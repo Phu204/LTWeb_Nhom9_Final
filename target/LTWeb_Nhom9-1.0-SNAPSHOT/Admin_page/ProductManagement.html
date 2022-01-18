@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quản Lý sản phẩm</title>
+    <link rel="icon" href="..\img\icon\logo.png" type="image/x-icon" />
+
+    <link href="../Admin_page/css/all.min.css" rel="stylesheet">
+    <link href="../Admin_page/css/admin.css" rel="stylesheet">
+    <link href="../Admin_page/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../Admin_page/css/datatables.min.css" rel="stylesheet">
+    <link href="../Admin_page/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+
+    <!-- azia CSS -->
+    <link rel="stylesheet" href="../Admin_page/css/azia.css">
+    <link rel="stylesheet" href="../Admin_page/css/app.css">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css" />
+
+    <style>
+        .sp {
+            border-radius: 15px;
+            color: burlywood;
+            background: black;
+        }
+    </style>
+    <style>
+        @media (min-width: 992px){
+            .az-header-menu .nav-item>.nav-link {
+                font-size: .775rem;
+            }
+        }
+        .row{
+            margin-bottom: 25px;
+            margin-top: 35px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="az-header">
+        <div class="container">
+            <div class="az-header-left">
+                <a href="Dashboard.html" class="az-logo"><span></span> Shop Team 9</a>
+                <a href="" id="azMenuShow" class="az-header-menu-icon d-lg-none"><span></span></a>
+            </div><!-- az-header-left -->
+            <div class="az-header-menu">
+                <div class="az-header-menu-header">
+                    <a href="Dashboard.html" class="az-logo"><span></span> azia</a>
+                    <a href="" class="close">&times;</a>
+                </div><!-- az-header-menu-header -->
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a href="Dashboard.html" class="nav-link"><i class="typcn typcn-chart-area-outline"></i> Dashboard</a>
+                    </li>
+    
+                    <li class="nav-item active show">
+                        <a href="ProductManagement.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i>
+                            Quản lý sản phẩm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="CategoriesManagement.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i>
+                            Quản lý danh mục</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="OrderManagement.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i>
+                            Quản lý đơn hàng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="UserManagement.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i>
+                            Quản lý người dùng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="BlogManagement.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i>
+                            Quản lý Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="FeedbackMangement.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i>
+                            Quản lý phản hồi</a>
+                    </li>
+    
+                </ul>
+            </div><!-- az-header-menu -->
+            <div class="az-header-right">
+
+                
+
+                <div class="dropdown az-profile-menu">
+                    <a href="" class="az-img-user"><img src="img/icon/logo.png" alt=""></a>
+                    <div class="dropdown-menu">
+                        <div class="az-dropdown-header d-sm-none">
+                            <a href="" class="az-header-arrow"><i class="icon ion-md-arrow-back"></i></a>
+                        </div>
+                        <div class="az-header-profile">
+                            <div class="az-img-user">
+                                <img src="img/icon/logo.png" alt="">
+                            </div><!-- az-img-user -->
+                            <h6>Aziana Pechon</h6>
+                            <span>Premium Member</span>
+                        </div><!-- az-header-profile -->
+
+                        <a href="" class="dropdown-item"><i class="typcn typcn-user-outline"></i> My Profile</a>
+                        <a href="" class="dropdown-item"><i class="typcn typcn-edit"></i> Edit Profile</a>
+                        <a href="" class="dropdown-item"><i class="typcn typcn-time"></i> Activity Logs</a>
+                        <a href="" class="dropdown-item"><i class="typcn typcn-cog-outline"></i> Account Settings</a>
+                        <a href="page-signin.html" class="dropdown-item"><i class="typcn typcn-power-outline"></i> Sign
+                            Out</a>
+                    </div><!-- dropdown-menu -->
+                </div>
+            </div><!-- az-header-right -->
+        </div><!-- container -->
+    </div><!-- az-header -->
+
+    <div class="container">
+        <div class="content container-fluid">
+            
+                <div class="page-header">
+					<div class="row">
+						<div class="col">
+							<h3 class="page-title">Sản phẩm</h3>
+						</div>
+						<div class="col-auto text-right">
+							<a href="Add_product.html" class="btn btn-add-product">
+								<i class="fa fa-plus"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+          
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-center mb-0 datatable">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Tên sản phẩm</th>
+                                            <th>Ảnh</th>
+                                            <th>Danh mục</th>
+                                            <th>Giá</th>
+                                            <th>Số lượng</th>
+                                            <th>Xóa</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                        <tr>
+                                            <td>10001</td>
+                                            <td>Bộ dụng cụ nhà bếp đa sắc 6 món Joseph Joseph</td>
+                                            <td>
+                                                <img class="product-img rounded-circle" alt=""
+                                                    src="img/products/DungCuNhaBep/product62.jpg">
+                                            </td>
+                                            <td>Dụng cụ nhà bếp</td>
+                                            <td>1.750.000 VNĐ</td>
+                                            <td>22</td>
+                                            <td><button type="button" class="btn btn-danger btn-delete-sanpham"><i
+                                                        class="fa fa-trash aria-hidden"></i> Xóa</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>10002</td>
+                                            <td>Kìm kẹp hải sản WMF</td>
+                                            <td>
+                                                <img class="product-img rounded-circle" alt=""
+                                                    src="img/products/DungCuNhaBep/product59.jpg">
+                                            </td>
+                                            <td>Dụng cụ nhà bếp</td>
+                                            <td>600.000 VNĐ</td>
+                                            <td>98</td>
+                                            <td><button type="button" class="btn btn-danger btn-delete-sanpham"><i
+                                                class="fa fa-trash aria-hidden"></i> Xóa</button></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>10003</td>
+                                            <td>Set xay tiêu WMF Profiselect</td>
+                                            <td>
+                                                <img class="product-img rounded-circle" alt=""
+                                                    src="img/products/DungCuNhaBep/product60.jpg">
+                                            </td>
+                                            <td>Dụng cụ nhà bếp</td>
+                                            <td>700.000 VNĐ</td>
+                                            <td>87</td>
+                                            <td><button type="button" class="btn btn-danger btn-delete-sanpham"><i
+                                                class="fa fa-trash aria-hidden"></i> Xóa</button></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>10004</td>
+                                            <td>Bộ đựng dụng cụ đa năng nhà bếp JOSEPH</td>
+                                            <td>
+                                                <img class="product-img rounded-circle" alt=""
+                                                    src="img/products/DungCuNhaBep/product61.jpg">
+                                            </td>
+                                            <td>Dụng cụ nhà bếp</td>
+                                            <td>1.900.000 VNĐ</td>
+                                            <td>54</td>
+                                            <td><button type="button" class="btn btn-danger btn-delete-sanpham"><i
+                                                class="fa fa-trash aria-hidden"></i> Xóa</button></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>10005</td>
+                                            <td>Bộ dụng cụ nhà bếp đa sắc 6 món Joseph</td>
+                                            <td>
+                                                <img class="product-img rounded-circle" alt=""
+                                                    src="img/products/DungCuNhaBep/product62.jpg">
+                                            </td>
+                                            <td>Dụng cụ nhà bếp</td>
+                                            <td>1.750.000 VNĐ</td>
+                                            <td>77</td>
+                                            <td><button type="button" class="btn btn-danger btn-delete-sanpham"><i
+                                                class="fa fa-trash aria-hidden"></i> Xóa</button></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>10006</td>
+                                            <td>Bộ dụng cụ nhà bếp 7 món Joseph</td>
+                                            <td>
+                                                <img class="product-img rounded-circle" alt=""
+                                                    src="img/products/DungCuNhaBep/product63.jpg">
+                                            </td>
+                                            <td>Dụng cụ nhà bếp</td>
+                                            <td>1.750.000 VNĐ</td>
+                                            <td>17</td>
+                                            <td><button type="button" class="btn btn-danger btn-delete-sanpham"><i
+                                                class="fa fa-trash aria-hidden"></i> Xóa</button></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>10007</td>
+                                            <td>Bộ nồi Fissler Original Profi 4 nồi 1 quánh, vung thép</td>
+                                            <td>
+                                                <img class="product-img rounded-circle" alt=""
+                                                    src="img/products/DungCuNhaBep/product64.jpg">
+                                            </td>
+                                            <td>Dụng cụ nhà bếp</td>
+                                            <td>13.000.000 VNĐ</td>
+                                            <td>32</td>
+                                            <td><button type="button" class="btn btn-danger btn-delete-sanpham"><i
+                                                class="fa fa-trash aria-hidden"></i> Xóa</button></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>10008</td>
+                                            <td>Bộ nồi Silit Nature Blue 4 nồi</td>
+                                            <td>
+                                                <img class="product-img rounded-circle" alt=""
+                                                    src="img/products/DungCuNhaBep/product65.jpg">
+                                            </td>
+                                            <td>Dụng cụ nhà bếp</td>
+                                            <td>10.000.000 VNĐ</td>
+                                            <td>29</td>
+                                            <td><button type="button" class="btn btn-danger btn-delete-sanpham"><i
+                                                class="fa fa-trash aria-hidden"></i> Xóa</button></td>
+
+                                        </tr>
+
+                                        <tr>
+                                            <td>10009</td>
+                                            <td>Máy pha cafe Delonghi | Ecam 22110</td>
+                                            <td>
+                                                <img class="product-img rounded-circle" alt=""
+                                                    src="img/products/DoGiaDung/product38.jpg">
+                                            </td>
+                                            <td>Đồ gia dụng</td>
+                                            <td>11.500.000 VNĐ</td>
+                                            <td>38</td>
+                                            <td><button type="button" class="btn btn-danger btn-delete-sanpham"><i
+                                                class="fa fa-trash aria-hidden"></i> Xóa</button></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>10009</td>
+                                            <td>Ấm siêu tốc cao cấp SMEG chỉnh nhiệt | KLF04</td>
+                                            <td>
+                                                <img class="product-img rounded-circle" alt=""
+                                                    src="img/products/DoGiaDung/product39.jpg">
+                                            </td>
+                                            <td>Đồ gia dụng</td>
+                                            <td>4.600.000 VNĐ</td>
+                                            <td>25</td>
+                                            <td><button type="button" class="btn btn-danger btn-delete-sanpham"><i
+                                                class="fa fa-trash aria-hidden"></i> Xóa</button></td>
+
+                                        </tr>
+                                        <tr> 
+                                            <td>10011</td>
+                                            <td>Bình thủy Caso Turbo HW660</td>
+                                            <td>
+                                                <img class="product-img rounded-circle" alt=""
+                                                    src="img/products/DoGiaDung/product40.jpg">
+                                            </td>
+                                            <td>Đồ gia dụng</td>
+                                            <td>2.900.000 VNĐ</td>
+                                            <td>87</td>
+                                            <td><button type="button" class="btn btn-danger btn-delete-sanpham"><i
+                                                class="fa fa-trash aria-hidden"></i> Xóa</button></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>10012</td>
+                                            <td>Máy vắt cam Caso CP330</td>
+                                            <td>
+                                                <img class="product-img rounded-circle" alt=""
+                                                src="img/products/DoGiaDung/product41.jpg">
+                                            </td>
+                                            <td>Đồ gia dụng</td>
+                                            <td>2.100.000 VNĐ</td>
+                                            <td>43</td>
+                                            <td><button type="button" class="btn btn-danger btn-delete-sanpham"><i
+                                                class="fa fa-trash aria-hidden"></i> Xóa</button></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>10013</td>
+                                            <td>Máy sấy khô thực phẩm WMF Kitchen Nminis</td>
+                                            <td>
+                                                <img class="product-img rounded-circle" alt=""
+                                                src="img/products/DoGiaDung/product42.jpg">
+                                            </td>
+                                            <td>Đồ gia dụng</td>
+                                            <td>3.150.000 VNĐ</td>
+                                            <td>77</td>
+                                            <td><button type="button" class="btn btn-danger btn-delete-sanpham"><i
+                                                class="fa fa-trash aria-hidden"></i> Xóa</button></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>10014</td>
+                                            <td> Máy hút chân không Caso VC10</td>
+                                            <td>
+                                                <img class="product-img rounded-circle" alt=""
+                                                src="img/products/DoGiaDung/product43.jpg">
+                                            </td>
+                                            <td>Đồ gia dụng</td>
+                                            <td>2.100.000 VNĐ</td>
+                                            <td>17</td>
+                                            <td><button type="button" class="btn btn-danger btn-delete-sanpham"><i
+                                                class="fa fa-trash aria-hidden"></i> Xóa</button></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>10015</td>
+                                            <td>Máy sấy quần áo Bosch WTX87M20 | 8kg Serie 8</td>
+                                            <td>
+                                                <img class="product-img rounded-circle" alt=""
+                                                src="img/products/DoGiaDung/product44.jpg">
+                                            </td>
+                                            <td>Đồ gia dụng</td>
+                                            <td>31.000.000 VNĐ</td>
+                                            <td>12</td>
+                                            <td><button type="button" class="btn btn-danger btn-delete-sanpham"><i
+                                                class="fa fa-trash aria-hidden"></i> Xóa</button></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>10016</td>
+                                            <td>Máy ép chậm Bosch MESM731M</td>
+                                            <td>
+                                                <img class="product-img rounded-circle" alt=""
+                                                src="img/products/DoGiaDung/product45.jpg">
+                                            </td>
+                                            <td>Đồ gia dụng</td>
+                                            <td>5.400.000 VNĐ</td>
+                                            <td>29</td>
+                                            <td><button type="button" class="btn btn-danger btn-delete-sanpham"><i
+                                                class="fa fa-trash aria-hidden"></i> Xóa</button></td>
+
+                                        </tr>
+                                        <tr> 
+                                            <td>10017</td>
+                                            <td>Quạt cây Rowenta VU5870 Turbo Slience</td>
+                                            <td>
+                                                <img class="product-img rounded-circle" alt=""
+                                                    src="img/products/DoGiaDung/product46.jpg">
+                                            </td>
+                                            <td>Đồ gia dụng</td>
+                                            <td>5.000.000 VNĐ</td>
+                                            <td>57</td>
+                                            <td><button type="button" class="btn btn-danger btn-delete-sanpham"><i
+                                                class="fa fa-trash aria-hidden"></i> Xóa</button></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>10018</td>
+                                            <td>Máy sấy quần áo Bosch WTX87M40 | 8KG Serie 8</td>
+                                            <td>
+                                                <img class="product-img rounded-circle" alt=""
+                                                src="img/products/DoGiaDung/product47.jpg">
+                                            </td>
+                                            <td>Đồ gia dụng</td>
+                                            <td>32.000.000 VNĐ</td>
+                                            <td>31</td>
+                                            <td><button type="button" class="btn btn-danger btn-delete-sanpham"><i
+                                                class="fa fa-trash aria-hidden"></i> Xóa</button></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>10019</td>
+                                            <td>Bàn âm thanh và tủ lạnh Caso</td>
+                                            <td>
+                                                <img class="product-img rounded-circle" alt=""
+                                                src="img/products/DoGiaDung/product48.jpg">
+                                            </td>
+                                            <td>Đồ gia dụng</td>
+                                            <td>34.000.000 VNĐ</td>
+                                            <td>17</td>
+                                            <td><button type="button" class="btn btn-danger btn-delete-sanpham"><i
+                                                class="fa fa-trash aria-hidden"></i> Xóa</button></td>
+
+                                        </tr>
+                                        
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- jQuery -->
+<script src="../Admin_page/js/jquery-3.5.0.min.js"></script>
+
+<!-- Bootstrap Core JS -->
+<script src="../Admin_page/js/popper.min.js"></script>
+<script src="../Admin_page/js/bootstrap.min.js"></script>
+
+<!-- Datepicker Core JS -->
+<script src="../Admin_page/js/moment.min.js"></script>
+<script src="../Admin_page/js/bootstrap-datetimepicker.min.js"></script>
+
+<!-- Datatables JS -->
+<script src="../Admin_page/js/datatables.min.js"></script>
+
+<!-- Select2 JS -->
+<script src="../Admin_page/js/select2.min.js"></script>
+
+<script src="../Admin_page/js/admin.js"></script>
+
+</html>

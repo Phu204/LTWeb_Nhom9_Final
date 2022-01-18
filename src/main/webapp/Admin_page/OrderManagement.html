@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản Lý Đơn Hàng</title>
+    <link rel="icon" href="..\img\icon\logo.png"
+          type="image/x-icon"/>
+
+    <link href="../Admin_page/css/all.min.css" rel="stylesheet">
+    <link href="../Admin_page/css/admin.css" rel="stylesheet">
+    <link href="../Admin_page/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../Admin_page/css/datatables.min.css" rel="stylesheet">
+    <link href="../Admin_page/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+
+    <!-- azia CSS -->
+    <link rel="stylesheet" href="../Admin_page/css/azia.css">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <style>
+        @media (min-width: 992px){
+            .az-header-menu .nav-item>.nav-link {
+                font-size: .775rem;
+            }
+        }
+        .row{
+            margin-bottom: 25px;
+            margin-top: 35px;
+        }
+
+        .sp{
+            border-radius: 15px;
+            color: burlywood;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+<div class="az-header">
+    <div class="container">
+        <div class="az-header-left">
+            <a href="Dashboard.html" class="az-logo"><span></span> Shop Team 9</a>
+            <a href="" id="azMenuShow" class="az-header-menu-icon d-lg-none"><span></span></a>
+        </div><!-- az-header-left -->
+        <div class="az-header-menu">
+            <div class="az-header-menu-header">
+                <a href="Dashboard.html" class="az-logo"><span></span> azia</a>
+                <a href="" class="close">&times;</a>
+            </div><!-- az-header-menu-header -->
+            <ul class="nav">
+                <li class="nav-item">
+                    <a href="Dashboard.html" class="nav-link"><i class="typcn typcn-chart-area-outline"></i> Dashboard</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="ProductManagement.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i>
+                        Quản lý sản phẩm</a>
+                </li>
+                <li class="nav-item">
+                    <a href="CategoriesManagement.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i>
+                        Quản lý danh mục</a>
+                </li>
+                <li class="nav-item active show">
+                    <a href="OrderManagement.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i>
+                        Quản lý đơn hàng</a>
+                </li>
+                <li class="nav-item">
+                    <a href="UserManagement.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i>
+                        Quản lý người dùng</a>
+                </li>
+                <li class="nav-item">
+                    <a href="BlogManagement.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i>
+                        Quản lý Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="FeedbackMangement.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i>
+                        Quản lý phản hồi</a>
+                </li>
+
+            </ul>
+        </div><!-- az-header-menu -->
+        <div class="az-header-right">
+
+            <div class="dropdown az-profile-menu">
+                <a href="" class="az-img-user"><img src="../img/icon/logo.png" alt=""></a>
+                <div class="dropdown-menu">
+                    <div class="az-dropdown-header d-sm-none">
+                        <a href="" class="az-header-arrow"><i class="icon ion-md-arrow-back"></i></a>
+                    </div>
+                    <div class="az-header-profile">
+                        <div class="az-img-user">
+                            <img src="../img/icon/logo.png" alt="">
+                        </div><!-- az-img-user -->
+                        <h6>Aziana Pechon</h6>
+                        <span>Premium Member</span>
+                    </div><!-- az-header-profile -->
+
+                    <a href="" class="dropdown-item"><i class="typcn typcn-user-outline"></i> My Profile</a>
+                    <a href="" class="dropdown-item"><i class="typcn typcn-edit"></i> Edit Profile</a>
+                    <a href="" class="dropdown-item"><i class="typcn typcn-time"></i> Activity Logs</a>
+                    <a href="" class="dropdown-item"><i class="typcn typcn-cog-outline"></i> Account Settings</a>
+                    <a href="page-signin.html" class="dropdown-item"><i class="typcn typcn-power-outline"></i> Sign Out</a>
+                </div><!-- dropdown-menu -->
+            </div>
+        </div><!-- az-header-right -->
+    </div><!-- container -->
+</div><!-- az-header -->
+
+<div class="container">
+    <div class="content container-fluid">
+        <div class="page-header">
+
+        </div>
+        <div class="row">
+            <ul class="nav nav-tabs menu-tabs">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Tất cả<span class="badge badge-light">550</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Chờ xử lí <span class="badge badge-light">125</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Đang xử lí <span class="badge badge-light">86</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Hoàn thành <span class="badge badge-light">89</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Đã hủy <span class="badge badge-light">121</span></a>
+                </li>
+            </ul>
+        </div>
+
+       <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-center mb-0 datatable">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Ngày đặt hàng</th>
+                                    <th>Khách hàng</th>
+                                    <th>Sản phẩm</th>
+                                    <th>Tổng tiền</th>
+                                    <th>Trạng thái</th>
+                                    <th class="text-right">Hành Động</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>10001</td>
+                                    <td>16/9/2021</td>
+                                    <td>
+                                        <span>Lữ Thanh Hải</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle sp" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                2 sản phẩm
+                                            </button>
+                                            <div class="dropdown-menu tx-13" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="#">
+                                                    <span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="../img/products/MayHutBui/product118.jpg">
+														</a>
+                                                        <span>Máy hút bụi A7</span>
+													</span>
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="../img/products/MayHutBui/product119.jpg">
+														</a>
+                                                        <span>Máy hút bụi A4.6</span>
+													</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>3.125.000 VNĐ</td>
+                                    <td>
+                                        <label class="badge badge-dark">Đang chờ xử lí</label>
+                                    </td>
+                                    <td class="text-right">
+                                        <a href="Edit_Order.html" class="btn btn-sm bg-success-light mr-2">	<i class="far fa-edit mr-1"></i> Sửa</a>
+                                        <button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Xóa</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>10002</td>
+                                    <td>16/11/2021</td>
+                                    <td>
+                                        <span>Hà Thanh Nam</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle sp" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                1 sản phẩm
+                                            </button>
+                                            <div class="dropdown-menu tx-13" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="#">
+                                                    <span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="../img/products/NoiChien/product132.jpg">
+														</a>
+                                                        <span>Máy hút bụi A7</span>
+													</span>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>125.000 VNĐ</td>
+                                    <td>
+                                        <label class="badge badge-dark">Đang chờ xử lí</label>
+                                    </td>
+                                    <td class="text-right">
+                                        <a href="Edit_Order.html" class="btn btn-sm bg-success-light mr-2">	<i class="far fa-edit mr-1"></i> Sửa</a>
+                                        <button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Xóa</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>10003</td>
+                                    <td>16/12/2021</td>
+                                    <td>
+                                        <span>Đoàn Quang Hải</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle sp" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                3 sản phẩm
+                                            </button>
+                                            <div class="dropdown-menu tx-13" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="#">
+                                                    <span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="../img/products/MayHutBui/product118.jpg">
+														</a>
+                                                        <span>Máy hút bụi A7</span>
+													</span>
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="../img/products/TuBaoQuan/product68.jpg">
+														</a>
+                                                        <span>Tủ bảo quản A4.6</span>
+													</span>
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="../img/products/MayHutBui/product119.jpg">
+														</a>
+                                                        <span>Máy hút bụi A4.6</span>
+													</span>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>125.000 VNĐ</td>
+                                    <td>
+                                        <label class="badge badge-dark">Đang chờ xử lí</label>
+                                    </td>
+                                    <td class="text-right">
+                                        <a href="Edit_Order.html" class="btn btn-sm bg-success-light mr-2">	<i class="far fa-edit mr-1"></i> Sửa</a>
+                                        <button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Xóa</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>10004</td>
+                                    <td>25/12/2021</td>
+                                    <td>
+                                        <span>Lữ Thanh Hải</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle sp" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                2 sản phẩm
+                                            </button>
+                                            <div class="dropdown-menu tx-13" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="#">
+                                                    <span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="../img/products/MayHutBui/product118.jpg">
+														</a>
+                                                        <span>Máy hút bụi A7</span>
+													</span>
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="../img/products/MayHutBui/product119.jpg">
+														</a>
+                                                        <span>Máy hút bụi A4.6</span>
+													</span>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>125.000 VNĐ</td>
+                                    <td>
+                                        <label class="badge badge-primary">Đã hoàn thành</label>
+                                    </td>
+                                    <td class="text-right">
+                                        <a href="Edit_Order.html" class="btn btn-sm bg-success-light mr-2">	<i class="far fa-edit mr-1"></i> Sửa</a>
+                                        <button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Xóa</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>10005</td>
+                                    <td>16/2/2021</td>
+                                    <td>
+                                        <span>Trần Hoàng Long</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle sp" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                2 sản phẩm
+                                            </button>
+                                            <div class="dropdown-menu tx-13" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="#">
+                                                    <span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="../img/products/MayHutBui/product118.jpg">
+														</a>
+                                                        <span>Máy hút bụi A7</span>
+													</span>
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="../img/products/MayHutBui/product119.jpg">
+														</a>
+                                                        <span>Máy hút bụi A4.6</span>
+													</span>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>125.000 VNĐ</td>
+                                    <td>
+                                        <label class="badge badge-danger">Bị hủy</label>
+                                    </td>
+                                    <td class="text-right">
+                                        <a href="Edit_Order.html" class="btn btn-sm bg-success-light mr-2">	<i class="far fa-edit mr-1"></i> Sửa</a>
+                                        <button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Xóa</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>10006</td>
+                                    <td>16/9/2021</td>
+                                    <td>
+                                        <span>Lữ Thanh Hải</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle sp" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                1 sản phẩm
+                                            </button>
+                                            <div class="dropdown-menu tx-13" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="#">
+                                                    <span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="../img/products/MayHutBui/product119.jpg">
+														</a>
+                                                        <span>Máy hút bụi A4.6</span>
+													</span>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>125.000 VNĐ</td>
+                                    <td>
+                                        <label class="badge badge-info">Đang xử lí</label>
+                                    </td>
+                                    <td class="text-right">
+                                        <a href="Edit_Order.html" class="btn btn-sm bg-success-light mr-2">	<i class="far fa-edit mr-1"></i> Sửa</a>
+                                        <button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Xóa</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>10007</td>
+                                    <td>16/9/2021</td>
+                                    <td>
+                                        <span>Lữ Thanh Hải</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle sp" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                2 sản phẩm
+                                            </button>
+                                            <div class="dropdown-menu tx-13" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="#">
+                                                    <span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="../img/products/MayHutBui/product118.jpg">
+														</a>
+                                                        <span>Máy hút bụi A7</span>
+													</span>
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="../img/products/MayHutBui/product119.jpg">
+														</a>
+                                                        <span>Máy hút bụi A4.6</span>
+													</span>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>125.000 VNĐ</td>
+                                    <td>
+                                        <label class="badge badge-warning">Đang giao</label>
+                                    </td>
+                                    <td class="text-right">
+                                        <a href="Edit_Order.html" class="btn btn-sm bg-success-light mr-2">	<i class="far fa-edit mr-1"></i> Sửa</a>
+                                        <button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Xóa</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>10008</td>
+                                    <td>16/9/2020</td>
+                                    <td>
+                                        <span>Lữ Thanh Hải</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle sp" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                2 sản phẩm
+                                            </button>
+                                            <div class="dropdown-menu tx-13" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="#">
+                                                    <span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="../img/products/MayHutBui/product118.jpg">
+														</a>
+                                                        <span>Máy hút bụi A7</span>
+													</span>
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="../img/products/MayHutBui/product119.jpg">
+														</a>
+                                                        <span>Máy hút bụi A4.6</span>
+													</span>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>125.000 VNĐ</td>
+                                    <td>
+                                        <label class="badge badge-dark">Đang chờ xử lí</label>
+                                    </td>
+                                    <td class="text-right">
+                                        <a href="Edit_Order.html" class="btn btn-sm bg-success-light mr-2">	<i class="far fa-edit mr-1"></i> Sửa</a>
+                                        <button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Xóa</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>10009</td>
+                                    <td>16/9/2020</td>
+                                    <td>
+                                        <span>Lữ Thanh Hải</span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle sp" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                2 sản phẩm
+                                            </button>
+                                            <div class="dropdown-menu tx-13" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="#">
+                                                    <span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="../img/products/MayHutBui/product118.jpg">
+														</a>
+                                                        <span>Máy hút bụi A7</span>
+													</span>
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <span class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" alt="" src="../img/products/MayHutBui/product119.jpg">
+														</a>
+                                                        <span>Máy hút bụi A4.6</span>
+													</span>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>125.000 VNĐ</td>
+                                    <td>
+                                        <label class="badge badge-dark">Đang chờ xử lí</label>
+                                    </td>
+                                    <td class="text-right">
+                                        <a href="Edit_Order.html" class="btn btn-sm bg-success-light mr-2">	<i class="far fa-edit mr-1"></i> Sửa</a>
+                                        <button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Xóa</button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+    <!-- jQuery -->
+    <script src="../Admin_page/js/jquery-3.5.0.min.js"></script>
+
+    <!-- Bootstrap Core JS -->
+    <script src="../Admin_page/js/popper.min.js"></script>
+    <script src="../Admin_page/js/bootstrap.min.js"></script>
+
+    <!-- Datepicker Core JS -->
+    <script src="../Admin_page/js/moment.min.js"></script>
+    <script src="../Admin_page/js/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- Datatables JS -->
+    <script src="../Admin_page/js/datatables.min.js"></script>
+
+    <!-- Select2 JS -->
+    <script src="../Admin_page/js/select2.min.js"></script>
+
+    <script src="../Admin_page/js/admin.js"></script>
+</html>

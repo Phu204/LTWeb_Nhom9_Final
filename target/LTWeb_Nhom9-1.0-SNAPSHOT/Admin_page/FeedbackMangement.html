@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Phản hồi khách hàng</title>
+    <link rel="icon" href="..\img\icon\logo.png" type="image/x-icon" />
+
+    <link href="../Admin_page/css/all.min.css" rel="stylesheet">
+    <link href="../Admin_page/css/admin.css" rel="stylesheet">
+    <link href="../Admin_page/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../Admin_page/css/datatables.min.css" rel="stylesheet">
+    <link href="../Admin_page/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+
+    <!-- azia CSS -->
+    <link rel="stylesheet" href="../Admin_page/css/azia.css">
+    <link rel="stylesheet" href="../Admin_page/css/app.css">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css" />
+
+    <style>
+        .sp {
+            border-radius: 15px;
+            color: burlywood;
+            background: black;
+        }
+    </style>
+    <style>
+        @media (min-width: 992px){
+            .az-header-menu .nav-item>.nav-link {
+                font-size: .775rem;
+            }
+        }
+        .row{
+            margin-bottom: 25px;
+            margin-top: 35px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="az-header">
+        <div class="container">
+            <div class="az-header-left">
+                <a href="Dashboard.html" class="az-logo"><span></span> Shop Team 9</a>
+                <a href="" id="azMenuShow" class="az-header-menu-icon d-lg-none"><span></span></a>
+            </div><!-- az-header-left -->
+            <div class="az-header-menu">
+                <div class="az-header-menu-header">
+                    <a href="Dashboard.html" class="az-logo"><span></span> azia</a>
+                    <a href="" class="close">&times;</a>
+                </div><!-- az-header-menu-header -->
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a href="Dashboard.html" class="nav-link"><i class="typcn typcn-chart-area-outline"></i> Dashboard</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a href="ProductManagement.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i>
+                            Quản lý sản phẩm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="CategoriesManagement.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i>
+                            Quản lý danh mục</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="OrderManagement.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i>
+                            Quản lý đơn hàng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="UserManagement.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i>
+                            Quản lý người dùng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="BlogManagement.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i>
+                            Quản lý Blog</a>
+                    </li>
+                    <li class="nav-item active show">
+                        <a href="FeedbackMangement.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i>
+                            Quản lý phản hồi</a>
+                    </li>
+    
+                </ul>
+            </div><!-- az-header-menu -->
+            <div class="az-header-right">
+
+                
+
+                <div class="dropdown az-profile-menu">
+                    <a href="" class="az-img-user"><img src="../img/icon/logo.png" alt=""></a>
+                    <div class="dropdown-menu">
+                        <div class="az-dropdown-header d-sm-none">
+                            <a href="" class="az-header-arrow"><i class="icon ion-md-arrow-back"></i></a>
+                        </div>
+                        <div class="az-header-profile">
+                            <div class="az-img-user">
+                                <img src="../img/icon/logo.png" alt="">
+                            </div><!-- az-img-user -->
+                            <h6>Aziana Pechon</h6>
+                            <span>Premium Member</span>
+                        </div><!-- az-header-profile -->
+
+                        <a href="" class="dropdown-item"><i class="typcn typcn-user-outline"></i> My Profile</a>
+                        <a href="" class="dropdown-item"><i class="typcn typcn-edit"></i> Edit Profile</a>
+                        <a href="" class="dropdown-item"><i class="typcn typcn-time"></i> Activity Logs</a>
+                        <a href="" class="dropdown-item"><i class="typcn typcn-cog-outline"></i> Account Settings</a>
+                        <a href="page-signin.html" class="dropdown-item"><i class="typcn typcn-power-outline"></i> Sign
+                            Out</a>
+                    </div><!-- dropdown-menu -->
+                </div>
+            </div><!-- az-header-right -->
+        </div><!-- container -->
+    </div><!-- az-header -->
+
+    <div class="container">
+        <div class="content container-fluid">
+            
+            <div class="page-header">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="page-title">Phản hồi người dùng </h3>
+                        
+
+                </div>
+            </div>
+          
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-center mb-0 datatable">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Tên người dùng</th>
+                                            <th>Email</th>
+                                            <th>Số điện thoại</th>
+                                            <th>Nội dung</th>
+                                            <th>Chi tiết</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr>
+                                            <td>user01</td>
+                                            <td>Trần Phước An</td>
+                                            <td>an1234@gmail.com</td>
+                                            <td>0372652520</td>
+                                            <td>Sản phẩm này có phải hàng chính hãng ko ạ</td>
+                                            <td><a href="FeedbackDetail.html" class="btn btn-danger btn-delete-sanpham">
+                                                <i class="fa fa-eye">Xem</i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>user02</td>
+                                            <td>Lâm Mỹ Anh</td>
+                                            <td>myanhlam2107@gmail.com</td>
+                                            <td>0564243269</td>
+                                            <td>Sản phẩm quá tốt so với các nơi khác</td>
+                                            <td><a href="FeedbackDetail.html" class="btn btn-danger btn-delete-sanpham">
+                                                <i class="fa fa-eye">Xem</i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>user03</td>
+                                            <td>Trần Thị Minh Anh</td>
+                                            <td>ttmanh@gmail.com</td>
+                                            <td>0372652520</td>
+                                            <td>10 điểm</td>
+                                            <td><a href="FeedbackDetail.html" class="btn btn-danger btn-delete-sanpham">
+                                                <i class="fa fa-eye">Xem</i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>user04</td>
+                                            <td>Ngô Quốc Bảo</td>
+                                            <td>baoquoc0302@gmail.com</td>
+                                            <td>0564243269</td>
+                                            <td>Không có gì để chê, giao hàng nhanh chất lượng</td>
+                                            <td><a href="FeedbackDetail.html" class="btn btn-danger btn-delete-sanpham">
+                                                <i class="fa fa-eye">Xem</i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>user05</td>
+                                            <td>Nguyễn Thùy Duyên</td>
+                                            <td>thuyduyencute@gmail.com</td>
+                                            <td>0568297607</td>
+                                            <td>Hàng đẹp ,vừa tiền ,màu hoa hướng dương hơi nhạt</td>
+                                            <td><a href="FeedbackDetail.html" class="btn btn-danger btn-delete-sanpham">
+                                                <i class="fa fa-eye">Xem</i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>user06</td>
+                                            <td>Trần Thái Linh</td>
+                                            <td>mhismproplayer@gmail.com</td>
+                                            <td>0702278492</td>
+                                            <td>Sản phẩm giao không đúng màu so với đơn đặt hàng</td>
+                                            <td><a href="FeedbackDetail.html" class="btn btn-danger btn-delete-sanpham">
+                                                <i class="fa fa-eye">Xem</i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>user07</td>
+                                            <td>Nguyễn Thị Hiếu Hưng</td>
+                                            <td>hungpro01@gmail.com</td>
+                                            <td>0984851207</td>
+                                            <td>Lần đầu mua của shop mà ưng lắm ạ giao hàng nhanh</td>
+                                            <td><a href="FeedbackDetail.html" class="btn btn-danger btn-delete-sanpham">
+                                                <i class="fa fa-eye">Xem</i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>user08</td>
+                                            <td>Nguyễn Thanh Hương</td>
+                                            <td>cobexinhxan@gmail.com</td>
+                                            <td>0380814069</td>
+                                            <td>Sản phẩm giao không đúng màu so với đơn đặt hàng</td>
+                                            <td><a href="FeedbackDetail.html" class="btn btn-danger btn-delete-sanpham">
+                                                <i class="fa fa-eye">Xem</i></a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>user09</td>
+                                            <td>Phạm Văn Lộc</td>
+                                            <td>locphuhodeptraitop1@gmail.com</td>
+                                            <td>0611599570</td>
+                                            <td>Sản phẩm giao không đúng màu so với đơn đặt hàng</td>
+                                            <td><a href="FeedbackDetail.html" class="btn btn-danger btn-delete-sanpham">
+                                                <i class="fa fa-eye">Xem</i></a></td>
+                                        </tr>
+
+
+
+                                    </tbody>
+
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- jQuery -->
+<script src="../Admin_page/js/jquery-3.5.0.min.js"></script>
+
+<!-- Bootstrap Core JS -->
+<script src="../Admin_page/js/popper.min.js"></script>
+<script src="../Admin_page/js/bootstrap.min.js"></script>
+
+<!-- Datepicker Core JS -->
+<script src="../Admin_page/js/moment.min.js"></script>
+<script src="../Admin_page/js/bootstrap-datetimepicker.min.js"></script>
+
+<!-- Datatables JS -->
+<script src="../Admin_page/js/datatables.min.js"></script>
+
+<!-- Select2 JS -->
+<script src="../Admin_page/js/select2.min.js"></script>
+
+<script src="../Admin_page/js/admin.js"></script>
+
+</html>

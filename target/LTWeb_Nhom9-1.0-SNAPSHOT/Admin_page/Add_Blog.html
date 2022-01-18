@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm Blog</title>
+    <link rel="icon" href="..\img\icon\logo.png"
+          type="image/x-icon"/>
+
+    <!-- azia CSS -->
+    <link rel="stylesheet" href="../Admin_page/css/azia.css">
+
+    <link href="../Admin_page/css/all.min.css" rel="stylesheet">
+    <link href="../Admin_page/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../Admin_page/css/datatables.min.css" rel="stylesheet">
+    <link href="../Admin_page/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="../Admin_page/css/admin.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <style>
+        @media (min-width: 992px){
+            .az-header-menu .nav-item>.nav-link {
+                font-size: .775rem;
+            }
+        }
+        .row{
+            margin-bottom: 25px;
+            margin-top: 35px;
+        }
+    </style>
+</head>
+<body>
+<div class="az-header">
+    <div class="container">
+        <div class="az-header-left">
+            <a href="Dashboard.html" class="az-logo"><span></span> Shop Team 9</a>
+            <a href="" id="azMenuShow" class="az-header-menu-icon d-lg-none"><span></span></a>
+        </div><!-- az-header-left -->
+        <div class="az-header-menu">
+            <div class="az-header-menu-header">
+                <a href="Dashboard.html" class="az-logo"><span></span> azia</a>
+                <a href="" class="close">&times;</a>
+            </div><!-- az-header-menu-header -->
+            <ul class="nav">
+                <li class="nav-item">
+                    <a href="Dashboard.html" class="nav-link"><i class="typcn typcn-chart-area-outline"></i> Dashboard</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="ProductManagement.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i>
+                        Quản lý sản phẩm</a>
+                </li>
+                <li class="nav-item">
+                    <a href="CategoriesManagement.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i>
+                        Quản lý danh mục</a>
+                </li>
+                <li class="nav-item">
+                    <a href="OrderManagement.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i>
+                        Quản lý đơn hàng</a>
+                </li>
+                <li class="nav-item">
+                    <a href="UserManagement.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i>
+                        Quản lý người dùng</a>
+                </li>
+                <li class="nav-item active show">
+                    <a href="BlogManagement.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i>
+                        Quản lý Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="FeedbackMangement.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i>
+                        Quản lý phản hồi</a>
+                </li>
+
+            </ul>
+        </div><!-- az-header-menu -->
+        <div class="az-header-right">
+
+            <div class="dropdown az-profile-menu">
+                <a href="" class="az-img-user"><img src="../img/icon/logo.png" alt=""></a>
+                <div class="dropdown-menu">
+                    <div class="az-dropdown-header d-sm-none">
+                        <a href="" class="az-header-arrow"><i class="icon ion-md-arrow-back"></i></a>
+                    </div>
+                    <div class="az-header-profile">
+                        <div class="az-img-user">
+                            <img src="../img/icon/logo.png" alt="">
+                        </div><!-- az-img-user -->
+                        <h6>Aziana Pechon</h6>
+                        <span>Premium Member</span>
+                    </div><!-- az-header-profile -->
+
+                    <a href="" class="dropdown-item"><i class="typcn typcn-user-outline"></i> My Profile</a>
+                    <a href="" class="dropdown-item"><i class="typcn typcn-edit"></i> Edit Profile</a>
+                    <a href="" class="dropdown-item"><i class="typcn typcn-time"></i> Activity Logs</a>
+                    <a href="" class="dropdown-item"><i class="typcn typcn-cog-outline"></i> Account Settings</a>
+                    <a href="page-signin.html" class="dropdown-item"><i class="typcn typcn-power-outline"></i> Sign Out</a>
+                </div><!-- dropdown-menu -->
+            </div>
+        </div><!-- az-header-right -->
+    </div><!-- container -->
+</div><!-- az-header -->
+
+<div class="container">
+    <div class="content container-fluid">
+        <div class="page-header">
+
+        </div>
+
+
+        <div class="content container-fluid">
+
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="page-title">Chỉnh Sửa Blog</h3>
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- /Page Header -->
+
+            <!-- table-->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <!-- <table class="table table-hover table-center mb-0 datatable"> -->
+                                <!-- Thay đổi code ở đây Thay đổi theo file word -->
+                                <!-- Form -->
+                                <form action="BlogManagement.html">
+
+                                    <div class="form-group">
+                                        <label>Ảnh</label>
+                                        <input class="form-control" type="file">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="avatar">
+                                            <img class="avatar-img rounded" alt="" src="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Title</label>
+                                        <input class="form-control" type="text" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Tóm tắt</label>
+                                        <textarea style="height: 100px;" class="form-control" type="text"></textarea>
+                                    </div>
+
+                                    <div class="mt-4">
+                                        <button class="btn btn-primary" type="submit">Lưu thay đổi</button>
+                                        <a href="BlogManagement.html" class="btn btn-link">Hủy</a>
+                                    </div>
+                                </form>
+                                <!-- /Form -->
+                                <!-- Thêm vào nội dung ở đây -->
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<!-- jQuery -->
+<script src="../Admin_page/js/jquery-3.5.0.min.js"></script>
+
+<!-- Bootstrap Core JS -->
+<script src="../Admin_page/js/popper.min.js"></script>
+<script src="../Admin_page/js/bootstrap.min.js"></script>
+
+<!-- Datepicker Core JS -->
+<script src="../Admin_page/js/moment.min.js"></script>
+<script src="../Admin_page/js/bootstrap-datetimepicker.min.js"></script>
+
+<!-- Datatables JS -->
+<script src="../Admin_page/js/datatables.min.js"></script>
+
+<!-- Select2 JS -->
+<script src="../Admin_page/js/select2.min.js"></script>
+
+<script src="../Admin_page/js/admin.js"></script>
+</html>
