@@ -1,8 +1,10 @@
 package com.example.ltweb_nhom9.beans;
 
+import com.example.ltweb_nhom9.dao.LabelDao;
 import com.example.ltweb_nhom9.dao.ProductDao;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class Product implements Serializable {
@@ -105,24 +107,45 @@ public class Product implements Serializable {
         this.decription = decription;
     }
 
-    public String stringPrice(int price){
-        String p = price + "";
-        int surplus = p.length() % 3;
-        char[] arr = p.toCharArray();
-        String result = "";
-        result += arr[0];
-        for (int i = 1;i < arr.length-1;i++){
-            if ((i%3) == surplus){
-                result += ".";
-            }
-            result += arr[i];
-        }
-        result += arr[arr.length-1];
+    public String stringPrice(double price){
+//        String p = price + "";
+//        int surplus = p.length() % 3;
+//        char[] arr = p.toCharArray();
+//        String result = "";
+//        result += arr[0];
+//        for (int i = 1;i < arr.length-1;i++){
+//            if ((i%3) == surplus){
+//                result += ".";
+//            }
+//            result += arr[i];
+//        }
+//        result += arr[arr.length-1];
+        DecimalFormat df = new DecimalFormat("###,###");
+        String result = df.format(price);
         return result;
     }
 
     public List<String> getListImage(){
         return ProductDao.getInstance().getImgList(imgId);
+    }
+
+    public double getTotalPrice(){
+        try {
+            Label label = LabelDao.getInstance().getById(lableId);
+            return price - (label.getRate() * price);
+        }catch (NullPointerException e){
+            return this.price ;
+        }
+
+    }
+
+    public String getLabel(){
+        try {
+            Label label = LabelDao.getInstance().getById(lableId);
+            return label.getLabel();
+        } catch (NullPointerException e){
+            return "New";
+        }
     }
 
     @Override

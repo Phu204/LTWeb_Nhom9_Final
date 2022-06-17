@@ -25,7 +25,7 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           type="text/css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="${pageContext.request.contextPath}/User_page/js/stats.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -55,6 +55,13 @@
     <jsp:param name="articleId" value=""/>
 </jsp:include>
 
+<script src="${pageContext.request.contextPath}/User_page/js/jquery.min.js" type="text/javascript"></script>
+
+<script src="${pageContext.request.contextPath}/User_page/js/option-selectors.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/User_page/js/api.jquery.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/User_page/js/slick.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/User_page/js/evo-index-js.js" type="text/javascript"></script>
+
 
 <section class="awe-section-1">
     <div class="container">
@@ -67,7 +74,7 @@
 
                 <div class="item">
                     <a href="#" class="clearfix" title="SHOP TEAM 9">
-                        <img src="#" data-lazy="<c:url value='/img/banner/slider_1.jpg'/>" alt="SHOP TEAM 9"
+                        <img src="#" data-lazy="${pageContext.request.contextPath}/img/banner/slider_1.jpg" alt="SHOP TEAM 9"
                              class="lazy img-responsive center-block"/>
                     </a>
                 </div>
@@ -75,7 +82,7 @@
 
                 <div class="item">
                     <a href="#" class="clearfix" title="SHOP TEAM 9">
-                        <img src="#" data-lazy="../img/banner/slider_2.jpg" alt="SHOP TEAM 9"
+                        <img src="#" data-lazy="${pageContext.request.contextPath}/img/banner/slider_2.jpg" alt="SHOP TEAM 9"
                              class="lazy img-responsive center-block"/>
                     </a>
                 </div>
@@ -83,7 +90,7 @@
 
                 <div class="item">
                     <a href="#" class="clearfix" title="SHOP TEAM 9">
-                        <img src="#" data-lazy="${pageContext.request.contextPath}\\img\\banner\\slider_3.jpg" alt="SHOP TEAM 9"
+                        <img src="#" data-lazy="${pageContext.request.contextPath}/img/banner/slider_3.jpg" alt="SHOP TEAM 9"
                              class="lazy img-responsive center-block"/>
                     </a>
                 </div>
@@ -1646,7 +1653,6 @@
 </div>
 <script src="${pageContext.request.contextPath}/User_page/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/User_page/js/jquery.form-validator.min.js" type="text/javascript"></script>
-<script src="${pageContext.request.contextPath}/User_page/js/jquery.min.js" type="text/javascript"></script>
 
 
 <script src="${pageContext.request.contextPath}/User_page/js/intersection-observer.js" type="text/javascript"></script>
@@ -1654,14 +1660,14 @@
 <script src="${pageContext.request.contextPath}/User_page/js/cs.script.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/User_page/js/jquery.cookie.min.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/User_page/js/main.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/User_page/js/stats.min.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/User_page/js/widgets.js" type="text/javascript"></script>
 
 
-<script src="${pageContext.request.contextPath}/User_page/js/option-selectors.js" type="text/javascript"></script>
-<script src="${pageContext.request.contextPath}/User_page/js/api.jquery.js" type="text/javascript"></script>
-<script src="${pageContext.request.contextPath}/User_page/js/slick.js" type="text/javascript"></script>
-<script src="${pageContext.request.contextPath}/User_page/js/evo-index-js.js" type="text/javascript"></script>
+
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js" integrity="sha512-FwqNPb8ENFXApJKNgRgYq5ok7VoOf5ImaOdzyF/xe/T5jdd/S0xq0CXBLDhpzaemxpQ61X3nLVln6KaczwhKgA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <div class="fb-livechat">
     <a href="#" target="" title="Chat với chúng tôi!" class="ctrlq fb-button"></a>

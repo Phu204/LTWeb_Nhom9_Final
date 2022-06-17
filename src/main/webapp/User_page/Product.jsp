@@ -5,11 +5,13 @@
   Time: 22:08
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix = "fn"
            uri = "http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
+<%@ taglib prefix = "x"
+           uri = "http://java.sun.com/jsp/jstl/xml" %>
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -283,7 +285,7 @@
                         <div class="evo-product-block-item ">
                             <div class="product-img">
                                 <div class="product-sale">
-                                    <span>- ${p.lableId} </span>
+                                    <span>${p.getLabel()} </span>
                                 </div>
                                 <a href="Detail"
                                    title=${p.name} class="image-resize">
@@ -294,7 +296,7 @@
 
                                     <img class="lazy hover-pic"
                                          src="Detail"
-                                         data-src="img/products/ThietBiVeSinh/product33_2.jpg"
+                                         data-src=${p.getListImage().get(1)}
                                          alt=${p.name}/>
 
                                 </a>
@@ -311,7 +313,6 @@
                                         <button type="button" title="Thêm vào giỏ" class="action add_to_cart"><i
                                                 class="fa fa-shopping-bag" aria-hidden="true"></i></button>
 
-
                                     </form>
                                 </div>
                             </div>
@@ -323,17 +324,17 @@
 
                                     </div>
                                     <h3 class="pro-name">
-                                        <a href="/voi-lavabo-am-tuong-grohe-lineare-23444001"
+                                        <a href="#"
                                            title=${p.name}>${p.name}</a>
                                     </h3>
                                     <div class="box-pro-prices">
                                         <p class="pro-price">
 
+                                                ${p.stringPrice(p.getTotalPrice())}₫
 
-                                                ${p.stringPrice(p.price)}
 
                                             <span class="pro-price-del">
-						<del class="compare-price">18.000.000₫</del>
+						<del class="compare-price">${p.stringPrice(p.price)}₫</del>
 					</span>
 
 
@@ -352,29 +353,37 @@
                         <nav class="text-center">
                             <ul class="pagination clearfix">
 
-                                <li class="page-item disabled"><a class="page-link" href="#" title="«">«</a></li>
+                                <li class="page-item
+                                <c:if test="${index == 1}" >disabled </c:if>
+                                 "><a class="page-link" href="Product?index=${1}" title="«">«</a></li>
 
 
-                                <li class="active page-item disabled"><a class="page-link" href="javascript:;"
-                                                                         title="1">1</a></li>
+                                <c:forEach var="i" begin="${index>2?index-2:1}" end="${index+1>numPage?numPage+1:index+2 }">
+                                    <li class="page-item"><a class="page-link" href="Product?index=${i}"
+                                            <c:if test="${index ==i }" >style="color: #858585" disabled="true" </c:if>
+<%--                                                             ${index==i?"style=\color:red;\"":""}--%>
+                                                             title="${i}">${i}</a></li>
+                                </c:forEach>
+
+<%--                                <li class="active page-item disabled"><a class="page-link" href="javascript:;"--%>
+<%--                                                                         title="1">1</a></li>--%>
 
 
-                                <li class="page-item"><a class="page-link" onclick="doSearch(2)" href="#"
-                                                         title="2">2</a></li>
+<%--                                --%>
 
 
-                                <li class="page-item"><a class="page-link" onclick="doSearch(3)" href="#"
-                                                         title="3">3</a></li>
+<%--                                <li class="page-item"><a class="page-link" onclick="doSearch(3)" href="#"--%>
+<%--                                                         title="3">3</a></li>--%>
 
 
-                                <li class="page-item"><a class="page-link" href="javascript:;" title="...">...</a></li>
+<%--                                <li class="page-item"><a class="page-link" href="javascript:;" title="...">...</a></li>--%>
 
 
-                                <li class="page-item"><a class="page-link" onclick="doSearch(39)" href="#"
-                                                         title="39">39</a></li>
+<%--                                <li class="page-item"><a class="page-link" onclick="doSearch(39)" href="#"--%>
+<%--                                                         title="39">39</a></li>--%>
 
 
-                                <li class="page-item"><a class="page-link" onclick="doSearch(2)" href="#"
+                                <li class="page-item"><a class="page-link" href="Product?index=${numPage + 1 }"
                                                          title="»">»</a></li>
 
                             </ul>

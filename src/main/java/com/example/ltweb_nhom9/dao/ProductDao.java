@@ -115,7 +115,9 @@ public class ProductDao {
     }
 
     public static void main(String[] args) {
-        List lis = ProductDao.getInstance().getImgList(1038);
-        System.out.println(lis.get(2));
+        List<Product> lis = ProductDao.getInstance().getAll();
+        System.out.println(lis.get(33));
+        System.out.println(lis.get(33).getTotalPrice());
+        System.out.println(LabelDao.getInstance().getById(1032));
     }
 }
