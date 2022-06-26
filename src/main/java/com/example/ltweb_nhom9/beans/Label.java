@@ -47,4 +47,12 @@ public class Label implements Serializable {
         return name;
     }
 
+    @Override
+    public String toString() {
+        return "Label{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", rate=" + rate +
+                '}';
+    }
 }

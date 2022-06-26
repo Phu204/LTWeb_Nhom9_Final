@@ -7,13 +7,5 @@
         <welcome-file>Home</welcome-file>
     </welcome-file-list>
 
-    <servlet>
-        <servlet-name>Home</servlet-name>
-        <servlet-class>com.example.ltweb_nhom9.Controller.user_page.Home_direct</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Home</servlet-name>
-        <url-pattern></url-pattern>
-    </servlet-mapping>
 
 </web-app>

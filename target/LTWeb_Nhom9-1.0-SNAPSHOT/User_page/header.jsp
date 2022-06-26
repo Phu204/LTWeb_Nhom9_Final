@@ -544,7 +544,7 @@
                     <ul id="nav" class="nav">
 
 
-                        <li class="nav-item active"><a class="nav-link" href="index.html" title="Trang chủ">Trang chủ</a>
+                        <li class="nav-item active"><a class="nav-link" href="Home" title="Trang chủ">Trang chủ</a>
                         </li>
 
 
@@ -802,7 +802,7 @@
                         </li>
 
 
-                        <li class="nav-item "><a class="nav-link" href="Product" title="Khuyến mãi">Khuyến mãi</a></li>
+                        <li class="nav-item "><a class="nav-link" href="DiscountProduct" title="Khuyến mãi">Khuyến mãi</a></li>
 
 
                         <li class=" nav-item has-childs ">

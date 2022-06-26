@@ -1,0 +1,22 @@
+package com.example.ltweb_nhom9.Controller.admin_page;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.annotation.*;
+import java.io.IOException;
+
+@WebServlet(name = "BlogManagement", value = "/BlogManagement")
+public class BlogManagement_direct extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("title","Quản Lý Blog");
+        request.setAttribute("TypePage","BlogManagement");
+        request.setAttribute("index",6);
+        request.getRequestDispatcher("Admin_page/BlogManagement.jsp").forward(request,response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request, response);
+    }
+}

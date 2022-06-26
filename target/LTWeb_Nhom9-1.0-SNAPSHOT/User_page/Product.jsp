@@ -20,7 +20,7 @@
 
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Tất cả sản phẩm | SHOP TEAM 9</title>
+    <title>${title}| SHOP TEAM 9</title>
     <link rel="icon" href="img/icon/logo.png"
           type="image/x-icon"/>
 
@@ -38,7 +38,7 @@
 
 <body class="bg-body collection">
 
-<div class="evo-search-bar">
+<div class="evo-search-bar"><%-- check--%>
     <form action="/search" method="get">
         <div class="input-group">
             <input type="text" name="query" class="search-auto form-control" placeholder="Bạn cần tìm gì hôm nay?"/>
@@ -68,14 +68,14 @@
 
 <script src="User_page/js/Productjs/evo-collection.js"
         type="text/javascript"></script>
-
+<script src="User_page/js/pagination.min.js" type="text/javascript"></script>
 
 <section class="bread-crumb margin-bottom-10">
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
                 <ul class="breadcrumb" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-                    <li class="home"><a itemprop="url" href="index.html" title="Trang chủ"><span
+                    <li class="home"><a itemprop="url" href="Home" title="Trang chủ"><span
                             itemprop="title">Trang chủ</span></a><span><i class="fa fa-angle-right"></i></span></li>
                     <li><strong><span itemprop="title">Tất cả sản phẩm</span></strong></li>
 
@@ -102,148 +102,21 @@
 
             <div class="group-category">
 
+                <jsp:useBean id="categoryList" scope="request" type="java.util.List"/>
+                <c:forEach items="${categoryList}" var="i">
+                    <div class="category-item">
+                        <a href="${typePage}?category=${i.getName()}" title="${i.getName()}">
+                            <div class="group-category-image">
 
-                <div class="category-item">
-                    <a href="/thiet-bi-nha-bep" title="THIẾT BỊ NHÀ BẾP">
-                        <div class="group-category-image">
+                                <img data-src="${i.getImg()}"
+                                     alt="${i.getName()}" class="img-responsive center-block lazy"/>
 
-                            <img data-src="img/products/ThietBiNhaBep/product22.jpg"
-                                 alt="THIẾT BỊ NHÀ BẾP" class="img-responsive center-block lazy"/>
-
-                        </div>
-                        <h6>THIẾT BỊ NHÀ BẾP</h6>
-                    </a>
-                </div>
-
-
-                <div class="category-item">
-                    <a href="/thiet-bi-ve-sinh" title="THIẾT BỊ VỆ SINH">
-                        <div class="group-category-image">
-
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                 data-src="img/products/ThietBiVeSinh/product25_2.jpg"
-                                 alt="THIẾT BỊ VỆ SINH" class="img-responsive center-block lazy"/>
-
-                        </div>
-                        <h6>THIẾT BỊ VỆ SINH</h6>
-                    </a>
-                </div>
-
-
-                <div class="category-item">
-                    <a href="/do-gia-dung" title="ĐỒ GIA DỤNG">
-                        <div class="group-category-image">
-
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                 data-src="img/products/DoGiaDung/product51.jpg"
-                                 alt="ĐỒ GIA DỤNG" class="img-responsive center-block lazy"/>
-
-                        </div>
-                        <h6>ĐỒ GIA DỤNG</h6>
-                    </a>
-                </div>
-
-
-                <div class="category-item">
-                    <a href="/dung-cu-nha-bep" title="DỤNG CỤ NHÀ BẾP">
-                        <div class="group-category-image">
-
-                            <img class="img-fluid lazy"
-                                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                 data-src="img/products/DungCuNhaBep/product60.jpg"
-                                 alt="DỤNG CỤ NHÀ BẾP"/>
-
-                        </div>
-                        <h6>DỤNG CỤ NHÀ BẾP</h6>
-                    </a>
-                </div>
-
-
-                <div class="category-item">
-                    <a href="/tu-bao-quan-cigar-ruou-vang" title="TỦ BẢO QUẢN CIGAR, RƯỢU VANG">
-                        <div class="group-category-image">
-
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                 data-src="img/products/TuBaoquan/product73.jpg"
-                                 alt="TỦ BẢO QUẢN CIGAR, RƯỢU VANG" class="img-responsive center-block lazy"/>
-
-                        </div>
-                        <h6>TỦ BẢO QUẢN CIGAR, RƯỢU VANG</h6>
-                    </a>
-                </div>
-
-
-                <div class="category-item">
-                    <a href="/thiet-bi-miele" title="THIẾT BỊ MIELE">
-                        <div class="group-category-image">
-
-                            <img class="img-fluid lazy"
-                                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                 data-src="img/products/miele/product89.jpg"
-                                 alt="THIẾT BỊ MIELE"/>
-
-                        </div>
-                        <h6>THIẾT BỊ MIELE</h6>
-                    </a>
-                </div>
-
-
-                <div class="category-item">
-                    <a href="/thiet-bi-smeg" title="THIẾT BỊ SMEG">
-                        <div class="group-category-image">
-
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                 data-src="img/products/SMEG/product106.jpg"
-                                 alt="THIẾT BỊ SMEG" class="img-responsive center-block lazy"/>
-
-                        </div>
-                        <h6>THIẾT BỊ SMEG</h6>
-                    </a>
-                </div>
-
-
-                <div class="category-item">
-                    <a href="/robot-hut-bui-lau-nha" title="ROBOT HÚT BỤI LAU NHÀ">
-                        <div class="group-category-image">
-
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                 data-src="img/products/MayHutBui/product117.jpg"
-                                 alt="ROBOT HÚT BỤI LAU NHÀ" class="img-responsive center-block lazy"/>
-
-                        </div>
-                        <h6>ROBOT HÚT BỤI LAU NHÀ</h6>
-                    </a>
-                </div>
-
-
-                <div class="category-item">
-                    <a href="/noi-chien-khong-dau" title="NỒI CHIÊN KHÔNG DẦU">
-                        <div class="group-category-image">
-
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                 data-src="img/products/NoiChien/product133.jpg"
-                                 alt="NỒI CHIÊN KHÔNG DẦU" class="img-responsive center-block lazy"/>
-
-                        </div>
-                        <h6>NỒI CHIÊN KHÔNG DẦU</h6>
-                    </a>
-                </div>
-
-
-                <div class="category-item">
-                    <a href="/thiet-bi-y-te" title="THIẾT BỊ Y TẾ">
-                        <div class="group-category-image">
-
-                            <img class="img-fluid lazy"
-                                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                 data-src="img/products/ThietBiYTe/product147.jpg"
-                                 alt="THIẾT BỊ Y TẾ"/>
-
-                        </div>
-                        <h6>THIẾT BỊ Y TẾ</h6>
-                    </a>
-                </div>
-
+                            </div>
+                            <h6>${i.getName()}</h6>
+                        </a>
+                    </div>
+                </c:forEach>
+<%--<h1>-${category}-</h1>--%>
             </div>
 
         </div>
@@ -284,9 +157,12 @@
 
                         <div class="evo-product-block-item ">
                             <div class="product-img">
-                                <div class="product-sale">
-                                    <span>${p.getLabel()} </span>
-                                </div>
+                                <c:if test="${p.lableId != 0}" >
+                                    <div class="product-sale">
+                                        <span>${p.getLabel()} </span>
+                                    </div>
+                                </c:if>
+
                                 <a href="Detail"
                                    title=${p.name} class="image-resize">
                                     <img class="lazy"
@@ -350,40 +226,25 @@
                     <div class="clearfix"></div>
                     <div class="text-xs-right">
 
-                        <nav class="text-center">
+                            <nav class="text-center">
                             <ul class="pagination clearfix">
 
                                 <li class="page-item
                                 <c:if test="${index == 1}" >disabled </c:if>
-                                 "><a class="page-link" href="Product?index=${1}" title="«">«</a></li>
+                                 "><a class="page-link" href="${typePage}?index=${1}&category=${category}" title="«">«</a></li>
 
 
                                 <c:forEach var="i" begin="${index>2?index-2:1}" end="${index+1>numPage?numPage+1:index+2 }">
-                                    <li class="page-item"><a class="page-link" href="Product?index=${i}"
+                                    <li class="page-item"><a class="page-link" href="${typePage}?index=${i}&category=${category}"
                                             <c:if test="${index ==i }" >style="color: #858585" disabled="true" </c:if>
 <%--                                                             ${index==i?"style=\color:red;\"":""}--%>
                                                              title="${i}">${i}</a></li>
                                 </c:forEach>
 
-<%--                                <li class="active page-item disabled"><a class="page-link" href="javascript:;"--%>
-<%--                                                                         title="1">1</a></li>--%>
 
-
-<%--                                --%>
-
-
-<%--                                <li class="page-item"><a class="page-link" onclick="doSearch(3)" href="#"--%>
-<%--                                                         title="3">3</a></li>--%>
-
-
-<%--                                <li class="page-item"><a class="page-link" href="javascript:;" title="...">...</a></li>--%>
-
-
-<%--                                <li class="page-item"><a class="page-link" onclick="doSearch(39)" href="#"--%>
-<%--                                                         title="39">39</a></li>--%>
-
-
-                                <li class="page-item"><a class="page-link" href="Product?index=${numPage + 1 }"
+                                <li class="page-item
+                                <c:if test="${index == (numPage + 1)}" >disabled </c:if>
+                                "><a class="page-link" href="${typePage}?index=${numPage + 1 }&category=${category}"
                                                          title="»">»</a></li>
 
                             </ul>
@@ -404,321 +265,12 @@
 
                     <ul class="nav navbar-pills nav-category">
 
+                        <c:forEach items="${categoryList}" var="i">
+                            <li class="nav-item ">
+                                <a class="nav-link" href="${typePage}?category=${i.getName()}" title="${i.getName()}">${i.getName()}</a>
+                            </li>
+                        </c:forEach>
 
-                        <li class="nav-item ">
-                            <a href="/thiet-bi-nha-bep" class="nav-link" title="THIẾT BỊ NHÀ BẾP">THIẾT BỊ NHÀ BẾP</a>
-                            <span class="Collapsible__Plus"></span>
-                            <ul class="dropdown-menu">
-
-
-                                <li class="dropdown-submenu nav-item ">
-                                    <a class="nav-link" href="/bep-tu" title="BẾP TỪ">BẾP TỪ</a>
-                                    <span class="Collapsible__Plus"></span>
-                                    <ul class="dropdown-menu">
-
-
-                                        <li class="nav-item ">
-                                            <a class="nav-link" href="/bep-bosch" title="BẾP BOSCH">BẾP BOSCH</a>
-                                        </li>
-
-
-                                        <li class="nav-item ">
-                                            <a class="nav-link" href="/bep-aeg" title="BẾP AEG">BẾP AEG</a>
-                                        </li>
-
-
-                                        <li class="nav-item ">
-                                            <a class="nav-link" href="/bep-siemens" title="BẾP SIEMENS">BẾP SIEMENS</a>
-                                        </li>
-
-
-                                        <li class="nav-item ">
-                                            <a class="nav-link" href="/bep-tu" title="BẾP TỪ KHÁC">BẾP TỪ KHÁC</a>
-                                        </li>
-
-
-                                    </ul>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/hut-mui" title="HÚT MÙI">HÚT MÙI</a>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/may-rua-bat" title="MÁY RỬA BÁT">MÁY RỬA BÁT</a>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/lo-vi-song-nuong-hap" title="LÒ VI SÓNG, NƯỚNG, HẤP">LÒ
-                                        VI SÓNG, NƯỚNG, HẤP</a>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/tu-lanh" title="TỦ LẠNH">TỦ LẠNH</a>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/bep-nuong" title="BẾP NƯỚNG">BẾP NƯỚNG</a>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/voi-chau-rua-bat" title="VÒI CHẬU RỬA BÁT">VÒI CHẬU RỬA
-                                        BÁT</a>
-                                </li>
-
-
-                            </ul>
-                        </li>
-
-
-                        <li class="nav-item ">
-                            <a href="/thiet-bi-ve-sinh" class="nav-link" title="THIẾT BỊ VỆ SINH">THIẾT BỊ VỆ SINH</a>
-                            <span class="Collapsible__Plus"></span>
-                            <ul class="dropdown-menu">
-
-
-                                <li class="dropdown-submenu nav-item ">
-                                    <a class="nav-link" href="/sen-tam" title="SEN TẮM">SEN TẮM</a>
-                                    <span class="Collapsible__Plus"></span>
-                                    <ul class="dropdown-menu">
-
-                                    </ul>
-                                </li>
-
-
-                                <li class="dropdown-submenu nav-item ">
-                                    <a class="nav-link" href="/voi-lavabo" title="VÒI LAVABO">VÒI LAVABO</a>
-                                    <span class="Collapsible__Plus"></span>
-                                    <ul class="dropdown-menu">
-
-                                    </ul>
-                                </li>
-
-
-                                <li class="dropdown-submenu nav-item ">
-                                    <a class="nav-link" href="/bon-tam" title="BỒN TẮM">BỒN TẮM</a>
-                                    <span class="Collapsible__Plus"></span>
-                                    <ul class="dropdown-menu">
-
-                                    </ul>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/phu-kien-nha-tam" title="PHỤ KIỆN NHÀ TẮM">PHỤ KIỆN NHÀ
-                                        TẮM</a>
-                                </li>
-
-
-                            </ul>
-                        </li>
-
-
-                        <li class="nav-item ">
-                            <a href="/do-gia-dung" class="nav-link" title="ĐỒ GIA DỤNG">ĐỒ GIA DỤNG</a>
-                            <span class="Collapsible__Plus"></span>
-                            <ul class="dropdown-menu">
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/may-pha-cafe" title="MÁY PHA CAFE">MÁY PHA CAFE</a>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/may-ep-may-vat-cam-may-xay"
-                                       title="MÁY ÉP, MÁY VẮT CAM, MÁY XAY">MÁY ÉP, MÁY VẮT CAM, MÁY XAY</a>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/bo-coc-ly-bat-dia-cao-cap"
-                                       title="BỘ CỐC, LY, BÁT ĐĨA CAO CẤP">BỘ CỐC, LY, BÁT ĐĨA CAO CẤP</a>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/am-dun-nuoc" title="ẤM ĐUN NƯỚC, BÌNH ĐỰNG NƯỚC">ẤM ĐUN
-                                        NƯỚC, BÌNH ĐỰNG NƯỚC</a>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/may-loc-khong-khi" title="MÁY LỌC KHÔNG KHÍ, QUẠT">MÁY
-                                        LỌC KHÔNG KHÍ, QUẠT</a>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/ban-la-may-say-may-giat"
-                                       title="BÀN LÀ, MÁY SẤY, MÁY GIẶT">BÀN LÀ, MÁY SẤY, MÁY GIẶT</a>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/thiet-bi-chieu-sang" title="THIẾT BỊ CHIẾU SÁNG">THIẾT BỊ
-                                        CHIẾU SÁNG</a>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/choi-cay-lau-nha" title="CHỔI, CÂY LAU NHÀ">CHỔI, CÂY LAU
-                                        NHÀ</a>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/tong-do-cao-rau" title="TÔNG ĐƠ, CẠO RÂU">TÔNG ĐƠ, CẠO
-                                        RÂU</a>
-                                </li>
-
-
-                            </ul>
-                        </li>
-
-
-                        <li class="nav-item ">
-                            <a href="/dung-cu-nha-bep" class="nav-link" title="DỤNG CỤ NHÀ BẾP">DỤNG CỤ NHÀ BẾP</a>
-                            <span class="Collapsible__Plus"></span>
-                            <ul class="dropdown-menu">
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/bo-noi-cao-cap" title="BỘ NỒI CHẢO CAO CẤP">BỘ NỒI CHẢO
-                                        CAO CẤP</a>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/noi-ap-suat-noi-da-nang"
-                                       title="NỒI CƠM, ẤP SUẤT, NỒI ĐA NĂNG">NỒI CƠM, ẤP SUẤT, NỒI ĐA NĂNG</a>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/bo-dao-thia-dia-keo-thot" title="DAO THÌA DĨA THỚT KÉO">DAO
-                                        THÌA DĨA THỚT KÉO</a>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/may-ep-may-vat-cam-may-xay"
-                                       title="MÁY ÉP, VẮT CAM, XAY THỊT">MÁY ÉP, VẮT CAM, XAY THỊT</a>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/dung-cu-nau-an" title="DỤNG CỤ NẤU ĂN">DỤNG CỤ NẤU ĂN</a>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/am-dun-nuoc" title="ẤM ĐUN NƯỚC, BÌNH ĐỰNG NƯỚC">ẤM ĐUN
-                                        NƯỚC, BÌNH ĐỰNG NƯỚC</a>
-                                </li>
-
-
-                            </ul>
-                        </li>
-
-
-                        <li class="nav-item ">
-                            <a href="/tu-bao-quan-cigar-ruou-vang" class="nav-link"
-                               title="TỦ BẢO QUẢN CIGAR, RƯỢU VANG">TỦ BẢO QUẢN CIGAR, RƯỢU VANG</a>
-                            <span class="Collapsible__Plus"></span>
-                            <ul class="dropdown-menu">
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/tu-bao-quan-cigar" title="TỦ BẢO QUẢN CIGAR">TỦ BẢO QUẢN
-                                        CIGAR</a>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/tu-bao-quan-ruou-vang" title="TỦ BẢO QUẢN RƯỢU VANG">TỦ
-                                        BẢO QUẢN RƯỢU VANG</a>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/phu-kien" title="PHỤ KIỆN">PHỤ KIỆN</a>
-                                </li>
-
-
-                            </ul>
-                        </li>
-
-
-                        <li class="nav-item ">
-                            <a href="/thiet-bi-miele" class="nav-link" title="THIẾT BỊ MIELE">THIẾT BỊ MIELE</a>
-                            <span class="Collapsible__Plus"></span>
-                            <ul class="dropdown-menu">
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/lo-nuong-miele" title="LÒ NƯỚNG MIELE">LÒ NƯỚNG MIELE</a>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/lo-vi-song-miele" title="LÒ VI SÓNG MIELE">LÒ VI SÓNG
-                                        MIELE</a>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/bep-tu-miele" title="BẾP TỪ MIELE">BẾP TỪ MIELE</a>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/may-rua-bat-miele" title="MÁY RỬA BÁT MIELE">MÁY RỬA BÁT
-                                        MIELE</a>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/hut-mui-miele" title="HÚT MÙI MIELE">HÚT MÙI MIELE</a>
-                                </li>
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="/may-pha-cafe-miele" title="MÁY PHA CAFE MIELE">MÁY PHA
-                                        CAFE MIELE</a>
-                                </li>
-
-
-                            </ul>
-                        </li>
-
-
-                        <li class="nav-item ">
-                            <a class="nav-link" href="/thiet-bi-smeg" title="THIẾT BỊ SMEG">THIẾT BỊ SMEG</a>
-                        </li>
-
-
-                        <li class="nav-item ">
-                            <a class="nav-link" href="/robot-hut-bui-lau-nha" title="ROBOT HÚT BỤI LAU NHÀ">ROBOT HÚT
-                                BỤI LAU NHÀ</a>
-                        </li>
-
-
-                        <li class="nav-item ">
-                            <a class="nav-link" href="/noi-chien-khong-dau" title="NỒI CHIÊN KHÔNG DẦU">NỒI CHIÊN KHÔNG
-                                DẦU</a>
-                        </li>
-
-
-                        <li class="nav-item ">
-                            <a class="nav-link" href="/thiet-bi-y-te" title="THIẾT BỊ Y TẾ">THIẾT BỊ Y TẾ</a>
-                        </li>
 
                     </ul>
 
@@ -726,7 +278,7 @@
             </aside>
             <script src="User_page/js/Productjs/search_filter.js" type="text/javascript"></script>
 
-            <div class="aside-filter clearfix">
+            <div class="aside-filter clearfix"><!-- check -->
                 <div class="heading">
                     Tìm theo
                 </div>
@@ -823,7 +375,7 @@
                                     <li class="filter-item filter-item--check-box filter-item--green">
                                             <span>
 								<label for="filter-tren1-000-000d">
-									<input type="checkbox" id="filter-tren1-000-000d" onchange="toggleFilter(this)"
+									<input type="checkbox" id="filter-tren1-000-000d" onchange="filter(this)"
                                            data-group="Khoảng giá" data-field="price_min" data-text="Trên 1.000.000đ"
                                            value="(>1000000)" data-operator="OR">
 									<i class="fa"></i>
@@ -838,225 +390,35 @@
                         </aside>
 
 
-                        <aside class="aside-item filter-vendor">
+                        <aside class="aside-item filter-vendor"><!-- check-->
                             <div class="aside-title">
-                                Thương hiệu
+                                THƯƠNG HIỆU
                             </div>
                             <div class="aside-content filter-group">
-                                <div class="field-search input-group">
-                                    <input type="text" placeholder="Tìm Thương hiệu"
-                                           class="form-control filter-vendor-list"
-                                           onkeyup="filterItemInList(jQuery('.filter-vendor-list'))">
-                                    <span class="input-group-btn">
-							<button class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
-						</span>
-                                </div>
-                                <ul class="filter-vendor">
 
+                                <ul class="filter-vendor" id="id01">
 
-                                    <li class="filter-item filter-item--check-box filter-item--green ">
-                                        <label data-filter="blanco" for="filter-blanco" class="blanco">
-                                            <input type="checkbox" id="filter-blanco" onchange="toggleFilter(this)"
-                                                   data-group="Hãng" data-field="vendor.filter_key" data-text="Blanco"
-                                                   value="(&#34;Blanco&#34;)" data-operator="OR">
-                                            <i class="fa"></i>
-                                            Blanco
-                                        </label>
-                                    </li>
-
-
-                                    <li class="filter-item filter-item--check-box filter-item--green ">
-                                        <label data-filter="bosch" for="filter-bosch" class="bosch">
-                                            <input type="checkbox" id="filter-bosch" onchange="toggleFilter(this)"
-                                                   data-group="Hãng" data-field="vendor.filter_key" data-text="Bosch"
-                                                   value="(&#34;Bosch&#34;)" data-operator="OR">
-                                            <i class="fa"></i>
-                                            Bosch
-                                        </label>
-                                    </li>
-
-
-                                    <li class="filter-item filter-item--check-box filter-item--green ">
-                                        <label data-filter="delonghi" for="filter-delonghi" class="delonghi">
-                                            <input type="checkbox" id="filter-delonghi" onchange="toggleFilter(this)"
-                                                   data-group="Hãng" data-field="vendor.filter_key" data-text="Delonghi"
-                                                   value="(&#34;Delonghi&#34;)" data-operator="OR">
-                                            <i class="fa"></i>
-                                            Delonghi
-                                        </label>
-                                    </li>
-
-
-                                    <li class="filter-item filter-item--check-box filter-item--green ">
-                                        <label data-filter="grohe" for="filter-grohe" class="grohe">
-                                            <input type="checkbox" id="filter-grohe" onchange="toggleFilter(this)"
-                                                   data-group="Hãng" data-field="vendor.filter_key" data-text="Grohe"
-                                                   value="(&#34;Grohe&#34;)" data-operator="OR">
-                                            <i class="fa"></i>
-                                            Grohe
-                                        </label>
-                                    </li>
-
-
-                                    <li class="filter-item filter-item--check-box filter-item--green ">
-                                        <label data-filter="klarstein" for="filter-klarstein" class="klarstein">
-                                            <input type="checkbox" id="filter-klarstein" onchange="toggleFilter(this)"
-                                                   data-group="Hãng" data-field="vendor.filter_key"
-                                                   data-text="Klarstein" value="(&#34;Klarstein&#34;)"
-                                                   data-operator="OR">
-                                            <i class="fa"></i>
-                                            Klarstein
-                                        </label>
-                                    </li>
-
-
-                                    <li class="filter-item filter-item--check-box filter-item--green ">
-                                        <label data-filter="lighting ever" for="filter-lighting-ever"
-                                               class="lighting-ever">
-                                            <input type="checkbox" id="filter-lighting-ever"
-                                                   onchange="toggleFilter(this)" data-group="Hãng"
-                                                   data-field="vendor.filter_key" data-text="Lighting Ever"
-                                                   value="(&#34;Lighting Ever&#34;)" data-operator="OR">
-                                            <i class="fa"></i>
-                                            Lighting Ever
-                                        </label>
-                                    </li>
-
-
-                                    <li class="filter-item filter-item--check-box filter-item--green ">
-                                        <label data-filter="nachtmann" for="filter-nachtmann" class="nachtmann">
-                                            <input type="checkbox" id="filter-nachtmann" onchange="toggleFilter(this)"
-                                                   data-group="Hãng" data-field="vendor.filter_key"
-                                                   data-text="Nachtmann" value="(&#34;Nachtmann&#34;)"
-                                                   data-operator="OR">
-                                            <i class="fa"></i>
-                                            Nachtmann
-                                        </label>
-                                    </li>
-
-
-                                    <li class="filter-item filter-item--check-box filter-item--green ">
-                                        <label data-filter="oral b" for="filter-oral-b" class="oral-b">
-                                            <input type="checkbox" id="filter-oral-b" onchange="toggleFilter(this)"
-                                                   data-group="Hãng" data-field="vendor.filter_key" data-text="Oral B"
-                                                   value="(&#34;Oral B&#34;)" data-operator="OR">
-                                            <i class="fa"></i>
-                                            Oral B
-                                        </label>
-                                    </li>
-
-
-                                    <li class="filter-item filter-item--check-box filter-item--green ">
-                                        <label data-filter="panasonic" for="filter-panasonic" class="panasonic">
-                                            <input type="checkbox" id="filter-panasonic" onchange="toggleFilter(this)"
-                                                   data-group="Hãng" data-field="vendor.filter_key"
-                                                   data-text="Panasonic" value="(&#34;Panasonic&#34;)"
-                                                   data-operator="OR">
-                                            <i class="fa"></i>
-                                            Panasonic
-                                        </label>
-                                    </li>
-
-
-                                    <li class="filter-item filter-item--check-box filter-item--green ">
-                                        <label data-filter="philips" for="filter-philips" class="philips">
-                                            <input type="checkbox" id="filter-philips" onchange="toggleFilter(this)"
-                                                   data-group="Hãng" data-field="vendor.filter_key" data-text="Philips"
-                                                   value="(&#34;Philips&#34;)" data-operator="OR">
-                                            <i class="fa"></i>
-                                            Philips
-                                        </label>
-                                    </li>
-
-
-                                    <li class="filter-item filter-item--check-box filter-item--green ">
-                                        <label data-filter="russell hobbs" for="filter-russell-hobbs"
-                                               class="russell-hobbs">
-                                            <input type="checkbox" id="filter-russell-hobbs"
-                                                   onchange="toggleFilter(this)" data-group="Hãng"
-                                                   data-field="vendor.filter_key" data-text="Russell Hobbs"
-                                                   value="(&#34;Russell Hobbs&#34;)" data-operator="OR">
-                                            <i class="fa"></i>
-                                            Russell Hobbs
-                                        </label>
-                                    </li>
-
-
-                                    <li class="filter-item filter-item--check-box filter-item--green ">
-                                        <label data-filter="silit" for="filter-silit" class="silit">
-                                            <input type="checkbox" id="filter-silit" onchange="toggleFilter(this)"
-                                                   data-group="Hãng" data-field="vendor.filter_key" data-text="Silit"
-                                                   value="(&#34;Silit&#34;)" data-operator="OR">
-                                            <i class="fa"></i>
-                                            Silit
-                                        </label>
-                                    </li>
-
-
-                                    <li class="filter-item filter-item--check-box filter-item--green ">
-                                        <label data-filter="steba" for="filter-steba" class="steba">
-                                            <input type="checkbox" id="filter-steba" onchange="toggleFilter(this)"
-                                                   data-group="Hãng" data-field="vendor.filter_key" data-text="Steba"
-                                                   value="(&#34;Steba&#34;)" data-operator="OR">
-                                            <i class="fa"></i>
-                                            Steba
-                                        </label>
-                                    </li>
-
-
-                                    <li class="filter-item filter-item--check-box filter-item--green ">
-                                        <label data-filter="tecknet" for="filter-tecknet" class="tecknet">
-                                            <input type="checkbox" id="filter-tecknet" onchange="toggleFilter(this)"
-                                                   data-group="Hãng" data-field="vendor.filter_key" data-text="Tecknet"
-                                                   value="(&#34;Tecknet&#34;)" data-operator="OR">
-                                            <i class="fa"></i>
-                                            Tecknet
-                                        </label>
-                                    </li>
-
-
-                                    <li class="filter-item filter-item--check-box filter-item--green ">
-                                        <label data-filter="tefal" for="filter-tefal" class="tefal">
-                                            <input type="checkbox" id="filter-tefal" onchange="toggleFilter(this)"
-                                                   data-group="Hãng" data-field="vendor.filter_key" data-text="Tefal"
-                                                   value="(&#34;Tefal&#34;)" data-operator="OR">
-                                            <i class="fa"></i>
-                                            Tefal
-                                        </label>
-                                    </li>
-
-
-                                    <li class="filter-item filter-item--check-box filter-item--green ">
-                                        <label data-filter="waterpik" for="filter-waterpik" class="waterpik">
-                                            <input type="checkbox" id="filter-waterpik" onchange="toggleFilter(this)"
-                                                   data-group="Hãng" data-field="vendor.filter_key" data-text="Waterpik"
-                                                   value="(&#34;Waterpik&#34;)" data-operator="OR">
-                                            <i class="fa"></i>
-                                            Waterpik
-                                        </label>
-                                    </li>
-
-
-                                    <li class="filter-item filter-item--check-box filter-item--green ">
-                                        <label data-filter="wilit" for="filter-wilit" class="wilit">
-                                            <input type="checkbox" id="filter-wilit" onchange="toggleFilter(this)"
-                                                   data-group="Hãng" data-field="vendor.filter_key" data-text="wilit"
-                                                   value="(&#34;wilit&#34;)" data-operator="OR">
-                                            <i class="fa"></i>
-                                            wilit
-                                        </label>
-                                    </li>
-
-
-                                    <li class="filter-item filter-item--check-box filter-item--green ">
-                                        <label data-filter="wmf" for="filter-wmf" class="wmf">
-                                            <input type="checkbox" id="filter-wmf" onchange="toggleFilter(this)"
-                                                   data-group="Hãng" data-field="vendor.filter_key" data-text="WMF"
-                                                   value="(&#34;WMF&#34;)" data-operator="OR">
-                                            <i class="fa"></i>
-                                            WMF
-                                        </label>
-                                    </li>
+                                    <c:forEach items="${brand}" var="i">
+<%--                                        <li class="filter-item filter-item--check-box filter-item--green " href="${typePage}?name=${i}">--%>
+<%--                                            <label >--%>
+<%--                                                <button--%>
+<%--&lt;%&ndash;                                                        type="checkbox" onclick="checked"&ndash;%&gt;--%>
+<%--                                                       checked data-text="${i}"/>--%>
+<%--                                                <a class="fa" href="${typePage}?name=${i}"></a>--%>
+<%--                                                <i href="${typePage}?name=${i}">${i}</i>--%>
+<%--                                            </label>--%>
+<%--&lt;%&ndash;                                        <a href="${typePage}?category=${i.getName()}">${i.getName()}</a>&ndash;%&gt;--%>
+<%--                                        </li>--%>
+                                        <li class="filter-item filter-item--check-box filter-item--green " href="${typePage}?name=${i}">
+                                            <label data-filter="${i}" for="filter-${i}" class="${i}">
+                                                <input type="checkbox" id="filter-${i}" onchange="toggleFilter(this)"
+                                                       data-group="Hãng" data-field="vendor.filter_key" data-text="${i}"
+                                                       value="(${i})" data-operator="OR">
+                                                <i class="fa"></i>
+                                                    ${i}
+                                            </label>
+                                        </li>
+                                    </c:forEach>
 
 
                                 </ul>
@@ -1072,7 +434,7 @@
             <aside class="evo-aside-banner">
                 <div class="heading">Khuyến mãi</div>
                 <div class="aside-content">
-                    <a class="single_image_effect" href="#" title="Khuyến mãi">
+                    <a class="single_image_effect" href="DiscountProduct" title="Khuyến mãi">
                         <img class="lazy img-responsive center-block"
                              src="data:image/png"
                              data-src="img/banner/aside_banner.webp"
@@ -1112,7 +474,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"
         type="text/javascript"></script>
 
-<div class="ajax-load">
+<div class="ajax-load"><!-- undefine-->
         <span class="loading-icon">
 		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
              width="24px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;"
@@ -1144,7 +506,7 @@
 		</svg>
 	</span>
 </div>
-<div class="loading awe-popup">
+<div class="loading awe-popup"><!-- undefine-->
     <div class="overlay"></div>
     <div class="loader" title="2">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -1177,7 +539,7 @@
 		</svg>
     </div>
 </div>
-<div class="addcart-popup product-popup awe-popup">
+<div class="addcart-popup product-popup awe-popup"><!-- undefine-->
     <div class="overlay no-background"></div>
     <div class="content">
         <div class="row row-noGutter">
@@ -1204,14 +566,14 @@
         </div>
     </div>
 </div>
-<div class="error-popup awe-popup">
+<div class="error-popup awe-popup"><!-- undefine-->
     <div class="overlay no-background"></div>
     <div class="popup-inner content">
         <div class="error-message"></div>
     </div>
 </div>
 <script src="User_page/js/Productjs/ProductJS.js"></script>
-<div id="popup-cart" class="modal fade" role="dialog">
+<div id="popup-cart" class="modal fade" role="dialog"><!-- undefine-->
     <div id="popup-cart-desktop" class="clearfix">
         <div class="title-popup-cart"><i class="ion ion-md-notifications-outline" aria-hidden="true"></i> Bạn đã thêm
             <span class="cart-popup-name"></span> vào giỏ hàng
@@ -1250,18 +612,50 @@
 <script src="User_page/js/main.js" type="text/javascript"></script>
 
 <script src="User_page/js/Productjs/col.js" type="text/javascript"></script>
-
-<div class="evo-recentview">
-    <div class="evo-recent-button" title="Sản phẩm đã xem"></div>
-    <div class="evo-recent_products">
-        <div class="evo-recent-title">Đã xem</div>
-        <div class="recent_products">
-            <div id="recent-content">
-
-            </div>
-        </div>
-    </div>
-</div>
+<script>
+    function filter(e) {
+        var checked = e.value;
+        var id= e.id;
+            $.ajax({
+                url: 'Product',
+                type: 'GET',
+                data: "&chkbx1="+id
+            });
+        alert(checked)
+    };
+    function sortList() {
+        var list, i, switching, b, shouldSwitch;
+        list = document.getElementById("id01");
+        switching = true;
+        /* Make a loop that will continue until
+        no switching has been done: */
+        while (switching) {
+            // start by saying: no switching is done:
+            switching = false;
+            b = list.getElementsByTagName("LI");
+            // Loop through all list-items:
+            for (i = 0; i < (b.length - 1); i++) {
+                // start by saying there should be no switching:
+                shouldSwitch = false;
+                /* check if the next item should
+                switch place with the current item: */
+                if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+                    /* if next item is alphabetically
+                    lower than current item, mark as a switch
+                    and break the loop: */
+                    shouldSwitch = true;
+                    break;
+                }
+            }
+            if (shouldSwitch) {
+                /* If a switch has been marked, make the switch
+                and mark the switch as done: */
+                b[i].parentNode.insertBefore(b[i + 1], b[i]);
+                switching = true;
+            }
+        }
+    }
+</script>
 
 <div class="fb-livechat">
     <a href="https://m.me/587115538341623" target="_blank" title="Chat với chúng tôi!" class="ctrlq fb-button"></a>

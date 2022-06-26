@@ -108,18 +108,6 @@ public class Product implements Serializable {
     }
 
     public String stringPrice(double price){
-//        String p = price + "";
-//        int surplus = p.length() % 3;
-//        char[] arr = p.toCharArray();
-//        String result = "";
-//        result += arr[0];
-//        for (int i = 1;i < arr.length-1;i++){
-//            if ((i%3) == surplus){
-//                result += ".";
-//            }
-//            result += arr[i];
-//        }
-//        result += arr[arr.length-1];
         DecimalFormat df = new DecimalFormat("###,###");
         String result = df.format(price);
         return result;
@@ -144,7 +132,7 @@ public class Product implements Serializable {
             Label label = LabelDao.getInstance().getById(lableId);
             return label.getLabel();
         } catch (NullPointerException e){
-            return "New";
+            return "null";
         }
     }
 

@@ -108,337 +108,79 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="new_title">
-                        <h2><a href="#" title="Sản phẩm khuyến mãi jsp">Sản phẩm khuyến mãi</a></h2>
+                        <h2><a href="DiscountProduct" title="Sản phẩm khuyến mãi">Sản phẩm khuyến mãi</a></h2>
                     </div>
 
                     <div class="slick_ajax_tab evo-slick">
 
 
-                        <div class="evo-product-block-item ">
-                            <div class="product-img">
-                                <div class="product-sale">
-                                    <span>- 30% </span>
-                                </div>
-                                <a href="Detail.html"
-                                   title="Máy r&#7917;a bát âm t&#7911; Bosch SMV8YCX01E | Series 8"
-                                   class="image-resize">
-                                    <img class="lazy"
-                                         src="Detail.html"
-                                         data-src="${pageContext.request.contextPath}/img/products/Miele/product93.jpg"
-                                         alt="Máy r&#7917;a bát âm t&#7911; Bosch SMV8YCX01E | Series 8"/>
-
-                                    <img class="lazy hover-pic"
-                                         src="Detail.html"
-                                         data-src="${pageContext.request.contextPath}/img/products/Miele/product93_2.jpg"
-                                         alt="Máy r&#7917;a bát âm t&#7911; Bosch SMV8YCX01E | Series 8"/>
-
-                                </a>
-                                <div class="button-add hidden-sm hidden-xs">
-                                    <form action="/cart/add" method="post" enctype="multipart/form-data"
-                                          class="hidden-md variants form-nut-grid form-ajaxtocart"
-                                          data-id="product-actions-21077442">
-
-
-                                        <input type="hidden" name="variantId" value="43455211"/>
-                                        <button type="button" title="Mua ngay" class="action"
-                                                onclick="buy_now('43455211')"><i class="fa fa-check-square-o"
-                                                                                 aria-hidden="true"></i></button>
-                                        <button type="button" title="Thêm vào giỏ" class="action add_to_cart"><i
-                                                class="fa fa-shopping-bag" aria-hidden="true"></i></button>
-
-
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="product-detail clearfix">
-                                <div class="box-pro-detail">
-                                    <div class="pro-brand">
-
-                                        <a href="#" title=""></a>
-
+                        <jsp:useBean id="discountList" scope="request" type="java.util.List"/>
+                        <c:forEach items="${discountList}" var="p">
+                            <div class="evo-product-block-item ">
+                                <div class="product-img">
+                                    <div class="product-sale">
+                                        <span>${p.getLabel()} </span>
                                     </div>
-                                    <h3 class="pro-name">
-                                        <a href="#" title="Máy r&#7917;a bát âm t&#7911; Bosch SMV8YCX01E | Series 8">
-                                            Máy r&#7917;a bát âm t&#7911; Bosch SMV8YCX01E | Series 8</a>
-                                    </h3>
-                                    <div class="box-pro-prices">
-                                        <p class="pro-price">
+                                    <a href="Detail"
+                                       title="${p.name}"
+                                       class="image-resize">
+                                        <img class="lazy"
+                                             src="Detail"
+                                             data-src="${p.getListImage().get(0)}"
+                                             alt="${p.name}"/>
+
+                                        <img class="lazy hover-pic"
+                                             src="Detail"
+                                             data-src="${p.getListImage().get(1)}"
+                                             alt="${p.name}"/>
+
+                                    </a>
+                                    <div class="button-add hidden-sm hidden-xs">
+                                        <form action="/cart/add" method="post" enctype="multipart/form-data"
+                                              class="hidden-md variants form-nut-grid form-ajaxtocart"
+                                              data-id="product-actions-21077442">
 
 
-                                            21.000.000₫
+                                            <input type="hidden" name="variantId" value="43455211"/>
+                                            <button type="button" title="Mua ngay" class="action"
+                                                    onclick="buy_now('43455211')"><i class="fa fa-check-square-o"
+                                                                                     aria-hidden="true"></i></button>
+                                            <button type="button" title="Thêm vào giỏ" class="action add_to_cart"><i
+                                                    class="fa fa-shopping-bag" aria-hidden="true"></i></button>
 
-                                            <span class="pro-price-del">
-						<del class="compare-price">30.000.000₫</del>
+
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="product-detail clearfix">
+                                    <div class="box-pro-detail">
+                                        <div class="pro-brand">
+
+                                            <a href="#" title=""></a>
+
+                                        </div>
+                                        <h3 class="pro-name">
+                                            <a href="#" title="${p.name}">
+                                                    ${p.name}</a>
+                                        </h3>
+                                        <div class="box-pro-prices">
+                                            <p class="pro-price">
+
+
+                                                    ${p.stringPrice(p.getTotalPrice())}₫
+
+                                                <span class="pro-price-del">
+						<del class="compare-price">${p.stringPrice(p.price)}₫</del>
 					</span>
 
 
-                                        </p>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </c:forEach>
 
-
-                        <div class="evo-product-block-item ">
-                            <div class="product-img">
-                                <div class="product-sale">
-                                    <span>- 20% </span>
-                                </div>
-                                <a href="Detail.html"
-                                   title="T&#7911; l&#7841;nh âm t&#7911; Bosch KIR81ADE0 | Serie 6"
-                                   class="image-resize">
-                                    <img class="lazy"
-                                         src="Detail.html"
-                                         data-src="${pageContext.request.contextPath}/img/products/ThietBiNhaBep/product23.jpg"
-                                         alt="T&#7911; l&#7841;nh âm t&#7911; Bosch KIR81ADE0 | Serie 6"/>
-
-                                    <img class="lazy hover-pic"
-                                         src="Detail.html"
-                                         data-src="${pageContext.request.contextPath}/img/products/ThietBiNhaBep/product23_2.jpg"
-                                         alt="T&#7911; l&#7841;nh âm t&#7911; Bosch KIR81ADE0 | Serie 6"/>
-
-                                </a>
-                                <div class="button-add hidden-sm hidden-xs">
-                                    <form action="/cart/add" method="post" enctype="multipart/form-data"
-                                          class="hidden-md variants form-nut-grid form-ajaxtocart"
-                                          data-id="product-actions-21332299">
-
-
-                                        <input type="hidden" name="variantId" value="44221380"/>
-                                        <button type="button" title="Mua ngay" class="action"
-                                                onclick="buy_now('44221380')"><i class="fa fa-check-square-o"
-                                                                                 aria-hidden="true"></i></button>
-                                        <button type="button" title="Thêm vào giỏ" class="action add_to_cart"><i
-                                                class="fa fa-shopping-bag" aria-hidden="true"></i></button>
-
-
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="product-detail clearfix">
-                                <div class="box-pro-detail">
-                                    <div class="pro-brand">
-
-                                        <a href="#" title=""></a>
-
-                                    </div>
-                                    <h3 class="pro-name">
-                                        <a href="#"
-                                           title="T&#7911; l&#7841;nh âm t&#7911; Bosch KIR81ADE0 | Serie 6">
-                                            T&#7911; l&#7841;nh âm t&#7911; Bosch KIR81ADE0 | Serie 6</a>
-                                    </h3>
-                                    <div class="box-pro-prices">
-                                        <p class="pro-price">
-
-
-                                            36.000.000₫
-
-                                            <span class="pro-price-del">
-						<del class="compare-price">45.000.000₫</del>
-					</span>
-
-
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="evo-product-block-item ">
-                            <div class="product-img">
-                                <div class="product-sale">
-                                    <span>- 10% </span>
-                                </div>
-                                <a href="Detail.html"
-                                   title="T&#7911; đông âm t&#7911; Bosch GIN81ACF0 | Serie 6" class="image-resize">
-                                    <img class="lazy"
-                                         src="Detail.html"
-                                         data-src="${pageContext.request.contextPath}/img/products/ThietBiNhaBep/product24.jpg"
-                                         alt="T&#7911; đông âm t&#7911; Bosch GIN81ACF0 | Serie 6"/>
-
-                                    <img class="lazy hover-pic"
-                                         src="Detail.html"
-                                         data-src="${pageContext.request.contextPath}/img/products/ThietBiNhaBep/product24_2.jpg"
-                                         alt="T&#7911; đông âm t&#7911; Bosch GIN81ACF0 | Serie 6"/>
-
-                                </a>
-                                <div class="button-add hidden-sm hidden-xs">
-                                    <form action="/cart/add" method="post" enctype="multipart/form-data"
-                                          class="hidden-md variants form-nut-grid form-ajaxtocart"
-                                          data-id="product-actions-17039166">
-
-
-                                        <input type="hidden" name="variantId" value="30947131"/>
-                                        <button type="button" title="Mua ngay" class="action"
-                                                onclick="buy_now('30947131')"><i class="fa fa-check-square-o"
-                                                                                 aria-hidden="true"></i></button>
-                                        <button type="button" title="Thêm vào giỏ" class="action add_to_cart"><i
-                                                class="fa fa-shopping-bag" aria-hidden="true"></i></button>
-
-
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="product-detail clearfix">
-                                <div class="box-pro-detail">
-                                    <div class="pro-brand">
-
-                                        <a href="#" title=""></a>
-
-                                    </div>
-                                    <h3 class="pro-name">
-                                        <a href="#" title="T&#7911; đông âm t&#7911; Bosch GIN81ACF0 | Serie 6">
-                                            T&#7911; đông âm t&#7911; Bosch GIN81ACF0 | Serie 6</a>
-                                    </h3>
-                                    <div class="box-pro-prices">
-                                        <p class="pro-price">
-
-
-                                            5.400.000₫
-
-                                            <span class="pro-price-del">
-						<del class="compare-price">6.000.000₫</del>
-					</span>
-
-
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="evo-product-block-item ">
-                            <div class="product-img">
-                                <div class="product-sale">
-                                    <span>- 17% </span>
-                                </div>
-                                <a href="Detail.html"
-                                   title="T&#7911; b&#7843;o qu&#7843;n cigar Klartsein 23L - M&#7851;u m&#7899;i"
-                                   class="image-resize">
-                                    <img class="lazy"
-                                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                         data-src="${pageContext.request.contextPath}\img\products\TuBaoQuan\product66.jpg"
-                                         alt="T&#7911; b&#7843;o qu&#7843;n cigar Klartsein 23L - M&#7851;u m&#7899;i"/>
-
-                                    <img class="lazy hover-pic"
-                                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                         data-src="${pageContext.request.contextPath}/img/products/TuBaoQuan/product66_2.jpg"
-                                         alt="T&#7911; b&#7843;o qu&#7843;n cigar Klartsein 23L - M&#7851;u m&#7899;i"/>
-
-                                </a>
-                                <div class="button-add hidden-sm hidden-xs">
-                                    <form action="/cart/add" method="post" enctype="multipart/form-data"
-                                          class="hidden-md variants form-nut-grid form-ajaxtocart"
-                                          data-id="product-actions-20720408">
-
-
-                                        <input type="hidden" name="variantId" value="42329288"/>
-                                        <button type="button" title="Mua ngay" class="action"
-                                                onclick="buy_now('42329288')"><i class="fa fa-check-square-o"
-                                                                                 aria-hidden="true"></i></button>
-                                        <button type="button" title="Thêm vào giỏ" class="action add_to_cart"><i
-                                                class="fa fa-shopping-bag" aria-hidden="true"></i></button>
-
-
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="product-detail clearfix">
-                                <div class="box-pro-detail">
-                                    <div class="pro-brand">
-
-                                        <a href="#" title=""></a>
-
-                                    </div>
-                                    <h3 class="pro-name">
-                                        <a href="#" title="T&#7911; b&#7843;o qu&#7843;n cigar Klartsein 23L - M&#7851;u m&#7899;i">
-                                            T&#7911; b&#7843;o qu&#7843;n cigar Klartsein 23L - M&#7851;u m&#7899;i
-                                        </a>
-                                    </h3>
-                                    <div class="box-pro-prices">
-                                        <p class="pro-price">
-
-
-                                            12.500.000₫
-
-                                            <span class="pro-price-del">
-						<del class="compare-price">15.000.000₫</del>
-					</span>
-
-
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="evo-product-block-item ">
-                            <div class="product-img">
-                                <div class="product-sale">
-                                    <span>- 38% </span>
-                                </div>
-                                <a href="Detail.html"
-                                   title="Vòi Lavabo âm tư&#7901;ng Grohe Lineare | 23444001" class="image-resize">
-                                    <img class="lazy"
-                                         src="Detail.html"
-                                         data-src="${pageContext.request.contextPath}/img/products/ThietBiVeSinh/product33.jpg"
-                                         alt="Vòi Lavabo âm tư&#7901;ng Grohe Lineare | 23444001"/>
-
-                                    <img class="lazy hover-pic"
-                                         src="Detail.html"
-                                         data-src="${pageContext.request.contextPath}/img/products/ThietBiVeSinh/product33_2.jpg"
-                                         alt="Vòi Lavabo âm tư&#7901;ng Grohe Lineare | 23444001"/>
-
-                                </a>
-                                <div class="button-add hidden-sm hidden-xs">
-                                    <form action="/cart/add" method="post" enctype="multipart/form-data"
-                                          class="hidden-md variants form-nut-grid form-ajaxtocart"
-                                          data-id="product-actions-16665275">
-
-
-                                        <input type="hidden" name="variantId" value="29980659"/>
-                                        <button type="button" title="Mua ngay" class="action"
-                                                onclick="buy_now('29980659')"><i class="fa fa-check-square-o"
-                                                                                 aria-hidden="true"></i></button>
-                                        <button type="button" title="Thêm vào giỏ" class="action add_to_cart"><i
-                                                class="fa fa-shopping-bag" aria-hidden="true"></i></button>
-
-
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="product-detail clearfix">
-                                <div class="box-pro-detail">
-                                    <div class="pro-brand">
-
-                                        <a href="#" title=""></a>
-
-                                    </div>
-                                    <h3 class="pro-name">
-                                        <a href="#"
-                                           title="Sen âm tư&#7901;ng cao c&#7845;p nh&#7853;p kh&#7849;u Đ&#7913;c Grohe Smartcontrol | 34706000">Sen
-                                            âm tư&#7901;ng cao c&#7845;p nh&#7853;p kh&#7849;u Đ&#7913;c Grohe
-                                            Smartcontrol | 34706000</a>
-                                    </h3>
-                                    <div class="box-pro-prices">
-                                        <p class="pro-price">
-
-
-                                            28.000.000₫
-
-                                            <span class="pro-price-del">
-						<del class="compare-price">45.000.000₫</del>
-					</span>
-
-
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                     </div>
 
@@ -456,7 +198,7 @@
 
 
                 <div class="col-md-4 col-sm-4 col-xs-6 banner-with-effects">
-                    <a href="#" class="btn_type" rel="nofollow" title="Thiết bị vệ sinh">
+                    <a href="Product?category=Thiết bị vệ sinh" class="btn_type" rel="nofollow" title="Thiết bị vệ sinh">
                         <img src="#" data-src="${pageContext.request.contextPath}\\img\\banner\\evo_banner_index_1.jpg" alt="Thiết bị vệ sinh"
                              class="img-responsive center-block lazy"/>
                         <div class="figcaption">
@@ -469,7 +211,7 @@
 
 
                 <div class="col-md-4 col-sm-4 col-xs-6 banner-with-effects">
-                    <a href="#" class="btn_type" rel="nofollow" title="Thiết bị nhà bếp">
+                    <a href="Product?category=Thiết bị nhà bếp" class="btn_type" rel="nofollow" title="Thiết bị nhà bếp">
                         <img src="#" data-src="${pageContext.request.contextPath}\\img\\banner\\evo_banner_index_2.jpg" alt="Thiết bị nhà bếp"
                              class="img-responsive center-block lazy"/>
                         <div class="figcaption">
@@ -482,7 +224,7 @@
 
 
                 <div class="col-md-4 col-sm-4 col-xs-12 banner-with-effects">
-                    <a href="#" class="btn_type" rel="nofollow" title="Đồ gia dụng">
+                    <a href="Product?category=Đồ gia dụng" class="btn_type" rel="nofollow" title="Đồ gia dụng">
                         <img src="#" data-src="${pageContext.request.contextPath}\\img\\banner\\evo_banner_index_3.jpg" alt="Đồ gia dụng"
                              class="img-responsive center-block lazy"/>
                         <div class="figcaption">
@@ -495,7 +237,7 @@
 
 
                 <div class="col-md-6 col-sm-6 col-xs-6 banner-with-effects">
-                    <a href="#" class="btn_type" rel="nofollow" title="Thiết bị y tế">
+                    <a href="Product?category=Thiết bị y tế" class="btn_type" rel="nofollow" title="Thiết bị y tế">
                         <img src="#" data-src="${pageContext.request.contextPath}\\img\\banner\\evo_banner_index_4.jpg" alt="Thiết bị y tế"
                              class="img-responsive center-block lazy"/>
                         <div class="figcaption">
@@ -508,7 +250,7 @@
 
 
                 <div class="col-md-6 col-sm-6 col-xs-6 banner-with-effects">
-                    <a href="#" class="btn_type" rel="nofollow" title="Tủ bảo quản Cigar, rượu vang">
+                    <a href="Product?category=Tủ bảo quản" class="btn_type" rel="nofollow" title="Tủ bảo quản Cigar, rượu vang">
                         <img src="#" data-src="${pageContext.request.contextPath}\\img\\banner\\evo_banner_index_5.jpg" alt="Tủ bảo quản Cigar, rượu vang"
                              class="img-responsive center-block lazy"/>
                         <div class="figcaption">
@@ -531,336 +273,77 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="new_title">
-                        <h2><a href="#" title="Đồ gia dụng">Đồ gia dụng</a></h2>
+                        <h2><a href="Product?category=Đồ gia dụng" title="Đồ gia dụng">Đồ gia dụng</a></h2>
                     </div>
 
                     <div class="slick_ajax_tab evo-slick">
 
 
-                        <div class="evo-product-block-item ">
-                            <div class="product-img">
-                                <div class="product-sale">
-                                    <span>- 10% </span>
-                                </div>
-                                <a href="Detail.html"
-                                   title="Máy pha Cafe viên nén Delonghi | EN560B" class="image-resize">
-                                    <img class="lazy"
-                                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                         data-src="${pageContext.request.contextPath}/img/products/DoGiaDung/product54.jpg"
-                                         alt="Máy pha Cafe viên nén Delonghi | EN560B"/>
-
-                                    <img class="lazy hover-pic"
-                                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                         data-src="${pageContext.request.contextPath}/img/products/DoGiaDung/product54_2.jpg"
-                                         alt="Máy pha Cafe viên nén Delonghi | EN560B"/>
-
-                                </a>
-                                <div class="button-add hidden-sm hidden-xs">
-                                    <form action="/cart/add" method="post" enctype="multipart/form-data"
-                                          class="hidden-md variants form-nut-grid form-ajaxtocart"
-                                          data-id="product-actions-18074390">
-
-
-                                        <input type="hidden" name="variantId" value="33013360"/>
-                                        <button type="button" title="Mua ngay" class="action"
-                                                onclick="buy_now('33013360')"><i class="fa fa-check-square-o"
-                                                                                 aria-hidden="true"></i></button>
-                                        <button type="button" title="Thêm vào giỏ" class="action add_to_cart"><i
-                                                class="fa fa-shopping-bag" aria-hidden="true"></i></button>
-
-
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="product-detail clearfix">
-                                <div class="box-pro-detail">
-                                    <div class="pro-brand">
-
-                                        <a href="#" title=""></a>
-
+                        <jsp:useBean id="GiaDungList" scope="request" type="java.util.List"/>
+                        <c:forEach items="${GiaDungList}" var="p">
+                            <div class="evo-product-block-item ">
+                                <div class="product-img">
+                                    <div class="product-sale">
+                                        <span>${p.getLabel()} </span>
                                     </div>
-                                    <h3 class="pro-name">
-                                        <a href="#" title="Máy pha cafe Delonghi | Ecam 22110">Máy pha cafe Delonghi |
-                                            Ecam 22110</a>
-                                    </h3>
-                                    <div class="box-pro-prices">
-                                        <p class="pro-price">
+                                    <a href="Detail"
+                                       title="${p.name}" class="image-resize">
+                                        <img class="lazy"
+                                             src="Detail"
+                                             data-src="${p.getListImage().get(0)}"
+                                             alt="${p.name}"/>
+
+                                        <img class="lazy hover-pic"
+                                             src="Datail"
+                                             data-src="${p.getListImage().get(1)}"
+                                             alt="${p.name}"/>
+
+                                    </a>
+                                    <div class="button-add hidden-sm hidden-xs"><
+                                        <form action="/cart/add" method="post" enctype="multipart/form-data"
+                                              class="hidden-md variants form-nut-grid form-ajaxtocart"
+                                              data-id="product-actions-18074390">
 
 
-                                            11.900.000₫
+                                            <input type="hidden" name="variantId" value="33013360"/>
+                                            <button type="button" title="Mua ngay" class="action"
+                                                    onclick="buy_now('33013360')"><i class="fa fa-check-square-o"
+                                                                                     aria-hidden="true"></i></button>
+                                            <button type="button" title="Thêm vào giỏ" class="action add_to_cart"><i
+                                                    class="fa fa-shopping-bag" aria-hidden="true"></i></button>
 
-                                            <span class="pro-price-del">
-						<del class="compare-price">13.200.000₫</del>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="product-detail clearfix">
+                                    <div class="box-pro-detail">
+                                        <div class="pro-brand">
+
+                                            <a href="#" title=""></a>
+
+                                        </div>
+                                        <h3 class="pro-name">
+                                            <a href="#" title="${p.name}">${p.name}</a>
+                                        </h3>
+                                        <div class="box-pro-prices">
+                                            <p class="pro-price">
+
+
+                                                    ${p.stringPrice(p.getTotalPrice())}₫
+
+                                                <span class="pro-price-del">
+						<del class="compare-price">${p.stringPrice(p.price)}₫</del>
 					</span>
 
 
-                                        </p>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </c:forEach>
 
 
-                        <div class="evo-product-block-item ">
-                            <div class="product-img">
-                                <div class="product-sale">
-                                    <span>- 23% </span>
-                                </div>
-                                <a href="Detail.html"
-                                   title="Máy sư&#7903;i Steba BS 1800 | Made in Italy" class="image-resize">
-                                    <img class="lazy"
-                                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                         data-src="${pageContext.request.contextPath}/img/products/ThietBiNhaBep/product9.jpg"
-                                         alt="Máy sư&#7903;i Steba BS 1800 | Made in Italy"/>
-
-                                    <img class="lazy hover-pic"
-                                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                         data-src="${pageContext.request.contextPath}/img/products/ThietBiNhaBep/product9_2.jpg"
-                                         alt="Máy sư&#7903;i Steba BS 1800 | Made in Italy"/>
-
-                                </a>
-                                <div class="button-add hidden-sm hidden-xs">
-                                    <form action="/cart/add" method="post" enctype="multipart/form-data"
-                                          class="hidden-md variants form-nut-grid form-ajaxtocart"
-                                          data-id="product-actions-20685254">
-
-
-                                        <input type="hidden" name="variantId" value="42002520"/>
-                                        <button type="button" title="Mua ngay" class="action"
-                                                onclick="buy_now('42002520')"><i class="fa fa-check-square-o"
-                                                                                 aria-hidden="true"></i></button>
-                                        <button type="button" title="Thêm vào giỏ" class="action add_to_cart"><i
-                                                class="fa fa-shopping-bag" aria-hidden="true"></i></button>
-
-
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="product-detail clearfix">
-                                <div class="box-pro-detail">
-                                    <div class="pro-brand">
-
-                                        <a href="#" title=""></a>
-
-                                    </div>
-                                    <h3 class="pro-name">
-                                        <a href="#"
-                                           title="Máy sư&#7903;i Steba BS 1800 | Made in Italy">
-                                            Máy sư&#7903;i Steba BS 1800 | Made in Italy
-                                        </a>
-                                    </h3>
-                                    <div class="box-pro-prices">
-                                        <p class="pro-price">
-
-
-                                            4.600.000₫
-
-                                            <span class="pro-price-del">
-						<del class="compare-price">6.000.000₫</del>
-					</span>
-
-
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="evo-product-block-item ">
-                            <div class="product-img">
-                                <div class="product-sale">
-                                    <span>- 26% </span>
-                                </div>
-                                <a href="Detail.html"
-                                   title="Máy pha cafe Siemens EQ.6 Plus S300 | TE653501DE" class="image-resize">
-                                    <img class="lazy"
-                                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                         data-src="${pageContext.request.contextPath}/img/products/DoGiaDung/product38.jpg"
-                                         alt="Máy pha cafe Siemens EQ.6 Plus S300 | TE653501DE"/>
-
-                                    <img class="lazy hover-pic"
-                                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                         data-src="${pageContext.request.contextPath}/img/products/DoGiaDung/product38_2.jpg"
-                                         alt="Máy pha cafe Siemens EQ.6 Plus S300 | TE653501DE"/>
-
-                                </a>
-                                <div class="button-add hidden-sm hidden-xs">
-                                    <form action="/cart/add" method="post" enctype="multipart/form-data"
-                                          class="hidden-md variants form-nut-grid form-ajaxtocart"
-                                          data-id="product-actions-17013460">
-
-
-                                        <input type="hidden" name="variantId" value="30858053"/>
-                                        <button type="button" title="Mua ngay" class="action"
-                                                onclick="buy_now('30858053')"><i class="fa fa-check-square-o"
-                                                                                 aria-hidden="true"></i></button>
-                                        <button type="button" title="Thêm vào giỏ" class="action add_to_cart"><i
-                                                class="fa fa-shopping-bag" aria-hidden="true"></i></button>
-
-
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="product-detail clearfix">
-                                <div class="box-pro-detail">
-                                    <div class="pro-brand">
-
-                                        <a href="#" title=""></a>
-
-                                    </div>
-                                    <h3 class="pro-name">
-                                        <a href="#" title="Máy pha cafe Siemens EQ.6 Plus S300 | TE653501DE">
-                                            Máy pha cafe Siemens EQ.6 Plus S300 | TE653501DE
-                                        </a>
-                                    </h3>
-                                    <div class="box-pro-prices">
-                                        <p class="pro-price">
-
-
-                                            2.900.000₫
-
-                                            <span class="pro-price-del">
-						<del class="compare-price">3.900.000₫</del>
-					</span>
-
-
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="evo-product-block-item ">
-                            <div class="product-img">
-                                <div class="product-sale">
-                                    <span>- 22% </span>
-                                </div>
-                                <a href="Detail.html"
-                                   title="Ch&#7843;o ch&#7889;ng dính Tefal Excellence" class="image-resize">
-                                    <img class="lazy"
-                                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                         data-src="${pageContext.request.contextPath}/img/products/DungCuNhaBep/product64.jpg"
-                                         alt="Ch&#7843;o ch&#7889;ng dính Tefal Excellence"/>
-
-                                    <img class="lazy hover-pic"
-                                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                         data-src="${pageContext.request.contextPath}/img/products/DungCuNhaBep/product64_2.jpg"
-                                         alt="Ch&#7843;o ch&#7889;ng dính Tefal Excellence"/>
-
-                                </a>
-                                <div class="button-add hidden-sm hidden-xs">
-                                    <form action="/cart/add" method="post" enctype="multipart/form-data"
-                                          class="hidden-md variants form-nut-grid form-ajaxtocart"
-                                          data-id="product-actions-18194610">
-
-
-                                        <input type="hidden" name="variantId" value="33273390"/>
-                                        <button type="button" title="Mua ngay" class="action"
-                                                onclick="buy_now('33273390')"><i class="fa fa-check-square-o"
-                                                                                 aria-hidden="true"></i></button>
-                                        <button type="button" title="Thêm vào giỏ" class="action add_to_cart"><i
-                                                class="fa fa-shopping-bag" aria-hidden="true"></i></button>
-
-
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="product-detail clearfix">
-                                <div class="box-pro-detail">
-                                    <div class="pro-brand">
-
-                                        <a href="#" title=""></a>
-
-                                    </div>
-                                    <h3 class="pro-name">
-                                        <a href="#" title="Ch&#7843;o ch&#7889;ng dính Tefal Excellence">
-                                            Ch&#7843;o ch&#7889;ng dính Tefal Excellence
-                                        </a>
-                                    </h3>
-                                    <div class="box-pro-prices">
-                                        <p class="pro-price">
-
-
-                                            2.100.000₫
-
-                                            <span class="pro-price-del">
-						<del class="compare-price">2.700.000₫</del>
-					</span>
-
-
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="evo-product-block-item ">
-                            <div class="product-img">
-                                <div class="product-sale">
-                                    <span>- 21% </span>
-                                </div>
-                                <a href="Detail.html"
-                                   title="Máy Hút B&#7909;i Di&#7879;t Khu&#7849;n Giư&#7901;ng Đ&#7879;m Hoover MBC500UV"
-                                   class="image-resize">
-                                    <img class="lazy"
-                                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                         data-src="${pageContext.request.contextPath}/img/products/MayHutBui/product117.jpg"
-                                         alt="Máy Hút B&#7909;i Di&#7879;t Khu&#7849;n Giư&#7901;ng Đ&#7879;m Hoover MBC500UV"/>
-
-                                    <img class="lazy hover-pic"
-                                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                         data-src="${pageContext.request.contextPath}/img/products/MayHutBui/product117_2.jpg"
-                                         alt="Máy Hút B&#7909;i Di&#7879;t Khu&#7849;n Giư&#7901;ng Đ&#7879;m Hoover MBC500UV"/>
-
-                                </a>
-                                <div class="button-add hidden-sm hidden-xs">
-                                    <form action="/cart/add" method="post" enctype="multipart/form-data"
-                                          class="hidden-md variants form-nut-grid form-ajaxtocart"
-                                          data-id="product-actions-17139162">
-
-
-                                        <input type="hidden" name="variantId" value="31133776"/>
-                                        <button type="button" title="Mua ngay" class="action"
-                                                onclick="buy_now('31133776')"><i class="fa fa-check-square-o"
-                                                                                 aria-hidden="true"></i></button>
-                                        <button type="button" title="Thêm vào giỏ" class="action add_to_cart"><i
-                                                class="fa fa-shopping-bag" aria-hidden="true"></i></button>
-
-
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="product-detail clearfix">
-                                <div class="box-pro-detail">
-                                    <div class="pro-brand">
-
-                                        <a href="#" title=""></a>
-
-                                    </div>
-                                    <h3 class="pro-name">
-                                        <a href="#" title="Máy Hút B&#7909;i Di&#7879;t Khu&#7849;n Giư&#7901;ng Đ&#7879;m Hoover MBC500UV">
-                                            Máy Hút B&#7909;i Di&#7879;t Khu&#7849;n Giư&#7901;ng Đ&#7879;m Hoover MBC500UV
-                                        </a>
-                                    </h3>
-                                    <div class="box-pro-prices">
-                                        <p class="pro-price">
-
-
-                                            3.150.000₫
-
-                                            <span class="pro-price-del">
-						<del class="compare-price">4.000.000₫</del>
-					</span>
-
-
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                     </div>
 
@@ -885,7 +368,7 @@
                 <div class="col-sm-6">
                     <div class="banner-item ">
                         <div class="banner-img">
-                            <a href="#" title=" ">
+                            <a href="Product?category=NỒI CHIÊN" title=" ">
                                 <img class="img-responsive center-block lazy" src="#"
                                      data-src="${pageContext.request.contextPath}\\img\\banner\\evo_banner_two_1.jpg" alt=""/>
                             </a>
@@ -894,7 +377,7 @@
                         <div class="banner-content">
                             <span></span>
                             <h4></h4>
-                            <a class="umino-btn" href="#" title="Xem thêm">Xem thêm</a>
+                            <a class="umino-btn" href="Product?category=NỒI CHIÊN" title="Xem thêm">Xem thêm</a>
                         </div>
 
                     </div>
@@ -904,7 +387,7 @@
                 <div class="col-sm-6">
                     <div class="banner-item banner-item-last">
                         <div class="banner-img">
-                            <a href="#" title=" ">
+                            <a href="Product?category=Đồ gia dụng" title=" ">
                                 <img class="img-responsive center-block lazy" src="#"
                                      data-src="${pageContext.request.contextPath}\\img\\banner\\evo_banner_two_2.jpg" alt=""/>
                             </a>
@@ -913,7 +396,7 @@
                         <div class="banner-content">
                             <span></span>
                             <h4></h4>
-                            <a class="umino-btn" href="#" title="Xem thêm">Xem thêm</a>
+                            <a class="umino-btn" href="Product?category=Đồ gia dụng" title="Xem thêm">Xem thêm</a>
                         </div>
 
                     </div>
@@ -929,249 +412,109 @@
     <div class="section_san_pham_col">
         <div class="container">
             <div class="row">
+
+
                 <div class="col-md-4 col-sm-12 col-xs-12">
                     <div class="new_title">
-                        <h2><a href="#" title="Nổi bật">Nổi bật</a></h2>
+                        <h2><a href="#" title="Nổi bật">Nổi bật</a></h2>  <!-- check -->
                     </div>
 
                     <div class="three-col-slick evo-slick">
 
+                        <c:if test="${discountList.size()>2}" >
+                            <c:set var = "list" scope = "page" value = "${discountList.subList(0,3)}"/>
+                            <div class="evo-item">
 
-                        <div class="evo-item">
+                                <c:forEach var="p" items="${list}">
+                                    <div class="evo-product-slide-item">
+                                        <div class="product-img">
+                                            <c:if test="${p.lableId != 0}" >
+                                                <div class="product-sale">
+                                                    <span>${p.getLabel()} </span>
+                                                </div>
+                                            </c:if>
+                                            <a href="Detail" title="${p.name}" class="image-resize">
+                                                <img class="lazy" src="#" data-src="${p.getListImage().get(0)}"
+                                                     alt="${p.name}"/>
+                                            </a>
+                                        </div>
+                                        <div class="product-detail clearfix">
+                                            <div class="pro-brand">
+
+                                                <a href="Detail" title=""></a>
+
+                                            </div>
+                                            <h3 class="pro-name">
+                                                <a href="Detail" title="${p.name}">${p.name}</a>
+                                            </h3>
+                                            <div class="box-pro-prices">
+                                                <p class="pro-price">
 
 
-                            <div class="evo-product-slide-item">
-                                <div class="product-img">
-                                    <div class="product-sale">
-                                        <span>- 16% </span>
-                                    </div>
-                                    <a href="#" title="Lò nư&#7899;ng Bosch HBG675BS1 | Serie 8" class="image-resize">
-                                        <img class="lazy" src="#" data-src="${pageContext.request.contextPath}\\img\\products\\ThietBiNhaBep\\product14_2.jpg"
-                                             alt="Lò nư&#7899;ng Bosch HBG675BS1 | Serie 8"/>
-                                    </a>
-                                </div>
-                                <div class="product-detail clearfix">
-                                    <div class="pro-brand">
+                                                        ${p.stringPrice(p.getTotalPrice())}₫
 
-                                        <a href="#" title=""></a>
-
-                                    </div>
-                                    <h3 class="pro-name">
-                                        <a href="#" title="Lò nư&#7899;ng Bosch HBG675BS1 | Serie 8">Lò nư&#7899;ng
-                                            Bosch HBG675BS1 | Serie 8</a>
-                                    </h3>
-                                    <div class="box-pro-prices">
-                                        <p class="pro-price">
-
-
-                                            24.500.000₫
-
-                                            <span class="pro-price-del">
-					<del class="compare-price">29.000.000₫</del>
+                                                    <span class="pro-price-del">
+					<del class="compare-price">${p.stringPrice(p.price)}₫</del>
 				</span>
 
 
-                                        </p>
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                </c:forEach>
+
+
                             </div>
+                        </c:if>
 
 
-                            <div class="evo-product-slide-item">
-                                <div class="product-img">
-                                    <div class="product-sale">
-                                        <span>- 16% </span>
-                                    </div>
-                                    <a href="#" title="Máy r&#7917;a bát Bosch SMI6ZCS49E | Serie 6"
-                                       class="image-resize">
-                                        <img class="lazy" src="#" data-src="${pageContext.request.contextPath}\\img\\products\\ThietBiNhaBep\\product15_2.jpg"
-                                             alt="Máy r&#7917;a bát Bosch SMI6ZCS49E | Serie 6"/>
-                                    </a>
-                                </div>
-                                <div class="product-detail clearfix">
-                                    <div class="pro-brand">
+                        <c:if test="${discountList.size()>5}" >
+                            <c:set var = "list" scope = "page" value = "${discountList.subList(3,6)}"/>
+                            <div class="evo-item">
 
-                                        <a href="#" title=""></a>
+                                <c:forEach var="p" items="${list}">
+                                    <div class="evo-product-slide-item">
+                                        <div class="product-img">
+                                            <c:if test="${p.lableId != 0}" >
+                                                <div class="product-sale">
+                                                    <span>${p.getLabel()} </span>
+                                                </div>
+                                            </c:if>
+                                            <a href="Detail" title="${p.name}" class="image-resize">
+                                                <img class="lazy" src="#" data-src="${p.getListImage().get(0)}"
+                                                     alt="${p.name}"/>
+                                            </a>
+                                        </div>
+                                        <div class="product-detail clearfix">
+                                            <div class="pro-brand">
 
-                                    </div>
-                                    <h3 class="pro-name">
-                                        <a href="#" title="Máy r&#7917;a bát Bosch SMI6ZCS49E | Serie 6">Máy r&#7917;a
-                                            bát Bosch SMI6ZCS49E | Serie 6</a>
-                                    </h3>
-                                    <div class="box-pro-prices">
-                                        <p class="pro-price">
+                                                <a href="Detail" title=""></a>
+
+                                            </div>
+                                            <h3 class="pro-name">
+                                                <a href="Detail" title="${p.name}">${p.name}</a>
+                                            </h3>
+                                            <div class="box-pro-prices">
+                                                <p class="pro-price">
 
 
-                                            29.500.000₫
+                                                        ${p.stringPrice(p.getTotalPrice())}₫
 
-                                            <span class="pro-price-del">
-					<del class="compare-price">35.000.000₫</del>
+                                                    <span class="pro-price-del">
+					<del class="compare-price">${p.stringPrice(p.price)}₫</del>
 				</span>
 
 
-                                        </p>
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                </c:forEach>
+
+
                             </div>
-
-
-                            <div class="evo-product-slide-item">
-                                <div class="product-img">
-                                    <div class="product-sale">
-                                        <span>- 26% </span>
-                                    </div>
-                                    <a href="#" title="B&#7871;p t&#7915; Bosch PXE675DC1E | Serie 8"
-                                       class="image-resize">
-                                        <img class="lazy" src="#" data-src="${pageContext.request.contextPath}\\img\\products\\ThietBiNhaBep\\product11.jpg"
-                                             alt="B&#7871;p t&#7915; Bosch PXE675DC1E | Serie 8"/>
-                                    </a>
-                                </div>
-                                <div class="product-detail clearfix">
-                                    <div class="pro-brand">
-
-                                        <a href="#" title=""></a>
-
-                                    </div>
-                                    <h3 class="pro-name">
-                                        <a href="#" title="B&#7871;p t&#7915; Bosch PXE675DC1E | Serie 8">B&#7871;p t&#7915;
-                                            Bosch PXE675DC1E | Serie 8</a>
-                                    </h3>
-                                    <div class="box-pro-prices">
-                                        <p class="pro-price">
-
-
-                                            18.500.000₫
-
-                                            <span class="pro-price-del">
-					<del class="compare-price">25.000.000₫</del>
-				</span>
-
-
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                        <div class="evo-item">
-
-
-                            <div class="evo-product-slide-item">
-                                <div class="product-img">
-                                    <div class="product-sale">
-                                        <span>- 15% </span>
-                                    </div>
-                                    <a href="#" title="T&#7911; l&#7841;nh Side by side Bosch KAD90VB20"
-                                       class="image-resize">
-                                        <img class="lazy" src="#" data-src="${pageContext.request.contextPath}\\img\\products\\ThietBiNhaBep\\product20.jpg"
-                                             alt="T&#7911; l&#7841;nh Side by side Bosch KAD90VB20"/>
-                                    </a>
-                                </div>
-                                <div class="product-detail clearfix">
-                                    <div class="pro-brand">
-
-                                        <a href="#" title=""></a>
-
-                                    </div>
-                                    <h3 class="pro-name">
-                                        <a href="#" title="T&#7911; l&#7841;nh Side by side Bosch KAD90VB20">T&#7911; l&#7841;nh
-                                            Side by side Bosch KAD90VB20</a>
-                                    </h3>
-                                    <div class="box-pro-prices">
-                                        <p class="pro-price">
-
-
-                                            51.000.000₫
-
-                                            <span class="pro-price-del">
-					<del class="compare-price">60.000.000₫</del>
-				</span>
-
-
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="evo-product-slide-item">
-                                <div class="product-img">
-                                    <div class="product-sale">
-                                        <span>- 18% </span>
-                                    </div>
-                                    <a href="#" title="Máy r&#7917;a bát Bosch SMS88UI36E | Serie 8"
-                                       class="image-resize">
-                                        <img class="lazy" src="#" data-src="${pageContext.request.contextPath}\\img\\products\\ThietBiNhaBep\\product18_2.jpg"
-                                             alt="Máy r&#7917;a bát Bosch SMS88UI36E | Serie 8"/>
-                                    </a>
-                                </div>
-                                <div class="product-detail clearfix">
-                                    <div class="pro-brand">
-
-                                        <a href="#" title=""></a>
-
-                                    </div>
-                                    <h3 class="pro-name">
-                                        <a href="#" title="Máy r&#7917;a bát Bosch SMS88UI36E | Serie 8">Máy r&#7917;a
-                                            bát Bosch SMS88UI36E | Serie 8</a>
-                                    </h3>
-                                    <div class="box-pro-prices">
-                                        <p class="pro-price">
-
-
-                                            32.000.000₫
-
-                                            <span class="pro-price-del">
-					<del class="compare-price">39.000.000₫</del>
-				</span>
-
-
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="evo-product-slide-item">
-                                <div class="product-img">
-                                    <div class="product-sale">
-                                        <span>- 30% </span>
-                                    </div>
-                                    <a href="#" title="Lò nư&#7899;ng Bosch HBG675BB1 - Serie 8" class="image-resize">
-                                        <img class="lazy" src="#" data-src="${pageContext.request.contextPath}\\img\\products\\ThietBiNhaBep\\product13.jpg"
-                                             alt="Lò nư&#7899;ng Bosch HBG675BB1 - Serie 8"/>
-                                    </a>
-                                </div>
-                                <div class="product-detail clearfix">
-                                    <div class="pro-brand">
-
-                                        <a href="#" title=""></a>
-
-                                    </div>
-                                    <h3 class="pro-name">
-                                        <a href="#" title="Lò nư&#7899;ng Bosch HBG675BB1 - Serie 8">Lò nư&#7899;ng
-                                            Bosch HBG675BB1 - Serie 8</a>
-                                    </h3>
-                                    <div class="box-pro-prices">
-                                        <p class="pro-price">
-
-
-                                            24.500.000₫
-
-                                            <span class="pro-price-del">
-					<del class="compare-price">35.000.000₫</del>
-				</span>
-
-
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
+                        </c:if>
 
                     </div>
 
@@ -1183,383 +526,204 @@
 
                     <div class="three-col-slick evo-slick">
 
+                        <c:if test="${discountList.size()>2}" >
+                            <c:set var = "list" scope = "page" value = "${discountList.subList(0,3)}"/>
+                            <div class="evo-item">
 
-                        <div class="evo-item">
+                                <c:forEach var="p" items="${list}">
+                                    <div class="evo-product-slide-item">
+                                        <div class="product-img">
+                                            <c:if test="${p.lableId != 0}" >
+                                                <div class="product-sale">
+                                                    <span>${p.getLabel()} </span>
+                                                </div>
+                                            </c:if>
+                                            <a href="Detail" title="${p.name}" class="image-resize">
+                                                <img class="lazy" src="#" data-src="${p.getListImage().get(0)}"
+                                                     alt="${p.name}"/>
+                                            </a>
+                                        </div>
+                                        <div class="product-detail clearfix">
+                                            <div class="pro-brand">
+
+                                                <a href="Detail" title=""></a>
+
+                                            </div>
+                                            <h3 class="pro-name">
+                                                <a href="Detail" title="${p.name}">${p.name}</a>
+                                            </h3>
+                                            <div class="box-pro-prices">
+                                                <p class="pro-price">
 
 
-                            <div class="evo-product-slide-item">
-                                <div class="product-img">
-                                    <div class="product-sale">
-                                        <span>- 24% </span>
-                                    </div>
-                                    <a href="#" title="Robot Medion hút b&#7909;i và lau nhà | MD19510"
-                                       class="image-resize">
-                                        <img class="lazy" src="#" data-src="${pageContext.request.contextPath}\\img\\products\\MayHutBui\\product125_2.jpg"
-                                             alt="Robot Medion hút b&#7909;i và lau nhà | MD19510"/>
-                                    </a>
-                                </div>
-                                <div class="product-detail clearfix">
-                                    <div class="pro-brand">
+                                                        ${p.stringPrice(p.getTotalPrice())}₫
 
-                                        <a href="#" title=""></a>
-
-                                    </div>
-                                    <h3 class="pro-name">
-                                        <a href="#" title="Robot Medion hút b&#7909;i và lau nhà | MD19510">Robot Medion
-                                            hút b&#7909;i và lau nhà | MD19510</a>
-                                    </h3>
-                                    <div class="box-pro-prices">
-                                        <p class="pro-price">
-
-
-                                            5.300.000₫
-
-                                            <span class="pro-price-del">
-					<del class="compare-price">7.000.000₫</del>
+                                                    <span class="pro-price-del">
+					<del class="compare-price">${p.stringPrice(p.price)}₫</del>
 				</span>
 
 
-                                        </p>
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                </c:forEach>
+
+
                             </div>
+                        </c:if>
 
 
-                            <div class="evo-product-slide-item">
-                                <div class="product-img">
-                                    <div class="product-sale">
-                                        <span>- 25% </span>
-                                    </div>
-                                    <a href="#"
-                                       title="T&#7911; b&#7843;o qu&#7843;n Cigar Klarstein El Presidente | 65L Màu b&#7841;c"
-                                       class="image-resize">
-                                        <img class="lazy" src="#" data-src="${pageContext.request.contextPath}\\img\\products\\TuBaoQuan\\product67.jpg"
-                                             alt="T&#7911; b&#7843;o qu&#7843;n Cigar Klarstein El Presidente | 65L Màu b&#7841;c"/>
-                                    </a>
-                                </div>
-                                <div class="product-detail clearfix">
-                                    <div class="pro-brand">
+                        <c:if test="${discountList.size()>5}" >
+                            <c:set var = "list" scope = "page" value = "${discountList.subList(3,6)}"/>
+                            <div class="evo-item">
 
-                                        <a href="#" title=""></a>
+                                <c:forEach var="p" items="${list}">
+                                    <div class="evo-product-slide-item">
+                                        <div class="product-img">
+                                            <c:if test="${p.lableId != 0}" >
+                                                <div class="product-sale">
+                                                    <span>${p.getLabel()} </span>
+                                                </div>
+                                            </c:if>
+                                            <a href="Detail" title="${p.name}" class="image-resize">
+                                                <img class="lazy" src="#" data-src="${p.getListImage().get(0)}"
+                                                     alt="${p.name}"/>
+                                            </a>
+                                        </div>
+                                        <div class="product-detail clearfix">
+                                            <div class="pro-brand">
 
-                                    </div>
-                                    <h3 class="pro-name">
-                                        <a href="#"
-                                           title="T&#7911; b&#7843;o qu&#7843;n Cigar Klarstein El Presidente | 65L Màu b&#7841;c">T&#7911;
-                                            b&#7843;o qu&#7843;n Cigar Klarstein El Presidente | 65L Màu b&#7841;c</a>
-                                    </h3>
-                                    <div class="box-pro-prices">
-                                        <p class="pro-price">
+                                                <a href="Detail" title=""></a>
+
+                                            </div>
+                                            <h3 class="pro-name">
+                                                <a href="Detail" title="${p.name}">${p.name}</a>
+                                            </h3>
+                                            <div class="box-pro-prices">
+                                                <p class="pro-price">
 
 
-                                            13.500.000₫
+                                                        ${p.stringPrice(p.getTotalPrice())}₫
 
-                                            <span class="pro-price-del">
-					<del class="compare-price">18.000.000₫</del>
+                                                    <span class="pro-price-del">
+					<del class="compare-price">${p.stringPrice(p.price)}₫</del>
 				</span>
 
 
-                                        </p>
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                </c:forEach>
+
+
                             </div>
-
-
-                            <div class="evo-product-slide-item">
-                                <div class="product-img">
-                                    <div class="product-sale">
-                                        <span>- 20% </span>
-                                    </div>
-                                    <a href="#" title="Máy làm s&#7919;a h&#7841;t Medion | MD19725"
-                                       class="image-resize">
-                                        <img class="lazy" src="#" data-src="${pageContext.request.contextPath}\\img\\products\\SMEG\\product111.jpg"
-                                             alt="Máy làm s&#7919;a h&#7841;t Medion | MD19725"/>
-                                    </a>
-                                </div>
-                                <div class="product-detail clearfix">
-                                    <div class="pro-brand">
-
-                                        <a href="#" title=""></a>
-
-                                    </div>
-                                    <h3 class="pro-name">
-                                        <a href="#" title="Máy làm s&#7919;a h&#7841;t Medion | MD19725">Máy làm s&#7919;a
-                                            h&#7841;t Medion | MD19725</a>
-                                    </h3>
-                                    <div class="box-pro-prices">
-                                        <p class="pro-price">
-
-
-                                            8.800.000₫
-
-                                            <span class="pro-price-del">
-					<del class="compare-price">11.000.000₫</del>
-				</span>
-
-
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                        <div class="evo-item">
-
-
-
-                            <div class="evo-product-slide-item">
-                                <div class="product-img">
-                                    <div class="product-sale">
-                                        <span>- 36% </span>
-                                    </div>
-                                    <a href="#"
-                                       title="T&#7911; b&#7843;o qu&#7843;n rư&#7907;u vang Caso Winesafe 18EB Black"
-                                       class="image-resize">
-                                        <img class="lazy" src="#" data-src="${pageContext.request.contextPath}\\img\\products\\TuBaoQuan\\product71_2.jpg"
-                                             alt="T&#7911; b&#7843;o qu&#7843;n rư&#7907;u vang Caso Winesafe 18EB Black"/>
-                                    </a>
-                                </div>
-                                <div class="product-detail clearfix">
-                                    <div class="pro-brand">
-
-                                        <a href="#" title=""></a>
-
-                                    </div>
-                                    <h3 class="pro-name">
-                                        <a href="#"
-                                           title="T&#7911; b&#7843;o qu&#7843;n rư&#7907;u vang Caso Winesafe 18EB Black">T&#7911;
-                                            b&#7843;o qu&#7843;n rư&#7907;u vang Caso Winesafe 18EB Black</a>
-                                    </h3>
-                                    <div class="box-pro-prices">
-                                        <p class="pro-price">
-
-
-                                            18.000.000₫
-
-                                            <span class="pro-price-del">
-					<del class="compare-price">28.000.000₫</del>
-				</span>
-
-
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
+                        </c:if>
 
                     </div>
-
                 </div>
                 <div class="col-md-4 col-sm-12 col-xs-12 mar">
                     <div class="new_title">
-                        <h2><a href="#" title="Khuyến mãi">Khuyến mãi</a></h2>
+                        <h2><a href="DiscountProduct" title="Khuyến mãi">Khuyến mãi</a></h2>
                     </div>
 
                     <div class="three-col-slick evo-slick">
 
+                        <c:if test="${discountList.size()>2}" >
+                            <c:set var = "list" scope = "page" value = "${discountList.subList(0,3)}"/>
+                            <div class="evo-item">
 
-                        <div class="evo-item">
+                                <c:forEach var="p" items="${list}">
+                                    <div class="evo-product-slide-item">
+                                        <div class="product-img">
+                                            <c:if test="${p.lableId != 0}" >
+                                                <div class="product-sale">
+                                                    <span>${p.getLabel()} </span>
+                                                </div>
+                                            </c:if>
+                                            <a href="Detail" title="${p.name}" class="image-resize">
+                                                <img class="lazy" src="#" data-src="${p.getListImage().get(0)}"
+                                                     alt="${p.name}"/>
+                                            </a>
+                                        </div>
+                                        <div class="product-detail clearfix">
+                                            <div class="pro-brand">
+
+                                                <a href="Detail" title=""></a>
+
+                                            </div>
+                                            <h3 class="pro-name">
+                                                <a href="Detail" title="${p.name}">${p.name}</a>
+                                            </h3>
+                                            <div class="box-pro-prices">
+                                                <p class="pro-price">
 
 
-                            <div class="evo-product-slide-item">
-                                <div class="product-img">
-                                    <div class="product-sale">
-                                        <span>- 10% </span>
-                                    </div>
-                                    <a href="#" title="Máy pha cafe Delonghi | Ecam 22110" class="image-resize">
-                                        <img class="lazy" src="#" data-src="${pageContext.request.contextPath}\\img\\products\\DoGiaDung\\product40.jpg"
-                                             alt="Máy pha cafe Delonghi | Ecam 22110"/>
-                                    </a>
-                                </div>
-                                <div class="product-detail clearfix">
-                                    <div class="pro-brand">
+                                                        ${p.stringPrice(p.getTotalPrice())}₫
 
-                                        <a href="#" title=""></a>
-
-                                    </div>
-                                    <h3 class="pro-name">
-                                        <a href="#" title="Máy pha cafe Delonghi | Ecam 22110">Máy pha cafe Delonghi |
-                                            Ecam 22110</a>
-                                    </h3>
-                                    <div class="box-pro-prices">
-                                        <p class="pro-price">
-
-
-                                            11.900.000₫
-
-                                            <span class="pro-price-del">
-					<del class="compare-price">13.200.000₫</del>
+                                                    <span class="pro-price-del">
+					<del class="compare-price">${p.stringPrice(p.price)}₫</del>
 				</span>
 
 
-                                        </p>
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                </c:forEach>
+
+
                             </div>
+                        </c:if>
 
 
-                            <div class="evo-product-slide-item">
-                                <div class="product-img">
-                                    <div class="product-sale">
-                                        <span>- 23% </span>
-                                    </div>
-                                    <a href="#"
-                                       title="&#7844;m siêu t&#7889;c cao c&#7845;p SMEG ch&#7881;nh nhi&#7879;t | KLF04"
-                                       class="image-resize">
-                                        <img class="lazy" src="#" data-src="${pageContext.request.contextPath}\\img\\products\\DoGiaDung\\product39.jpg"
-                                             alt="&#7844;m siêu t&#7889;c cao c&#7845;p SMEG ch&#7881;nh nhi&#7879;t | KLF04"/>
-                                    </a>
-                                </div>
-                                <div class="product-detail clearfix">
-                                    <div class="pro-brand">
+                        <c:if test="${discountList.size()>5}" >
+                            <c:set var = "list" scope = "page" value = "${discountList.subList(3,6)}"/>
+                            <div class="evo-item">
 
-                                        <a href="#" title=""></a>
+                                <c:forEach var="p" items="${list}">
+                                    <div class="evo-product-slide-item">
+                                        <div class="product-img">
+                                            <c:if test="${p.lableId != 0}" >
+                                                <div class="product-sale">
+                                                    <span>${p.getLabel()} </span>
+                                                </div>
+                                            </c:if>
+                                            <a href="Detail" title="${p.name}" class="image-resize">
+                                                <img class="lazy" src="#" data-src="${p.getListImage().get(0)}"
+                                                     alt="${p.name}"/>
+                                            </a>
+                                        </div>
+                                        <div class="product-detail clearfix">
+                                            <div class="pro-brand">
 
-                                    </div>
-                                    <h3 class="pro-name">
-                                        <a href="#"
-                                           title="&#7844;m siêu t&#7889;c cao c&#7845;p SMEG ch&#7881;nh nhi&#7879;t | KLF04">&#7844;m
-                                            siêu t&#7889;c cao c&#7845;p SMEG ch&#7881;nh nhi&#7879;t | KLF04</a>
-                                    </h3>
-                                    <div class="box-pro-prices">
-                                        <p class="pro-price">
+                                                <a href="Detail" title=""></a>
+
+                                            </div>
+                                            <h3 class="pro-name">
+                                                <a href="Detail" title="${p.name}">${p.name}</a>
+                                            </h3>
+                                            <div class="box-pro-prices">
+                                                <p class="pro-price">
 
 
-                                            4.600.000₫
+                                                        ${p.stringPrice(p.getTotalPrice())}₫
 
-                                            <span class="pro-price-del">
-					<del class="compare-price">6.000.000₫</del>
+                                                    <span class="pro-price-del">
+					<del class="compare-price">${p.stringPrice(p.price)}₫</del>
 				</span>
 
 
-                                        </p>
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                </c:forEach>
+
+
                             </div>
-
-
-                            <div class="evo-product-slide-item">
-                                <div class="product-img">
-                                    <div class="product-sale">
-                                        <span>- 26% </span>
-                                    </div>
-                                    <a href="#" title="Bình th&#7911;y Caso Turbo HW660" class="image-resize">
-                                        <img class="lazy" src="#" data-src="${pageContext.request.contextPath}\\img\\products\\DoGiaDung\\product41_2.jpg"
-                                             alt="Bình th&#7911;y Caso Turbo HW660"/>
-                                    </a>
-                                </div>
-                                <div class="product-detail clearfix">
-                                    <div class="pro-brand">
-
-                                        <a href="#" title=""></a>
-
-                                    </div>
-                                    <h3 class="pro-name">
-                                        <a href="#" title="Bình th&#7911;y Caso Turbo HW660">Bình th&#7911;y Caso Turbo
-                                            HW660</a>
-                                    </h3>
-                                    <div class="box-pro-prices">
-                                        <p class="pro-price">
-
-
-                                            2.900.000₫
-
-                                            <span class="pro-price-del">
-					<del class="compare-price">3.900.000₫</del>
-				</span>
-
-
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                        <div class="evo-item">
-
-
-                            <div class="evo-product-slide-item">
-                                <div class="product-img">
-                                    <div class="product-sale">
-                                        <span>- 22% </span>
-                                    </div>
-                                    <a href="#" title="Máy v&#7855;t cam Caso CP330" class="image-resize">
-                                        <img class="lazy" src="#" data-src="${pageContext.request.contextPath}\\img\\products\\DoGiaDung\\product41.jpg" alt="Máy v&#7855;t cam Caso CP330"/>
-                                    </a>
-                                </div>
-                                <div class="product-detail clearfix">
-                                    <div class="pro-brand">
-
-                                        <a href="#" title=""></a>
-
-                                    </div>
-                                    <h3 class="pro-name">
-                                        <a href="#" title="Máy v&#7855;t cam Caso CP330">Máy v&#7855;t cam Caso
-                                            CP330</a>
-                                    </h3>
-                                    <div class="box-pro-prices">
-                                        <p class="pro-price">
-
-
-                                            2.100.000₫
-
-                                            <span class="pro-price-del">
-					<del class="compare-price">2.700.000₫</del>
-				</span>
-
-
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="evo-product-slide-item">
-                                <div class="product-img">
-                                    <div class="product-sale">
-                                        <span>- 21% </span>
-                                    </div>
-                                    <a href="#" title="Máy s&#7845;y khô th&#7921;c ph&#7849;m WMF Kitchen Nminis"
-                                       class="image-resize">
-                                        <img class="lazy" src="#" data-src="${pageContext.request.contextPath}\\img\\products\\DoGiaDung\\product52.jpg"
-                                             alt="Máy s&#7845;y khô th&#7921;c ph&#7849;m WMF Kitchen Nminis"/>
-                                    </a>
-                                </div>
-                                <div class="product-detail clearfix">
-                                    <div class="pro-brand">
-
-                                        <a href="#" title=""></a>
-
-                                    </div>
-                                    <h3 class="pro-name">
-                                        <a href="#" title="Máy s&#7845;y khô th&#7921;c ph&#7849;m WMF Kitchen Nminis">Máy
-                                            s&#7845;y khô th&#7921;c ph&#7849;m WMF Kitchen Nminis</a>
-                                    </h3>
-                                    <div class="box-pro-prices">
-                                        <p class="pro-price">
-
-
-                                            3.150.000₫
-
-                                            <span class="pro-price-del">
-					<del class="compare-price">4.000.000₫</del>
-				</span>
-
-
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-
+                        </c:if>
 
                     </div>
 
