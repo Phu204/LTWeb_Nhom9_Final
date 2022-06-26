@@ -12,18 +12,20 @@
     <meta charset="UTF-8">
     <title>SHOP TEAM 9</title>
 
-    <link href="User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="User_page/css/plugin.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="User_page/css/base.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="User_page/css/evo-main.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="User_page/css/slick.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="User_page/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-    <link href="User_page/css/evo-index.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/plugin.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/base.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/evo-main.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/slick.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/evo-index.scss.css" rel="stylesheet" type="text/css"/>
 
-    <link href="User_page/css/Reposive&&ContacIcon.css" rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}/User_page/css/ContacIcon.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           type="text/css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
 
 </head>
 <body>
@@ -542,7 +544,7 @@
                     <ul id="nav" class="nav">
 
 
-                        <li class="nav-item active"><a class="nav-link" href="index.html" title="Trang chủ">Trang chủ</a>
+                        <li class="nav-item active"><a class="nav-link" href="Home" title="Trang chủ">Trang chủ</a>
                         </li>
 
 
@@ -550,7 +552,7 @@
 
 
                         <li class=" nav-item has-childs  has-mega">
-                            <a href="Product.html" class="nav-link" title="Sản phẩm">Sản phẩm <i class="fa fa-angle-down"
+                            <a href="Product" class="nav-link" title="Sản phẩm">Sản phẩm <i class="fa fa-angle-down"
                                                                                                  data-toggle="dropdown"></i></a>
 
 
@@ -800,7 +802,7 @@
                         </li>
 
 
-                        <li class="nav-item "><a class="nav-link" href="Product.html" title="Khuyến mãi">Khuyến mãi</a></li>
+                        <li class="nav-item "><a class="nav-link" href="DiscountProduct" title="Khuyến mãi">Khuyến mãi</a></li>
 
 
                         <li class=" nav-item has-childs ">
