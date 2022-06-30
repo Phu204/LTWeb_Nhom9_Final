@@ -70,15 +70,15 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
-                            <form action="ProductManagement">
+                            <form action="ProductManagement" method="post" enctype="multipart/form-data">
 
                                 <div class="form-group">
                                     <label>Ảnh</label>
-                                    <input class="form-control" type="file">
+                                    <input class="form-control" name="image" type="file" value="${p.getListImage().get(0)}">
                                 </div>
                                 <div class="form-group">
                                     <div class="avatar">
-                                        <img class="avatar-img rounded" alt="" src="">
+                                        <img class="avatar-img rounded" alt="" src="${p.getListImage().get(0)}" >
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -130,7 +130,7 @@
                                     <textarea style="height: 100px;" class="form-control" type="text">${product.decription}</textarea>
                                 </div>
                                 <div class="mt-4">
-                                    <button class="btn btn-primary" type="submit">Lưu thay đổi</button>
+                                    <button class="btn btn-primary" type="submit" value="Upload">Lưu thay đổi</button>
                                     <a href="ProductManagement" class="btn btn-link">Hủy</a>
                                 </div>
                             </form>

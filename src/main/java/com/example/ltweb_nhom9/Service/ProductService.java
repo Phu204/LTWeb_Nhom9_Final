@@ -39,4 +39,8 @@ public class ProductService {
     }
 
     public List<Product> getProductListInOrder(int id){return ProductDao.getInstance().getProductListInOrder(id);}
+
+    public List<Product> filterProduct(String name,String category){ return ProductDao.getInstance().filterProduct(name,category);}
+
+    public List<Product> searchProduct(String category,String... name){ return ProductDao.getInstance().searchProduct(category,name);}
 }

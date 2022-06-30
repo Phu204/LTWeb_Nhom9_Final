@@ -5,7 +5,7 @@
   Time: 13:21
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
@@ -58,7 +58,7 @@
         <!-- Search Filter -->
         <div class="card filter-card" id="filter_inputs">
             <div class="card-body pb-0">
-                <form action="#" method="post">
+                <form action="ProductManagement" method="post">
                     <div class="row filter-row">
 
                         <!-- thay đổi ở đây ************************ -->
@@ -66,23 +66,18 @@
                         <div class="col-sm-6 col-md-3">
                             <div class="form-group">
                                 <label>Tên</label>
-                                <input class="form-control" type="text">
+                                <input class="form-control" type="text" name="name">
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-3">
                             <div class="form-group">
-                                <label>Từ Ngày</label>
-                                <div class="">
-                                    <input class="form-control datetimepicker" type="text">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-3">
-                            <div class="form-group">
-                                <label>Đến Ngày</label>
-                                <div class="">
-                                    <input class="form-control datetimepicker" type="text">
-                                </div>
+                                <label>Category</label>
+                                <select class="form-control select" name="category">
+                                    <option selected value="%">Tất cả</option>
+                                    <c:forEach items="${categoryList}" var="c">
+                                        <option value="${c.id}">${c.name}</option>
+                                    </c:forEach>
+                                </select>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-3">
@@ -125,7 +120,7 @@
                                             <img class="product-img rounded-circle" alt=""
                                                  src="${p.getListImage().get(0)}">
                                         </td>
-                                        <td>${categoryList.get(p.categoryId).name}</td>
+                                        <td>${categoryList.get(p.categoryId - 1).name}</td>
                                         <td>${p.stringPrice(p.price)} VNĐ</td>
                                         <td>${p.quantity}</td>
 <%--                                        <td>--%>

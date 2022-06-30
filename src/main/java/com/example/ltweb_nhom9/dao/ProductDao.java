@@ -241,8 +241,78 @@ public class ProductDao {
         return list;
     }
 
+    public List<Product> filterProduct(String name,String category){
+        Statement statement = DBConect.getInstance().get();
+        String sql = "select p.* from product p " +
+                "join category c on p.category_id = c.id " +
+                "where p.name like '" + name + "' " +
+                "and c.name like '"+ category + "'";
+        List<Product> list = new ArrayList<>();
+        try {
+            ResultSet rs = statement.executeQuery(sql);
+
+            Product product = null;
+            while (rs.next()) {
+                product = new Product();
+                product.setId(rs.getInt("id"));
+                product.setName(rs.getString("name"));
+                product.setActive(rs.getBoolean("active"));
+                product.setCategoryId(rs.getInt("category_id"));
+                product.setPrice(rs.getInt("price"));
+                product.setLableId(rs.getInt("label_id"));
+                product.setQuantity(rs.getInt("quantity"));
+                product.setDecription(rs.getString("decription"));
+                product.setImgId(rs.getInt("img_id"));
+                list.add(product);
+            }
+            rs.close();
+        }  catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return list;
+    }
+
+    public List<Product> searchProduct(String category,String... name){
+        Statement statement = DBConect.getInstance().get();
+        String addName = "";
+        for (int i = 1;i < name.length;i++){
+            addName += "and p.name like '%" + name[i] + "%' " +
+                    "and c.name like '%"+ category + "%' ";
+        }
+
+        String sql = "select p.* from product p " +
+                "join category c on p.category_id = c.id " +
+                "where p.name like '%" + name[0] + "%' " +
+                "and c.name like '%"+ category + "%' " + addName;
+        List<Product> list = new ArrayList<>();
+        try {
+            ResultSet rs = statement.executeQuery(sql);
+
+            Product product = null;
+            while (rs.next()) {
+                product = new Product();
+                product.setId(rs.getInt("id"));
+                product.setName(rs.getString("name"));
+                product.setActive(rs.getBoolean("active"));
+                product.setCategoryId(rs.getInt("category_id"));
+                product.setPrice(rs.getInt("price"));
+                product.setLableId(rs.getInt("label_id"));
+                product.setQuantity(rs.getInt("quantity"));
+                product.setDecription(rs.getString("decription"));
+                product.setImgId(rs.getInt("img_id"));
+                list.add(product);
+            }
+            rs.close();
+        }  catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return list;
+    }
+
     public static void main(String[] args) {
-        List<Order> lis = OrderService.getInstance().getAll();
+        List<Product> lis = ProductService.getInstance().filterProduct("%","THIẾT BỊ SMEG");
 
         System.out.println(lis.get(2).toString());
         System.out.println(lis.size());

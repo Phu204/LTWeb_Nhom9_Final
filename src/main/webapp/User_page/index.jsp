@@ -33,24 +33,7 @@
 
 <div id="fb-root"></div>
 
-<div class="evo-search-bar">
-    <form action="#" method="get">
-        <div class="input-group">
-            <input type="text" name="query" class="search-auto form-control" placeholder="Bạn cần tìm gì hôm nay?"/>
-            <span class="input-group-btn">
-				<button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
-			</span>
-        </div>
-    </form>
-    <button class="site-header__search" title="Đóng tìm kiếm">
-        <svg width="26.045" height="26.044">
-            <g data-name="Group 470">
-                <path d="M19.736 17.918l-4.896-4.896 4.896-4.896a1.242 1.242 0 0 0-.202-1.616 1.242 1.242 0 0 0-1.615-.202l-4.896 4.896L8.127 6.31a1.242 1.242 0 0 0-1.615.202 1.242 1.242 0 0 0-.202 1.615l4.895 4.896-4.896 4.896a1.242 1.242 0 0 0 .202 1.615 1.242 1.242 0 0 0 1.616.202l4.896-4.896 4.896 4.896a1.242 1.242 0 0 0 1.615-.202 1.242 1.242 0 0 0 .202-1.615z"
-                      data-name="Path 224" fill="#1c1c1c"></path>
-            </g>
-        </svg>
-    </button>
-</div>
+
 <jsp:include page='header.jsp'>
     <jsp:param name="articleId" value=""/>
 </jsp:include>

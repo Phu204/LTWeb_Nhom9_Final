@@ -33,4 +33,6 @@ public class OrderService {
     public Order getById(int id) {return OrderDao.getInstance().getById(id);}
 
     public List<Order> getOrderListOfCustomer(int id){return OrderDao.getInstance().getOrderListOfCustomer(id);}
+
+    public List<Order> getOrderListByStatus(int status){ return OrderDao.getInstance().getOrderListByStatus(status);}
 }

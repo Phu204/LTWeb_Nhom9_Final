@@ -118,65 +118,19 @@
                                     </thead>
                                     <!-- Thêm vào nội dung ở đây -->
                                     <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Sản phẩm mới từ đức có gì?</td>
-                                        <td>11 Tháng Chín 2021</td>
-                                        <td class="text-right">
-                                            <a href="Edit_Blog.html" class="btn btn-outline-light btn-sm bg-success-light mr-2">	<i class="far fa-edit mr-1"></i> Sửa</a>
-                                            <button type="button" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i> Xóa</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Cách tiết kiệm chi điện khi dùng tủ lạnh</td>
-                                        <td>11 Tháng Chín 2021</td>
-                                        <td class="text-right">
-                                            <a href="Edit_Blog.html" class="btn btn-sm bg-success-light mr-2">	<i class="far fa-edit mr-1"></i> Sửa</a>
-                                            <button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Xóa</button>
 
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Sản phẩm mới từ đức có gì?</td>
-                                        <td>11 Tháng Mười 2021</td>
-                                        <td class="text-right">
-                                            <a href="Edit_Blog.html" class="btn btn-sm bg-success-light mr-2">	<i class="far fa-edit mr-1"></i> Sửa</a>
-                                            <button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Xóa</button>
+                                    <c:forEach items="${blogs}" var="b">
+                                        <tr>
+                                            <td>${b.id}</td>
+                                            <td>${b.title}</td>
+                                            <td>${b.datecreate}</td>
+                                            <td class="text-right">
+                                                <a href="Add_Blog?id=${b.id}" class="btn btn-outline-light btn-sm bg-success-light mr-2">	<i class="far fa-edit mr-1"></i> Sửa</a>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
 
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Sản phẩm mới từ đức có gì?</td>
-                                        <td>11 Tháng Chín 2019</td>
-                                        <td class="text-right">
-                                            <a href="Edit_Blog.html" class="btn btn-sm bg-success-light mr-2">	<i class="far fa-edit mr-1"></i> Sửa</a>
-                                            <button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Xóa</button>
 
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>Sản phẩm mới từ đức có gì?</td>
-                                        <td>11 Tháng Chín 2019</td>
-                                        <td class="text-right">
-                                            <a href="Edit_Blog.html" class="btn btn-sm bg-success-light mr-2">	<i class="far fa-edit mr-1"></i> Sửa</a>
-                                            <button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Xóa</button>
-
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>6</td>
-                                        <td>Sản phẩm mới từ đức có gì?</td>
-                                        <td>11 Tháng Chín 2020</td>
-                                        <td class="text-right">
-                                            <a href="Edit_Blog.html" class="btn btn-sm bg-success-light mr-2">	<i class="far fa-edit mr-1"></i> Sửa</a>
-                                            <button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Xóa</button>
-
-                                        </td>
-                                    </tr>
                                     </tbody>
                                 </table>
                             </div>

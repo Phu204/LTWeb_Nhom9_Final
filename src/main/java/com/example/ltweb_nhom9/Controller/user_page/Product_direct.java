@@ -16,7 +16,21 @@ import java.util.List;
 public class Product_direct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Product> productList =  ProductService.getInstance().getAll();
+
+        //search
+        String category = "";
+
+        String query = "";
+        String[] sub = {""};
+        if (request.getParameter("query") != null){
+            query = request.getParameter("query");
+            sub = query.split(" ");
+        }
+        if (request.getParameter("category") != null){
+            category = request.getParameter("category");
+        }
+
+        List<Product> productList = ProductService.getInstance().searchProduct(category,sub);
         int numPage = (int)(productList.size()/15);
 
         int index = 1;
@@ -25,18 +39,6 @@ public class Product_direct extends HttpServlet {
         } catch (Exception e){
 
         }
-
-        String category = "";
-        try {
-            category = request.getParameter("category");
-            if (!category.equals("")){
-                productList =  ProductService.getInstance().getProductQuerybyCategory(category);
-            }
-        } catch (Exception e){
-
-        }
-
-        request.setAttribute("category",category);
 
         // tính số product biểu diễn paging
         int start = 0 + (15* (index -1 ));
@@ -55,10 +57,12 @@ public class Product_direct extends HttpServlet {
         List<String> brand = ProductService.getInstance().getBrand();
 
         String filter ="";
+        request.setAttribute("query",query);
+        request.setAttribute("category",category);
         request.setAttribute("brand",brand);
         request.setAttribute("filter",filter);
         request.setAttribute("typePage","Product");
-        request.setAttribute("title","Tất cả sản phẩm");
+        request.setAttribute("title",sub[0]);//"Tất cả sản phẩm"
         request.setAttribute("products",list);
         request.setAttribute("numPage", numPage);
         request.setAttribute("categoryList",categoryList);
