@@ -61,4 +61,16 @@ public class Blog implements Serializable {
     public void setActive(boolean active) {
         this.active = active;
     }
+
+    @Override
+    public String toString() {
+        return "Blog{" +
+                "id=" + id +
+                ", title='" + title +
+                ", img='" + img +
+                ", active=" + active +
+                ", datecreate=" + datecreate +
+                ", content='" + content +
+                '}';
+    }
 }

@@ -59,36 +59,8 @@ public class ProductManagement_direct extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (!ServletFileUpload.isMultipartContent(request)){
-            throw new ServletException("Context is not multipart");
-        }
-        response.setContentType("text/html");
-        try{
-            List<FileItem> fileItemList = uploader.parseRequest(request);
-            File productdir = new File(request.getServletContext().getAttribute("FILE_DIR") + File.separator + "product");
-            if(!productdir.exists()) productdir.mkdirs();
-            for (FileItem fileItem : fileItemList) {
-                File file = new File(request.getServletContext().getAttribute("FILE_DIR") + File.separator + "product" + File.separator + fileItem.getName());
-
-                System.out.println("path file " + file.getAbsolutePath());
-                fileItem.write(file);
-            }
-        } catch (FileUploadException e){
-            System.out.println("fileupload exception");
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
 
         doGet(request, response);
     }
 
-    private ServletFileUpload uploader = null;
-
-    @Override
-    public void init() throws ServletException {
-        DiskFileItemFactory filefactory = new DiskFileItemFactory();
-        File filedir = (File) getServletContext().getAttribute("FILE_DIR_FILE");
-        filefactory.setRepository(filedir);
-        this.uploader = new ServletFileUpload(filefactory);
-    }
 }

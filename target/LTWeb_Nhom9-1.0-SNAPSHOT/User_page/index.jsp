@@ -91,7 +91,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="new_title">
-                        <h2><a href="DiscountProduct" title="Sản phẩm khuyến mãi">Sản phẩm khuyến mãi</a></h2>
+                        <h2><a href="Product?typePage=DiscountProduct" title="Sản phẩm khuyến mãi">Sản phẩm khuyến mãi</a></h2>
                     </div>
 
                     <div class="slick_ajax_tab evo-slick">
@@ -399,13 +399,13 @@
 
                 <div class="col-md-4 col-sm-12 col-xs-12">
                     <div class="new_title">
-                        <h2><a href="#" title="Nổi bật">Nổi bật</a></h2>  <!-- check -->
+                        <h2><a href="#" title="Máy pha Cafe">Máy pha Cafe</a></h2>
                     </div>
 
                     <div class="three-col-slick evo-slick">
 
-                        <c:if test="${discountList.size()>2}" >
-                            <c:set var = "list" scope = "page" value = "${discountList.subList(0,3)}"/>
+                        <c:if test="${MayPhaCafeList.size()>2}" >
+                            <c:set var = "list" scope = "page" value = "${MayPhaCafeList.subList(0,3)}"/>
                             <div class="evo-item">
 
                                 <c:forEach var="p" items="${list}">
@@ -452,8 +452,8 @@
                         </c:if>
 
 
-                        <c:if test="${discountList.size()>5}" >
-                            <c:set var = "list" scope = "page" value = "${discountList.subList(3,6)}"/>
+                        <c:if test="${MayPhaCafeList.size()>5}" >
+                            <c:set var = "list" scope = "page" value = "${MayPhaCafeList.subList(3,6)}"/>
                             <div class="evo-item">
 
                                 <c:forEach var="p" items="${list}">
@@ -509,8 +509,8 @@
 
                     <div class="three-col-slick evo-slick">
 
-                        <c:if test="${discountList.size()>2}" >
-                            <c:set var = "list" scope = "page" value = "${discountList.subList(0,3)}"/>
+                        <c:if test="${BanChayList.size()>2}" >
+                            <c:set var = "list" scope = "page" value = "${BanChayList.subList(0,3)}"/>
                             <div class="evo-item">
 
                                 <c:forEach var="p" items="${list}">
@@ -557,8 +557,8 @@
                         </c:if>
 
 
-                        <c:if test="${discountList.size()>5}" >
-                            <c:set var = "list" scope = "page" value = "${discountList.subList(3,6)}"/>
+                        <c:if test="${BanChayList.size()>5}" >
+                            <c:set var = "list" scope = "page" value = "${BanChayList.subList(3,6)}"/>
                             <div class="evo-item">
 
                                 <c:forEach var="p" items="${list}">
@@ -608,7 +608,7 @@
                 </div>
                 <div class="col-md-4 col-sm-12 col-xs-12 mar">
                     <div class="new_title">
-                        <h2><a href="DiscountProduct" title="Khuyến mãi">Khuyến mãi</a></h2>
+                        <h2><a href="Product?typePage=DiscountProduct" title="Khuyến mãi">Khuyến mãi</a></h2>
                     </div>
 
                     <div class="three-col-slick evo-slick">
@@ -720,7 +720,7 @@
 <section class="awe-section-9">
 
 
-    <div class="container section_blogs">
+    <div class="container section_blogs">  <!-- check -->
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="new_title">
@@ -777,27 +777,6 @@
     <jsp:param name="articleId" value=""/>
 </jsp:include>
 
-<a href="#" class="suntory-alo-phone suntory-alo-green  d-sm-none hidden-lg hidden-md hidden-sm"
-   id="suntory-alo-phoneIcon" style="left: 0px; bottom: 0px;">
-    <div class="suntory-alo-ph-circle"></div>
-    <div class="suntory-alo-ph-circle-fill"></div>
-    <div class="suntory-alo-ph-img-circle"><i class="fa fa-phone"></i></div>
-</a>
-<a href="#" class="suntory-alo-phone suntory-alo-green d-none d-lg-block d-xl-block d-md-block hidden-xs"
-   id="suntory-alo-phoneIcon-mb" style="left: 0px; bottom: 0px;">
-    <div class="suntory-alo-ph-circle"></div>
-    <div class="suntory-alo-ph-circle-fill"></div>
-    <div class="suntory-alo-ph-img-circle"><i class="fa fa-phone"></i></div>
-    <span class="oi">012345678</span>
-</a>
-<div class="box_chat">
-    <a class="sc w d-sm-none hidden-lg hidden-md hidden-sm" href="#" title="Zalo">
-        <img src="${pageContext.request.contextPath}/img/icon/zalochat.png" alt="Zalo">
-    </a>
-    <a class="sc w d-none d-lg-block d-xl-block d-md-block hidden-xs" href="#" title="Zalo" target="">
-        <img src="${pageContext.request.contextPath}/img/icon/zalochat.png" alt="Zalo">
-    </a>
-</div>
 <script src="${pageContext.request.contextPath}/User_page/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/User_page/js/jquery.form-validator.min.js" type="text/javascript"></script>
 
@@ -816,9 +795,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js" integrity="sha512-FwqNPb8ENFXApJKNgRgYq5ok7VoOf5ImaOdzyF/xe/T5jdd/S0xq0CXBLDhpzaemxpQ61X3nLVln6KaczwhKgA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<div class="fb-livechat">
-    <a href="#" target="" title="Chat với chúng tôi!" class="ctrlq fb-button"></a>
-</div>
 
 </body>
 

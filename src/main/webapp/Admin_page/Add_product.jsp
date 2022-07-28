@@ -70,7 +70,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
-                            <form action="ProductManagement" method="post" enctype="multipart/form-data">
+                            <form action="Add_product_handle" method="post" enctype="multipart/form-data">
 
                                 <div class="form-group">
                                     <label>Ảnh</label>
@@ -83,9 +83,9 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Tên sản phẩm</label>
-                                    <input class="form-control" type="text" value="${product.name}">
+                                    <input class="form-control" name="name" type="text" value="${product.name}">
                                 </div>
-                                <div class="status-toggle">
+                                <div class="status-toggle form-group">
                                     <label>Hiển thị</label>
                                     <input id="rating_2" class="check" name="active" value="true" type="checkbox"
                                            <c:if test="${product.active}">checked</c:if>>
@@ -93,7 +93,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Danh mục</label>
-                                    <select class="form-control " required>
+                                    <select class="form-control " name="category" required>
                                         <c:forEach items="${categoryList}" var="c">
                                             <option
                                                     value="${c.id}"
@@ -106,7 +106,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Dán Nhãn</label>
-                                    <select class="form-control " required>
+                                    <select class="form-control " name="label" required>
                                         <c:forEach items="${labelList}" var="c">
                                             <option
                                                     value="${c.id}"
@@ -123,11 +123,15 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Giá bán</label>
-                                    <input class="form-control" type="text" value="${product.stringPrice(product.price)} VNĐ">
+                                    <input class="form-control" name="price" type="number" min="0" value="${product.stringPrice(product.price)} VNĐ">
+                                </div>
+                                <div class="form-group">
+                                    <label>Số lượng</label>
+                                    <input class="form-control" name="quantity" type="number" min="0" value="${product.quantity} VNĐ">
                                 </div>
                                 <div class="form-group">
                                     <label>Mô tả ngắn</label>
-                                    <textarea style="height: 100px;" class="form-control" type="text">${product.decription}</textarea>
+                                    <textarea style="height: 100px;" class="form-control" name="description" type="text">${product.description}</textarea>
                                 </div>
                                 <div class="mt-4">
                                     <button class="btn btn-primary" type="submit" value="Upload">Lưu thay đổi</button>

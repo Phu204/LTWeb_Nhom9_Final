@@ -9,7 +9,10 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 @WebServlet(name = "Product", value = "/Product")
@@ -31,7 +34,39 @@ public class Product_direct extends HttpServlet {
         }
 
         List<Product> productList = ProductService.getInstance().searchProduct(category,sub);
+
+        // check typepage
+        String typePage = request.getParameter("typePage");
+        try {
+            if (typePage.equalsIgnoreCase("DiscountProduct")){
+                productList = ProductService.getInstance().getAllDiscount();
+            }
+        } catch (NullPointerException e){
+            typePage = "Product";
+        }
+
+        //sort
+        String sort = "unsort";
+
+        try{
+            Comparator<Product> comp = null;
+            sort = request.getParameter("sort");
+            if (sort.equalsIgnoreCase("A-Z")) {
+                comp = ProductService.getInstance().sortAZ;
+            }
+            if (sort.equalsIgnoreCase("Z-A"))comp = ProductService.getInstance().sortZA;
+            if (sort.equalsIgnoreCase("new"))comp = ProductService.getInstance().sortnew;
+            if (sort.equalsIgnoreCase("pricelow"))comp = ProductService.getInstance().sortpricelow;
+            if (sort.equalsIgnoreCase("pricehigh"))comp = ProductService.getInstance().sortpricehigh;
+
+            Collections.sort(productList,comp);
+        } catch (Exception e){
+
+        }
+
+        //paging
         int numPage = (int)(productList.size()/15);
+        numPage +=  ((int)productList.size()%15 !=0)?1:0;
 
         int index = 1;
         try {
@@ -39,16 +74,16 @@ public class Product_direct extends HttpServlet {
         } catch (Exception e){
 
         }
-
-        // tính số product biểu diễn paging
+        if (index > numPage){
+            index =1;
+        }
         int start = 0 + (15* (index -1 ));
         int end = 15+(15* (index -1 ));
         List<Product> list = new ArrayList<Product>();
-        if (index > numPage +1){
-            index =1;
-        }
+
         try{
             list = productList.subList(start,end>productList.size()?productList.size():end);
+
         }catch (Exception e){
 
         }
@@ -57,12 +92,13 @@ public class Product_direct extends HttpServlet {
         List<String> brand = ProductService.getInstance().getBrand();
 
         String filter ="";
+        request.setAttribute("sort",sort);
         request.setAttribute("query",query);
         request.setAttribute("category",category);
         request.setAttribute("brand",brand);
         request.setAttribute("filter",filter);
-        request.setAttribute("typePage","Product");
-        request.setAttribute("title",sub[0]);//"Tất cả sản phẩm"
+        request.setAttribute("typePage",typePage);
+        request.setAttribute("title","Tất cả sản phẩm");
         request.setAttribute("products",list);
         request.setAttribute("numPage", numPage);
         request.setAttribute("categoryList",categoryList);

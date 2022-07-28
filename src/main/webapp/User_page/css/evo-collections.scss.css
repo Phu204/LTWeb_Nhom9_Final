@@ -479,10 +479,10 @@ keyframes placeHolderShimmer {
     padding: 3px 0
 }
 
-.filter-container__selected-filter-item>a {
-    color: #333;
-    font-size: em(13px)
-}
+/*.filter-container__selected-filter-item>a {*/
+/*    color: #333;*/
+/*    font-size: em(13px)*/
+/*}*/
 
 .filter-container__selected-filter-item>a:hover,
 .filter-container__selected-filter-item>a:focus {

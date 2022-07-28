@@ -33,7 +33,7 @@ public class OrderDao {
                 orderDetail.setId(rs.getInt("id"));
                 orderDetail.setOrderId(rs.getInt("ord_id"));
                 orderDetail.setProductId(rs.getInt("pro_id"));
-                orderDetail.setQuatity(rs.getInt("quantity"));
+                orderDetail.setQuantity(rs.getInt("quantity"));
                 list.add(orderDetail);
             }
             rs.close();
@@ -58,7 +58,7 @@ public class OrderDao {
                 orderDetail.setId(rs.getInt("id"));
                 orderDetail.setOrderId(rs.getInt("ord_id"));
                 orderDetail.setProductId(rs.getInt("pro_id"));
-                orderDetail.setQuatity(rs.getInt("quantity"));
+                orderDetail.setQuantity(rs.getInt("quantity"));
                 list.add(orderDetail);
             }
             rs.close();
@@ -83,7 +83,7 @@ public class OrderDao {
                 orderDetail.setId(rs.getInt("id"));
                 orderDetail.setOrderId(rs.getInt("ord_id"));
                 orderDetail.setProductId(rs.getInt("pro_id"));
-                orderDetail.setQuatity(rs.getInt("quantity"));
+                orderDetail.setQuantity(rs.getInt("quantity"));
                 list.add(orderDetail);
             }
             rs.close();

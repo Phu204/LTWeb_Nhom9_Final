@@ -549,7 +549,7 @@
                         </li>
 
 
-                        <li class="nav-item "><a class="nav-link" href="DiscountProduct" title="Khuyến mãi">Khuyến mãi</a></li>
+                        <li class="nav-item "><a class="nav-link" href="Product?typePage=DiscountProduct" title="Khuyến mãi">Khuyến mãi</a></li>
 
 
                         <li class=" nav-item has-childs ">
