@@ -1,14 +1,21 @@
 package com.example.ltweb_nhom9.Controller.admin_page;
 
+import com.example.ltweb_nhom9.Service.BlogService;
+import com.example.ltweb_nhom9.beans.Blog;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "BlogManagement", value = "/BlogManagement")
 public class BlogManagement_direct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Blog> blogs = BlogService.getInstance().getAll();
+
+        request.setAttribute("blogs",blogs);
         request.setAttribute("title","Quản Lý Blog");
         request.setAttribute("TypePage","BlogManagement");
         request.setAttribute("index",6);

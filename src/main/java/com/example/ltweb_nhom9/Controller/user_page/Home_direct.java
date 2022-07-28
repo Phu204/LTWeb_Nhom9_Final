@@ -19,7 +19,16 @@ public class Home_direct extends HttpServlet {
         list = ProductService.getInstance().getProductQuerybyCategory("đồ gia dụng");
         List<Product> GiaDungList = list.subList(0,list.size()>6?6:list.size());
 
+        list = ProductService.getInstance().getProductSold();
+        List<Product> BanChayList = list.subList(0,list.size()>6?6:list.size());
+
+        list = ProductService.getInstance().getProductQuerybyName("máy pha cafe");
+        List<Product> MayPhaCafeList = list.subList(0,list.size()>6?6:list.size());
+
+        request.setAttribute("title","Trang chủ");
         request.setAttribute("GiaDungList",GiaDungList);
+        request.setAttribute("BanChayList",BanChayList);
+        request.setAttribute("MayPhaCafeList",MayPhaCafeList);
         request.setAttribute("discountList",discountList);
         request.getRequestDispatcher("User_page/index.jsp").forward(request,response);
     }

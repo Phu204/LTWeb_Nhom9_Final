@@ -24,7 +24,7 @@ public class Edit_Order_direct extends HttpServlet {
             request.setAttribute("detailList",detailList);
             request.setAttribute("o",order);
         } catch (Exception e){
-            request.getRequestDispatcher("Admin_page/OrderManagement.jsp").forward(request,response);
+            response.sendRedirect("Admin_page/OrderManagement.jsp");
         }
 
 

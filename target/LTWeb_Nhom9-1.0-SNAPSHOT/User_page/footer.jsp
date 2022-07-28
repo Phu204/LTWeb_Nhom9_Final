@@ -16,6 +16,29 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/User_page/css/bootstrap.scss.css">
 </head>
 <body>
+
+
+<a href="javascript:;" class="suntory-alo-phone suntory-alo-green d-none d-lg-block d-xl-block d-md-block hidden-xs"
+   id="suntory-alo-phoneIcon-mb" style="left: 0px; bottom: 0px;">
+    <div class="suntory-alo-ph-circle"></div>
+    <div class="suntory-alo-ph-circle-fill"></div>
+    <div class="suntory-alo-ph-img-circle"><i class="fa fa-phone"></i></div>
+    <span class="oi">0123456789</span>
+</a>
+
+<div class="box_chat">
+    <a class="sc w d-sm-none hidden-lg hidden-md hidden-sm" href="https://zalo.me/0355081520" title="Zalo">
+        <img src="img/icon/zalochat.png" alt="Zalo">
+    </a>
+    <a class="sc w d-none d-lg-block d-xl-block d-md-block hidden-xs" href="https://zalo.me/0355081520" title="Zalo" target="_blank">
+        <img src="img/icon/zalochat.png" alt="Zalo">
+    </a>
+</div>
+
+<div class="fb-livechat">
+    <a href="http://m.me/nphugk" target="_blank" title="Chat với chúng tôi!" class="ctrlq fb-button"></a>
+</div>
+
 <footer class="footer bg-footer">
     <div class="site-footer">
         <div class="container">
@@ -101,7 +124,7 @@
                 </div>
             </div>
 
-            <div class="back-to-top show" title="Lên đầu trang"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
+            <div class="back-to-top show" href="#" title="Lên đầu trang"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
 
         </div>
     </div>

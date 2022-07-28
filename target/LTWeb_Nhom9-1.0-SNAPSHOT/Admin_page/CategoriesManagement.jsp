@@ -37,6 +37,11 @@
 <div class="container">
     <div class="content container-fluid">
 
+        <div class="page-header">
+            <div class="col">
+                <h3 class="page-title">Danh Mục</h3>
+            </div>
+        </div>
 
 
         <div class="row">

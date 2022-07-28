@@ -91,7 +91,7 @@
                                                 <tr>
                                                     <td>${d.getproduct().name}</td>
                                                     <td>${o.stringPrice(d.getproduct().getTotalPrice())}VNĐ</td>
-                                                    <td>${d.quatity}</td>
+                                                    <td>${d.quantity}</td>
                                                     <td>${o.stringPrice(d.getTotalPrice())}VNĐ</td>
 <%--                                                    <td class="text-right">--%>
 <%--                                                        <button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i> Xóa</button>--%>

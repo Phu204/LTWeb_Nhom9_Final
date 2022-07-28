@@ -65,29 +65,29 @@
                                 <!-- <table class="table table-hover table-center mb-0 datatable"> -->
                                 <!-- Thay đổi code ở đây Thay đổi theo file word -->
                                 <!-- Form -->
-                                <form action="BlogManagement.html">
+                                <form action="BlogManagement">
 
                                     <div class="form-group">
                                         <label>Ảnh</label>
-                                        <input class="form-control" type="file">
+                                        <input class="form-control" type="file" >
                                     </div>
                                     <div class="form-group">
                                         <div class="avatar">
-                                            <img class="avatar-img rounded" alt="" src="">
+                                            <img class="avatar-img rounded" alt="" src="${b.img}">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label>Title</label>
-                                        <input class="form-control" type="text" value="">
+                                        <input class="form-control" type="text" value="${b.title}">
                                     </div>
                                     <div class="form-group">
-                                        <label>Tóm tắt</label>
-                                        <textarea style="height: 100px;" class="form-control" type="text"></textarea>
+                                        <label>Nội dung</label>
+                                        <textarea style="height: 100px;" class="form-control" type="text">${b.content}</textarea>
                                     </div>
 
                                     <div class="mt-4">
                                         <button class="btn btn-primary" type="submit">Lưu thay đổi</button>
-                                        <a href="BlogManagement.html" class="btn btn-link">Hủy</a>
+                                        <a href="BlogManagement" class="btn btn-link">Hủy</a>
                                     </div>
                                 </form>
                                 <!-- /Form -->
