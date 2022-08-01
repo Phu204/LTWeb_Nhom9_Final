@@ -8,13 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/User_page/css/evo-main.scss.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/User_page/css/base.scss.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/User_page/css/bootstrap.scss.css">
-</head>
+
 <body>
 
 

@@ -6,6 +6,7 @@
         <exploded>true</exploded>
         <module>LTWeb_Nhom9</module>
         <packaging>war</packaging>
+        <unpackNestedArchives>false</unpackNestedArchives>
       </options>
     </properties>
     <root id="root">
@@ -14,6 +15,9 @@
           <element id="module-output" name="LTWeb_Nhom9" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: javax.mail:mail:1.4" />
+          <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
+          <element id="library" level="project" name="Maven: com.sun.mail:javax.mail:1.6.2" />
           <element id="file-copy" path="$MAVEN_REPOSITORY$/javax/servlet/jstl/1.2/jstl-1.2.jar" output-file-name="javax.servlet-jstl-1.2.jar" />
           <element id="file-copy" path="$MAVEN_REPOSITORY$/jstl/jstl/1.2/jstl-1.2.jar" output-file-name="jstl-jstl-1.2.jar" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.25" />

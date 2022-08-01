@@ -9,7 +9,7 @@ public class DBConect {
     private static DBConect instance;
     private static String DB_URL = "jdbc:mysql://localhost:3306/shopteam9_db";
     private static String USER = "root";
-    private static String PASS = "LTWteam9";
+    private static String PASS = "";
 
     private Connection connection;
 
@@ -24,18 +24,24 @@ public class DBConect {
         return instance;
     }
 
-    private void connect() throws SQLException, ClassNotFoundException {
-        if (connection==null || connection.isClosed()){
+    public Connection connect(){
+        Connection connection = null;
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection= DriverManager.getConnection(DB_URL,USER,PASS);
+            connection = DriverManager.getConnection(DB_URL,USER,PASS);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
+        return connection;
     }
 
     public Statement get(){
         try {
             connect();
             return connection.createStatement();
-        }catch (SQLException | ClassNotFoundException e){
+        }catch (SQLException e){
             e.printStackTrace();
             return null;
         }
