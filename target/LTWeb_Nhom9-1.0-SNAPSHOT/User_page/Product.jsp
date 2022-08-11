@@ -163,7 +163,8 @@
                                     </div>
                                 </c:if>
 
-                                <a href="Detail"
+<%--                                chu y thay doi ten -tat ca nam trong foreach - them--%>
+                                <a href="Detail?id=${p.id}"
                                    title=${p.name} class="image-resize">
                                     <img class="lazy"
                                          src="Detail"
@@ -177,19 +178,19 @@
 
                                 </a>
                                 <div class="button-add hidden-sm hidden-xs">
-                                    <form action="/cart/add" method="post" enctype="multipart/form-data"
-                                          class="hidden-md variants form-nut-grid form-ajaxtocart"
-                                          data-id="product-actions-23508466">
+
+                                         <form class="hidden-md variants form-nut-grid form-ajaxtocart"
+                                          data-id="product-actions-23508466" action="buynow">
 
 
-                                        <input type="hidden" name="variantId" value="53448979"/>
-                                        <button type="button" title="Mua ngay" class="action"
-                                                onclick="buy_now('53448979')"><i class="fa fa-check-square-o"
+                                        <input type="hidden" name="id_product" value="${p.id}"/>
+                                        <button type="submit" title="Mua ngay" class="action"
+                                               ><i class="fa fa-check-square-o"
                                                                                  aria-hidden="true"></i></button>
                                         <button type="button" title="Thêm vào giỏ" class="action add_to_cart"><i
-                                                class="fa fa-shopping-bag" aria-hidden="true"></i></button>
+                                                class="fa fa-shopping-bag" aria-hidden="true" onclick="addCart(${p.id})"></i></button>
 
-                                    </form>
+                                         </form>
                                 </div>
                             </div>
                             <div class="product-detail clearfix">
@@ -623,6 +624,17 @@
             });
         alert(checked)
     };
+    function addCart(e) {
+        $.ajax({
+            url: 'AddCart',
+            type: 'GET',
+            data: {id_product:e},
+            success: function(responseText){
+                $('.count_item_pr').html(responseText) ;
+            }
+        });
+
+    };
     function sortList() {
         var list, i, switching, b, shouldSwitch;
         list = document.getElementById("id01");
@@ -655,6 +667,7 @@
             }
         }
     }
+
 </script>
 
 <div class="fb-livechat">

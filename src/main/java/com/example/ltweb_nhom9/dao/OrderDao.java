@@ -4,10 +4,9 @@ import com.example.ltweb_nhom9.beans.Order;
 import com.example.ltweb_nhom9.beans.OrderDetail;
 import com.example.ltweb_nhom9.db.DBConect;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
+
 import java.util.List;
 
 public class OrderDao {
@@ -19,7 +18,82 @@ public class OrderDao {
         if (instance == null) instance = new OrderDao();
         return instance;
     }
+    public int getIdLastOrder(){
+        Statement statement = DBConect.getInstance().get();
 
+        String sql = "select max(id) from orders";
+        int id = 0;
+        try {
+            ResultSet rs = statement.executeQuery(sql);
+            if (rs.next()){
+                id = rs.getInt("max(id)");
+            }
+            rs.close();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return id;
+    }
+    public int getIdLastOrderDetail(){
+        Statement statement = DBConect.getInstance().get();
+
+        String sql = "select max(id) from orderdetail";
+        int id = 0;
+        try {
+            ResultSet rs = statement.executeQuery(sql);
+            if (rs.next()){
+                id = rs.getInt("max(id)");
+            }
+            rs.close();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return id;
+    }
+    public boolean InsertOrderDetail(int id,int orderId, int productId,int quantity ){
+        Statement statement = DBConect.getInstance().get();
+
+        String sql = "INSERT INTO orderdetail VALUE(" +
+                id + "," + orderId + "," + productId + "," + quantity +" )";
+        int update = 0;
+        try {
+            update = statement.executeUpdate(sql);
+
+            return update == 1;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    public boolean InsertOrder(int id, int customerId, Date datecreate, Date dateupdate, double price, int addressId, double phone,
+                               boolean payment, int status, int shipprice, String note ){
+
+
+        try {
+            String sql = "insert into orders values(?,?,?,?,?,?,?,?,?,?,?)";
+            PreparedStatement ps= DBConect.getInstance().get2(sql);
+            ps.setInt(1,id);
+            ps.setInt(2,customerId);
+            ps.setDate(3,datecreate);
+            ps.setDate(4,dateupdate);
+            ps.setDouble(5,price);
+            ps.setInt(6,addressId);
+            ps.setDouble(7,phone);
+            ps.setBoolean(8,payment);
+            ps.setInt(9,status);
+            ps.setInt(10,shipprice);
+            ps.setString(11,note);
+            int update = 0;
+            update = ps.executeUpdate();
+
+            return update == 1;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
     public List<OrderDetail> getByCategoryId(int id){
         Statement statement = DBConect.getInstance().get();
         String sql = "SELECT o.* FROM orderdetail o join product p on o.pro_id = p.id where p.category_id = " + id;

@@ -67,5 +67,35 @@ public class AddressDao {
 
         return list;
     }
+    public boolean InsertAddress(int id, String province, String district, String ward, String addressDetail){
+        Statement statement = DBConect.getInstance().get();
+        String sql = "INSERT INTO address VALUE(" +
+                id + ",'" + province + "','" + district + "','" + ward + "','" + addressDetail +"')";
+        int update = 0;
+        try {
+            update = statement.executeUpdate(sql);
 
+            return update == 1;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    public int getIdLastAddress(){
+        Statement statement = DBConect.getInstance().get();
+
+        String sql = "select max(id) from address";
+        int id = 0;
+        try {
+            ResultSet rs = statement.executeQuery(sql);
+            if (rs.next()){
+                id = rs.getInt("max(id)");
+            }
+            rs.close();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return id;
+    }
 }
