@@ -29,17 +29,7 @@
 
 </head>
 <body>
-<div class="evo-search-bar">
-    <form action="Product" method="get">
-        <div class="input-group">
-            <input type="text" name="query" class="search-auto form-control" placeholder="Bạn cần tìm gì hôm nay?"/>
-            <span class="input-group-btn">
-				<button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
-			</span>
-        </div>
-    </form>
 
-</div>
 <header class="header">
     <div class="evo-top-header">
         <div class="container">
@@ -94,7 +84,7 @@
                     </div>
                 </div>
                 <div class="col-md-5 evo-header-search hidden-sm hidden-xs">
-                    <form action="#" method="get">
+                    <form action="Product" method="get">
                         <div class="input-group">
                             <input type="text" name="query" class="search-auto form-control"
                                    placeholder="Bạn cần tìm gì...?" />

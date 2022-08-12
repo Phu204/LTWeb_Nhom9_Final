@@ -62,7 +62,7 @@
                                 </thead>
                                 <tbody>
 
-                                <c:forEach items="${categoryList}" var="c"> <!-- check -->
+                                <c:forEach items="${categoryList}" var="c">
                                     <tr>
                                         <td>${c.id}</td>
                                         <td>

@@ -16,7 +16,7 @@ public class CategoriesManagement_direct extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Category> categoryList = CategoryDao.getInstance().getAll();
 
-        request.setAttribute("products", ProductService.getInstance().getAll());
+        request.setAttribute("products", ProductService.getInstance().getAll(false));
         request.setAttribute("categoryList",categoryList);
         request.setAttribute("title","Quản Lý Danh Mục");
         request.setAttribute("TypePage","CategoriesManagement");

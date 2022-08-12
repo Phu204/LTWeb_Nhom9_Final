@@ -266,9 +266,11 @@
                         <c:forEach items="${GiaDungList}" var="p">
                             <div class="evo-product-block-item ">
                                 <div class="product-img">
-                                    <div class="product-sale">
-                                        <span>${p.getLabel()} </span>
-                                    </div>
+                                    <c:if test="${p.lableId != 0}" >
+                                        <div class="product-sale">
+                                            <span>${p.getLabel()} </span>
+                                        </div>
+                                    </c:if>
                                     <a href="Detail"
                                        title="${p.name}" class="image-resize">
                                         <img class="lazy"
@@ -282,7 +284,7 @@
                                              alt="${p.name}"/>
 
                                     </a>
-                                    <div class="button-add hidden-sm hidden-xs"><
+                                    <div class="button-add hidden-sm hidden-xs"><!-- undefine -->
                                         <form action="/cart/add" method="post" enctype="multipart/form-data"
                                               class="hidden-md variants form-nut-grid form-ajaxtocart"
                                               data-id="product-actions-18074390">
@@ -314,10 +316,11 @@
 
                                                     ${p.stringPrice(p.getTotalPrice())}₫
 
-                                                <span class="pro-price-del">
-						<del class="compare-price">${p.stringPrice(p.price)}₫</del>
-					</span>
-
+                                                        <c:if test="${p.isSale()}">
+                                                        <span class="pro-price-del">
+                                                            <del class="compare-price">${p.stringPrice(p.price)}₫</del>
+                                                        </span>
+                                                        </c:if>
 
                                             </p>
                                         </div>
@@ -436,9 +439,11 @@
 
                                                         ${p.stringPrice(p.getTotalPrice())}₫
 
-                                                    <span class="pro-price-del">
-					<del class="compare-price">${p.stringPrice(p.price)}₫</del>
-				</span>
+                                                            <c:if test="${p.isSale()}">
+                                                        <span class="pro-price-del">
+                                                            <del class="compare-price">${p.stringPrice(p.price)}₫</del>
+                                                        </span>
+                                                            </c:if>
 
 
                                                 </p>
@@ -484,9 +489,11 @@
 
                                                         ${p.stringPrice(p.getTotalPrice())}₫
 
-                                                    <span class="pro-price-del">
-					<del class="compare-price">${p.stringPrice(p.price)}₫</del>
-				</span>
+                                                            <c:if test="${p.isSale()}">
+                                                        <span class="pro-price-del">
+                                                            <del class="compare-price">${p.stringPrice(p.price)}₫</del>
+                                                        </span>
+                                                            </c:if>
 
 
                                                 </p>
@@ -541,9 +548,11 @@
 
                                                         ${p.stringPrice(p.getTotalPrice())}₫
 
-                                                    <span class="pro-price-del">
-					<del class="compare-price">${p.stringPrice(p.price)}₫</del>
-				</span>
+                                                            <c:if test="${p.isSale()}">
+                                                        <span class="pro-price-del">
+                                                            <del class="compare-price">${p.stringPrice(p.price)}₫</del>
+                                                        </span>
+                                                            </c:if>
 
 
                                                 </p>
@@ -589,9 +598,11 @@
 
                                                         ${p.stringPrice(p.getTotalPrice())}₫
 
-                                                    <span class="pro-price-del">
-					<del class="compare-price">${p.stringPrice(p.price)}₫</del>
-				</span>
+                                                            <c:if test="${p.isSale()}">
+                                                        <span class="pro-price-del">
+                                                            <del class="compare-price">${p.stringPrice(p.price)}₫</del>
+                                                        </span>
+                                                            </c:if>
 
 
                                                 </p>
@@ -645,9 +656,11 @@
 
                                                         ${p.stringPrice(p.getTotalPrice())}₫
 
-                                                    <span class="pro-price-del">
-					<del class="compare-price">${p.stringPrice(p.price)}₫</del>
-				</span>
+                                                            <c:if test="${p.isSale()}">
+                                                        <span class="pro-price-del">
+                                                            <del class="compare-price">${p.stringPrice(p.price)}₫</del>
+                                                        </span>
+                                                            </c:if>
 
 
                                                 </p>
@@ -693,9 +706,11 @@
 
                                                         ${p.stringPrice(p.getTotalPrice())}₫
 
-                                                    <span class="pro-price-del">
-					<del class="compare-price">${p.stringPrice(p.price)}₫</del>
-				</span>
+                                                            <c:if test="${p.isSale()}">
+                                                        <span class="pro-price-del">
+                                                            <del class="compare-price">${p.stringPrice(p.price)}₫</del>
+                                                        </span>
+                                                            </c:if>
 
 
                                                 </p>

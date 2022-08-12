@@ -62,12 +62,10 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="table-responsive">
-                                <!-- <table class="table table-hover table-center mb-0 datatable"> -->
-                                <!-- Thay đổi code ở đây Thay đổi theo file word -->
                                 <!-- Form -->
-                                <form action="OrderManagement">
+                                <form action="Edit_Order_handle?id=${o.id}&addressId=${o.addressId}" method="post" >
 
-                                    <div class="form-group">
+                                    <div class="form-group" >
                                         <label>Khách Hàng</label>
                                         <div class="customer"><strong>${o.getCustomerName()}</strong></div>
                                     </div>
@@ -109,14 +107,28 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group"> <!-- check -->
                                         <label>Địa chỉ</label>
-                                        <textarea style="height: 100px;" class="form-control" type="text">${o.getAddress()}</textarea>
+                                        <textarea name="address" style="height: 100px;" class="form-control" type="text" required>${o.getAddress()}</textarea>
                                     </div>
 
                                     <div class="form-group">
                                         <label>Phone</label>
-                                        <input class="form-control" type="text" value="${o.getStringPhone()}">
+                                        <input name="phone" class="form-control" type="number" min="0" value="${o.getStringPhone()}" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Trạng Thái</label>
+                                        <select class="form-control " name="status" required>
+                                            <c:forEach items="${statusList}" var="t" varStatus="loop">
+                                                <option
+                                                        value="${loop.index + 1}"
+                                                        <c:if test="${t == status}">
+                                                            selected
+                                                        </c:if>
+                                                >${t}</option>
+                                            </c:forEach>
+                                        </select>
                                     </div>
 
                                     <div class="form-group">
@@ -134,7 +146,7 @@
 
                                     <div class="form-group">
                                         <label>Ghi chú</label>
-                                        <textarea style="height: 100px;" class="form-control" type="text">${o.note} .</textarea>
+                                        <textarea id="description" name="decription" style="height: 100px;" class="form-control" type="text">${o.note}</textarea>
                                     </div>
 
                                     <div class="mt-4">
@@ -143,7 +155,6 @@
                                     </div>
                                 </form>
                                 <!-- /Form -->
-                                <!-- Thêm vào nội dung ở đây -->
                                 </table>
                             </div>
                         </div>
@@ -174,4 +185,10 @@
 
 <script src="${pageContext.request.contextPath}/Admin_page/js/admin.js"></script>
 
+
+<script src="${pageContext.request.contextPath}/Admin_page/lib/ckeditor/ckeditor.js"></script>
+<script>
+    // CKEDITOR.replace( 'address' );
+    CKEDITOR.replace( 'description' );
+</script>
 </html>

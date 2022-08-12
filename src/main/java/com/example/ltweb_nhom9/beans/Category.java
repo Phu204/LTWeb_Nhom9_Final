@@ -63,6 +63,6 @@ public class Category implements Serializable {
         return CategoryDao.getInstance().getQuantityRemainOfCategory(this.id);
     }
     public int getQuantityProduct(){
-        return ProductService.getInstance().getProductQuerybyCategory(this.name).size();
+        return ProductService.getInstance().getProductQuerybyCategory(this.name,false).size();
     }
 }

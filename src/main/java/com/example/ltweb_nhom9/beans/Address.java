@@ -19,6 +19,14 @@ public class Address implements Serializable {
 
     public Address(){}
 
+    public Address(int id, String provine_city, String dictrict, String ward, String detail) {
+        this.id = id;
+        this.provine_city = provine_city;
+        this.dictrict = dictrict;
+        this.ward = ward;
+        this.detail = detail;
+    }
+
     public int getId() {
         return id;
     }

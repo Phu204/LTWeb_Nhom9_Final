@@ -17,6 +17,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,7 +27,7 @@ public class Add_product_handle extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Category> categoryList = CategoryDao.getInstance().getAll();
-        List<Product> productList =  ProductService.getInstance().getAll();
+        List<Product> productList =  ProductService.getInstance().getAll(false);
         List<Label> labelList = LabelService.getInstance().getAll();
 
         request.setAttribute("categoryList",categoryList);
@@ -50,20 +51,23 @@ public class Add_product_handle extends HttpServlet {
             File productdir = new File(request.getServletContext().getAttribute("FILE_DIR") + File.separator + "product");
             if(!productdir.exists()) productdir.mkdirs();
 
+            List<String> imgdirlist = new ArrayList<>();
             File imgdir = null;
             Map<String,String> map = new HashMap<String,String>();
             for (FileItem fileItem : fileItemList) {
-//                File file = new File(request.getServletContext().getAttribute("FILE_DIR") + File.separator + "product" + File.separator + fileItem.getName());
-//
-//                System.out.println("path file " + file.getAbsolutePath());
-//                fileItem.write(file);
+                File file = new File(request.getServletContext().getAttribute("FILE_DIR") + File.separator + "product" + File.separator + fileItem.getName());
+
+                System.out.println("path file " + file.getAbsolutePath());
+                fileItem.write(file);
 
                 if (fileItem.isFormField()){
                     map.put(fileItem.getFieldName(),fileItem.getString("UTF-8").trim());
                 } else if (!fileItem.isFormField()) {
                     imgdir = new File(request.getServletContext().getAttribute("FILE_DIR") + File.separator + "product" + File.separator + fileItem.getName());
+                    if(imgdir.exists()) imgdir = new File(request.getServletContext().getAttribute("FILE_DIR") + File.separator + "product" + File.separator + System.currentTimeMillis() + "-" + fileItem.getName());
                     System.out.println("path file " + imgdir.getAbsolutePath());
                     fileItem.write(imgdir);
+                    imgdirlist.add(imgdir.getAbsolutePath());
                 }
             }
 
@@ -71,13 +75,34 @@ public class Add_product_handle extends HttpServlet {
             String name = map.get("name");
             int category = Integer.parseInt(map.get("category"));
             int label = Integer.parseInt(map.get("label"));
-            int price = Integer.parseInt(map.get("price"));
+            double price = Double.parseDouble(map.get("price"));
             int quantity = Integer.parseInt(map.get("quantity"));
-            String description = map.get("description");
-            boolean active = map.get("active").equals("true")?true:false;
-            System.out.println(name + " " +category + " " +active + " " +label+ " " +price+ " " +quantity+ " " +description+ " " +imgdir.getAbsolutePath());
+            String description;
+            try {
+                description = map.get("description");
+            } catch (NullPointerException e){
+                description = null;
+            }
 
-            boolean insertimg = ProductDao.getInstance().InsertImage(id,imgdir.getAbsolutePath(), imgdir.getAbsolutePath(), imgdir.getAbsolutePath(), imgdir.getAbsolutePath());
+            boolean active =false;
+            try {
+                active  = map.get("active").equals("true");
+            } catch (NullPointerException e){
+
+            }
+            System.out.println(id + " " + name + " " +category + " " +active + " " +label+ " " +price+ " " +quantity+  " " +imgdir.getAbsolutePath());
+
+            String img1 = null,img2 = null,img3 = null,img4 = null;
+            try {
+                img1 = imgdirlist.get(0).replace("\\","\\\\");
+                img2 = imgdirlist.get(1).replace("\\","\\\\");
+                img3 = imgdirlist.get(2).replace("\\","\\\\");
+                img4 = imgdirlist.get(3).replace("\\","\\\\");
+            } catch (IndexOutOfBoundsException e){
+
+            }
+
+            boolean insertimg = ProductDao.getInstance().InsertImage(id,img1, img2, img3, img4);
             boolean insertpro = ProductDao.getInstance().InsertProduct(id,name,active,category,price,label,id,quantity,description);
 
             System.out.println(insertimg +"- insert - "+ insertpro);

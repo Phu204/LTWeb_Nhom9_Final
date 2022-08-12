@@ -219,4 +219,21 @@ public class OrderDao {
 
         return list;
     }
+
+    public boolean UpdateOrder(int id,int addressId,String phone,String decription,int status){
+        Statement statement = DBConect.getInstance().get();
+
+        String sql = "UPDATE orders SET address_id = "+ addressId + ", " + "phone = '"+ phone + "', " +
+                " note = '"+ decription + "',status =  " + status +
+                " where id = "+ id +"";
+        int update = 0;
+        try {
+            update = statement.executeUpdate(sql);
+
+            return update == 1;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }

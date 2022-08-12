@@ -128,6 +128,10 @@ public class Product implements Serializable {
 
     }
 
+    public boolean isSale(){
+        return lableId>0;
+    }
+
     public String getLabel(){
         try {
             Label label = LabelDao.getInstance().getById(lableId);
