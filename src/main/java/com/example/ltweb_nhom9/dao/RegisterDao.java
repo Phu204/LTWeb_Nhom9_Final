@@ -96,13 +96,4 @@ public class RegisterDao {
         return false;
     }
 
-    public static void main(String[] args) {
-        registerId_user("hieu", "0938456565", "19130072@st.hcmuaf.edu.vn", "123987");
-        Date now = new Date();
-        Timestamp timestamp = new Timestamp(now.getTime());
-        System.out.println(timestamp);
-        System.out.println("done");
-//        System.out.println(checkEmailDuplicates("minhdan@gmail.com"));
-
-    }
 }

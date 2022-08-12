@@ -20,17 +20,17 @@
     <link rel="icon" href="../img/icon/logo.png" type="image/x-icon"/>
 
 
-    <link href="/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="/css/plugin.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="/css/base.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="/css/evo-main.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="/css/slick.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/plugin.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/base.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/evo-main.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/slick.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 
-    <link href="/css/Reposive&&ContacIcon.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/Reposive&&ContacIcon.css" rel="stylesheet" type="text/css"/>
 
-    <link href="/css/evo-accounts.scss.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="css/all.css"
+    <link href="${pageContext.request.contextPath}/User_page/css/evo-accounts.scss.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/User_page/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           type="text/css"/>
@@ -96,7 +96,7 @@
                 <div id="login">
                     <h1 class="title-head text-center margin-bottom-30">Đăng ký tài khoản</h1>
 
-                    <form accept-charset="utf-8" action="/LTWeb_Nhom9/Register" id="customer_register"
+                    <form accept-charset="utf-8" action="/LTWeb_Nhom9_war/Register" id="customer_register"
                           method="post">
                         <input name="FormType" type="hidden" value="customer_register"/>
                         <input name="utf8" type="hidden" value="true"/><input type="hidden"

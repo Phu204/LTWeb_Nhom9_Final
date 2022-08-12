@@ -26,9 +26,5 @@ public class ContactDao {
 
     }
 
-    public static void main(String[] args) {
-        addContact("hieu","hieu@gmail.com","02384833","test1");
-        System.out.println("done");
-    }
 
 }

@@ -27,11 +27,11 @@
                             </li>
                         </c:if>
                         <c:if test="${sessionScope.auth != null }">
-                            <li><a rel="nofollow" href="/LTWeb_Nhom9/LogOut" title="Đăng xuất"><i class="fa fa-sign-out"
+                            <li><a rel="nofollow" href="/LTWeb_Nhom9_war/LogOut" title="Đăng xuất"><i class="fa fa-sign-out"
                                                                                      aria-hidden="true"></i> Đăng
                                 xuất</a></li>
-                            <li><a rel="nofollow" href="userPage.jsp" title="hello name"><i class="fa fa-user"
-                                                                                            aria-hidden="true"></i>
+                            <li><a rel="nofollow" href="account.jsp" title="hello name"><i class="fa fa-user"
+                                                                                           aria-hidden="true"></i>
                                 Hello ${sessionScope.auth.name}</a>
                             </li>
                         </c:if>

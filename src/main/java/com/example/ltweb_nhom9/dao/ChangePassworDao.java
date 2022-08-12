@@ -19,8 +19,4 @@ public class ChangePassworDao {
         return false;
     }
 
-    public static void main(String[] args) {
-        System.out.println(changePassword("nguyenngochieu040301@gmail","123456","hieu3"));
-        System.out.println("done");
-    }
 }

@@ -82,15 +82,4 @@ public class GetPasswordDao {
         return colorMsg;
     }
 
-    public static void main(String[] args) {
-//        System.out.println(checkUser("huyentrang@gmail.com"));
-//        System.out.println(randomPassword(6));
-        String newPass = GetPasswordDao.randomPassword(6);
-        System.out.println(randomPassword(6));
-        System.out.println(newPass);
-//        System.out.println(updatePassword("nguyenngochieu040301@gmail.com", newPass));
-        System.out.println("done");
-    }
-
-
 }
