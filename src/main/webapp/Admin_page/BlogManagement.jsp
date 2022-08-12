@@ -64,7 +64,6 @@
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-hover table-center mb-0 datatable">
-                                    <!-- Thay đổi code ở đây Thay đổi theo file word -->
                                     <thead>
                                     <tr>
                                         <th>ID</th>
@@ -73,7 +72,6 @@
                                         <th class="text-right">Hành Động</th>
                                     </tr>
                                     </thead>
-                                    <!-- Thêm vào nội dung ở đây -->
                                     <tbody>
 
                                     <c:forEach items="${blogs}" var="b">
@@ -82,6 +80,7 @@
                                             <td>${b.title}</td>
                                             <td>${b.datecreate}</td>
                                             <td class="text-right">
+                                                <button onclick="delete_blog(${b.id})" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i> Xóa</button>
                                                 <a href="Add_Blog?id=${b.id}" class="btn btn-outline-light btn-sm bg-success-light mr-2">	<i class="far fa-edit mr-1"></i> Sửa</a>
                                             </td>
                                         </tr>
@@ -118,5 +117,30 @@
 <script src="${pageContext.request.contextPath}/Admin_page/js/select2.min.js"></script>
 
 <script src="${pageContext.request.contextPath}/Admin_page/js/admin.js"></script>
+
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    function delete_blog(id) {
+
+        swal({
+            title: "Bạn có chắc muốn xóa!!",
+            text: "Khi xóa bài viết sẽ không thể khôi phục lại!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    document.location.href= "Delete_Blog?id="+id;
+                    swal("Bài viết đã được xóa!", {
+                        icon: "success",
+                    });
+                } else {
+                    swal("Bài viết đã được giữ lại!");
+                }
+            });
+    }
+</script>
 
 </html>

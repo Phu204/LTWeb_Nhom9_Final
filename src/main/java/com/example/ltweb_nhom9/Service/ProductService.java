@@ -23,17 +23,17 @@ public class ProductService {
         return ProductDao.getInstance().getById(id);
     }
 
-    public List<Product> getAll() {
-        return ProductDao.getInstance().getAll();
+    public List<Product> getAll(boolean checkActive) {
+        return ProductDao.getInstance().getAll(checkActive);
     }
 
     public List<Product> getAllDiscount(){return ProductDao.getInstance().getAllDiscount();}
 
     public List<Product> getProductSold() {return ProductDao.getInstance().getProductSold();}
 
-    public List<Product> getProductQuerybyName(String name){return ProductDao.getInstance().queryProductByName(name);}
+    public List<Product> getProductQuerybyName(String name,boolean checkActive){return ProductDao.getInstance().queryProductByName(name,checkActive);}
 
-    public List<Product> getProductQuerybyCategory(String category){return ProductDao.getInstance().queryProductByCategory(category);}
+    public List<Product> getProductQuerybyCategory(String category,boolean checkAcitve){return ProductDao.getInstance().queryProductByCategory(category,checkAcitve);}
 
     public List<String> getBrand(){
         List<String> brand = new ArrayList<String>(Arrays.asList("Bosch","Delonghi","Grohe","Klarstein","Lighting Ever","Nachtmann","Panasonic","Philips","Steba","KAFF","TOTO","WMF"));
@@ -42,11 +42,11 @@ public class ProductService {
 
     public List<Product> getProductListInOrder(int id){return ProductDao.getInstance().getProductListInOrder(id);}
 
-    public List<Product> filterProduct(String name,String category){ return ProductDao.getInstance().filterProduct(name,category);}
+    public List<Product> filterProduct(String name,String category,boolean checkAcitve){ return ProductDao.getInstance().filterProduct(name,category,checkAcitve);}
 
     public List<Product> searchProduct(String category,String... name){ return ProductDao.getInstance().searchProduct(category,name);}
 
-    public List<Product> searchProduct(String category,int minprice,int maxprice,String... name){ return ProductDao.getInstance().searchProduct(category,minprice,maxprice,name);}
+    public List<Product> searchProduct(String category,int minprice,int maxprice,boolean isonlysale,String... name){ return ProductDao.getInstance().searchProduct(category,minprice,maxprice,isonlysale,name);}
 
     public int getIdLastProduct(){ return ProductDao.getInstance().getIdLastProduct();}
 
@@ -81,6 +81,13 @@ public class ProductService {
         @Override
         public int compare(Product o1, Product o2) {
             return o2.getTotalPrice()>o1.getTotalPrice()?1:-1;
+        }
+    };
+
+    public static Comparator<Product> sortsale = new Comparator<Product>() {
+        @Override
+        public int compare(Product o1, Product o2) {
+            return o1.getLableId()<o2.getLableId()?1:-1;
         }
     };
 

@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class BlogDao {
@@ -66,4 +67,71 @@ public class BlogDao {
         return list;
     }
 
+    public int getIdLastBlog(){
+        Statement statement = DBConect.getInstance().get();
+
+        String sql = "select max(id) from blog";
+        int id = 0;
+        try {
+            ResultSet rs = statement.executeQuery(sql);
+            if (rs.next()){
+                id = rs.getInt("max(id)");
+            }
+            rs.close();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return id;
+    }
+
+    public boolean InsertBlog(int id, String title, String img, boolean active, String datecreate, String content){
+        Statement statement = DBConect.getInstance().get();
+
+        String sql = "INSERT INTO blog VALUE(" +
+                id + ",'" + title + "'," + active + ",'" + img + "','" + datecreate + "','" +
+                content + "')";
+        int update = 0;
+        try {
+            update = statement.executeUpdate(sql);
+
+            return update == 1;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean UpdateBlog(int id, String title, String img, boolean active, String content){
+        Statement statement = DBConect.getInstance().get();
+
+        String sql = "UPDATE blog SET title = '"+ title + "', active = "+ active + ",img = '" + img + "', " +
+                "content = '"+ content +"' " +
+                "where id = "+ id +"";
+        int update = 0;
+        try {
+            update = statement.executeUpdate(sql);
+
+            return update == 1;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean DeleteBlog(int id){
+        Statement statement = DBConect.getInstance().get();
+
+        String sql = "DELETE FROM blog " +
+                "where id = "+ id +"";
+        int update = 0;
+        try {
+            update = statement.executeUpdate(sql);
+
+            return update == 1;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }

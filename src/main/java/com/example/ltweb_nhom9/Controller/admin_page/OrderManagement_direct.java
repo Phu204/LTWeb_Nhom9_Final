@@ -36,7 +36,6 @@ public class OrderManagement_direct extends HttpServlet {
         } catch (Exception e){
 
         }
-
         request.setAttribute("status",status);
         request.setAttribute("orders",orders);
         request.setAttribute("title","Quản Lý Đơn Hàng");

@@ -20,7 +20,7 @@ public class Dashboard_direct extends HttpServlet {
 
         request.setAttribute("orders",orders);
         request.setAttribute("title","Dash Board");
-        request.setAttribute("NumProduct", ProductService.getInstance().getAll().size());
+        request.setAttribute("NumProduct", ProductService.getInstance().getAll(false).size());
         request.setAttribute("NumUser", CustomerService.getInstance().getAll().size());
         request.setAttribute("TypePage","Dashboard");
         request.setAttribute("index",1);

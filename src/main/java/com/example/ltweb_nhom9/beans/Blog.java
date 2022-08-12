@@ -14,6 +14,15 @@ public class Blog implements Serializable {
 
     public Blog(){}
 
+    public Blog(int id, String title, String img, boolean active, Date datecreate, String content) {
+        this.id = id;
+        this.title = title;
+        this.img = img;
+        this.active = active;
+        this.datecreate = datecreate;
+        this.content = content;
+    }
+
     public int getId() {
         return id;
     }

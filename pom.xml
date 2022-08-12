@@ -17,6 +17,14 @@
         <junit.version>5.7.1</junit.version>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>cksource-mvn-repo</id>
+            <name>CKSource Maven Repository</name>
+            <url>https://maven.cksource.com/</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -88,7 +96,11 @@
             <version>2.11.0</version>
         </dependency>
 
-
+        <dependency>
+            <groupId>com.cksource</groupId>
+            <artifactId>ckfinder3</artifactId>
+            <version>3.5.1.1</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -101,3 +113,4 @@
         </plugins>
     </build>
 </project>
+

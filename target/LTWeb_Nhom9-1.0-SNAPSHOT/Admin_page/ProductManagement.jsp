@@ -61,8 +61,6 @@
                 <form action="ProductManagement" method="post">
                     <div class="row filter-row">
 
-                        <!-- thay đổi ở đây ************************ -->
-                        <!-- Thay đổi theo danh sách đề mục -->
                         <div class="col-sm-6 col-md-3">
                             <div class="form-group">
                                 <label>Tên</label>
@@ -72,7 +70,7 @@
                         <div class="col-sm-6 col-md-3">
                             <div class="form-group">
                                 <label>Category</label>
-                                <select class="form-control select" name="category">
+                                <select class="form-control" name="category">
                                     <option selected value="%">Tất cả</option>
                                     <c:forEach items="${categoryList}" var="c">
                                         <option value="${c.id}">${c.name}</option>
@@ -97,7 +95,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-hover table-center mb-0 datatable">
+                            <table class="table table-hover table-center mb-0 datatable" id="table">
                                 <thead>
                                 <tr>
                                     <th>ID</th>
@@ -124,7 +122,7 @@
                                         <td>${p.stringPrice(p.price)} VNĐ</td>
                                         <td>${p.quantity}</td>
 <%--                                        <td>--%>
-<%--                                            <div class="status-toggle"> <!-- check -->--%>
+<%--                                            <div class="status-toggle">
 <%--                                                <input id="rating_${p.id}" class="check" type="checkbox"--%>
 <%--                                                    <c:if test="${p.active}" >--%>
 <%--                                                       checked--%>
@@ -133,6 +131,7 @@
 <%--                                            </div>--%>
 <%--                                        </td>--%>
                                         <td class="text-right">
+                                            <button onclick="delete_product(${p.id})" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i> Xóa</button>
                                             <a href="Add_product?id=${p.id}" class="btn btn-sm bg-success-light mr-2">	<i class="far fa-edit mr-1"></i> Sửa</a>
                                         </td>
                                     </tr>
@@ -149,6 +148,42 @@
     </div>
 </div>
 </body>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    function delete_product(id) {
+        let text = "Bạn có chắc muốn xóa!!";
+        if (confirm(text) == true) {
+            // const xhttp = new XMLHttpRequest();
+            //  xhttp.onload = function() { //getvitriload
+            //     document.getElementById("table").innerHTML =
+            //         this.responseText ;
+            // }
+            //
+            // xhttp.open("GET", "Delete_product?id="+id);
+            // xhttp.send();
+
+            swal({
+                title: "Bạn có chắc muốn xóa!!",
+                text: "Khi xóa sản phẩm sẽ không thể khôi phục lại!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        document.location.href= "Delete_product?id="+id;
+                        swal("Sản phẩm đã được xóa!", {
+                            icon: "success",
+                        });
+                    } else {
+                        swal("Sản phẩm của bạn đã được giữ lại!");
+                    }
+                });
+        }
+
+    }
+</script>
 
 <!-- jQuery -->
 <script src="${pageContext.request.contextPath}/Admin_page/js/jquery-3.5.0.min.js"></script>
