@@ -10,13 +10,13 @@ public class OrderDetail implements Serializable {
     private int id;
     private int orderId;
     private int productId;
-    private int quatity;
+    private int quantity;
 
-    public OrderDetail(int id, int orderId, int productId, int quatity) {
+    public OrderDetail(int id, int orderId, int productId, int quantity) {
         this.id = id;
         this.orderId = orderId;
         this.productId = productId;
-        this.quatity = quatity;
+        this.quantity = quantity;
     }
 
     public OrderDetail(){
@@ -47,12 +47,12 @@ public class OrderDetail implements Serializable {
         this.productId = productId;
     }
 
-    public int getQuatity() {
-        return quatity;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setQuatity(int quatity) {
-        this.quatity = quatity;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public Product getproduct(){
@@ -60,7 +60,7 @@ public class OrderDetail implements Serializable {
     }
 
     public double getTotalPrice(){
-        return getproduct().getTotalPrice() * quatity;
+        return getproduct().getTotalPrice() * quantity;
     }
 
     @Override
@@ -69,7 +69,7 @@ public class OrderDetail implements Serializable {
                 "id=" + id +
                 ", orderId=" + orderId +
                 ", productId=" + productId +
-                ", quatity=" + quatity +
+                ", quatity=" + quantity +
                 '}';
     }
 }

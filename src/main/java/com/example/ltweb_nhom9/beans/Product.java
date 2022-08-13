@@ -5,6 +5,7 @@ import com.example.ltweb_nhom9.dao.ProductDao;
 
 import java.io.Serializable;
 import java.text.DecimalFormat;
+import java.util.Comparator;
 import java.util.List;
 
 public class Product implements Serializable {
@@ -18,12 +19,12 @@ public class Product implements Serializable {
     private int lableId;
     private int imgId;
     private int quantity;
-    private String decription;
+    private String description;
 
     public Product() {
     }
 
-    public Product(int id, String name, boolean active, int categoryId, double price, int lableId, int img, int quantity, String decription) {
+    public Product(int id, String name, boolean active, int categoryId, double price, int lableId, int img, int quantity, String description) {
         this.id = id;
         this.name = name;
         this.active = active;
@@ -32,7 +33,7 @@ public class Product implements Serializable {
         this.lableId = lableId;
         this.imgId = img;
         this.quantity = quantity;
-        this.decription = decription;
+        this.description = description;
     }
 
     public int getId() {
@@ -99,12 +100,12 @@ public class Product implements Serializable {
         this.quantity = quantity;
     }
 
-    public String getDecription() {
-        return decription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDecription(String decription) {
-        this.decription = decription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String stringPrice(double price){
@@ -127,6 +128,10 @@ public class Product implements Serializable {
 
     }
 
+    public boolean isSale(){
+        return lableId>0;
+    }
+
     public String getLabel(){
         try {
             Label label = LabelDao.getInstance().getById(lableId);
@@ -147,7 +152,9 @@ public class Product implements Serializable {
                 ", lableId=" + lableId +
                 ", img=" + imgId +
                 ", quantity=" + quantity +
-                ", decription='" + decription + '\'' +
+                ", description='" + description + '\'' +
                 '}';
     }
+
+
 }

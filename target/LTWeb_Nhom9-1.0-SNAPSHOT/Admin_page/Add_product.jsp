@@ -70,22 +70,24 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
-                            <form action="ProductManagement">
+                            <form action="${TypePage}_handle?id=${product.id}" method="post" enctype="multipart/form-data">
 
                                 <div class="form-group">
                                     <label>Ảnh</label>
-                                    <input class="form-control" type="file">
+                                    <input class="form-control" multiple="multiple" name="image" type="file" value="${ImageList}" required>
                                 </div>
                                 <div class="form-group">
                                     <div class="avatar">
-                                        <img class="avatar-img rounded" alt="" src="">
+                                        <c:forEach items="${ImageList}" var="i">
+                                            <img class="avatar-img rounded" src="${i}" >
+                                        </c:forEach>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Tên sản phẩm</label>
-                                    <input class="form-control" type="text" value="${product.name}">
+                                    <input class="form-control" name="name" type="text" value="${product.name}" required>
                                 </div>
-                                <div class="status-toggle">
+                                <div class="status-toggle form-group">
                                     <label>Hiển thị</label>
                                     <input id="rating_2" class="check" name="active" value="true" type="checkbox"
                                            <c:if test="${product.active}">checked</c:if>>
@@ -93,7 +95,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Danh mục</label>
-                                    <select class="form-control " required>
+                                    <select class="form-control " name="category" required>
                                         <c:forEach items="${categoryList}" var="c">
                                             <option
                                                     value="${c.id}"
@@ -106,7 +108,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Dán Nhãn</label>
-                                    <select class="form-control " required>
+                                    <select class="form-control " name="label" required>
                                         <c:forEach items="${labelList}" var="c">
                                             <option
                                                     value="${c.id}"
@@ -123,14 +125,18 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Giá bán</label>
-                                    <input class="form-control" type="text" value="${product.stringPrice(product.price)} VNĐ">
+                                    <input class="form-control" name="price" type="number" min="0" value="${product.price}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Số lượng</label>
+                                    <input class="form-control" name="quantity" type="number" min="0" value="${product.quantity}" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Mô tả ngắn</label>
-                                    <textarea style="height: 100px;" class="form-control" type="text">${product.decription}</textarea>
+                                    <textarea rows="10" cols="80" class="form-control" id="description" name="description" type="text">${product.description}</textarea>
                                 </div>
                                 <div class="mt-4">
-                                    <button class="btn btn-primary" type="submit">Lưu thay đổi</button>
+                                    <button class="btn btn-primary" type="submit" value="Upload">Lưu thay đổi</button>
                                     <a href="ProductManagement" class="btn btn-link">Hủy</a>
                                 </div>
                             </form>
@@ -162,5 +168,12 @@
 <script src="${pageContext.request.contextPath}/Admin_page/js/select2.min.js"></script>
 
 <script src="${pageContext.request.contextPath}/Admin_page/js/admin.js"></script>
+
+<script src="${pageContext.request.contextPath}/Admin_page/lib/ckeditor/ckeditor.js"></script>
+<script>
+    // Replace the <textarea id="editor1"> with a CKEditor 4
+    // instance, using default configuration.
+    CKEDITOR.replace( 'description' );
+</script>
 
 </html>

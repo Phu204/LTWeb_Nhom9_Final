@@ -21,7 +21,7 @@
 
     <!-- azia CSS -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Admin_page/css/azia.css">
-
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Admin_page/css/app.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -34,8 +34,11 @@
 
 <div class="container">
     <div class="content container-fluid">
-        <div class="page-header">
 
+        <div class="page-header">
+            <div class="col">
+                <h3 class="page-title">Người Dùng</h3>
+            </div>
         </div>
 
 

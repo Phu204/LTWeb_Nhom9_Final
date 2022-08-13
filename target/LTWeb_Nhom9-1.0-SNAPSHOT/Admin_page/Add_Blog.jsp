@@ -62,32 +62,40 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="table-responsive">
-                                <!-- <table class="table table-hover table-center mb-0 datatable"> -->
-                                <!-- Thay đổi code ở đây Thay đổi theo file word -->
-                                <!-- Form -->
-                                <form action="BlogManagement.html">
+                                <form action="${TypePage}_handle?id=${b.id}" method="post" enctype="multipart/form-data">
 
                                     <div class="form-group">
                                         <label>Ảnh</label>
-                                        <input class="form-control" type="file">
+                                        <input type="file" onclick="actionCallFinder()"
+<%--                                               class="form-control" name="image"--%>
+                                        >
                                     </div>
                                     <div class="form-group">
                                         <div class="avatar">
-                                            <img class="avatar-img rounded" alt="" src="">
+                                            <img class="avatar-img rounded" src="${b.img}">
                                         </div>
+                                    </div>
+                                    <div class="form-group" style="display: none">
+                                        <input class="image-value" name="image-value">
                                     </div>
                                     <div class="form-group">
                                         <label>Title</label>
-                                        <input class="form-control" type="text" value="">
+                                        <input name="title" required class="form-control" type="text" value="${b.title}">
+                                    </div>
+                                    <div class="status-toggle form-group">
+                                        <label>Hiển thị</label>
+                                        <input id="rating_2" class="check" name="active" value="true" type="checkbox"
+                                               <c:if test="${b.active}">checked</c:if>>
+                                        <label for="rating_2" class="checktoggle">checkbox</label>
                                     </div>
                                     <div class="form-group">
-                                        <label>Tóm tắt</label>
-                                        <textarea style="height: 100px;" class="form-control" type="text"></textarea>
+                                        <label>Nội dung</label>
+                                        <textarea id="content" name="content" required rows="10" cols="80"  class="form-control" type="text">${b.content}</textarea>
                                     </div>
 
                                     <div class="mt-4">
                                         <button class="btn btn-primary" type="submit">Lưu thay đổi</button>
-                                        <a href="BlogManagement.html" class="btn btn-link">Hủy</a>
+                                        <a href="BlogManagement" class="btn btn-link">Hủy</a>
                                     </div>
                                 </form>
                                 <!-- /Form -->
@@ -121,5 +129,31 @@
 <script src="${pageContext.request.contextPath}/Admin_page/js/select2.min.js"></script>
 
 <script src="${pageContext.request.contextPath}/Admin_page/js/admin.js"></script>
+
+<script src="${pageContext.request.contextPath}/Admin_page/lib/ckeditor/ckeditor.js"></script>
+<script src="${pageContext.request.contextPath}/Admin_page/lib/ckfinder/ckfinder.js"></script>
+<script>
+    // Replace the <textarea id="editor1"> with a CKEditor 4
+    // instance, using default configuration.
+    // var editor = CKEDITOR.replace( 'content', {
+    //     filebrowserBrowseUrl: 'ckfinder/ckfinder.html',
+    //     filebrowserUploadUrl: 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+    // } );
+    // CKFinder.setupCKEditor(editor);
+
+    CKEDITOR.replace('content');
+
+
+    function actionCallFinder(){
+    let ckfinder = new CKFinder();
+        ckfinder.selectActionFunction = function (fileUrl) {
+            console.log(fileUrl)
+            $(".avatar-img").prop("src",fileUrl);
+
+            $(".image-value").prop("value",fileUrl);
+        }
+        ckfinder.popup();
+    }
+</script>
 
 </html>

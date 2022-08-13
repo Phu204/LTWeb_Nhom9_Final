@@ -18,6 +18,7 @@ public class BlogService {
         return instances;
     }
 
+    public Blog getById(int id){ return BlogDao.getInstance().getById(id);}
     public List<Blog> getAll(){
         return BlogDao.getInstance().getAll();
     }

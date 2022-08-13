@@ -98,4 +98,20 @@ public class AddressDao {
         }
         return id;
     }
+    public boolean UpdateAddress(int id, String provine_city, String dictrict, String ward, String detail){
+        Statement statement = DBConect.getInstance().get();
+
+        String sql = "UPDATE address SET Provine_city = '"+ provine_city + "', " + "Dictrict = '"+ dictrict + "', " +
+                "Ward = '"+ ward + "',  "+ "Detail = '"+ detail + "' " +
+                "where id = "+ id +"";
+        int update = 0;
+        try {
+            update = statement.executeUpdate(sql);
+
+            return update == 1;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }

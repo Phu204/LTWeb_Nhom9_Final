@@ -51,4 +51,6 @@ public class OrderService {
         return OrderDao.getInstance().InsertOrderDetail(id, orderId, productId, quantity);
     }
 
+
+    public List<Order> getOrderListByStatus(int status){ return OrderDao.getInstance().getOrderListByStatus(status);}
 }
