@@ -806,7 +806,7 @@
 
 
                         <li class=" nav-item has-childs ">
-                            <a href="tu-van.html" class="nav-link" title="Tư vấn">Tư vấn <i class="fa fa-angle-down"
+                            <a href="Blog" class="nav-link" title="Blog">Blog <i class="fa fa-angle-down"
                                                                                             data-toggle="dropdown"></i></a>
 
                             <ul class="dropdown-menu">

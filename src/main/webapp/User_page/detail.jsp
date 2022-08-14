@@ -491,15 +491,15 @@ MICRO-...">
 
                             <div class="payment_product">
                                 <span class="payment_product_text">Hình thức thanh toán</span>
-                                <img src="imgProductDemo/picture19.jpg" alt="Shop TEAM 9 GERMANY" />
-                                <img src="imgProductDemo/picture20.JPG" alt="Shop TEAM 9 GERMANY" />
-                                <img src="imgProductDemo/picture21.jpg" alt="Shop TEAM 9 GERMANY" />
+                                <img src="img/imgProductDemo/picture19.jpg" alt="Shop TEAM 9 GERMANY" />
+                                <img src="img/imgProductDemo/picture20.JPG" alt="Shop TEAM 9 GERMANY" />
+                                <img src="img/imgProductDemo/picture21.jpg" alt="Shop TEAM 9 GERMANY" />
                             </div>
 
                         </div>
                         <div class="size-guide">
                             <button class="size-title" data-toggle="modal" data-target="#mySize" title="Hướng dẫn Mua hàng">
-                                <img src="imgProductDemo/picture22.jpg" alt="Hướng dẫn Mua hàng" /> Hướng dẫn Mua hàng
+                                <img src="img/imgProductDemo/picture22.jpg" alt="Hướng dẫn Mua hàng" /> Hướng dẫn Mua hàng
                             </button>
                             <div class="modal fade" id="mySize" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                 <div class="modal-dialog" role="document">
@@ -590,7 +590,7 @@ MICRO-...">
                                         <span>- 8% </span>
                                     </div>
                                     <a href="/quat-thap-khong-canh-dyson-tp04-kem-loc-khong-khi" title="Qu&#7841;t tháp không cánh Dyson TP04 kèm l&#7885;c không khí" class="image-resize">
-                                        <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="imgProductDemo/picture23.jpg" alt="Qu&#7841;t tháp không cánh Dyson TP04 kèm l&#7885;c không khí" />
+                                        <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="img/imgProductDemo/picture23.jpg" alt="Qu&#7841;t tháp không cánh Dyson TP04 kèm l&#7885;c không khí" />
                                     </a>
                                 </div>
                                 <div class="product-detail clearfix">
@@ -626,7 +626,7 @@ MICRO-...">
                                         <span>- 24% </span>
                                     </div>
                                     <a href="/sen-cay-grohe-euphoria-smartcontrol-system-26508000" title="Sen cây Grohe Euphoria SmartControl System | 26508000" class="image-resize">
-                                        <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="imgProductDemo/picture24.jpg" alt="Sen cây Grohe Euphoria SmartControl System | 26508000" />
+                                        <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="img/imgProductDemo/picture24.jpg" alt="Sen cây Grohe Euphoria SmartControl System | 26508000" />
                                     </a>
                                 </div>
                                 <div class="product-detail clearfix">
@@ -662,7 +662,7 @@ MICRO-...">
                                         <span>- 21% </span>
                                     </div>
                                     <a href="/noi-chien-khong-dau-philips-xxl-hd9860-90" title="N&#7891;i chiên không d&#7847;u Philips HD9860 -XXL" class="image-resize">
-                                        <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="imgProductDemo/picture25.jpg" alt="N&#7891;i chiên không d&#7847;u Philips HD9860 -XXL" />
+                                        <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="img/imgProductDemo/picture25.jpg" alt="N&#7891;i chiên không d&#7847;u Philips HD9860 -XXL" />
                                     </a>
                                 </div>
                                 <div class="product-detail clearfix">
@@ -698,7 +698,7 @@ MICRO-...">
                                         <span>- 32% </span>
                                     </div>
                                     <a href="/voi-lavabo-hansgrohe-talis-240" title="Vòi  r&#7917;a m&#7863;t lavabo Hansgrohe Talis 240" class="image-resize">
-                                        <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="imgProductDemo/picture26.jpg" alt="Vòi  r&#7917;a m&#7863;t lavabo Hansgrohe Talis 240" />
+                                        <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="img/imgProductDemo/picture26.jpg" alt="Vòi  r&#7917;a m&#7863;t lavabo Hansgrohe Talis 240" />
                                     </a>
                                 </div>
                                 <div class="product-detail clearfix">
@@ -759,9 +759,9 @@ MICRO-...">
                                         <span>- 25% </span>
                                     </div>
                                     <a href="/tu-bao-quan-cigar-klarstein-65l" title="T&#7911; b&#7843;o qu&#7843;n Cigar Klarstein El Presidente | 65L Màu b&#7841;c" class="image-resize">
-                                        <img class="lazy" src="imgProductDemo/picture12.jpg" data-src="imgProductDemo/picture12.jpg" alt="T&#7911; b&#7843;o qu&#7843;n Cigar Klarstein El Presidente | 65L Màu b&#7841;c" />
+                                        <img class="lazy" src="img/imgProductDemo/picture12.jpg" data-src="img/imgProductDemo/picture12.jpg" alt="T&#7911; b&#7843;o qu&#7843;n Cigar Klarstein El Presidente | 65L Màu b&#7841;c" />
 
-                                        <img class="lazy hover-pic" src="imgProductDemo/picture23.jpg" data-src="imgProductDemo/picture28.jpg" alt="T&#7911; b&#7843;o qu&#7843;n Cigar Klarstein El Presidente | 65L Màu b&#7841;c" />
+                                        <img class="lazy hover-pic" src="img/imgProductDemo/picture23.jpg" data-src="img/imgProductDemo/picture28.jpg" alt="T&#7911; b&#7843;o qu&#7843;n Cigar Klarstein El Presidente | 65L Màu b&#7841;c" />
 
                                     </a>
                                     <div class="button-add hidden-sm hidden-xs">
@@ -815,9 +815,9 @@ MICRO-...">
                                         <span>- 20% </span>
                                     </div>
                                     <a href="/may-lam-sua-hat-medion-md19725" title="Máy làm s&#7919;a h&#7841;t Medion | MD19725" class="image-resize">
-                                        <img class="lazy" src="imgProductDemo/picture23.jpg" data-src="imgProductDemo/picture13.jpg" alt="Máy làm s&#7919;a h&#7841;t Medion | MD19725" />
+                                        <img class="lazy" src="img/imgProductDemo/picture23.jpg" data-src="img/imgProductDemo/picture13.jpg" alt="Máy làm s&#7919;a h&#7841;t Medion | MD19725" />
 
-                                        <img class="lazy hover-pic" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="imgProductDemo/picture27.jpg" alt="Máy làm s&#7919;a h&#7841;t Medion | MD19725" />
+                                        <img class="lazy hover-pic" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="img/imgProductDemo/picture27.jpg" alt="Máy làm s&#7919;a h&#7841;t Medion | MD19725" />
 
                                     </a>
                                     <div class="button-add hidden-sm hidden-xs">
@@ -871,9 +871,9 @@ MICRO-...">
                                         <span>- 38% </span>
                                     </div>
                                     <a href="/sen-am-tuong-grohe-34706000-smartcontrol-grohtherm" title="Sen âm tư&#7901;ng cao c&#7845;p nh&#7853;p kh&#7849;u Đ&#7913;c Grohe Smartcontrol | 34706000" class="image-resize">
-                                        <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="imgProductDemo/picture29.jpg" alt="Sen âm tư&#7901;ng cao c&#7845;p nh&#7853;p kh&#7849;u Đ&#7913;c Grohe Smartcontrol | 34706000" />
+                                        <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="img/imgProductDemo/picture29.jpg" alt="Sen âm tư&#7901;ng cao c&#7845;p nh&#7853;p kh&#7849;u Đ&#7913;c Grohe Smartcontrol | 34706000" />
 
-                                        <img class="lazy hover-pic" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="imgProductDemo/picture30.jpg" alt="Sen âm tư&#7901;ng cao c&#7845;p nh&#7853;p kh&#7849;u Đ&#7913;c Grohe Smartcontrol | 34706000" />
+                                        <img class="lazy hover-pic" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="img/imgProductDemo/picture30.jpg" alt="Sen âm tư&#7901;ng cao c&#7845;p nh&#7853;p kh&#7849;u Đ&#7913;c Grohe Smartcontrol | 34706000" />
 
                                     </a>
                                     <div class="button-add hidden-sm hidden-xs">
@@ -927,9 +927,9 @@ MICRO-...">
                                         <span>- 27% </span>
                                     </div>
                                     <a href="/may-giat-hap-say-lg-styler-s5gfo-2021" title="Máy gi&#7863;t h&#7845;p s&#7845;y LG Styler Model 2021 | S5GFO" class="image-resize">
-                                        <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="imgProductDemo/picture15.jpg" alt="Máy gi&#7863;t h&#7845;p s&#7845;y LG Styler Model 2021 | S5GFO" />
+                                        <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="img/imgProductDemo/picture15.jpg" alt="Máy gi&#7863;t h&#7845;p s&#7845;y LG Styler Model 2021 | S5GFO" />
 
-                                        <img class="lazy hover-pic" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="imgProductDemo/picture33.jpg" alt="Máy gi&#7863;t h&#7845;p s&#7845;y LG Styler Model 2021 | S5GFO" />
+                                        <img class="lazy hover-pic" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="img/imgProductDemo/picture33.jpg" alt="Máy gi&#7863;t h&#7845;p s&#7845;y LG Styler Model 2021 | S5GFO" />
 
                                     </a>
                                     <div class="button-add hidden-sm hidden-xs">
@@ -983,9 +983,9 @@ MICRO-...">
                                         <span>- 17% </span>
                                     </div>
                                     <a href="/bep-nuong-than-ngoai-troi-tepro-toronto-2019" title="B&#7871;p nư&#7899;ng than ngoài tr&#7901;i Tepro Toronto" class="image-resize">
-                                        <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="imgProductDemo/picture16.jpg" alt="B&#7871;p nư&#7899;ng than ngoài tr&#7901;i Tepro Toronto" />
+                                        <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="img/imgProductDemo/picture16.jpg" alt="B&#7871;p nư&#7899;ng than ngoài tr&#7901;i Tepro Toronto" />
 
-                                        <img class="lazy hover-pic" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="imgProductDemo/picture34.jpg" alt="B&#7871;p nư&#7899;ng than ngoài tr&#7901;i Tepro Toronto" />
+                                        <img class="lazy hover-pic" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="img/imgProductDemo/picture34.jpg" alt="B&#7871;p nư&#7899;ng than ngoài tr&#7901;i Tepro Toronto" />
 
                                     </a>
                                     <div class="button-add hidden-sm hidden-xs">

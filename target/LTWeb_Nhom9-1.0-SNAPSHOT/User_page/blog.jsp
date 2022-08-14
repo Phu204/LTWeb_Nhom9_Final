@@ -563,6 +563,21 @@
 <script src="${pageContext.request.contextPath}/User_page/js/stats.min.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/User_page/js/widgets.js" type="text/javascript"></script>
 
+<%--thêm--%>
+
+<link href="${pageContext.request.contextPath}User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
+<link href="${pageContext.request.contextPath}User_page/css/plugin.scss.css" rel="stylesheet" type="text/css"/>
+<link href="${pageContext.request.contextPath}User_page/css/base.scss.css" rel="stylesheet" type="text/css"/>
+<link href="${pageContext.request.contextPath}User_page/css/evo-main.scss.css" rel="stylesheet" type="text/css"/>
+<link href="${pageContext.request.contextPath}User_page/css/slick.scss.css" rel="stylesheet" type="text/css"/>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+      type="text/css"/>
+<link href="${pageContext.request.contextPath}css/ContacIcon.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}User_page/css/evo-collections.scss.css" rel="stylesheet" type="text/css"/>
+
+
+
+
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js" integrity="sha512-FwqNPb8ENFXApJKNgRgYq5ok7VoOf5ImaOdzyF/xe/T5jdd/S0xq0CXBLDhpzaemxpQ61X3nLVln6KaczwhKgA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

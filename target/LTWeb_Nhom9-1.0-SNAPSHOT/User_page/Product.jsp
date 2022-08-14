@@ -61,11 +61,9 @@
 </jsp:include>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
-
 <script src="User_page/js/option-selectors.js" type="text/javascript"></script>
 <script src="User_page/js/api.jquery.js" type="text/javascript"></script>
 <script src="User_page/js/slick.js" type="text/javascript"></script>
-
 <script src="User_page/js/Productjs/evo-collection.js"
         type="text/javascript"></script>
 <script src="User_page/js/pagination.min.js" type="text/javascript"></script>
