@@ -276,7 +276,7 @@
         <div class="logo logo--center">
 
             <a href="/">
-                <img class="logo__image  logo__image--medium " alt="SHOP HA ANH GERMANY" src="img_thanhtoansanpham/logo.png" />
+                <img class="logo__image  logo__image--medium " alt="SHOP HA ANH GERMANY" src="img/imgProductDemo/logo.png" />
             </a>
 
         </div>
@@ -322,7 +322,7 @@
                                         </h2>
 
 
-                                        <a href="/account/login?returnUrl=/checkout/37af1dbfc716440eb4e754ec02e83db3">
+                                        <a href="#">
                                             <i class="fa fa-user-circle-o fa-lg"></i>
                                             <span>Đăng nhập </span>
                                         </a>

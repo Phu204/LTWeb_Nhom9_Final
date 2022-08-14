@@ -563,19 +563,6 @@
 <script src="${pageContext.request.contextPath}/User_page/js/stats.min.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/User_page/js/widgets.js" type="text/javascript"></script>
 
-<%--thêm--%>
-
-<link href="${pageContext.request.contextPath}User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
-<link href="${pageContext.request.contextPath}User_page/css/plugin.scss.css" rel="stylesheet" type="text/css"/>
-<link href="${pageContext.request.contextPath}User_page/css/base.scss.css" rel="stylesheet" type="text/css"/>
-<link href="${pageContext.request.contextPath}User_page/css/evo-main.scss.css" rel="stylesheet" type="text/css"/>
-<link href="${pageContext.request.contextPath}User_page/css/slick.scss.css" rel="stylesheet" type="text/css"/>
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-      type="text/css"/>
-<link href="${pageContext.request.contextPath}css/ContacIcon.css" rel="stylesheet" type="text/css">
-<link href="${pageContext.request.contextPath}User_page/css/evo-collections.scss.css" rel="stylesheet" type="text/css"/>
-
-
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
