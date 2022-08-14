@@ -34,6 +34,7 @@
     <orderEntry type="library" name="slick-carousel" level="application" />
     <orderEntry type="library" name="jquery.lazyload" level="application" />
     <orderEntry type="library" name="jquery-3.6.0.slim" level="application" />
+    <orderEntry type="library" name="CKFinder-2.6.2.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:javax.servlet-api:4.0.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-api:5.7.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apiguardian:apiguardian-api:1.1.0" level="project" />
@@ -41,6 +42,9 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-commons:1.7.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.7.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.7.1" level="project" />
+    <orderEntry type="library" name="Maven: javax.mail:mail:1.4" level="project" />
+    <orderEntry type="library" name="Maven: javax.activation:activation:1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.mail:javax.mail:1.6.2" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:jstl:1.2" level="project" />
     <orderEntry type="library" name="Maven: jstl:jstl:1.2" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.25" level="project" />
@@ -69,6 +73,5 @@
     <orderEntry type="library" name="Maven: org.yaml:snakeyaml:1.23" level="project" />
     <orderEntry type="library" name="Maven: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="library" name="Maven: net.coobird:thumbnailator:0.4.8" level="project" />
-    <orderEntry type="library" name="CKFinder-2.6.2.1" level="project" />
   </component>
 </module>
