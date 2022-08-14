@@ -32,10 +32,10 @@ public class LoadProduct extends HttpServlet {
         //search
         String category = "";
 
-        String query = "";
-        String[] sub = {""};
+        String query = filter;
+        String[] sub = {filter};
         if (request.getParameter("query") != null){
-            query = request.getParameter("query");
+            query = filter + " " + request.getParameter("query");
             sub = query.split(" ");
         }
         if (request.getParameter("category") != null){
@@ -51,7 +51,19 @@ public class LoadProduct extends HttpServlet {
 
         }
 
-        List<Product> productList = ProductService.getInstance().searchProduct(category,minprice,maxprice,filter);
+        // check typepage
+        String typePage = request.getParameter("typePage");
+        boolean isonlysale = false;
+        try {
+            if (typePage.equalsIgnoreCase("DiscountProduct")){
+                isonlysale = true;
+            }
+        } catch (NullPointerException e){
+            typePage = "Product";
+        }
+        List<Product> productList = ProductService.getInstance().searchProduct(category,minprice,maxprice,isonlysale,sub);
+
+
         //sort
         String sort = "";
 
@@ -99,7 +111,6 @@ public class LoadProduct extends HttpServlet {
         List<Category> categoryList = CategoryDao.getInstance().getAll();
         List<String> brand = ProductService.getInstance().getBrand();
 
-        String typePage = "LoadProduct";
 
         //request.setAttribute("query",query);
         request.setAttribute("category",category);
@@ -117,8 +128,10 @@ public class LoadProduct extends HttpServlet {
         String load = "";
 
         String loadPaging = "";
+        String price = request.getParameter("price");
+
         for (int i = index>2?index-2:1;i <= (index+1>numPage?numPage:index+1);i++){
-            loadPaging += "<li class=\"page-item\"><a class=\"page-link\" href=\"Product?index="+ i +"&category="+ category +"&query="+filter+"&sort="+sort+"\"\n" +
+            loadPaging += "<li class=\"page-item\"><a class=\"page-link\" href=\"Product?typePage="+ typePage+"&index="+ i +"&category="+ category +"&price="+price + "&query="+filter+"&sort="+sort+"\"\n" +
                     (index==i?"style=\"color: #858585\" disabled=\"true\" \n":"") +
                     "                                                             title=\""+i+"\">"+i+"</a></li>";
         }
@@ -183,11 +196,12 @@ public class LoadProduct extends HttpServlet {
                     "                                                " + p.stringPrice(p.getTotalPrice()) +"₫\n" +
                     "\n" +
                     "\n" +
+                    (p.isSale()?
                     "                                            <span class=\"pro-price-del\">\n" +
                     "\t\t\t\t\t\t<del class=\"compare-price\">" + p.stringPrice(p.getPrice()) +"₫</del>\n" +
                     "\t\t\t\t\t</span>\n" +
                     "\n" +
-                    "\n" +
+                    "\n":"") +
                     "                                        </p>\n" +
                     "                                    </div>\n" +
                     "                                </div>\n" +
@@ -204,7 +218,7 @@ public class LoadProduct extends HttpServlet {
                 "\n" +
                 "                                <li class=\"page-item\n" +
                 (index==1?"disabled":"") +
-                "                                 \"><a class=\"page-link\" href=\""+ typePage +"?index=1&category="+ category +"&query="+ filter + "&sort="+ sort +"\" title=\"«\">«</a></li>\n" +
+                "                                 \"><a class=\"page-link\" href=\"Product?typePage="+ typePage+"&index=1&category="+ category +"&price="+request.getParameter("price") + "&query="+ filter + "&sort="+ sort +"\" title=\"«\">«</a></li>\n" +
                 "\n" +
                 "\n" +
                 loadPaging +
@@ -212,13 +226,19 @@ public class LoadProduct extends HttpServlet {
                 "\n" +
                 "                                <li class=\"page-item\n" +
                 (index==numPage?"disabled":"") +
-                "                                \"><a class=\"page-link\" href=\""+ typePage +"?index="+ numPage +"&category="+ category +"&query="+filter+"&sort="+sort+"\"\n" +
+                "                                \"><a class=\"page-link\" href=\"Product?typePage="+ typePage+"&index="+ numPage +"&category="+ category +"&price="+request.getParameter("price") + "&query="+filter+"&sort="+sort+"\"\n" +
                 "                                                         title=\"»\">»</a></li>\n" +
                 "\n" +
                 "                            </ul>\n" +
                 "                        </nav>\n" +
                 "\n" +
                 "                    </div>";
+
+        if (list.size() == 0){
+            load = "<p style=\"\n" +
+                    "    text-align: center;\n" +
+                    "    font-size: 25px;\">Không tìm thấy sản phẩm phù hợp</p>";
+        }
         out.println(load);
     }
 

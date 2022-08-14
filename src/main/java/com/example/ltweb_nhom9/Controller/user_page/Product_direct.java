@@ -33,17 +33,31 @@ public class Product_direct extends HttpServlet {
             category = request.getParameter("category");
         }
 
-        List<Product> productList = ProductService.getInstance().searchProduct(category,sub);
+        int minprice = 0,maxprice = 999999999;
+        try {
+            String[] price = request.getParameter("price").split(" ");
+            minprice = Integer.parseInt(price[0]);
+            maxprice = Integer.parseInt(price[1]);
+        } catch (Exception e){
+
+        }
+
 
         // check typepage
         String typePage = request.getParameter("typePage");
+        boolean isonlysale = false;
         try {
             if (typePage.equalsIgnoreCase("DiscountProduct")){
-                productList = ProductService.getInstance().getAllDiscount();
+                isonlysale = true;
+            } else {
+                //for search
+                typePage = "Product";
             }
         } catch (NullPointerException e){
             typePage = "Product";
         }
+
+        List<Product> productList = ProductService.getInstance().searchProduct(category,minprice,maxprice,isonlysale,sub);
 
         //sort
         String sort = "unsort";

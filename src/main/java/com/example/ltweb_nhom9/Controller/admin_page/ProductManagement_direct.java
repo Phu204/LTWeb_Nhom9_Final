@@ -28,7 +28,7 @@ public class ProductManagement_direct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Category> categoryList = CategoryDao.getInstance().getAll();
-        List<Product> productList =  ProductService.getInstance().getAll();
+        List<Product> productList =  ProductService.getInstance().getAll(false);
         List<Label> labelList = LabelService.getInstance().getAll();
 
         String filterProduct = "%";
@@ -46,12 +46,12 @@ public class ProductManagement_direct extends HttpServlet {
             filterProduct = "%" + new String(productInbyte,StandardCharsets.UTF_8)  + "%";
         }
 
-        productList = ProductService.getInstance().filterProduct(filterProduct,filterCategory);
+        productList = ProductService.getInstance().filterProduct(filterProduct,filterCategory,false);
 
         request.setAttribute("categoryList",categoryList);
         request.setAttribute("labelList",labelList);
         request.setAttribute("products", productList.subList(0,productList.size()>120?120: productList.size()));
-        request.setAttribute("title",filterProduct);
+        request.setAttribute("title","Quản Lý Sản Phẩm");
         request.setAttribute("TypePage","ProductManagement");
         request.setAttribute("index",2);
         request.getRequestDispatcher("Admin_page/ProductManagement.jsp").forward(request,response);

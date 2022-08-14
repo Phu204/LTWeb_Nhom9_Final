@@ -265,3 +265,19 @@ $(document).ready(function () {
 			$(this).unbind('submit').submit()
 	});
 })
+
+function CallDeleteServlet(link) {
+	let text = "Bạn có chắc muốn xóa!!";
+	if (confirm(text) == true) {
+		// const xhttp = new XMLHttpRequest();
+		//  xhttp.onload = function() { //getvitriload
+		//     document.getElementById("table").innerHTML =
+		//         this.responseText ;
+		// }
+		//
+		// xhttp.open("GET", "Delete_product?id="+id);
+		// xhttp.send();
+		document.location.href= link;
+	}
+
+}

@@ -15,6 +15,7 @@ public class Add_Blog_direct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String title = "Thêm Blog";
+        String TypePage = "Add_Blog";
         int IdBlog = -1;
         try {
             IdBlog = Integer.parseInt(request.getParameter("id"));
@@ -24,12 +25,13 @@ public class Add_Blog_direct extends HttpServlet {
 
         if (IdBlog != -1){
             title = "Chỉnh sửa Blog";
+            TypePage = "Edit_Blog";
             Blog blog = BlogService.getInstance().getById(IdBlog);
             request.setAttribute("b",blog);
         }
 
         request.setAttribute("title",title);
-        request.setAttribute("TypePage","Add_Blog");
+        request.setAttribute("TypePage",TypePage);
         request.getRequestDispatcher("Admin_page/Add_Blog.jsp").forward(request,response);
     }
 
