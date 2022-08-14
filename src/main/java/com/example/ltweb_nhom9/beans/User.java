@@ -2,6 +2,7 @@ package com.example.ltweb_nhom9.beans;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.text.DecimalFormat;
 
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -92,4 +93,5 @@ public class User implements Serializable {
     public void setDatecreate(Date datecreate) {
         this.datecreate = datecreate;
     }
+
 }

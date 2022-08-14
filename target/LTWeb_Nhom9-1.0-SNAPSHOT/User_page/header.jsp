@@ -30,7 +30,7 @@
                             <li><a rel="nofollow" href="/LTWeb_Nhom9_war/LogOut" title="Đăng xuất"><i class="fa fa-sign-out"
                                                                                      aria-hidden="true"></i> Đăng
                                 xuất</a></li>
-                            <li><a rel="nofollow" href="account.jsp" title="hello name"><i class="fa fa-user"
+                            <li><a rel="nofollow" href="/LTWeb_Nhom9_war/loadOrderHistory" title="hello name"><i class="fa fa-user"
                                                                                            aria-hidden="true"></i>
                                 Hello ${sessionScope.auth.name}</a>
                             </li>

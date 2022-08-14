@@ -10,9 +10,7 @@ import java.util.Date;
 import java.util.List;
 
 public class RegisterDao {
-    //    register
     public static int nextID(String id_user, String table_name) throws SQLException {
-//      String sql = "SELECT " + id_user + "FROM" + table_name;
         String sql = "SELECT " + id_user + " FROM " + table_name;
         Connection connection = DBConect.getInstance().connect();
         PreparedStatement ps = connection.prepareStatement(sql);

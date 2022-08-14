@@ -97,7 +97,17 @@
                     <div class="text-center margin-bottom-30">
                         <h1 class="title-head">Đăng nhập tài khoản</h1>
                     </div>
-
+                    <div class="social-login text-center margin-bottom-10">
+                        <a href="#" class="social-login--facebook" ><img
+                                width="129px" height="37px" alt="facebook-login-button"
+                                src="../img/icon/fb-btn.svg"></a>
+                        <a href="#" class="social-login--google" ><img
+                                width="129px" height="37px" alt="google-login-button"
+                                src="../img/icon/gp-btn.svg"></a>
+                    </div>
+                    <div class="line-break">
+                        <span>hoặc</span>
+                    </div>
                     <form action="/LTWeb_Nhom9_war/Login" method="post">
                         <%
                             String error = (String) request.getAttribute("error");

@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class DBConect {
     private static DBConect instance;
-    private static String DB_URL = "jdbc:mysql://localhost:3306/shopteam9_db";
+    private static String DB_URL = "jdbc:mysql://localhost:3306/shop";
     private static String USER = "root";
     private static String PASS = "";
 
@@ -39,7 +39,7 @@ public class DBConect {
 
     public Statement get(){
         try {
-            connect();
+            connection = connect();
             return connection.createStatement();
         }catch (SQLException e){
             e.printStackTrace();

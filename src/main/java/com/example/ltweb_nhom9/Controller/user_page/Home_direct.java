@@ -13,7 +13,7 @@ import java.util.List;
 public class Home_direct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Product> list = ProductService.getInstance().getAllDiscount();
+        List<Product> list = ProductService.getInstance().getAll();
         List<Product> discountList = list.subList(0,list.size()>10?10:list.size());
 
         list = ProductService.getInstance().getProductQuerybyCategory("đồ gia dụng");

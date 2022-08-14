@@ -28,7 +28,8 @@ public class LoginDao {
                 us.setEmail(rs.getString(5));
                 us.setPassword(rs.getString(3));
                 us.setName(rs.getString(2));
-                us.setRole(rs.getInt(8));
+                us.setAddress_id(rs.getString(8));
+                us.setRole(rs.getInt(9));
                 us.setId(rs.getInt(1));
                 us.setDatecreate(rs.getDate(6));
                 if (!rs.getString(5).equals(email)) return null;

@@ -14,6 +14,7 @@
 <head>
     <meta charset="UTF-8">
     <title>SHOP TEAM 9</title>
+    <link rel="icon" href="../img/icon/logo.png" type="image/x-icon"/>
 
     <link href="css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
     <link href="css/plugin.scss.css" rel="stylesheet" type="text/css"/>
