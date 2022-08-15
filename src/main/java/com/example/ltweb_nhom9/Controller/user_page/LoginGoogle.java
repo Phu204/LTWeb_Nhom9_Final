@@ -1,7 +1,10 @@
 package com.example.ltweb_nhom9.Controller.user_page;
 
 import com.example.ltweb_nhom9.Service.LoginGoogleService;
+import com.example.ltweb_nhom9.Service.UserServices;
+import com.example.ltweb_nhom9.beans.User;
 import com.example.ltweb_nhom9.beans.UserGoogleDto;
+import com.example.ltweb_nhom9.dao.RegisterDao;
 
 
 import javax.servlet.*;
@@ -20,15 +23,16 @@ public class LoginGoogle extends HttpServlet {
         String accessToken = LoginGoogleService.getToken(code);
         UserGoogleDto user = LoginGoogleService.getUserInfo(accessToken);
         System.out.println(user);
-//        boolean isEmailExist = GoogleDaoHandler.checkEmail(user.getEmail());
-//        if(!isEmailExist){
-//            boolean r = GoogleDaoHandler.register(name, phone, email);
-//        }
-//        User us = GoogleDaoHandler  .login(email);
-//        HttpSession session = request.getSession();
-//        session.setAttribute("auth", us);
-//        session.setMaxInactiveInterval(120);
-//        response.sendRedirect("Home");
+        String phone = null;
+        boolean isEmailExist = RegisterDao.checkEmailDuplicates(user.getEmail());
+        if(isEmailExist){
+            RegisterDao.registerId_user(user.getName(), phone, user.getEmail(), "loginWithGG");
+        }
+        User us = UserServices.checkLogin(user.getEmail(), "loginWithGG");
+        HttpSession session = request.getSession();
+        session.setAttribute("auth", us);
+        session.setMaxInactiveInterval(120);
+        response.sendRedirect("Home");
     }
 
     @Override
