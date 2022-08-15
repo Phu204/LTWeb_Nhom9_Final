@@ -28,7 +28,7 @@ public class UserDao {
         List<Order> orderList = new ArrayList<>();
         String sql = "select * from orders where cus_id = ?";
         try {
-            Connection connection = DBConect.getInstance().connect();
+            Connection connection = DBConect.getInstance().connection();
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(1,id);
             ResultSet rs = ps.executeQuery();

@@ -550,6 +550,19 @@
 <%--<script src="User_page/js/ajax.js" type="text/javascript"></script>--%>
 <script src="User_page/js/evo-collection.js" type="text/javascript"></script>
 <script>
+
+    // function filter(e) {
+    //     var checked = e.value;
+    //     var id= e.id;
+    //     $.ajax({
+    //         url: 'Product',
+    //         type: 'GET',
+    //         data: "&chkbx1="+id
+    //     });
+    //     alert(checked)
+
+
+
     function filter(name) {
         const xhttp = new XMLHttpRequest();
         xhttp.onload = function() {

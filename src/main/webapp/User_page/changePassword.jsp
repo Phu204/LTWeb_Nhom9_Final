@@ -16,7 +16,7 @@
 <html lang="en">
 <head>
 
-    <%--    <meta charset="UTF-8">--%>
+    <meta charset="UTF-8">
     <title>${title} | SHOP TEAM 9</title>
     <link rel="icon" href="${pageContext.request.contextPath}/img/icon/logo.png" type="image/x-icon"/>
 
@@ -64,38 +64,38 @@
                     <form action="/LTWeb_Nhom9_war/ChangePassword" method="post">
                         <%--                    error--%>
                         <%
-                            String error = (String) session.getAttribute("error");
+                            String ehms = (String) session.getAttribute("ehms");
                         %>
                         <%
-                            if (error != null) {
+                            if (ehms != null) {
                         %>
                         <div class="alert alert-danger" role="alert">
-                            <%= error%>
+                            <%= ehms%>
                         </div>
                         <%
                             }
                         %>
                         <%--                    success--%>
                         <%
-                            String success = (String) session.getAttribute("success");
+                            String doimktk = (String) session.getAttribute("doimktk");
                         %>
                         <%
-                            if (success != null) {
+                            if (doimktk != null) {
                         %>
                         <div class="alert alert-success" role="alert">
-                            <%= success%>
+                            <%= doimktk%>
                         </div>
                         <%
                             }
                         %>
                         <%
-                            String error2 = (String) session.getAttribute("error2");
+                            String mkms = (String) session.getAttribute("mkms");
                         %>
                         <%
-                            if (error2 != null) {
+                            if (mkms != null) {
                         %>
                         <div class="alert alert-danger" role="alert">
-                            <%= error2%>
+                            <%= mkms%>
                         </div>
                         <%
                             }

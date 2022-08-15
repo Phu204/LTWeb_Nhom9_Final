@@ -15,7 +15,7 @@
 
 <head>
 
-<%--    <meta charset="UTF-8">--%>
+    <meta charset="UTF-8">
     <title>${title} | SHOP TEAM 9</title>
     <link rel="icon" href="${pageContext.request.contextPath}/img/icon/logo.png" type="image/x-icon"/>
 
@@ -662,13 +662,26 @@
                                                                               name="Token"/>
 <%--                    register error--%>
                         <%
-                            String error = (String) session.getAttribute("error");
+                            String dktb = (String) session.getAttribute("dktb");
                         %>
                         <%
-                            if (error != null) {
+                            if (dktb != null) {
                         %>
                         <div class="alert alert-danger" role="alert">
-                            <%= error%>
+                            <%= dktb%>
+                        </div>
+                        <%
+                            }
+                        %>
+
+                        <%
+                            String dktk = (String) session.getAttribute("dktk");
+                        %>
+                        <%
+                            if (dktk != null) {
+                        %>
+                        <div class="alert alert-danger" role="alert">
+                            <%= dktk%>
                         </div>
                         <%
                             }

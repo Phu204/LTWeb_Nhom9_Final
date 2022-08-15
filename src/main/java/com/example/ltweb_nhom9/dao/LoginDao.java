@@ -16,7 +16,7 @@ public class LoginDao {
         Connection connection =null;
         try {
             String sql = "SELECT * FROM customer WHERE email = ? AND password = ?";
-             connection = DBConect.getInstance().connect();
+             connection = DBConect.getInstance().connection();
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, email);
             ps.setString(2, password);

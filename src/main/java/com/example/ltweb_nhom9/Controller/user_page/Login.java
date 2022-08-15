@@ -33,7 +33,7 @@ public class Login extends HttpServlet {
             session.setMaxInactiveInterval(120);
             response.sendRedirect("Home");
         }else{
-            session.setAttribute("error", "Email hoặc mật khẩu không chính xác.");
+            session.setAttribute("dntb", "Email hoặc mật khẩu không chính xác.");
             response.sendRedirect("Login");
         }
     }

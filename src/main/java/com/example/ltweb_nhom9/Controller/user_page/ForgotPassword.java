@@ -26,10 +26,10 @@ public class ForgotPassword extends HttpServlet {
         String email = request.getParameter("email");
         boolean c = UserServices.forgotPassword(email);
         if (c){
-            session.setAttribute("success", "Mật khẩu đã được thay đổi <b>thành công</b></style>. Vui lòng kiểm tra hộp thư, Email có thể nằm trong Inbox hoặc thư mục Spam trong hộp thư của bạn.");
-            response.sendRedirect("Login");
+            session.setAttribute("qmktk", "Mật khẩu đã được thay đổi <b>thành công</b></style>. Vui lòng kiểm tra hộp thư, Email có thể nằm trong Inbox hoặc thư mục Spam trong hộp thư của bạn.");
+            response.sendRedirect("ForgotPassword");
         }else{
-            session.setAttribute("error", "Email không tồn tại.");
+            session.setAttribute("qmktb", "Email không tồn tại.");
             response.sendRedirect("ForgotPassword");
         }
 

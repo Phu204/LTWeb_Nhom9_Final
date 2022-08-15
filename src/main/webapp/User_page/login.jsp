@@ -16,8 +16,8 @@
 
 <head>
 
-<%--    <meta charset="UTF-8">--%>
-<%--    <title> ${title} | SHOP TEAM 9</title>--%>
+    <meta charset="UTF-8">
+    <title> ${title} | SHOP TEAM 9</title>
     <link rel="icon" href="${pageContext.request.contextPath}/img/icon/logo.png" type="image/x-icon"/>
 
 
@@ -109,30 +109,18 @@
                     </div>
                     <form action="/LTWeb_Nhom9_war/Login" method="post">
                         <%
-                            String error = (String) session.getAttribute("error");
+                            String dntb = (String) session.getAttribute("dntb");
                         %>
                         <%
-                            if (error != null) {
+                            if (dntb != null) {
                         %>
                         <div class="alert alert-danger" role="alert">
-                            <%= error%>
+                            <%= dntb%>
                         </div>
                         <%
                             }
                         %>
-<%--                    success--%>
-                        <%
-                            String success = (String) session.getAttribute("success");
-                        %>
-                        <%
-                            if (success != null) {
-                        %>
-                        <div class="alert alert-success" role="alert">
-                            <%= success%>
-                        </div>
-                        <%
-                            }
-                        %>
+
                         <div class="clearfix">
                             <fieldset class="form-group margin-bottom-20">
                                 <label>Email<span class="required">*</span></label>

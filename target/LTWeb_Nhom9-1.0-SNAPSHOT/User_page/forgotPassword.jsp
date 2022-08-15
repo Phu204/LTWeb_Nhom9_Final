@@ -664,26 +664,26 @@
                     <form action="/LTWeb_Nhom9_war/ForgotPassword" method="post">
 <%--                    đổi mật khẩu error--%>
                         <%
-                            String error = (String) session.getAttribute("error");
+                            String qmktb = (String) session.getAttribute("qmktb");
                         %>
                         <%
-                            if (error != null) {
+                            if (qmktb != null) {
                         %>
                         <div class="alert alert-danger" role="alert">
-                            <%= error%>
+                            <%= qmktb%>
                         </div>
                         <%
                             }
                         %>
 <%--                    đổi mật khẩu success--%>
                         <%
-                            String success = (String) session.getAttribute("success");
+                            String qmktk = (String) session.getAttribute("qmktk");
                         %>
                         <%
-                            if (success != null) {
+                            if (qmktk != null) {
                         %>
                         <div class="alert alert-success" role="alert">
-                            <%= success%>
+                            <%= qmktk%>
                         </div>
                         <%
                             }

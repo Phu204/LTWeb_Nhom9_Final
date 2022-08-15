@@ -33,14 +33,14 @@ public class ChangePassword extends HttpServlet {
             if (us.getPassword().equals(oldPass) || us.getEmail().equals(email)) {
                 if (ChangePassworDao.checkNewPassword(email, oldPass, newPass, reNewPass)) {
                     ChangePassworDao.changePassword(email, oldPass, newPass);
-                    session.setAttribute("success", "Thay đổi mật khẩu thành công.");
+                    session.setAttribute("doimktk", "Thay đổi mật khẩu thành công.");
                     response.sendRedirect("ChangePassword");
                 } else {
-                    session.setAttribute("error2", "Mật khẩu mới không chính xác.");
+                    session.setAttribute("mkms", "Mật khẩu mới không chính xác.");
                     response.sendRedirect("ChangePassword");
                 }
             } else {
-                session.setAttribute("error", "Email hoặc mật khẩu không chính xác.");
+                session.setAttribute("ehms", "Email hoặc mật khẩu không chính xác.");
                 response.sendRedirect("ChangePassword");
             }
         }else{

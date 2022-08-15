@@ -31,10 +31,9 @@ public class Register extends HttpServlet {
         String password = request.getParameter("password");
         boolean r = RegisterDao.registerId_user(name, phone, email, password);
         if (r){
-            session.setAttribute("success", "<b>Đăng ký thành công</b>, vui lòng đăng nhập tài khoản.");
             response.sendRedirect("Login");
         } else{
-            session.setAttribute("error", "Email đã tồn tại.");
+            session.setAttribute("dktb", "Email đã tồn tại.");
             response.sendRedirect("Register");
         }
     }
