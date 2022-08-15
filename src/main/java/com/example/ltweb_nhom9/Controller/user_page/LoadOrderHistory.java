@@ -10,24 +10,26 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "loadOrderHistory", value = "/loadOrderHistory")
+@WebServlet(name = "LoadOrderHistory", value = "/LoadOrderHistory")
 public class LoadOrderHistory extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("auth");
+
         int id = user.getId();
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         UserDao ud = UserDao.getInstance();
         List<Order> orderList = ud.getOrderHistory(id);
         request.setAttribute("oderLists", orderList);
-
-        if(id != 0){
+        if(user != null){
             request.getRequestDispatcher("User_page/user.jsp").forward(request,response);
         }else{
             response.sendRedirect("Login");
         }
+
+
     }
 
     @Override

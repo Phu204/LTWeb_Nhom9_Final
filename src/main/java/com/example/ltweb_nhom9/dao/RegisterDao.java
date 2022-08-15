@@ -40,6 +40,10 @@ public class RegisterDao {
         return max;
     }
 
+    public static void main(String[] args) {
+        System.out.println(checkEmailDuplicates("y2ennhi0909@gmail.com"));
+    }
+
     public static boolean checkEmailDuplicates(String email) {
         try {
             String sql = "SELECT email FROM customer WHERE email = ?";

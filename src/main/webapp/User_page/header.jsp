@@ -54,7 +54,7 @@
                             <li><a rel="nofollow" href="LogOut" title="Đăng xuất"><i class="fa fa-sign-out"
                                                                                      aria-hidden="true"></i> Đăng
                                 xuất</a></li>
-                            <li><a rel="nofollow" href="loadOrderHistory" title="hello name"><i class="fa fa-user"
+                            <li><a rel="nofollow" href="LoadOrderHistory" title="hello name"><i class="fa fa-user"
                                                                                            aria-hidden="true"></i>
                                 Hello ${sessionScope.auth.name}</a>
                             </li>
@@ -592,7 +592,7 @@
                         </li>
 
 
-                        <li class="nav-item "><a class="nav-link" href="lien-he.html" title="Liên hệ">Liên hệ</a></li>
+                        <li class="nav-item "><a class="nav-link" href="Contact" title="Liên hệ">Liên hệ</a></li>
 
 
                     </ul>
