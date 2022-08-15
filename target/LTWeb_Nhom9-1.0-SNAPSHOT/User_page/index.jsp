@@ -34,9 +34,7 @@
 <div id="fb-root"></div>
 
 
-<jsp:include page='header.jsp'>
-    <jsp:param name="articleId" value=""/>
-</jsp:include>
+<jsp:include page='header.jsp'></jsp:include>
 
 <script src="${pageContext.request.contextPath}/User_page/js/jquery.min.js" type="text/javascript"></script>
 

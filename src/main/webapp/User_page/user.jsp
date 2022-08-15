@@ -10,17 +10,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 
-<% List<Order> list = (List<Order>) request.getAttribute("orderLists");
-    System.out.println(list+" 1");
-%>
-
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 
-    <link rel="icon" href="../img/icon/logo.png" type="image/x-icon"/>
+    <link rel="icon" href="${pageContext.request.contextPath}/img/icon/logo.png" type="image/x-icon"/>
     <title>${sessionScope.auth.name} | SHOP TEAM 9</title>
 
     <link href="${pageContext.request.contextPath}/User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
@@ -68,7 +63,7 @@
                         <div class="block-content form-signup block-edit-padding">
                             <p><i class="fa fa-user"></i> ${sessionScope.auth.name}</p>
                             <p><i class="fa fa-map-marker"></i></p>
-                            <div class="margin-top-20"><a href="User_page/address"
+                            <div class="margin-top-20"><a href="#"
                                                           class="btn btn-blues btn-full" title="Sổ địa chỉ"><i
                                     class="fa fa-book"></i>
                                 Sổ địa chỉ (0)</a></div>
@@ -102,39 +97,12 @@
                                             <tr>
                                                 <td><p>1</p></td>
                                                 <td>${o.getDatecreate()}</td>
-                                                <td>${o.getPhone()}</td>
-                                                <td>addCus</td>
+                                                <td>${o.stringPhoneNum(o.getPhone())}</td>
+                                                <td>${o.getAddress()}</td>
                                                 <td>${o.stringPrice(o.getPrice())}</td>
-                                                <td>payment</td>
+                                                <td>${o.stringPayment(o.payment)}</td>
                                             </tr>
                                         </c:forEach>
-
-                                        <%--                                        <tr>--%>
-                                        <%--                                            <td >--%>
-                                        <%--                                                <p>1</p>--%>
-                                        <%--                                            </td>--%>
-                                        <%--                                            <td >--%>
-                                        <%--                                                <p>2</p>--%>
-                                        <%--                                            </td>--%>
-                                        <%--                                            <td >--%>
-                                        <%--                                                <p>3</p>--%>
-                                        <%--                                            </td>--%>
-                                        <%--                                            <td >--%>
-                                        <%--                                                <p>4</p>--%>
-                                        <%--                                            </td>--%>
-                                        <%--                                            <td >--%>
-                                        <%--                                                <p>5</p>--%>
-                                        <%--                                            </td>--%>
-                                        <%--                                            <td >--%>
-                                        <%--                                                <p>6</p>--%>
-                                        <%--                                            </td>--%>
-                                        <%--                                        </tr>--%>
-                                        <%--                                        --%>
-                                        <%--                                        <tr>--%>
-                                        <%--                                            <td colspan="7">--%>
-                                        <%--                                                <p>Không có đơn hàng nào.</p>--%>
-                                        <%--                                            </td>--%>
-                                        <%--                                        </tr>--%>
 
                                         </tbody>
                                     </table>
@@ -151,22 +119,10 @@
 </div>
 
 <div class="pull-xs-left text-center" style="margin-top: 15px;">
-    <a href="changePassword.jsp" class="btn btn-style btn-blues" rel="nofollow">Đổi mật khẩu</a>
+    <a href="ChangePassword" class="btn btn-style btn-blues" rel="nofollow">Đổi mật khẩu</a>
 </div>
 
 <jsp:include page="footer.jsp"></jsp:include>
-<%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>--%>
-<%--<script>--%>
-<%--    $.ajax({--%>
-<%--        url: "/LTWeb_Nhom9_Final/loadOrderHistory",--%>
-<%--        type: "get",--%>
-<%--        success: function (data) {--%>
-<%--            var row = document.getElementById("content");--%>
-<%--            row.innerHTML += data;--%>
-<%--        }--%>
-<%--    })--%>
-<%--</script>--%>
-
 
 </body>
 </html>

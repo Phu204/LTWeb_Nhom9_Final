@@ -17,8 +17,8 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>Đăng nhập</title>
-    <link rel="icon" href="../img/icon/logo.png" type="image/x-icon"/>
+    <title> ${title} | SHOP TEAM 9</title>
+    <link rel="icon" href="${pageContext.request.contextPath}/img/icon/logo.png" type="image/x-icon"/>
 
 
     <link href="${pageContext.request.contextPath}/User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
@@ -98,42 +98,29 @@
                         <h1 class="title-head">Đăng nhập tài khoản</h1>
                     </div>
                     <div class="social-login text-center margin-bottom-10">
-                        <a href="#" class="social-login--facebook" ><img
-                                width="129px" height="37px" alt="facebook-login-button"
-                                src="../img/icon/fb-btn.svg"></a>
-                        <a href="#" class="social-login--google" ><img
+                        <a href="https://accounts.google.com/o/oauth2/auth?scope=email%20profile%20openid&redirect_uri=http://localhost:8080/LTWeb_Nhom9_war/LoginGoogle&response_type=code
+                        &client_id=143041336891-uti56rdkneqhih5i5tlr2gr1op35pm5s.apps.googleusercontent.com&approval_prompt=force"
+                           class="social-login--google" ><img
                                 width="129px" height="37px" alt="google-login-button"
-                                src="../img/icon/gp-btn.svg"></a>
+                                src="${pageContext.request.contextPath}/img/icon/gp-btn.svg"></a>
                     </div>
                     <div class="line-break">
                         <span>hoặc</span>
                     </div>
                     <form action="/LTWeb_Nhom9_war/Login" method="post">
                         <%
-                            String error = (String) request.getAttribute("error");
+                            String dntb = (String) session.getAttribute("dntb");
                         %>
                         <%
-                            if (error != null) {
+                            if (dntb != null) {
                         %>
                         <div class="alert alert-danger" role="alert">
-                            <%= error%>
+                            <%= dntb%>
                         </div>
                         <%
                             }
                         %>
-<%--                    success--%>
-                        <%
-                            String success = (String) request.getAttribute("success");
-                        %>
-                        <%
-                            if (success != null) {
-                        %>
-                        <div class="alert alert-success" role="alert">
-                            <%= success%>
-                        </div>
-                        <%
-                            }
-                        %>
+
                         <div class="clearfix">
                             <fieldset class="form-group margin-bottom-20">
                                 <label>Email<span class="required">*</span></label>
@@ -160,12 +147,12 @@
                             </div>
                             <div class="clearfix"></div>
                             <p class="text-center">
-                                <a href="forgotPassword.jsp" class="btn-link-style"
+                                <a href="ForgotPassword" class="btn-link-style"
                                    title="Quên mật khẩu?">Quên mật khẩu?</a>
                             </p>
                             <div class="text-login text-center">
                                 <p>
-                                    Bạn chưa có tài khoản. Đăng ký <a href="register.jsp" title="Đăng ký">tại đây.</a>
+                                    Bạn chưa có tài khoản. Đăng ký <a href="Register" title="Đăng ký">tại đây.</a>
                                 </p>
                             </div>
                         </div>
@@ -193,12 +180,9 @@
     <span class="oi">0123456789</span>
 </a>
 <div class="box_chat">
-    <a class="sc w d-sm-none hidden-lg hidden-md hidden-sm" href="#" title="Zalo">
-        <img src="../img/icon/zalochat.png" alt="Zalo">
-    </a>
     <a class="sc w d-none d-lg-block d-xl-block d-md-block hidden-xs" href="#" title="Zalo"
        target="">
-        <img src="../img/icon/zalochat.png" alt="Zalo">
+        <img src="${pageContext.request.contextPath}/img/icon/zalochat.png" alt="Zalo">
     </a>
 </div>
 

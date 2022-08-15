@@ -11,11 +11,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class LoginDao {
-    //    login
+
     public static User login(String email, String password) {
+        Connection connection =null;
         try {
             String sql = "SELECT * FROM customer WHERE email = ? AND password = ?";
-            Connection connection = DBConect.getInstance().connection();
+             connection = DBConect.getInstance().connection();
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, email);
             ps.setString(2, password);
@@ -40,6 +41,13 @@ public class LoginDao {
             return us;
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            try{
+                if(connection!=null) connection.close();
+            }catch (SQLException e){
+                e.printStackTrace();
+            }
+
         }
         return null;
 

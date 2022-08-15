@@ -154,6 +154,23 @@ public class Order implements Serializable {
         this.note = note;
     }
 
+    public String stringPayment(boolean payment){
+        String result = "";
+        if(payment == true){
+            result = "Đã thanh toán";
+        }else{
+            result = "Thanh toán khi nhận hàng";
+        }
+        return result;
+    }
+
+    public String stringPhoneNum(double phone){
+        String result = "0";
+        DecimalFormat df = new DecimalFormat("##########");
+        String rs = df.format(phone);
+        return result + rs;
+    }
+
     public String stringPrice(double price){
         DecimalFormat df = new DecimalFormat("###,###");
         String result = df.format(price);

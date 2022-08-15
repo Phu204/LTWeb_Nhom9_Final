@@ -16,21 +16,21 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>Quên mật khẩu</title>
-    <link rel="icon" href="../img/icon/logo.png" type="image/x-icon"/>
+    <title>${title} | SHOP TEAM 9</title>
+    <link rel="icon" href="${pageContext.request.contextPath}/img/icon/logo.png" type="image/x-icon"/>
 
 
-    <link href="css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="css/plugin.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="css/base.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="css/evo-main.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="css/slick.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/plugin.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/base.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/evo-main.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/slick.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 
-    <link href="css/ContacIcon.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/Reposive&&ContacIcon.css" rel="stylesheet" type="text/css"/>
 
-    <link href="css/evo-accounts.scss.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="css/all.css"
+    <link href="${pageContext.request.contextPath}/User_page/css/evo-accounts.scss.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/User_page/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           type="text/css"/>
@@ -74,12 +74,12 @@
                 <div class="col-md-6 col-sm-6 evo-account hidden-xs hidden-sm">
                     <ul>
 
-                        <li><a rel="nofollow" href="login.jsp" title="Đăng nhập"><i class="fa fa-sign-in"
-                                                                                    aria-hidden="true"></i> Đăng
+                        <li><a rel="nofollow" href="Login" title="Đăng nhập"><i class="fa fa-sign-in"
+                                                                                aria-hidden="true"></i> Đăng
                             nhập</a></li>
-                        <li><a rel="nofollow" href="register.jsp" title="Đăng ký"><i class="fa fa-user-plus"
-                                                                                     aria-hidden="true"></i> Đăng
-                            ký</a></li>
+                        <li><a rel="nofollow" href="Register" title="Đăng ký"><i class="fa fa-user-plus"
+                                                                                 aria-hidden="true"></i> Đăng ký</a>
+                        </li>
 
                     </ul>
                 </div>
@@ -98,7 +98,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="/" class="logo-wrapper" title="SHOP TEAM 9">
-                        <img src="../img/icon/logo.png" data-src="img/icon/logo.png" alt="SHOP TEAM 9"
+                        <img src="${pageContext.request.contextPath}/img/icon/logo.png" data-src="img/icon/logo.png" alt="SHOP TEAM 9"
                              class="lazy img-responsive center-block"/>
                     </a>
                     <div class="evo-flexitem evo-flexitem-fill visible-sm visible-xs">
@@ -120,10 +120,10 @@
                     </div>
                 </div>
                 <div class="col-md-5 evo-header-search hidden-sm hidden-xs">
-                    <form action="#" method="get">
+                    <form action="Product" method="get">
                         <div class="input-group">
                             <input type="text" name="query" class="search-auto form-control"
-                                   placeholder="Bạn cần tìm gì...?"/>
+                                   placeholder="Bạn cần tìm gì...?" />
                             <span class="input-group-btn">
 									<button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
 								</span>
@@ -217,14 +217,14 @@
                             </div>
                             <a href="/" class="logo-wrapper" title="SHOP TEAM 9">
                                 <img src="#" data-src="img/icon/logo.png" alt="SHOP TEAM 9"
-                                     class="lazy img-responsive center-block"/>
+                                     class="lazy img-responsive center-block" />
                             </a>
 
                         </div>
                         <div class="ul-first-menu">
 
-                            <a rel="nofollow" href="login.jsp" title="Đăng nhập">Đăng nhập</a>
-                            <a rel="nofollow" href="register.jsp" title="Đăng ký">Đăng ký</a>
+                            <a rel="nofollow" href="login.html" title="Đăng nhập">Đăng nhập</a>
+                            <a rel="nofollow" href="register.html" title="Đăng ký">Đăng ký</a>
 
                         </div>
                     </div>
@@ -235,62 +235,51 @@
                             <ul id="menu2017">
 
                                 <li class="dropdown menu-item-count">
-                                    <a class="evo-categories-a" href="#" title="THIẾT BỊ NHÀ BẾP">THIẾT BỊ NHÀ BẾP<i
+                                    <a class="evo-categories-a" href="Product?category=THIẾT BỊ NHÀ BẾP" title="THIẾT BỊ NHÀ BẾP">THIẾT BỊ NHÀ BẾP<i
                                             class="fa fa-angle-down hidden-lg hidden-md"
                                             data-toggle="dropdown"></i></a>
                                     <div class="subcate gd-menu">
 
 
                                         <aside class="aside-evo">
-                                            <a class="evo-categories-main-sub" href="#" title="BẾP TỪ">BẾP TỪ<i
+                                            <a class="evo-categories-main-sub" href="Product?query=BẾP TỪ" title="BẾP TỪ">BẾP TỪ<i
                                                     class="fa fa-angle-down hidden-lg hidden-md"
                                                     data-toggle="dropdown"></i></a>
-                                            <div class="list-evo-categories-main-sub">
-
-                                                <a href="#" title="BẾP BOSCH">BẾP BOSCH</a>
-
-                                                <a href="#" title="BẾP AEG">BẾP AEG</a>
-
-                                                <a href="#" title="BẾP SIEMENS">BẾP SIEMENS</a>
-
-                                                <a href="#" title="BẾP TỪ KHÁC">BẾP TỪ KHÁC</a>
-
-                                            </div>
                                         </aside>
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#" title="HÚT MÙI">HÚT MÙI</a>
+                                            <a class="evo-categories-main-sub" href="Product?query=HÚT MÙI" title="HÚT MÙI">HÚT MÙI</a>
                                         </aside>
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#" title="MÁY RỬA BÁT">MÁY RỬA
+                                            <a class="evo-categories-main-sub" href="Product?query=MÁY RỬA BÁT" title="MÁY RỬA BÁT">MÁY RỬA
                                                 BÁT</a>
                                         </aside>
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#"
-                                               title="LÒ VI SÓNG, NƯỚNG, HẤP">LÒ
+                                            <a class="evo-categories-main-sub" href="Product?query=LÒ VI SÓNG"
+                                               title="LÒ VI SÓNG">LÒ
                                                 VI SÓNG, NƯỚNG, HẤP</a>
                                         </aside>
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#" title="TỦ LẠNH">TỦ LẠNH</a>
+                                            <a class="evo-categories-main-sub" href="Product?query=TỦ LẠNH" title="TỦ LẠNH">TỦ LẠNH</a>
                                         </aside>
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#" title="BẾP NƯỚNG">BẾP
+                                            <a class="evo-categories-main-sub" href="Product?query=LÒ NƯỚNG" title="LÒ NƯỚNG">LÒ
                                                 NƯỚNG</a>
                                         </aside>
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#" title="VÒI CHẬU RỬA BÁT">VÒI
-                                                CHẬU RỬA BÁT</a>
+                                            <a class="evo-categories-main-sub" href="Product?query=VÒI RỬA" title="VÒI RỬA">VÒI
+                                                RỬA</a>
                                         </aside>
 
 
@@ -298,15 +287,16 @@
                                 </li>
 
 
+
                                 <li class="dropdown menu-item-count">
-                                    <a class="evo-categories-a" href="#" title="THIẾT BỊ VỆ SINH">THIẾT BỊ VỆ SINH<i
+                                    <a class="evo-categories-a" href="Product?query=THIẾT BỊ VỆ SINH" title="THIẾT BỊ VỆ SINH">THIẾT BỊ VỆ SINH<i
                                             class="fa fa-angle-down hidden-lg hidden-md"
                                             data-toggle="dropdown"></i></a>
                                     <div class="subcate gd-menu">
 
 
                                         <aside class="aside-evo">
-                                            <a class="evo-categories-main-sub" href="#" title="SEN TẮM">SEN TẮM<i
+                                            <a class="evo-categories-main-sub" href="Product?query=SEN TẮM" title="SEN TẮM">SEN TẮM<i
                                                     class="fa fa-angle-down hidden-lg hidden-md"
                                                     data-toggle="dropdown"></i></a>
                                             <div class="list-evo-categories-main-sub">
@@ -316,7 +306,7 @@
 
 
                                         <aside class="aside-evo">
-                                            <a class="evo-categories-main-sub" href="#" title="VÒI LAVABO">VÒI
+                                            <a class="evo-categories-main-sub" href="Product?query=VÒI LAVABO" title="VÒI LAVABO">VÒI
                                                 LAVABO<i class="fa fa-angle-down hidden-lg hidden-md"
                                                          data-toggle="dropdown"></i></a>
                                             <div class="list-evo-categories-main-sub">
@@ -326,7 +316,7 @@
 
 
                                         <aside class="aside-evo">
-                                            <a class="evo-categories-main-sub" href="#" title="BỒN TẮM">BỒN TẮM<i
+                                            <a class="evo-categories-main-sub" href="Product?query=BỒN TẮM" title="BỒN TẮM">BỒN TẮM<i
                                                     class="fa fa-angle-down hidden-lg hidden-md"
                                                     data-toggle="dropdown"></i></a>
                                             <div class="list-evo-categories-main-sub">
@@ -336,7 +326,7 @@
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#" title="PHỤ KIỆN NHÀ TẮM">PHỤ
+                                            <a class="evo-categories-main-sub" href="Product?query=PHỤ KIỆN" title="PHỤ KIỆN NHÀ TẮM">PHỤ
                                                 KIỆN NHÀ TẮM</a>
                                         </aside>
 
@@ -346,68 +336,59 @@
 
 
                                 <li class="dropdown menu-item-count">
-                                    <a class="evo-categories-a" href="#" title="ĐỒ GIA DỤNG">ĐỒ GIA DỤNG<i
+                                    <a class="evo-categories-a" href="Product?category=ĐỒ GIA DỤNG" title="ĐỒ GIA DỤNG">ĐỒ GIA DỤNG<i
                                             class="fa fa-angle-down hidden-lg hidden-md"
                                             data-toggle="dropdown"></i></a>
                                     <div class="subcate gd-menu">
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#" title="MÁY PHA CAFE">MÁY PHA
+                                            <a class="evo-categories-main-sub" href="Product?query=MÁY PHA CAFE" title="MÁY PHA CAFE">MÁY PHA
                                                 CAFE</a>
                                         </aside>
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#"
-                                               title="MÁY ÉP, MÁY VẮT CAM, MÁY XAY">MÁY ÉP, MÁY VẮT CAM, MÁY
-                                                XAY</a>
+                                            <a class="evo-categories-main-sub" href="Product?query=MÁY ÉP"
+                                               title="MÁY ÉP, MÁY VẮT CAM, MÁY XAY">MÁY ÉP
+                                            </a>
                                         </aside>
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#"
-                                               title="BỘ CỐC, LY, BÁT ĐĨA CAO CẤP">BỘ CỐC, LY, BÁT ĐĨA CAO CẤP</a>
+                                            <a class="evo-categories-main-sub" href="Product?query=ẤM ĐUN"
+                                               title="ẤM ĐUN NƯỚC">ẤM ĐUN NƯỚC</a>
                                         </aside>
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#"
-                                               title="ẤM ĐUN NƯỚC, BÌNH ĐỰNG NƯỚC">ẤM ĐUN NƯỚC, BÌNH ĐỰNG NƯỚC</a>
+                                            <a class="evo-categories-main-sub" href="Product?query=MÁY LỌC"
+                                               title="MÁY LỌC KHÔNG KHÍ">MÁY
+                                                LỌC KHÔNG KHÍ</a>
                                         </aside>
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#"
-                                               title="MÁY LỌC KHÔNG KHÍ, QUẠT">MÁY
-                                                LỌC KHÔNG KHÍ, QUẠT</a>
+                                            <a class="evo-categories-main-sub" href="Product?query=BÀN LÀ"
+                                               title="BÀN LÀ">BÀN LÀ</a>
                                         </aside>
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#"
-                                               title="BÀN LÀ, MÁY SẤY, MÁY GIẶT">BÀN LÀ, MÁY SẤY, MÁY GIẶT</a>
+                                            <a class="evo-categories-main-sub" href="Product?query=MÁY SẤY"
+                                               title="MÁY SẤY">MÁY SẤY</a>
+                                        </aside>
+
+                                        <aside>
+                                            <a class="evo-categories-main-sub" href="Product?query=MÁY GIẶT"
+                                               title="MÁY GIẶT">MÁY GIẶT</a>
                                         </aside>
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#"
-                                               title="THIẾT BỊ CHIẾU SÁNG">THIẾT
-                                                BỊ CHIẾU SÁNG</a>
-                                        </aside>
-
-
-                                        <aside>
-                                            <a class="evo-categories-main-sub" href="#"
-                                               title="CHỔI, CÂY LAU NHÀ">CHỔI,
+                                            <a class="evo-categories-main-sub" href="Product?query=CÂY LAU NHÀ"
+                                               title="CÂY LAU NHÀ">
                                                 CÂY LAU NHÀ</a>
-                                        </aside>
-
-
-                                        <aside>
-                                            <a class="evo-categories-main-sub" href="#"
-                                               title="TÔNG ĐƠ, CẠO RÂU">TÔNG
-                                                ĐƠ, CẠO RÂU</a>
                                         </aside>
 
 
@@ -416,48 +397,55 @@
 
 
                                 <li class="dropdown menu-item-count">
-                                    <a class="evo-categories-a" href="#" title="DỤNG CỤ NHÀ BẾP">DỤNG CỤ NHÀ BẾP<i
+                                    <a class="evo-categories-a" href="Product?category=DỤNG CỤ NHÀ BẾP" title="DỤNG CỤ NHÀ BẾP">DỤNG CỤ NHÀ BẾP<i
                                             class="fa fa-angle-down hidden-lg hidden-md"
                                             data-toggle="dropdown"></i></a>
                                     <div class="subcate gd-menu">
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#"
+                                            <a class="evo-categories-main-sub" href="Product?query=NỒI CHẢO"
                                                title="BỘ NỒI CHẢO CAO CẤP">BỘ
                                                 NỒI CHẢO CAO CẤP</a>
                                         </aside>
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#"
-                                               title="NỒI CƠM, ẤP SUẤT, NỒI ĐA NĂNG">NỒI CƠM, ẤP SUẤT, NỒI ĐA
-                                                NĂNG</a>
+                                            <a class="evo-categories-main-sub" href="Product?query=NỒI CƠM"
+                                               title="NỒI CƠM">NỒI CƠM</a>
+                                        </aside>
+
+                                        <aside>
+                                            <a class="evo-categories-main-sub" href="Product?query=ẤP SUẤT"
+                                               title="ẤP SUẤT">ẤP SUẤT</a>
+                                        </aside>
+
+                                        <aside>
+                                            <a class="evo-categories-main-sub" href="Product?query=NỒI ĐA NĂNG"
+                                               title="NỒI ĐA NĂNG">NỒI ĐA NĂNG</a>
+                                        </aside>
+
+                                        <aside>
+                                            <a class="evo-categories-main-sub" href="Product?query=DAO"
+                                               title="DAO ">DAO</a>
                                         </aside>
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#"
-                                               title="DAO THÌA DĨA THỚT KÉO">DAO
-                                                THÌA DĨA THỚT KÉO</a>
+                                            <a class="evo-categories-main-sub" href="Product?query=MÁY ÉP"
+                                               title="MÁY ÉP">MÁY ÉP</a>
                                         </aside>
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#"
-                                               title="MÁY ÉP, VẮT CAM, XAY THỊT">MÁY ÉP, VẮT CAM, XAY THỊT</a>
-                                        </aside>
-
-
-                                        <aside>
-                                            <a class="evo-categories-main-sub" href="#" title="DỤNG CỤ NẤU ĂN">DỤNG
+                                            <a class="evo-categories-main-sub" href="Product?query=DỤNG CỤ NẤU ĂN" title="DỤNG CỤ NẤU ĂN">DỤNG
                                                 CỤ
                                                 NẤU ĂN</a>
                                         </aside>
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#"
+                                            <a class="evo-categories-main-sub" href="Product?query=ẤM ĐUN NƯỚC"
                                                title="ẤM ĐUN NƯỚC, BÌNH ĐỰNG NƯỚC">ẤM ĐUN NƯỚC, BÌNH ĐỰNG NƯỚC</a>
                                         </aside>
 
@@ -467,29 +455,23 @@
 
 
                                 <li class="dropdown menu-item-count">
-                                    <a class="evo-categories-a" href="#" title="TỦ BẢO QUẢN CIGAR, RƯỢU VANG">TỦ BẢO
+                                    <a class="evo-categories-a" href="Product?query=TỦ BẢO QUẢN" title="TỦ BẢO QUẢN CIGAR, RƯỢU VANG">TỦ BẢO
                                         QUẢN CIGAR, RƯỢU VANG<i class="fa fa-angle-down hidden-lg hidden-md"
                                                                 data-toggle="dropdown"></i></a>
                                     <div class="subcate gd-menu">
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#" title="TỦ BẢO QUẢN CIGAR">TỦ
+                                            <a class="evo-categories-main-sub" href="Product?query=TỦ BẢO QUẢN CIGAR" title="TỦ BẢO QUẢN CIGAR">TỦ
                                                 BẢO
                                                 QUẢN CIGAR</a>
                                         </aside>
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#"
+                                            <a class="evo-categories-main-sub" href="Product?category=TỦ BẢO QUẢN RƯỢU"
                                                title="TỦ BẢO QUẢN RƯỢU VANG">TỦ
                                                 BẢO QUẢN RƯỢU VANG</a>
-                                        </aside>
-
-
-                                        <aside>
-                                            <a class="evo-categories-main-sub" href="#" title="PHỤ KIỆN">PHỤ
-                                                KIỆN</a>
                                         </aside>
 
 
@@ -498,48 +480,48 @@
 
 
                                 <li class="dropdown menu-item-count">
-                                    <a class="evo-categories-a" href="#" title="THIẾT BỊ MIELE">THIẾT BỊ MIELE<i
+                                    <a class="evo-categories-a" href="Product?category=THIẾT BỊ MIELE" title="THIẾT BỊ MIELE">THIẾT BỊ MIELE<i
                                             class="fa fa-angle-down hidden-lg hidden-md"
                                             data-toggle="dropdown"></i></a>
                                     <div class="subcate gd-menu">
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#" title="LÒ NƯỚNG MIELE">LÒ
+                                            <a class="evo-categories-main-sub" href="Product?query=LÒ NƯỚNG MIELE" title="LÒ NƯỚNG MIELE">LÒ
                                                 NƯỚNG
                                                 MIELE</a>
                                         </aside>
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#" title="LÒ VI SÓNG MIELE">LÒ
+                                            <a class="evo-categories-main-sub" href="Product?query=LÒ VI SÓNG MIELE" title="LÒ VI SÓNG MIELE">LÒ
                                                 VI
                                                 SÓNG MIELE</a>
                                         </aside>
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#" title="BẾP TỪ MIELE">BẾP TỪ
+                                            <a class="evo-categories-main-sub" href="Product?query=BẾP TỪ MIELE" title="BẾP TỪ MIELE">BẾP TỪ
                                                 MIELE</a>
                                         </aside>
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#"
+                                            <a class="evo-categories-main-sub" href="Product?query=MÁY RỬA BÁT MIELE"
                                                title="MÁY RỬA BÁT MIELE">MÁY
                                                 RỬA BÁT MIELE</a>
                                         </aside>
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#" title="HÚT MÙI MIELE">HÚT
+                                            <a class="evo-categories-main-sub" href="Product?query=" title="HÚT MÙI MIELE">HÚT
                                                 MÙI
                                                 MIELE</a>
                                         </aside>
 
 
                                         <aside>
-                                            <a class="evo-categories-main-sub" href="#"
+                                            <a class="evo-categories-main-sub" href="Product?query=PHA CAFE MIELE"
                                                title="MÁY PHA CAFE MIELE">MÁY
                                                 PHA CAFE MIELE</a>
                                         </aside>
@@ -550,25 +532,25 @@
 
 
                                 <li class="menu-item-count">
-                                    <a class="evo-categories-a" href="#" title="THIẾT BỊ SMEG">THIẾT BỊ SMEG</a>
+                                    <a class="evo-categories-a" href="Product?category=THIẾT BỊ SMEG" title="THIẾT BỊ SMEG">THIẾT BỊ SMEG</a>
                                 </li>
 
 
                                 <li class="menu-item-count">
-                                    <a class="evo-categories-a" href="#" title="ROBOT HÚT BỤI LAU NHÀ">ROBOT HÚT BỤI
+                                    <a class="evo-categories-a" href="Product?category=MÁY HÚT BỤI" title="ROBOT HÚT BỤI LAU NHÀ">ROBOT HÚT BỤI
                                         LAU
                                         NHÀ</a>
                                 </li>
 
 
                                 <li class="menu-item-count">
-                                    <a class="evo-categories-a" href="#" title="NỒI CHIÊN KHÔNG DẦU">NỒI CHIÊN KHÔNG
+                                    <a class="evo-categories-a" href="Product?category=NỒI CHIÊN KHÔNG DẦU" title="NỒI CHIÊN KHÔNG DẦU">NỒI CHIÊN KHÔNG
                                         DẦU</a>
                                 </li>
 
 
                                 <li class="menu-item-count">
-                                    <a class="evo-categories-a" href="#" title="THIẾT BỊ Y TẾ">THIẾT BỊ Y TẾ</a>
+                                    <a class="evo-categories-a" href="Product?category=THIẾT BỊ Y TẾ" title="THIẾT BỊ Y TẾ">THIẾT BỊ Y TẾ</a>
                                 </li>
 
 
@@ -580,266 +562,20 @@
                     <ul id="nav" class="nav">
 
 
-                        <li class="nav-item active"><a class="nav-link" href="#" title="Trang chủ">Trang chủ</a>
+                        <li class="nav-item active"><a class="nav-link" href="Home" title="Trang chủ">Trang chủ</a>
                         </li>
 
 
-                        <li class="nav-item "><a class="nav-link" href="gioi-thieu.html" title="Giới thiệu">Giới
-                            thiệu</a></li>
+                        <li class="nav-item "><a class="nav-link" href="gioi-thieu.html" title="Giới thiệu">Giới thiệu</a></li>
 
 
-                        <li class=" nav-item has-childs  has-mega">
-                            <a href="#" class="nav-link" title="Sản phẩm">Sản phẩm <i class="fa fa-angle-down"
-                                                                                      data-toggle="dropdown"></i></a>
-
-
-                            <div class="mega-content">
-                                <ul class="level0">
-
-
-                                    <li class="level1 parent item fix-navs">
-                                        <a class="hmega" href="#" title="THIẾT BỊ NHÀ BẾP">THIẾT BỊ NHÀ BẾP <i
-                                                class="fa fa-angle-down hidden-lg hidden-md"
-                                                data-toggle="dropdown"></i></a>
-                                        <ul class="level1">
-
-                                            <li class="level2">
-                                                <a href="#" title="BẾP TỪ">BẾP TỪ</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="HÚT MÙI">HÚT MÙI</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="MÁY RỬA BÁT">MÁY RỬA BÁT</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="LÒ VI SÓNG, NƯỚNG, HẤP">LÒ VI SÓNG, NƯỚNG,
-                                                    HẤP</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="TỦ LẠNH">TỦ LẠNH</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="BẾP NƯỚNG">BẾP NƯỚNG</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="VÒI CHẬU RỬA BÁT">VÒI CHẬU RỬA BÁT</a>
-                                            </li>
-
-                                        </ul>
-                                    </li>
-
-
-                                    <li class="level1 parent item fix-navs">
-                                        <a class="hmega" href="#" title="THIẾT BỊ VỆ SINH">THIẾT BỊ VỆ SINH <i
-                                                class="fa fa-angle-down hidden-lg hidden-md"
-                                                data-toggle="dropdown"></i></a>
-                                        <ul class="level1">
-
-                                            <li class="level2">
-                                                <a href="#" title="SEN TẮM">SEN TẮM</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="VÒI LAVABO">VÒI LAVABO</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="BỒN TẮM">BỒN TẮM</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="PHỤ KIỆN NHÀ TẮM">PHỤ KIỆN NHÀ TẮM</a>
-                                            </li>
-
-                                        </ul>
-                                    </li>
-
-
-                                    <li class="level1 parent item fix-navs">
-                                        <a class="hmega" href="#" title="ĐỒ GIA DỤNG">ĐỒ GIA DỤNG <i
-                                                class="fa fa-angle-down hidden-lg hidden-md"
-                                                data-toggle="dropdown"></i></a>
-                                        <ul class="level1">
-
-                                            <li class="level2">
-                                                <a href="#" title="MÁY PHA CAFE">MÁY PHA CAFE</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="MÁY ÉP, MÁY VẮT CAM, MÁY XAY">MÁY ÉP, MÁY VẮT
-                                                    CAM,
-                                                    MÁY XAY</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="BỘ CỐC, LY, BÁT ĐĨA CAO CẤP">BỘ CỐC, LY, BÁT ĐĨA
-                                                    CAO
-                                                    CẤP</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="ẤM ĐUN NƯỚC, BÌNH ĐỰNG NƯỚC">ẤM ĐUN NƯỚC, BÌNH
-                                                    ĐỰNG
-                                                    NƯỚC</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="MÁY LỌC KHÔNG KHÍ, QUẠT">MÁY LỌC KHÔNG KHÍ,
-                                                    QUẠT</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="BÀN LÀ, MÁY SẤY, MÁY GIẶT">BÀN LÀ, MÁY SẤY, MÁY
-                                                    GIẶT</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="THIẾT BỊ CHIẾU SÁNG">THIẾT BỊ CHIẾU SÁNG</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="CHỔI, CÂY LAU NHÀ">CHỔI, CÂY LAU NHÀ</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="TÔNG ĐƠ, CẠO RÂU">TÔNG ĐƠ, CẠO RÂU</a>
-                                            </li>
-
-                                        </ul>
-                                    </li>
-
-
-                                    <li class="level1 parent item fix-navs">
-                                        <a class="hmega" href="#" title="DỤNG CỤ NHÀ BẾP">DỤNG CỤ NHÀ BẾP <i
-                                                class="fa fa-angle-down hidden-lg hidden-md"
-                                                data-toggle="dropdown"></i></a>
-                                        <ul class="level1">
-
-                                            <li class="level2">
-                                                <a href="#" title="BỘ NỒI CHẢO CAO CẤP">BỘ NỒI CHẢO CAO CẤP</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="NỒI CƠM, ẤP SUẤT, NỒI ĐA NĂNG">NỒI CƠM, ẤP SUẤT,
-                                                    NỒI
-                                                    ĐA NĂNG</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="DAO THÌA DĨA THỚT KÉO">DAO THÌA DĨA THỚT KÉO</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="MÁY ÉP, VẮT CAM, XAY THỊT">MÁY ÉP, VẮT CAM, XAY
-                                                    THỊT</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="DỤNG CỤ NẤU ĂN">DỤNG CỤ NẤU ĂN</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="ẤM ĐUN NƯỚC, BÌNH ĐỰNG NƯỚC">ẤM ĐUN NƯỚC, BÌNH
-                                                    ĐỰNG
-                                                    NƯỚC</a>
-                                            </li>
-
-                                        </ul>
-                                    </li>
-
-
-                                    <li class="level1 parent item fix-navs">
-                                        <a class="hmega" href="#" title="TỦ BẢO QUẢN CIGAR, RƯỢU VANG">TỦ BẢO QUẢN
-                                            CIGAR, RƯỢU VANG <i class="fa fa-angle-down hidden-lg hidden-md"
-                                                                data-toggle="dropdown"></i></a>
-                                        <ul class="level1">
-
-                                            <li class="level2">
-                                                <a href="#" title="TỦ BẢO QUẢN CIGAR">TỦ BẢO QUẢN CIGAR</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="TỦ BẢO QUẢN RƯỢU VANG">TỦ BẢO QUẢN RƯỢU VANG</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="PHỤ KIỆN">PHỤ KIỆN</a>
-                                            </li>
-
-                                        </ul>
-                                    </li>
-
-
-                                    <li class="level1 parent item fix-navs">
-                                        <a class="hmega" href="#" title="THIẾT BỊ MIELE">THIẾT BỊ MIELE <i
-                                                class="fa fa-angle-down hidden-lg hidden-md"
-                                                data-toggle="dropdown"></i></a>
-                                        <ul class="level1">
-
-                                            <li class="level2">
-                                                <a href="#" title="LÒ NƯỚNG MIELE">LÒ NƯỚNG MIELE</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="LÒ VI SÓNG MIELE">LÒ VI SÓNG MIELE</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="BẾP TỪ MIELE">BẾP TỪ MIELE</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="MÁY RỬA BÁT MIELE">MÁY RỬA BÁT MIELE</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="HÚT MÙI MIELE">HÚT MÙI MIELE</a>
-                                            </li>
-
-                                            <li class="level2">
-                                                <a href="#" title="MÁY PHA CAFE MIELE">MÁY PHA CAFE MIELE</a>
-                                            </li>
-
-                                        </ul>
-                                    </li>
-
-
-                                    <li class="level1 item">
-                                        <a class="hmega" href="#" title="THIẾT BỊ SMEG">THIẾT BỊ SMEG</a>
-                                    </li>
-
-
-                                    <li class="level1 item">
-                                        <a class="hmega" href="#" title="ROBOT HÚT BỤI LAU NHÀ">ROBOT HÚT BỤI LAU
-                                            NHÀ</a>
-                                    </li>
-
-
-                                    <li class="level1 item">
-                                        <a class="hmega" href="#" title="NỒI CHIÊN KHÔNG DẦU">NỒI CHIÊN KHÔNG
-                                            DẦU</a>
-                                    </li>
-
-
-                                    <li class="level1 item">
-                                        <a class="hmega" href="#" title="THIẾT BỊ Y TẾ">THIẾT BỊ Y TẾ</a>
-                                    </li>
-
-
-                                </ul>
-                            </div>
-
+                        <li class=" nav-item">
+                            <a href="Product" class="nav-link" title="Sản phẩm">Sản phẩm <i class="fa fa-angle-down"
+                                                                                            data-toggle="dropdown"></i></a>
                         </li>
 
 
-                        <li class="nav-item "><a class="nav-link" href="#" title="Khuyến mãi">Khuyến mãi</a></li>
+                        <li class="nav-item "><a class="nav-link" href="Product?typePage=DiscountProduct" title="Khuyến mãi">Khuyến mãi</a></li>
 
 
                         <li class=" nav-item has-childs ">
@@ -849,26 +585,22 @@
                             <ul class="dropdown-menu">
 
 
-                                <li class="nav-item-lv2"><a class="nav-link" href="may-rua-bat.html"
-                                                            title="Tư vấn Máy rửa bát">Tư
+                                <li class="nav-item-lv2"><a class="nav-link" href="may-rua-bat.html" title="Tư vấn Máy rửa bát">Tư
                                     vấn
                                     Máy rửa bát</a></li>
 
 
-                                <li class="nav-item-lv2"><a class="nav-link" href="tu-van-bep-tu.html"
-                                                            title="Tư vấn Bếp từ">Tư vấn
+                                <li class="nav-item-lv2"><a class="nav-link" href="tu-van-bep-tu.html" title="Tư vấn Bếp từ">Tư vấn
                                     Bếp
                                     từ</a></li>
 
 
-                                <li class="nav-item-lv2"><a class="nav-link" href="kien-truc.html"
-                                                            title="Kiến trúc VIỆT">Kiến
+                                <li class="nav-item-lv2"><a class="nav-link" href="kien-truc.html" title="Kiến trúc VIỆT">Kiến
                                     trúc
                                     VIỆT</a></li>
 
 
-                                <li class="nav-item-lv2"><a class="nav-link" href="may-ep-cham.html"
-                                                            title="Máy ép chậm">Máy ép
+                                <li class="nav-item-lv2"><a class="nav-link" href="may-ep-cham.html" title="Máy ép chậm">Máy ép
                                     chậm</a></li>
 
 
@@ -894,9 +626,9 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
 
-<script src="js/option-selectors.js" type="text/javascript"></script>
-<script src="js/api.jquery.js" type="text/javascript"></script>
-<script src="js/slick.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/option-selectors.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/api.jquery.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/slick.js" type="text/javascript"></script>
 
 
 <section class="bread-crumb margin-bottom-10">
@@ -929,29 +661,29 @@
                     <div class="fix-sblock text-center">
                         Bạn quên mật khẩu? Nhập địa chỉ email để lấy lại mật khẩu qua email.
                     </div>
-                    <form action="/LTWeb_Nhom9/ForgotPassword" method="post">
+                    <form action="/LTWeb_Nhom9_war/ForgotPassword" method="post">
 <%--                    đổi mật khẩu error--%>
                         <%
-                            String error = (String) request.getAttribute("error");
+                            String qmktb = (String) session.getAttribute("qmktb");
                         %>
                         <%
-                            if (error != null) {
+                            if (qmktb != null) {
                         %>
                         <div class="alert alert-danger" role="alert">
-                            <%= error%>
+                            <%= qmktb%>
                         </div>
                         <%
                             }
                         %>
 <%--                    đổi mật khẩu success--%>
                         <%
-                            String success = (String) request.getAttribute("success");
+                            String qmktk = (String) session.getAttribute("qmktk");
                         %>
                         <%
-                            if (success != null) {
+                            if (qmktk != null) {
                         %>
                         <div class="alert alert-success" role="alert">
-                            <%= success%>
+                            <%= qmktk%>
                         </div>
                         <%
                             }
@@ -981,108 +713,7 @@
 </div>
 <!-- ================================================= -->
 
-<footer class="footer bg-footer">
-    <div class="site-footer">
-        <div class="container">
-            <div class="footer-inner padding-bottom-20">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-3 fix-clear">
-                        <div class="footer-widget">
-                            <h3>Chính sách</h3>
-                            <ul class="list-menu has-click">
-
-                                <li><a href="huong-dan-thanh-toan.html" title="Hướng dẫn thanh toán" rel="nofollow">Hướng
-                                    dẫn thanh toán</a></li>
-
-                                <li><a href="chinh-sach-thanh-toan.html" title="Chính sách thanh toán" rel="nofollow">Chính
-                                    sách thanh toán</a></li>
-
-                                <li><a href="chinh-sach-doi-tra-bao-hanh.html" title="Chính sách đổi trả, bảo hành"
-                                       rel="nofollow">Chính sách đổi trả, bảo hành</a></li>
-
-                                <li><a href="chinh-sach-van-chuyen-va-doi-tra.html"
-                                       title="Chính sách vận chuyển và đổi trả" rel="nofollow">Chính sách vận chuyển và
-                                    đổi trả</a></li>
-
-                                <li><a href="chinh-sach.html" title="Chính sách bảo mật" rel="nofollow">Chính sách bảo
-                                    mật</a></li>
-
-                                <li><a href="dieu-khoan.html" title="Quy định sử dụng" rel="nofollow">Quy định sử
-                                    dụng</a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3 fix-clear">
-                        <div class="footer-widget">
-                            <h3>Fanpage</h3>
-                            <ul class="list-menu has-click">
-
-                                <li>
-                                    <div class="fb-page" data-href="#" data-tabs="" data-width="" data-height=""
-                                         data-small-header="false" data-adapt-container-width="true"
-                                         data-hide-cover="false" data-show-facepile="true">
-                                        <blockquote cite="#" class="fb-xfbml-parse-ignore">
-                                            <a href="#">SHOP TEAM 9</a>
-                                        </blockquote>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3 fix-clear">
-                        <div class="footer-widget footer-contact">
-                            <h3>Liên hệ với chúng tôi</h3>
-                            <ul class="list-menu">
-
-                                <li><strong>Địa chỉ</strong>Đại Học Nông Lâm,khu phố 6,phường Linh Trung,Tp Thủ Đức</li>
-                                <li class="hidden-xs"><strong>Hotline</strong><a href="javascript:;" title="0123456789">0123456789</a>
-                                </li>
-                                <li class="hidden-md hidden-sm hidden-lg"><strong>Hotline</strong><a href="#"
-                                                                                                     title="0123456789">0123456789</a>
-                                </li>
-                                <li><strong>Email</strong><a href="#" title="19130169@st.hcmuaf.edu.vn">19130169@st.hcmuaf.edu.vn</a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3 fix-clear">
-                        <div class="footer-widget form-mailchimp">
-                            <h3>Đăng ký nhận bản tin</h3>
-
-
-                            <form action="#" method="post" id="mc-embedded-subscribe-form"
-                                  name="mc-embedded-subscribe-form" target="_blank" class="has-validation-callback">
-                                <input type="email" class="form-control" value="" placeholder="Email của bạn"
-                                       name="EMAIL" id="mail">
-                                <button class="btn btn-default" name="subscribe" id="subscribe" type="submit"><i
-                                        class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                            </form>
-                            <p>Bạn là khách hàng mới. Đăng ký email và nhận mã giảm giá 50.000 đ.</p>
-                            <div class="bct-and-payment">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="copyright clearfix">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                    <span>© Bản quyền thuộc về <b>Shop TEAM 9</b> <span class="s480-f"></span></span>
-
-                </div>
-            </div>
-
-            <div class="back-to-top show" title="Lên đầu trang"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
-
-        </div>
-    </div>
-</footer>
+<jsp:include page="footer.jsp"></jsp:include>
 
 <a href="#" class="suntory-alo-phone suntory-alo-green  d-sm-none hidden-lg hidden-md hidden-sm"
    id="suntory-alo-phoneIcon" style="left: 0px; bottom: 0px;">
@@ -1098,9 +729,6 @@
     <span class="oi">0123456789</span>
 </a>
 <div class="box_chat">
-    <a class="sc w d-sm-none hidden-lg hidden-md hidden-sm" href="#" title="Zalo">
-        <img src="../img/icon/zalochat.png" alt="Zalo">
-    </a>
     <a class="sc w d-none d-lg-block d-xl-block d-md-block hidden-xs" href="#" title="Zalo" target="">
         <img src="../img/icon/zalochat.png" alt="Zalo">
     </a>

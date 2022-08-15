@@ -17,21 +17,24 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>Đổi mật khẩu</title>
-    <link rel="icon" href="../img/icon/logo.png" type="image/x-icon"/>
+    <title>${title} | SHOP TEAM 9</title>
+    <link rel="icon" href="${pageContext.request.contextPath}/img/icon/logo.png" type="image/x-icon"/>
 
 
-    <link href="css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="css/plugin.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="css/base.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="css/evo-main.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="css/slick.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/plugin.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/base.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/evo-main.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/slick.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css"/>
 
-    <link href="css/ContacIcon.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/Reposive&&ContacIcon.css" rel="stylesheet"
+          type="text/css"/>
 
-    <link href="css/evo-accounts.scss.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="css/all.css"
+    <link href="${pageContext.request.contextPath}/User_page/css/evo-accounts.scss.css" rel="stylesheet"
+          type="text/css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/User_page/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           type="text/css"/>
@@ -44,9 +47,9 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
 
-<script src="js/option-selectors.js" type="text/javascript"></script>
-<script src="js/api.jquery.js" type="text/javascript"></script>
-<script src="js/slick.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/User_page/js/option-selectors.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/User_page/js/api.jquery.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/User_page/js/slick.js" type="text/javascript"></script>
 
 
 <div class="container margin-bottom-20 margin-top-30">
@@ -58,29 +61,41 @@
                         <h1 class="title-head">Thay đổi mật khẩu</h1>
                     </div>
 
-                    <form action="/LTWeb_Nhom9/ChangePassword" method="post">
-<%--                    error--%>
+                    <form action="/LTWeb_Nhom9_war/ChangePassword" method="post">
+                        <%--                    error--%>
                         <%
-                            String error = (String) request.getAttribute("error");
+                            String ehms = (String) session.getAttribute("ehms");
                         %>
                         <%
-                            if (error != null) {
+                            if (ehms != null) {
                         %>
                         <div class="alert alert-danger" role="alert">
-                            <%= error%>
+                            <%= ehms%>
                         </div>
                         <%
                             }
                         %>
-<%--                    success--%>
+                        <%--                    success--%>
                         <%
-                            String success = (String) request.getAttribute("success");
+                            String doimktk = (String) session.getAttribute("doimktk");
                         %>
                         <%
-                            if (success != null) {
+                            if (doimktk != null) {
                         %>
                         <div class="alert alert-success" role="alert">
-                            <%= success%>
+                            <%= doimktk%>
+                        </div>
+                        <%
+                            }
+                        %>
+                        <%
+                            String mkms = (String) session.getAttribute("mkms");
+                        %>
+                        <%
+                            if (mkms != null) {
+                        %>
+                        <div class="alert alert-danger" role="alert">
+                            <%= mkms%>
                         </div>
                         <%
                             }
@@ -111,8 +126,16 @@
                                        id="customer_new_password" data-validation-error-msg="Không được để trống"
                                        data-validation="required"/>
                             </fieldset>
+                            <fieldset class="form-group">
+                                <label>Nhập lại mật khẩu mới<span class="required">*</span></label>
+                                <input autocomplete="off" placeholder="Nhập lại mật khẩu mới" type="password"
+                                       class="form-control form-control-lg" value="" name="reNewPassword"
+                                       id="customer_re_new_password" data-validation-error-msg="Không được để trống"
+                                       data-validation="required"/>
+                            </fieldset>
                             <div class="pull-xs-left text-center" style="margin-top: 15px;">
-                                <button class="btn btn-style btn-blues" type="submit" value="login">Đổi mật khẩu</button>
+                                <button class="btn btn-style btn-blues" type="submit" value="login">Đổi mật khẩu
+                                </button>
                             </div>
                         </div>
                     </form>
@@ -139,12 +162,9 @@
     <span class="oi">0123456789</span>
 </a>
 <div class="box_chat">
-    <a class="sc w d-sm-none hidden-lg hidden-md hidden-sm" href="#" title="Zalo">
-        <img src="../img/icon/zalochat.png" alt="Zalo">
-    </a>
     <a class="sc w d-none d-lg-block d-xl-block d-md-block hidden-xs" href="#" title="Zalo"
        target="">
-        <img src="../img/icon/zalochat.png" alt="Zalo">
+        <img src="${pageContext.request.contextPath}/img/icon/zalochat.png" alt="Zalo">
     </a>
 </div>
 
@@ -157,11 +177,11 @@
 
 
 <div id="myModal" class="modal fade" role="dialog"></div>
-<script src="js/intersection-observer.js"></script>
-<script src="js/lazyload.min.js"></script>
-<script src="js/cs.script.js" type="text/javascript"></script>
-<script src="js/jquery.cookie.min.js"></script>
-<script src="js/main.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/intersection-observer.js"></script>
+<script src="${pageContext.request.contextPath}/js/lazyload.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/cs.script.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.cookie.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/main.js" type="text/javascript"></script>
 
 
 <div class="fb-livechat">
