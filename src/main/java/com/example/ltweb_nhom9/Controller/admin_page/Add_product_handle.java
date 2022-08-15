@@ -1,20 +1,18 @@
 package com.example.ltweb_nhom9.Controller.admin_page;
 
-import com.example.ltweb_nhom9.Service.LabelService;
 import com.example.ltweb_nhom9.Service.ProductService;
-import com.example.ltweb_nhom9.beans.Category;
-import com.example.ltweb_nhom9.beans.Label;
-import com.example.ltweb_nhom9.beans.Product;
-import com.example.ltweb_nhom9.dao.CategoryDao;
 import com.example.ltweb_nhom9.dao.ProductDao;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -26,17 +24,8 @@ import java.util.Map;
 public class Add_product_handle extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Category> categoryList = CategoryDao.getInstance().getAll();
-        List<Product> productList =  ProductService.getInstance().getAll(false);
-        List<Label> labelList = LabelService.getInstance().getAll();
-
-        request.setAttribute("categoryList",categoryList);
-        request.setAttribute("labelList",labelList);
-        request.setAttribute("products", productList.subList(0,productList.size()>120?120: productList.size()));
-        request.setAttribute("title","Quản lý sản phẩm");
-        request.setAttribute("TypePage","ProductManagement");
-        request.setAttribute("index",2);
-        request.getRequestDispatcher("Admin_page/ProductManagement.jsp").forward(request,response);
+        RequestDispatcher rd = request.getRequestDispatcher("ProductManagement");
+        rd.forward(request,response);
     }
 
     @Override
@@ -54,20 +43,18 @@ public class Add_product_handle extends HttpServlet {
             List<String> imgdirlist = new ArrayList<>();
             File imgdir = null;
             Map<String,String> map = new HashMap<String,String>();
+            int count=0;
             for (FileItem fileItem : fileItemList) {
-                File file = new File(request.getServletContext().getAttribute("FILE_DIR") + File.separator + "product" + File.separator + fileItem.getName());
-
-                System.out.println("path file " + file.getAbsolutePath());
-                fileItem.write(file);
-
+                count++;
                 if (fileItem.isFormField()){
                     map.put(fileItem.getFieldName(),fileItem.getString("UTF-8").trim());
                 } else if (!fileItem.isFormField()) {
                     imgdir = new File(request.getServletContext().getAttribute("FILE_DIR") + File.separator + "product" + File.separator + fileItem.getName());
                     if(imgdir.exists()) imgdir = new File(request.getServletContext().getAttribute("FILE_DIR") + File.separator + "product" + File.separator + System.currentTimeMillis() + "-" + fileItem.getName());
-                    System.out.println("path file " + imgdir.getAbsolutePath());
+                    System.out.println(count + "path file " + imgdir.getAbsolutePath());
+                    System.out.println("http://localhost:8080/LTWeb_Nhom9_war/" + request.getServletContext().getAttribute("storePath")+ File.separator + "product" + File.separator + fileItem.getName());
                     fileItem.write(imgdir);
-                    imgdirlist.add(imgdir.getAbsolutePath());
+                    imgdirlist.add("http://localhost:8080/LTWeb_Nhom9_war/" + request.getServletContext().getAttribute("storePath")+ File.separator + "product" + File.separator + fileItem.getName());
                 }
             }
 

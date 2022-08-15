@@ -67,7 +67,7 @@
                                     <div class="form-group">
                                         <label>Ảnh</label>
                                         <input type="file" onclick="actionCallFinder()"
-<%--                                               class="form-control" name="image"--%>
+                                        <%--                                               class="form-control" name="image"--%>
                                         >
                                     </div>
                                     <div class="form-group">
@@ -76,7 +76,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group" style="display: none">
-                                        <input class="image-value" name="image-value">
+                                        <input class="image-value" name="image-value" value="${b.img}" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Title</label>
@@ -143,9 +143,8 @@
 
     CKEDITOR.replace('content');
 
-
     function actionCallFinder(){
-    let ckfinder = new CKFinder();
+        let ckfinder = new CKFinder();
         ckfinder.selectActionFunction = function (fileUrl) {
             console.log(fileUrl)
             $(".avatar-img").prop("src",fileUrl);
@@ -153,6 +152,8 @@
             $(".image-value").prop("value",fileUrl);
         }
         ckfinder.popup();
+
+
     }
 </script>
 

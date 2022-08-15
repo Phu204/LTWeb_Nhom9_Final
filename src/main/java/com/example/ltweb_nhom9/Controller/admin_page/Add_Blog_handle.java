@@ -1,22 +1,24 @@
 package com.example.ltweb_nhom9.Controller.admin_page;
 
-import com.example.ltweb_nhom9.Service.BlogService;
-import com.example.ltweb_nhom9.Service.ProductService;
-import com.example.ltweb_nhom9.beans.Blog;
 import com.example.ltweb_nhom9.dao.BlogDao;
-import com.example.ltweb_nhom9.dao.ProductDao;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @WebServlet(name = "Add_Blog_handle", value = "/Add_Blog_handle")
 public class Add_Blog_handle extends HttpServlet {
@@ -68,6 +70,7 @@ public class Add_Blog_handle extends HttpServlet {
 
             }
             String ig = map.get("image-value");
+
             System.out.println(id + " " + title + " " +content + " " +active + " " +datecreate+ " "+ ig);
 
             boolean insertblog = BlogDao.getInstance().InsertBlog(id,title,ig,active,datecreate,content);

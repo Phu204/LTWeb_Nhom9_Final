@@ -13,7 +13,7 @@ public class GetPasswordDao {
     public static boolean checkUser(String email) {
         try {
             String sql = "SELECT * FROM customer WHERE email=?";
-            Connection connection = DBConect.getInstance().connect();
+            Connection connection = DBConect.getInstance().connection();
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, email);
             ResultSet rs = ps.executeQuery();
@@ -35,7 +35,7 @@ public class GetPasswordDao {
     public static boolean updatePassword(String email, String newPassword) {
         try {
             String sql = "UPDATE customer SET password=? WHERE email=?";
-            Connection connection = DBConect.getInstance().connect();
+            Connection connection = DBConect.getInstance().connection();
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, newPassword);
             ps.setString(2, email);

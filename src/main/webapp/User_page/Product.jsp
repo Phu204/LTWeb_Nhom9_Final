@@ -157,7 +157,8 @@
                                     </div>
                                 </c:if>
 
-                                <a href="Detail?id=1"
+<%--                                chu y thay doi ten -tat ca nam trong foreach - them--%>
+                                <a href="Detail?id=${p.id}"
                                    title=${p.name} class="image-resize">
                                     <img class="lazy"
                                          src="Detail"
@@ -171,20 +172,20 @@
 
                                 </a>
                                 <div class="button-add hidden-sm hidden-xs">
-                                    <form action="/cart/add" method="post" enctype="multipart/form-data"
-                                          class="hidden-md variants form-nut-grid form-ajaxtocart"
-                                          data-id="product-actions-23508466">
+
+                                         <form class="hidden-md variants form-nut-grid form-ajaxtocart"
+                                          data-id="product-actions-23508466" action="buynow">
 
 
-                                        <input type="hidden" name="variantId" value="53448979"/>
-                                        <button type="button" title="Mua ngay" class="action"
-                                                onclick="buy_now('53448979')"><i class="fa fa-check-square-o"
+                                        <input type="hidden" name="id_product" value="${p.id}"/>
+                                        <button type="submit" title="Mua ngay" class="action"
+                                               ><i class="fa fa-check-square-o"
                                                                                  aria-hidden="true"></i></button>
                                         <button type="button" title="Thêm vào giỏ" class="action add_to_cart"><i
-                                                class="fa fa-shopping-bag" aria-hidden="true"></i></button>
+                                                class="fa fa-shopping-bag" aria-hidden="true" onclick="addCart(${p.id})"></i></button>
 
-                                    </form>
-                                </div> <!-- undefine -->
+                                         </form>
+                                </div>
                             </div>
                             <div class="product-detail clearfix">
                                 <div class="box-pro-detail">
@@ -549,6 +550,19 @@
 <%--<script src="User_page/js/ajax.js" type="text/javascript"></script>--%>
 <script src="User_page/js/evo-collection.js" type="text/javascript"></script>
 <script>
+
+    // function filter(e) {
+    //     var checked = e.value;
+    //     var id= e.id;
+    //     $.ajax({
+    //         url: 'Product',
+    //         type: 'GET',
+    //         data: "&chkbx1="+id
+    //     });
+    //     alert(checked)
+
+
+
     function filter(name) {
         const xhttp = new XMLHttpRequest();
         xhttp.onload = function() {
@@ -578,6 +592,51 @@
         xhttp.send();
 
     }
+    function addCart(e) {
+        $.ajax({
+            url: 'AddCart',
+            type: 'GET',
+            data: {id_product:e},
+            success: function(responseText){
+                $('.count_item_pr').html(responseText) ;
+            }
+        });
+
+    };
+
+    function sortList() {
+        var list, i, switching, b, shouldSwitch;
+        list = document.getElementById("id01");
+        switching = true;
+        /* Make a loop that will continue until
+        no switching has been done: */
+        while (switching) {
+            // start by saying: no switching is done:
+            switching = false;
+            b = list.getElementsByTagName("LI");
+            // Loop through all list-items:
+            for (i = 0; i < (b.length - 1); i++) {
+                // start by saying there should be no switching:
+                shouldSwitch = false;
+                /* check if the next item should
+                switch place with the current item: */
+                if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+                    /* if next item is alphabetically
+                    lower than current item, mark as a switch
+                    and break the loop: */
+                    shouldSwitch = true;
+                    break;
+                }
+            }
+            if (shouldSwitch) {
+                /* If a switch has been marked, make the switch
+                and mark the switch as done: */
+                b[i].parentNode.insertBefore(b[i + 1], b[i]);
+                switching = true;
+            }
+        }
+    }
+
 
     function sort(sort) {
         const xhttp = new XMLHttpRequest();

@@ -374,21 +374,24 @@ public class ProductDao {
         Statement statement = DBConect.getInstance().get();
         String addName = "";
         String addSale = "";
+        String joinLabel = "";
         if (isonlysale){
+            joinLabel = "join Label l on l.id = p.label_id ";
             addSale = "and l.name = 'sale' ";
         }
         for (int i = 1;i < name.length;i++){
-            addName += "and p.name like '%" + name[i] + "%' " +
-                    "and c.name like '%"+ category + "%' ";
+            addName += "and p.name like '%" + name[i] + "%' " ;
+//                    + "or c.name like '%"+ name[i] + "%' )";
         }
 
         String sql = "select p.* from product p " +
                 "join category c on p.category_id = c.id " +
-                "join Label l on l.id = p.label_id " +
+                joinLabel +
                 "where p.name like '%" + name[0] + "%' " + addSale +
                 "and c.name like '%"+ category + "%' " + addName +
                 "and p.price between "+minprice+" and "+ maxprice + " " +
                 "and p.active = true";
+        System.out.println(sql);
         List<Product> list = new ArrayList<>();
         try {
             ResultSet rs = statement.executeQuery(sql);
@@ -422,12 +425,12 @@ public class ProductDao {
         String sql = "select max(id) from product";
         int id = 0;
         try {
-                ResultSet rs = statement.executeQuery(sql);
-                if (rs.next()){
-                    id = rs.getInt("max(id)");
-                }
-                rs.close();
+            ResultSet rs = statement.executeQuery(sql);
+            if (rs.next()){
+                id = rs.getInt("max(id)");
             }
+            rs.close();
+        }
         catch (SQLException e) {
             e.printStackTrace();
         }
