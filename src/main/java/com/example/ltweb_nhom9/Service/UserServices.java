@@ -47,12 +47,4 @@ public class UserServices {
         return false;
     }
 
-
-
-    public static void main(String[] args) {
-//        System.out.println(forgotPassword("nguyenngochieu040301@gmail.com"));
-//        String newPass = GetPasswordDao.randomPassword(6);
-//        System.out.println(newPass);
-        System.out.println("done");
-    }
 }

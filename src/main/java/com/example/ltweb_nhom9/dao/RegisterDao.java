@@ -40,6 +40,10 @@ public class RegisterDao {
         return max;
     }
 
+    public static void main(String[] args) {
+        System.out.println(checkEmailDuplicates("y2ennhi0909@gmail.com"));
+    }
+
     public static boolean checkEmailDuplicates(String email) {
         try {
             String sql = "SELECT email FROM customer WHERE email = ?";
@@ -80,7 +84,8 @@ public class RegisterDao {
                 psAdd.setTimestamp(6, timestamp);
                 psAdd.setString(7, phone);
                 psAdd.setString(8, null);
-                psAdd.setInt(9, 1);
+                psAdd.setInt(9, 0);
+
                 int result = psAdd.executeUpdate();
                 SendEmail s = new SendEmail();
                 s.sendEmail(email, textMessage, registerSuccessSub);

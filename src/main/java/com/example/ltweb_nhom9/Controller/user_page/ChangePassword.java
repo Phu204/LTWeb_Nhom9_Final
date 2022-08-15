@@ -17,7 +17,11 @@ public class ChangePassword extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("title","Đổi mật khẩu");
-        request.getRequestDispatcher("User_page/changePassword.jsp").forward(request,response);
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("auth");
+        if(user != null) {
+            request.getRequestDispatcher("User_page/changePassword.jsp").forward(request, response);
+        }else response.sendRedirect("Login");
     }
 
     @Override

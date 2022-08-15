@@ -54,24 +54,8 @@
                         <p><i>Xin chào, ${sessionScope.auth.name}</i></p>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-3 col-md-push-9 col-lg-3 col-lg-push-9">
-                    <div class="block block-account margin-bottom-20">
-                        <div class="block-title">
-                            <h2 class="widget-title">Thông tin khách hàng</h2>
-                        </div>
-                        <div class="divider-full-1"></div>
-                        <div class="block-content form-signup block-edit-padding">
-                            <p><i class="fa fa-user"></i> ${sessionScope.auth.name}</p>
-                            <p><i class="fa fa-map-marker"></i></p>
-                            <div class="margin-top-20"><a href="#"
-                                                          class="btn btn-blues btn-full" title="Sổ địa chỉ"><i
-                                    class="fa fa-book"></i>
-                                Sổ địa chỉ (0)</a></div>
-                        </div>
 
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-9 col-md-pull-3 col-lg-9 col-lg-pull-3">
+                <div class="col-xs-12 col-sm-12">
                     <div class="form-signup">
                         <h2 class="widget-title">Đơn hàng gần nhất</h2>
                     </div>

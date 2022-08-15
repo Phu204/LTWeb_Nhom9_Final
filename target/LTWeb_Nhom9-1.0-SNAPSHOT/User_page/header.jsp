@@ -7,30 +7,30 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>${title} | SHOP TEAM 9</title>
-    <link rel="icon" href="../img/icon/logo.png" type="image/x-icon"/>
+<%--<!DOCTYPE html>--%>
+<%--<html lang="en">--%>
+<%--<head>--%>
+<%--    <meta charset="UTF-8">--%>
+<%--    <title>${title} | SHOP TEAM 9</title>--%>
+<%--    <link rel="icon" href="../img/icon/logo.png" type="image/x-icon"/>--%>
 
-    <link href="${pageContext.request.contextPath}/User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="${pageContext.request.contextPath}/User_page/css/plugin.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="${pageContext.request.contextPath}/User_page/css/base.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="${pageContext.request.contextPath}/User_page/css/evo-main.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="${pageContext.request.contextPath}/User_page/css/slick.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="${pageContext.request.contextPath}/User_page/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-    <link href="${pageContext.request.contextPath}/User_page/css/evo-index.scss.css" rel="stylesheet" type="text/css"/>
+<%--    <link href="${pageContext.request.contextPath}/User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>--%>
+<%--    <link href="${pageContext.request.contextPath}/User_page/css/plugin.scss.css" rel="stylesheet" type="text/css"/>--%>
+<%--    <link href="${pageContext.request.contextPath}/User_page/css/base.scss.css" rel="stylesheet" type="text/css"/>--%>
+<%--    <link href="${pageContext.request.contextPath}/User_page/css/evo-main.scss.css" rel="stylesheet" type="text/css"/>--%>
+<%--    <link href="${pageContext.request.contextPath}/User_page/css/slick.scss.css" rel="stylesheet" type="text/css"/>--%>
+<%--    <link href="${pageContext.request.contextPath}/User_page/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>--%>
+<%--    <link href="${pageContext.request.contextPath}/User_page/css/evo-index.scss.css" rel="stylesheet" type="text/css"/>--%>
 
-    <link href="${pageContext.request.contextPath}/User_page/css/ContacIcon.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-          type="text/css"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<%--    <link href="${pageContext.request.contextPath}/User_page/css/ContacIcon.css" rel="stylesheet" type="text/css">--%>
+<%--    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>--%>
+<%--    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"--%>
+<%--          type="text/css"/>--%>
+<%--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">--%>
 
 
-</head>
-<body>
+<%--</head>--%>
+<%--<body>--%>
 
 <header class="header">
     <div class="evo-top-header">
@@ -54,7 +54,7 @@
                             <li><a rel="nofollow" href="LogOut" title="Đăng xuất"><i class="fa fa-sign-out"
                                                                                      aria-hidden="true"></i> Đăng
                                 xuất</a></li>
-                            <li><a rel="nofollow" href="loadOrderHistory" title="hello name"><i class="fa fa-user"
+                            <li><a rel="nofollow" href="LoadOrderHistory" title="hello name"><i class="fa fa-user"
                                                                                            aria-hidden="true"></i>
                                 Hello ${sessionScope.auth.name}</a>
                             </li>
@@ -75,7 +75,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="Home" class="logo-wrapper" title="SHOP TEAM 9">
+                    <a href="/" class="logo-wrapper" title="SHOP TEAM 9">
                         <img src="${pageContext.request.contextPath}/img/icon/logo.png" data-src="img/icon/logo.png" alt="SHOP TEAM 9"
                              class="lazy img-responsive center-block"/>
                     </a>
@@ -193,7 +193,7 @@
                                     </g>
                                 </svg>
                             </div>
-                            <a href="Home" class="logo-wrapper" title="SHOP TEAM 9">
+                            <a href="/" class="logo-wrapper" title="SHOP TEAM 9">
                                 <img src="#" data-src="img/icon/logo.png" alt="SHOP TEAM 9"
                                      class="lazy img-responsive center-block" />
                             </a>
@@ -201,8 +201,8 @@
                         </div>
                         <div class="ul-first-menu">
 
-                            <a rel="nofollow" href="Login" title="Đăng nhập">Đăng nhập</a>
-                            <a rel="nofollow" href="Register" title="Đăng ký">Đăng ký</a>
+                            <a rel="nofollow" href="login.html" title="Đăng nhập">Đăng nhập</a>
+                            <a rel="nofollow" href="register.html" title="Đăng ký">Đăng ký</a>
 
                         </div>
                     </div>
@@ -540,41 +540,59 @@
                     <ul id="nav" class="nav">
 
 
-                        <li class="nav-item
-                            <c:if test="${headIndex == 1}">active</c:if>
-                            "><a class="nav-link" href="Home" title="Trang chủ">Trang chủ</a>
+                        <li class="nav-item active"><a class="nav-link" href="Home" title="Trang chủ">Trang chủ</a>
                         </li>
 
 
-                        <li class="nav-item
-                            <c:if test="${headIndex == 2}">active</c:if>
-                            "><a class="nav-link" href="gioi-thieu.html" title="Giới thiệu">Giới thiệu</a></li>
+                        <li class="nav-item "><a class="nav-link" href="gioi-thieu.html" title="Giới thiệu">Giới thiệu</a></li>
 
 
-                        <li class=" nav-item
-                            <c:if test="${headIndex == 3}">active</c:if>
-                            ">
-                            <a href="Product" class="nav-link" title="Sản phẩm">Sản phẩm </a>
+                        <li class=" nav-item">
+                            <a href="Product" class="nav-link" title="Sản phẩm">Sản phẩm <i class="fa fa-angle-down"
+                                                                                                 data-toggle="dropdown"></i></a>
                         </li>
 
 
-                        <li class="nav-item
-                            <c:if test="${headIndex == 4}">active</c:if>
-                            "><a class="nav-link" href="Product?typePage=DiscountProduct" title="Khuyến mãi">Khuyến mãi</a></li>
+                        <li class="nav-item "><a class="nav-link" href="Product?typePage=DiscountProduct" title="Khuyến mãi">Khuyến mãi</a></li>
 
 
-                        <li class=" nav-item
-                            <c:if test="${headIndex == 5}">active</c:if>
-                            ">
-                            <a href="Blog" class="nav-link" title="Blog">Blog </a>
+                        <li class=" nav-item has-childs ">
+                            <a href="Blog" class="nav-link" title="Blog">Blog <i class="fa fa-angle-down"
+                                                                                            data-toggle="dropdown"></i></a>
 
+                            <ul class="dropdown-menu">
+
+
+                                <li class="nav-item-lv2"><a class="nav-link" href="may-rua-bat.html" title="Tư vấn Máy rửa bát">Tư
+                                    vấn
+                                    Máy rửa bát</a></li>
+
+
+                                <li class="nav-item-lv2"><a class="nav-link" href="tu-van-bep-tu.html" title="Tư vấn Bếp từ">Tư vấn
+                                    Bếp
+                                    từ</a></li>
+
+
+                                <li class="nav-item-lv2"><a class="nav-link" href="kien-truc.html" title="Kiến trúc VIỆT">Kiến
+                                    trúc
+                                    VIỆT</a></li>
+
+
+                                <li class="nav-item-lv2"><a class="nav-link" href="may-ep-cham.html" title="Máy ép chậm">Máy ép
+                                    chậm</a></li>
+
+
+                                <li class="nav-item-lv2"><a class="nav-link" href="noi-chien-khong-dau.html"
+                                                            title="Nồi chiên không dầu">Nồi
+                                    chiên không dầu</a></li>
+
+
+                            </ul>
 
                         </li>
 
 
-                        <li class="nav-item
-                            <c:if test="${headIndex == 6}">active</c:if>
-                            "><a class="nav-link" href="Contact" title="Liên hệ">Liên hệ</a></li>
+                        <li class="nav-item "><a class="nav-link" href="Contact" title="Liên hệ">Liên hệ</a></li>
 
 
                     </ul>
