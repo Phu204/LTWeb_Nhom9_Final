@@ -4,6 +4,8 @@ import com.example.ltweb_nhom9.beans.Order;
 import com.example.ltweb_nhom9.beans.OrderDetail;
 import com.example.ltweb_nhom9.dao.OrderDao;
 
+
+import java.sql.Date;
 import java.util.List;
 
 public class OrderService {
@@ -33,6 +35,22 @@ public class OrderService {
     public Order getById(int id) {return OrderDao.getInstance().getById(id);}
 
     public List<Order> getOrderListOfCustomer(int id){return OrderDao.getInstance().getOrderListOfCustomer(id);}
+    public int getIdLastOrders(){
+        return OrderDao.getInstance().getIdLastOrder();
+    }
+    public int getIdLastOrderDetail(){
+        return OrderDao.getInstance().getIdLastOrderDetail();
+    }
+
+    public boolean insertOrders(int id, int customerId, Date datecreate, Date dateupdate, double price, int addressId, double phone,
+                                boolean payment, int status, int shipprice, String note ){
+        return OrderDao.getInstance().InsertOrder(id, customerId, datecreate, dateupdate, price, addressId, phone, payment, status, shipprice, note);
+    }
+
+    public boolean insertOrderDetail(int id, int orderId,int productId, int quantity){
+        return OrderDao.getInstance().InsertOrderDetail(id, orderId, productId, quantity);
+    }
+
 
     public List<Order> getOrderListByStatus(int status){ return OrderDao.getInstance().getOrderListByStatus(status);}
 }
