@@ -12,8 +12,8 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>Liên hệ</title>
-    <link rel="icon" href="../img/icon/logo.png" type="image/x-icon" />
+    <title>${title} | SHOP TEAM 9</title>
+    <link rel="icon" href="${pageContext.request.contextPath}/img/icon/logo.png" type="image/x-icon" />
 
 
     <link href="${pageContext.request.contextPath}/User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css" />
@@ -138,15 +138,15 @@
                     <span class="text-contact block text-center">Chúng tôi mong muốn lắng nghe ý kiến của quý khách.
 							Vui lòng gửi mọi yêu cầu, thắc mắc theo thông tin bên dưới, chúng tôi sẽ liên lạc với bạn
 							sớm nhất có thế.</span>
-                    <form accept-charset="utf-8" action="/LTWeb_Nhom9_war/Contact" id="contact" method="post">
+                    <form accept-charset="utf-8" action="Contact" id="contact" method="post">
                         <%
-                            String success = (String) request.getAttribute("success");
+                            String lienhe = (String) session.getAttribute("lienhe");
                         %>
                         <%
-                            if (success != null) {
+                            if (lienhe != null) {
                         %>
                         <div class="alert alert-success" role="alert">
-                            <%= success%>
+                            <%= lienhe%>
                         </div>
                         <%
                             }
@@ -222,10 +222,10 @@
 </a>
 <div class="box_chat">
     <a class="sc w d-sm-none hidden-lg hidden-md hidden-sm" href="#" title="Zalo">
-        <img src="../img/icon/zalochat.png" alt="Zalo">
+        <img src="${pageContext.request.contextPath}/img/icon/zalochat.png" alt="Zalo">
     </a>
     <a class="sc w d-none d-lg-block d-xl-block d-md-block hidden-xs" href="#" title="Zalo" target="">
-        <img src="../img/icon/zalochat.png" alt="Zalo">
+        <img src="${pageContext.request.contextPath}/img/icon/zalochat.png" alt="Zalo">
     </a>
 </div>
 
@@ -239,11 +239,11 @@
 
 
 <div id="myModal" class="modal fade" role="dialog"></div>
-<script src="js/intersection-observer.js"></script>
-<script src="js/lazyload.min.js"></script>
-<script src="js/cs.script.js" type="text/javascript"></script>
-<script src="js/jquery.cookie.min.js"></script>
-<script src="js/main.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/intersection-observer.js"></script>
+<script src="${pageContext.request.contextPath}/js/lazyload.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/cs.script.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.cookie.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/main.js" type="text/javascript"></script>
 
 
 
