@@ -81,6 +81,7 @@ public class RegisterDao {
                 psAdd.setString(7, phone);
                 psAdd.setString(8, null);
                 psAdd.setInt(9, 0);
+
                 int result = psAdd.executeUpdate();
                 SendEmail s = new SendEmail();
                 s.sendEmail(email, textMessage, registerSuccessSub);
