@@ -68,4 +68,8 @@ public class UserGoogleDto {
     public void setFamily_name(String family_name) {
         this.family_name = family_name;
     }
+
+    public String toString() {
+        return "UserGoogleDto{" + "id=" + id + ", email=" + email + ", verified_email=" + verified_email + ", name=" + name + ", given_name=" + given_name + ", family_name=" + family_name + '}';
+    }
 }

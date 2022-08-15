@@ -98,10 +98,7 @@
                         <h1 class="title-head">Đăng nhập tài khoản</h1>
                     </div>
                     <div class="social-login text-center margin-bottom-10">
-                        <a href="#" class="social-login--facebook" ><img
-                                width="129px" height="37px" alt="facebook-login-button"
-                                src="${pageContext.request.contextPath}/img/icon/fb-btn.svg"></a>
-                        <a href="https://accounts.google.com/o/oauth2/auth?scope=profile&redirect_uri=http://localhost:8080/LTWeb_Nhom9_war/LoginGoogle&response_type=code
+                        <a href="https://accounts.google.com/o/oauth2/auth?scope=email%20profile%20openid&redirect_uri=http://localhost:8080/LTWeb_Nhom9_war/LoginGoogle&response_type=code
                         &client_id=143041336891-uti56rdkneqhih5i5tlr2gr1op35pm5s.apps.googleusercontent.com&approval_prompt=force"
                            class="social-login--google" ><img
                                 width="129px" height="37px" alt="google-login-button"
