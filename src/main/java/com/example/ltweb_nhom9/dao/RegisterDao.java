@@ -12,7 +12,7 @@ import java.util.List;
 public class RegisterDao {
     public static int nextID(String id_user, String table_name) throws SQLException {
         String sql = "SELECT " + id_user + " FROM " + table_name;
-        Connection connection = DBConect.getInstance().connect();
+        Connection connection = DBConect.getInstance().connection();
         PreparedStatement ps = connection.prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
         List<Integer> list_id = new ArrayList<Integer>();
@@ -43,7 +43,7 @@ public class RegisterDao {
     public static boolean checkEmailDuplicates(String email){
         try {
             String sql = "SELECT email FROM customer WHERE email = ?";
-            Connection connection = DBConect.getInstance().connect();
+            Connection connection = DBConect.getInstance().connection();
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, email);
             ResultSet rs = ps.executeQuery();
@@ -65,7 +65,7 @@ public class RegisterDao {
     public static boolean registerId_user(String name, String phone, String email, String password) {
         try {
             if (checkEmailDuplicates(email)) {
-                Connection connection = DBConect.getInstance().connect();
+                Connection connection = DBConect.getInstance().connection();
                 int newID = nextID("id", "customer");
                 Date now = new Date();
                 Timestamp timestamp = new Timestamp(now.getTime());

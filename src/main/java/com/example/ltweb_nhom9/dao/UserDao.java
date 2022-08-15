@@ -37,7 +37,7 @@ public class UserDao {
     public static UserDao getAddressCus(int id_cus){
         String sql = "SELECT address.*  from address join orders on address.id = orders.address_id WHERE orders.cus_id = ?";
         try {
-            Connection connection = DBConect.getInstance().connect();
+            Connection connection = DBConect.getInstance().connection();
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(1,id_cus);
             ResultSet rs = ps.executeQuery();
@@ -63,7 +63,7 @@ public class UserDao {
         String sql = "select * from orders where cus_id = ?";
         try {
             System.out.println("1");
-            Connection connection = DBConect.getInstance().connect();
+            Connection connection = DBConect.getInstance().connection();
             System.out.println("2");
             PreparedStatement ps = connection.prepareStatement(sql);
             System.out.println("3");

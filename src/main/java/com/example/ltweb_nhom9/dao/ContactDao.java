@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class ContactDao {
     public static void addContact(String name, String email, String phone, String message){
         try {
-            Connection connection = DBConect.getInstance().connect();
+            Connection connection = DBConect.getInstance().connection();
             int nextId = RegisterDao.nextID("id_contact", "contact");
             String sqlAddCon = "INSERT INTO contact VALUES(?,?,?,?,?)";
             PreparedStatement ps = connection.prepareStatement(sqlAddCon);
