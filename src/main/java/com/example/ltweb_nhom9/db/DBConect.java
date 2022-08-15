@@ -4,9 +4,9 @@ import java.sql.*;
 
 public class DBConect {
     private static DBConect instance;
-    private static String DB_URL = "jdbc:mysql://localhost:3306/shop";
+    private static String DB_URL = "jdbc:mysql://localhost:3306/shopteam9_db";
     private static String USER = "root";
-    private static String PASS = "";
+    private static String PASS = "LTWteam9";
 
     private Connection connection;
 

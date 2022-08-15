@@ -28,6 +28,7 @@ public class Contact extends HttpServlet {
 
         ContactDao.addContact(name, email, phone, message);
 
+        request.setAttribute("headIndex",6);
         request.setAttribute("success", "<b>Thông tin của bạn đã được ghi lại.</b>");
 //        response.sendRedirect("contact.jsp");
         request.getRequestDispatcher("User_page/contact.jsp").forward(request, response);

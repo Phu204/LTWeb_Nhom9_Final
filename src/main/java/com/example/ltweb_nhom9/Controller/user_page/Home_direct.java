@@ -15,7 +15,7 @@ public class Home_direct extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Product> list = ProductService.getInstance().getAllDiscount();
         List<Product> discountList = list.subList(0,list.size()>10?10:list.size());
-
+        System.out.println("in home");
         list = ProductService.getInstance().getProductQuerybyCategory("đồ gia dụng",true);
         List<Product> GiaDungList = list.subList(0,list.size()>6?6:list.size());
 
@@ -25,6 +25,7 @@ public class Home_direct extends HttpServlet {
         list = ProductService.getInstance().getProductQuerybyName("máy pha cafe",true);
         List<Product> MayPhaCafeList = list.subList(0,list.size()>6?6:list.size());
 
+        request.setAttribute("headIndex",1);
         request.setAttribute("title","Trang chủ");
         request.setAttribute("GiaDungList",GiaDungList);
         request.setAttribute("BanChayList",BanChayList);

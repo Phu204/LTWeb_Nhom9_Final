@@ -150,7 +150,7 @@ public class LoadProduct extends HttpServlet {
                     "                            <div class=\"product-img\">\n" +
                     label +
                     "\n" +
-                    "                                <a href=\"Detail?id=1\" style=\"opacity: 1;\" \n" +
+                    "                                <a href=\"Detail?id="+ p.getId() + "\" style=\"opacity: 1;\" \n" +
                     "                                   " + p.getName() +" class=\"image-resize\">\n" +
                     "                                    <img class=\" lazy loaded \"\n" +
                     "                                         src=\""+ p.getListImage().get(0) + "\"\n" +

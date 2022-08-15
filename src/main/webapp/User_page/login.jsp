@@ -79,7 +79,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <ul class="breadcrumb" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-                    <li class="home"><a itemprop="url" href="/" title="Trang chủ"><span itemprop="title">Trang
+                    <li class="home"><a itemprop="url" href="Home" title="Trang chủ"><span itemprop="title">Trang
 									chủ</span></a><span><i class="fa fa-angle-right"></i></span></li>
 
                     <li><strong itemprop="title">Đăng nhập tài khoản</strong></li>

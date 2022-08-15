@@ -19,6 +19,7 @@ import java.util.List;
 public class Product_direct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int headIndex = 3;
 
         //search
         String category = "";
@@ -48,6 +49,7 @@ public class Product_direct extends HttpServlet {
         boolean isonlysale = false;
         try {
             if (typePage.equalsIgnoreCase("DiscountProduct")){
+                headIndex = 4;
                 isonlysale = true;
             } else {
                 //for search
@@ -106,6 +108,7 @@ public class Product_direct extends HttpServlet {
         List<String> brand = ProductService.getInstance().getBrand();
 
         String filter ="";
+        request.setAttribute("headIndex",headIndex);
         request.setAttribute("sort",sort);
         request.setAttribute("query",query);
         request.setAttribute("category",category);

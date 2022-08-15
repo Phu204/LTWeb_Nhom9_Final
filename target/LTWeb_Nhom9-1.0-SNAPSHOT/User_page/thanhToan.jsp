@@ -170,7 +170,7 @@
     <div class="wrap">
         <div class="logo logo--center">
 
-            <a href="/">
+            <a href="Home">
                 <img class="logo__image  logo__image--medium " alt="SHOP TEAM 9" src="img/imgProductDemo/logo.png" />
             </a>
 
@@ -197,7 +197,7 @@
                 <header class="main__header">
                     <div class="logo logo--center">
 
-                        <a href="/">
+                        <a href="Home">
                             <img class="logo__image  logo__image--medium " alt="SHOP TEAM 9" src="img/imgProductDemo/logo.png" />
                         </a>
 
