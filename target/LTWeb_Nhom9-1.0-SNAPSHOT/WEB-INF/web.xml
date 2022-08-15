@@ -9,7 +9,7 @@
 
     <context-param>
         <param-name>tempfile.dir</param-name>
-        <param-value>ltweb_nhom9/manage/upload</param-value>
+        <param-value>LTWeb_Nhom9_war</param-value>
     </context-param>
 
     <!--Connection CKFinder with CKEditor-->

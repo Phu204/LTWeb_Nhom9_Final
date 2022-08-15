@@ -4,9 +4,11 @@ import com.example.ltweb_nhom9.Service.ProductService;
 import com.example.ltweb_nhom9.beans.Category;
 import com.example.ltweb_nhom9.dao.CategoryDao;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 

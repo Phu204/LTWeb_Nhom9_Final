@@ -12,9 +12,11 @@ import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -102,8 +104,10 @@ public class Edit_product_handle extends HttpServlet {
             } catch (IndexOutOfBoundsException e){
 
             }
-
-            boolean updateImageimg = ProductDao.getInstance().UpdateImage(id,img1, img2, img3, img4);
+            boolean updateImageimg = false;
+            if (imgdirlist.size() > 0 ){
+                updateImageimg = ProductDao.getInstance().InsertImage(id,img1, img2, img3, img4);
+            }
             boolean updateProduct = ProductDao.getInstance().UpdateProduct(id,name,active,category,price,label,quantity,description);
 
             System.out.println(updateImageimg +"- update - "+ updateProduct);
