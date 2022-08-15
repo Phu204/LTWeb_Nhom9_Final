@@ -39,6 +39,59 @@
         </div>
 
         <div class="row">
+            <ul class="nav nav-tabs menu-tabs">
+                <li class="nav-item
+                     <c:if test="${status == 0}">
+                        active
+                     </c:if>  ">
+                    <a class="nav-link" href="OrderManagement">Tất cả<span class="badge badge-light">${status_all.size()}</span></a>
+                </li>
+
+                <li class="nav-item
+                     <c:if test="${status == 1}">
+                        active
+                     </c:if>  ">
+                    <a class="nav-link" href="OrderManagement?status=1">Đã hủy <span class="badge badge-light">${status_huy.size()}</span></a>
+                </li>
+
+                <li class="nav-item
+                     <c:if test="${status == 2}">
+                        active
+                     </c:if>  ">
+                    <a class="nav-link" href="OrderManagement?status=2">Bị từ chối<span class="badge badge-light">${status_tuchoi.size()}</span></a>
+                </li>
+
+                <li class="nav-item
+                     <c:if test="${status == 3}">
+                        active
+                     </c:if>  ">
+                    <a class="nav-link" href="OrderManagement?status=3">Đang xử lí <span class="badge badge-light">${status_xuli.size()}</span></a>
+                </li>
+
+                <li class="nav-item
+                     <c:if test="${status == 4}">
+                        active
+                     </c:if>  ">
+                    <a class="nav-link" href="OrderManagement?status=4">Đang đóng gói<span class="badge badge-light">${status_donggoi.size()}</span></a>
+                </li>
+
+                <li class="nav-item
+                     <c:if test="${status == 5}">
+                        active
+                     </c:if>  ">
+                    <a class="nav-link" href="OrderManagement?status=5">Đang vận chuyển<span class="badge badge-light">${status_vanchuyen.size()}</span></a>
+                </li>
+
+                <li class="nav-item
+                     <c:if test="${status == 6}">
+                        active
+                     </c:if>  ">
+                    <a class="nav-link" href="OrderManagement?status=6">Hoàn thành <span class="badge badge-light">${status_hoanthanh.size()}</span></a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">

@@ -107,7 +107,7 @@ public class OrderDao {
                 orderDetail.setId(rs.getInt("id"));
                 orderDetail.setOrderId(rs.getInt("ord_id"));
                 orderDetail.setProductId(rs.getInt("pro_id"));
-                orderDetail.setQuatity(rs.getInt("quantity"));
+                orderDetail.setQuantity(rs.getInt("quantity"));
                 list.add(orderDetail);
             }
             rs.close();
@@ -132,7 +132,7 @@ public class OrderDao {
                 orderDetail.setId(rs.getInt("id"));
                 orderDetail.setOrderId(rs.getInt("ord_id"));
                 orderDetail.setProductId(rs.getInt("pro_id"));
-                orderDetail.setQuatity(rs.getInt("quantity"));
+                orderDetail.setQuantity(rs.getInt("quantity"));
                 list.add(orderDetail);
             }
             rs.close();
@@ -157,7 +157,7 @@ public class OrderDao {
                 orderDetail.setId(rs.getInt("id"));
                 orderDetail.setOrderId(rs.getInt("ord_id"));
                 orderDetail.setProductId(rs.getInt("pro_id"));
-                orderDetail.setQuatity(rs.getInt("quantity"));
+                orderDetail.setQuantity(rs.getInt("quantity"));
                 list.add(orderDetail);
             }
             rs.close();
@@ -262,4 +262,52 @@ public class OrderDao {
         return list;
     }
 
+    public List<Order> getOrderListByStatus(int status){
+        Statement statement = DBConect.getInstance().get();
+        String sql = "SELECT * FROM orders where status = " + status ;
+        List<Order> list = new ArrayList<>();
+        try {
+            ResultSet rs = statement.executeQuery(sql);
+
+            Order order = null;
+            while (rs.next()) {
+                order = new Order();
+                order.setId(rs.getInt("id"));
+                order.setCustomerId(rs.getInt("cus_id"));
+                order.setDatecreate(rs.getDate("datecreate"));
+                order.setDateupdate(rs.getDate("dateupdate"));
+                order.setPrice(rs.getInt("price"));
+                order.setAddressId(rs.getInt("address_id"));
+                order.setPhone(rs.getDouble("phone"));
+                order.setPayment(rs.getBoolean("payment"));
+                order.setStatus(rs.getInt("status"));
+                order.setShipprice(rs.getInt("shipprice"));
+                order.setNote(rs.getString("note"));
+                list.add(order);
+            }
+            rs.close();
+        }  catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        return list;
+    }
+
+    public boolean UpdateOrder(int id,int addressId,String phone,String decription,int status){
+        Statement statement = DBConect.getInstance().get();
+
+        String sql = "UPDATE orders SET address_id = "+ addressId + ", " + "phone = '"+ phone + "', " +
+                " note = '"+ decription + "',status =  " + status +
+                " where id = "+ id +"";
+        int update = 0;
+        try {
+            update = statement.executeUpdate(sql);
+
+            return update == 1;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }

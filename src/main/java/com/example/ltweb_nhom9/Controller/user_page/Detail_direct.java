@@ -26,6 +26,7 @@ public class Detail_direct extends HttpServlet {
         req.setAttribute("item",item);
         req.setAttribute("images",images);
         req.setAttribute("category",category);
+        System.out.println(item);
         req.getRequestDispatcher("User_page/detail.jsp").forward(req,resp);
     }
 

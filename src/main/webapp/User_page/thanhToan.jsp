@@ -13,8 +13,8 @@
     <meta http-equiv="Content-Type" content="text/html";  charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="SHOP HA ANH GERMANY - Thanh toán đơn hàng" />
-    <title>SHOP HA ANH GERMANY - Thanh toán đơn hàng</title>
+    <meta name="description" content="SHOP TEAM 9- Thanh toán đơn hàng" />
+    <title>SHOP TEAM 9 - Thanh toán đơn hàng</title>
 
     <!--Facebook Pixel Code-->
     <script>
@@ -276,7 +276,7 @@
         <div class="logo logo--center">
 
             <a href="/">
-                <img class="logo__image  logo__image--medium " alt="SHOP HA ANH GERMANY" src="img/imgProductDemo/logo.png" />
+                <img class="logo__image  logo__image--medium " alt="SHOP TEAM 9" src="img/imgProductDemo/logo.png" />
             </a>
 
         </div>
@@ -303,7 +303,7 @@
                     <div class="logo logo--center">
 
                         <a href="/">
-                            <img class="logo__image  logo__image--medium " alt="SHOP HA ANH GERMANY" src="img_thanhtoansanpham/logo.png" />
+                            <img class="logo__image  logo__image--medium " alt="SHOP TEAM 9" src="img/imgProductDemo/logo.png" />
                         </a>
 
                     </div>

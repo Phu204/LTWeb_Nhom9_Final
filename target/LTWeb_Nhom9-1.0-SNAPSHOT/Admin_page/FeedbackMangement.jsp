@@ -66,89 +66,17 @@
                                     </thead>
                                     <tbody>
 
+                                    <c:forEach items="${feedbacks}" var="f">
                                     <tr>
-                                        <td>user01</td>
-                                        <td>Trần Phước An</td>
-                                        <td>an1234@gmail.com</td>
-                                        <td>0372652520</td>
-                                        <td>Sản phẩm này có phải hàng chính hãng ko ạ</td>
-                                        <td><a href="FeedbackDetail.html" class="btn btn-danger btn-delete-sanpham">
-                                            <i class="fa fa-eye">Xem</i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>user02</td>
-                                        <td>Lâm Mỹ Anh</td>
-                                        <td>myanhlam2107@gmail.com</td>
-                                        <td>0564243269</td>
-                                        <td>Sản phẩm quá tốt so với các nơi khác</td>
-                                        <td><a href="FeedbackDetail.html" class="btn btn-danger btn-delete-sanpham">
-                                            <i class="fa fa-eye">Xem</i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>user03</td>
-                                        <td>Trần Thị Minh Anh</td>
-                                        <td>ttmanh@gmail.com</td>
-                                        <td>0372652520</td>
-                                        <td>10 điểm</td>
-                                        <td><a href="FeedbackDetail.html" class="btn btn-danger btn-delete-sanpham">
-                                            <i class="fa fa-eye">Xem</i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>user04</td>
-                                        <td>Ngô Quốc Bảo</td>
-                                        <td>baoquoc0302@gmail.com</td>
-                                        <td>0564243269</td>
-                                        <td>Không có gì để chê, giao hàng nhanh chất lượng</td>
-                                        <td><a href="FeedbackDetail.html" class="btn btn-danger btn-delete-sanpham">
-                                            <i class="fa fa-eye">Xem</i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>user05</td>
-                                        <td>Nguyễn Thùy Duyên</td>
-                                        <td>thuyduyencute@gmail.com</td>
-                                        <td>0568297607</td>
-                                        <td>Hàng đẹp ,vừa tiền ,màu hoa hướng dương hơi nhạt</td>
-                                        <td><a href="FeedbackDetail.html" class="btn btn-danger btn-delete-sanpham">
-                                            <i class="fa fa-eye">Xem</i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>user06</td>
-                                        <td>Trần Thái Linh</td>
-                                        <td>mhismproplayer@gmail.com</td>
-                                        <td>0702278492</td>
-                                        <td>Sản phẩm giao không đúng màu so với đơn đặt hàng</td>
-                                        <td><a href="FeedbackDetail.html" class="btn btn-danger btn-delete-sanpham">
-                                            <i class="fa fa-eye">Xem</i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>user07</td>
-                                        <td>Nguyễn Thị Hiếu Hưng</td>
-                                        <td>hungpro01@gmail.com</td>
-                                        <td>0984851207</td>
-                                        <td>Lần đầu mua của shop mà ưng lắm ạ giao hàng nhanh</td>
-                                        <td><a href="FeedbackDetail.html" class="btn btn-danger btn-delete-sanpham">
-                                            <i class="fa fa-eye">Xem</i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>user08</td>
-                                        <td>Nguyễn Thanh Hương</td>
-                                        <td>cobexinhxan@gmail.com</td>
-                                        <td>0380814069</td>
-                                        <td>Sản phẩm giao không đúng màu so với đơn đặt hàng</td>
-                                        <td><a href="FeedbackDetail.html" class="btn btn-danger btn-delete-sanpham">
-                                            <i class="fa fa-eye">Xem</i></a></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>user09</td> <!-- check btn-delete-sanpham ko duoc su dung-->
-                                        <td>Phạm Văn Lộc</td>
-                                        <td>locphuhodeptraitop1@gmail.com</td>
-                                        <td>0611599570</td>
-                                        <td>Sản phẩm giao không đúng màu so với đơn đặt hàng</td>
-                                        <td><a href="FeedbackDetail.html" class="btn btn-outline-primary btn-primary ">
+                                        <td>${f.id}</td> <!-- check btn-delete-sanpham ko duoc su dung-->
+                                        <td>${f.name}</td>
+                                        <td>${f.email}</td>
+                                        <td>${f.getStringPhone()}</td>
+                                        <td>${f.getContentShort()}</td>
+                                        <td><a href="FeedbackDetail?id=${f.id}" class="btn btn-outline-primary btn-primary ">
                                             <i class="fa fa-eye"> Xem</i></a></td>
                                     </tr>
-
+                                    </c:forEach>
 
 
                                     </tbody>

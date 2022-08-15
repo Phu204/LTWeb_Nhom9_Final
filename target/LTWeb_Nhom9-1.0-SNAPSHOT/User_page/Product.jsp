@@ -34,38 +34,23 @@
     <link href="css/ContacIcon.css" rel="stylesheet" type="text/css">
     <link href="User_page/css/evo-collections.scss.css" rel="stylesheet" type="text/css"/>
 
+    <link href="User_page/css/checkbox.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body class="bg-body collection">
 
-<div class="evo-search-bar"><%-- check--%>
-    <form action="/search" method="get">
-        <div class="input-group">
-            <input type="text" name="query" class="search-auto form-control" placeholder="Bạn cần tìm gì hôm nay?"/>
-            <span class="input-group-btn">
-				<button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
-			</span>
-        </div>
-    </form>
-    <button class="site-header__search" title="Đóng tìm kiếm">
-        <svg xmlns="http://www.w3.org/2000/svg" width="26.045" height="26.044">
-            <g data-name="Group 470">
-                <path d="M19.736 17.918l-4.896-4.896 4.896-4.896a1.242 1.242 0 0 0-.202-1.616 1.242 1.242 0 0 0-1.615-.202l-4.896 4.896L8.127 6.31a1.242 1.242 0 0 0-1.615.202 1.242 1.242 0 0 0-.202 1.615l4.895 4.896-4.896 4.896a1.242 1.242 0 0 0 .202 1.615 1.242 1.242 0 0 0 1.616.202l4.896-4.896 4.896 4.896a1.242 1.242 0 0 0 1.615-.202 1.242 1.242 0 0 0 .202-1.615z"
-                      data-name="Path 224" fill="#1c1c1c"></path>
-            </g>
-        </svg>
-    </button>
-</div>
+
 <jsp:include page='header.jsp'>
     <jsp:param name="articleId" value=""/>
 </jsp:include>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
+
 <script src="User_page/js/option-selectors.js" type="text/javascript"></script>
 <script src="User_page/js/api.jquery.js" type="text/javascript"></script>
 <script src="User_page/js/slick.js" type="text/javascript"></script>
-<script src="User_page/js/Productjs/evo-collection.js"
-        type="text/javascript"></script>
+
+
 <script src="User_page/js/pagination.min.js" type="text/javascript"></script>
 
 <section class="bread-crumb margin-bottom-10">
@@ -103,7 +88,7 @@
                 <jsp:useBean id="categoryList" scope="request" type="java.util.List"/>
                 <c:forEach items="${categoryList}" var="i">
                     <div class="category-item">
-                        <a href="${typePage}?category=${i.getName()}" title="${i.getName()}">
+                        <a href="Product?typePage=${typePage}&category=${i.getName()}" title="${i.getName()}">
                             <div class="group-category-image">
 
                                 <img data-src="${i.getImg()}"
@@ -125,29 +110,40 @@
                     <div class="sort-cate-left hidden-xs">
                         <h3>Xếp theo:</h3>
                         <ul>
-                            <li class="btn-quick-sort alpha-asc">
-                                <a href="javascript:void(0)" title="Tên A-Z"><i></i>Tên A-Z</a>
-                            </li>
-                            <li class="btn-quick-sort alpha-desc">
-                                <a href="javascript:void(0)" title="Tên Z-A"><i></i>Tên Z-A</a>
-                            </li>
-                            <li class="btn-quick-sort position-desc">
-                                <a href="javascript:void(0)" title="Hàng mới"><i></i>Hàng mới</a>
-                            </li>
-                            <li class="btn-quick-sort price-asc">
-                                <a href="javascript:void(0)" title="Giá thấp đến cao"><i></i>Giá
-                                    thấp đến cao</a>
-                            </li>
-                            <li class="btn-quick-sort price-desc">
-                                <a href="javascript:void(0)" title="Giá cao xuống thấp"><i></i>Giá
-                                    cao xuống thấp</a>
-                            </li>
+                            <label class="checkbox-wrap checkbox-primary alpha-desc " style="display: none">
+                                <input name="sort-product" onclick="sort('')" value="" type="radio" checked >
+                                <span class="checkmark" style="margin-left: 10px"></span>
+                            </label>
+                            <label class="checkbox-wrap checkbox-primary alpha-desc " style="float: left">Tên A-Z
+                                <input name="sort-product" onclick="sort('A-Z')" value="A-Z" type="radio" <c:if test="${sort.equalsIgnoreCase('A-Z')}">checked</c:if>>
+                                <span class="checkmark" style="margin-left: 10px"></span>
+                            </label>
+                            <label class="checkbox-wrap checkbox-primary alpha-desc " style="float: left">Tên Z-A
+                                <input name="sort-product" onclick="sort('Z-A')" value="Z-A" type="radio" <c:if test="${sort.equalsIgnoreCase('Z-A')}">checked</c:if>>
+                                <span class="checkmark" style="margin-left: 10px"></span>
+                            </label>
+                            <label class="checkbox-wrap checkbox-primary alpha-desc " style="float: left">Hàng mới
+                                <input name="sort-product" onclick="sort('new')" value="new" type="radio" <c:if test="${sort.equalsIgnoreCase('new')}">checked</c:if>>
+                                <span class="checkmark" style="margin-left: 10px"></span>
+                            </label>
+                            <label class="checkbox-wrap checkbox-primary alpha-desc " style="float: left">Giá thấp đến cao
+                                <input name="sort-product" onclick="sort('pricelow')" value="pricelow" type="radio" <c:if test="${sort.equalsIgnoreCase('pricelow')}">checked</c:if>>
+                                <span class="checkmark" style="margin-left: 10px"></span>
+                            </label>
+                            <label class="checkbox-wrap checkbox-primary alpha-desc " style="float: left">Giá cao xuống thấp
+                                <input name="sort-product" onclick="sort('pricehigh')" value="pricehigh" type="radio" <c:if test="${sort.equalsIgnoreCase('pricehigh')}">checked</c:if>>
+                                <span class="checkmark" style="margin-left: 10px"></span>
+                            </label>
+<%--                            <li class="btn-quick-sort price-desc <c:if test="${sort.equalsIgnoreCase('pricehigh')}">active</c:if>">--%>
+<%--                                <a href="Product?typePage=${typePage}?category=${category}&query=${query}&sort=pricehigh" title="Giá cao xuống thấp"><i></i>Giá--%>
+<%--                                    cao xuống thấp</a>--%>
+<%--                            </li>--%>
                         </ul>
                     </div>
 
                 </div>
 
-                <section class="products-view products-view-grid row">
+                <section class="products-view products-view-grid row" id="product-load">
 
                     <jsp:useBean id="products" scope="request" type="java.util.List"/>
                     <c:forEach var="p" items="${products}">
@@ -193,11 +189,6 @@
                             </div>
                             <div class="product-detail clearfix">
                                 <div class="box-pro-detail">
-                                    <div class="pro-brand">
-
-                                        <a href="/search?query=vendor:" title=""></a>
-
-                                    </div>
                                     <h3 class="pro-name">
                                         <a href="#"
                                            title=${p.name}>${p.name}</a>
@@ -207,10 +198,11 @@
 
                                                 ${p.stringPrice(p.getTotalPrice())}₫
 
-
-                                            <span class="pro-price-del">
-						<del class="compare-price">${p.stringPrice(p.price)}₫</del>
-					</span>
+                                                    <c:if test="${p.isSale()}">
+                                                        <span class="pro-price-del">
+                                                            <del class="compare-price">${p.stringPrice(p.price)}₫</del>
+                                                        </span>
+                                                    </c:if>
 
 
                                         </p>
@@ -230,11 +222,11 @@
 
                                 <li class="page-item
                                 <c:if test="${index == 1}" >disabled </c:if>
-                                 "><a class="page-link" href="${typePage}?index=${1}&category=${category}" title="«">«</a></li>
+                                 "><a class="page-link" href="Product?typePage=${typePage}&index=1&category=${category}&query=${query}&sort=${sort}" title="«">«</a></li>
 
 
-                                <c:forEach var="i" begin="${index>2?index-2:1}" end="${index+1>numPage?numPage+1:index+2 }">
-                                    <li class="page-item"><a class="page-link" href="${typePage}?index=${i}&category=${category}"
+                                <c:forEach var="i" begin="${index>2?index-2:1}" end="${index+1>numPage?numPage:index+1 }">
+                                    <li class="page-item"><a class="page-link" href="Product?typePage=${typePage}&index=${i }&category=${category}&query=${query}&sort=${sort}"
                                             <c:if test="${index ==i }" >style="color: #858585" disabled="true" </c:if>
 <%--                                                             ${index==i?"style=\color:red;\"":""}--%>
                                                              title="${i}">${i}</a></li>
@@ -242,8 +234,8 @@
 
 
                                 <li class="page-item
-                                <c:if test="${index == (numPage + 1)}" >disabled </c:if>
-                                "><a class="page-link" href="${typePage}?index=${numPage + 1 }&category=${category}"
+                                <c:if test="${index == numPage}" >disabled </c:if>
+                                "><a class="page-link" href="Product?typePage=${typePage}&index=${numPage}&category=${category}&query=${query}&sort=${sort}"
                                                          title="»">»</a></li>
 
                             </ul>
@@ -266,7 +258,7 @@
 
                         <c:forEach items="${categoryList}" var="i">
                             <li class="nav-item ">
-                                <a class="nav-link" href="${typePage}?category=${i.getName()}" title="${i.getName()}">${i.getName()}</a>
+                                <a class="nav-link" href="Product?typePage=${typePage}?category=${i.getName()}" title="${i.getName()}">${i.getName()}</a>
                             </li>
                         </c:forEach>
 
@@ -275,28 +267,13 @@
 
                 </div>
             </aside>
-            <script src="User_page/js/Productjs/search_filter.js" type="text/javascript"></script>
 
-            <div class="aside-filter clearfix"><!-- check -->
+            <div class="aside-filter clearfix">
                 <div class="heading">
                     Tìm theo
                 </div>
                 <div class="aside-hidden-mobile">
                     <div class="filter-container">
-                        <div class="filter-containers">
-                            <div class="filter-container__selected-filter" style="display: none;">
-                                <div class="filter-container__selected-filter-header clearfix">
-                                    <span class="filter-container__selected-filter-header-title">Bạn chọn</span>
-                                    <a href="javascript:void(0)" onclick="clearAllFiltered()"
-                                       class="filter-container__clear-all" title="Bỏ hết">Bỏ hết <i
-                                            class="fa fa-angle-right"></i></a>
-                                </div>
-                                <div class="filter-container__selected-filter-list">
-                                    <ul></ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
 
                         <aside class="aside-item filter-price">
                             <div class="aside-title">
@@ -305,55 +282,25 @@
                             <div class="aside-content filter-group">
                                 <ul>
 
-                                    <li class="filter-item filter-item--check-box filter-item--green">
+                                    <li class="filter-item filter-item--check-box filter-item--green" >
                                             <span>
-								<label for="filter-duoi-100-000d">
-									<input type="checkbox" id="filter-duoi-100-000d" onchange="toggleFilter(this);"
-                                           data-group="Khoảng giá" data-field="price_min" data-text="Dưới 100.000đ"
-                                           value="(<100000)" data-operator="OR">
+								<label for="filter-all-price">
+									<input type="radio" name="pricefilter"  id="filter-all-price" onchange="filterPrice(this.value)"
+                                           value="0+999999999" checked>
 									<i class="fa"></i>
-									Giá dưới 100.000đ
+                                    Tất cả
 								</label>
 							</span>
                                     </li>
 
                                     <li class="filter-item filter-item--check-box filter-item--green">
                                             <span>
-								<label for="filter-100-000d-200-000d">
-									<input type="checkbox" id="filter-100-000d-200-000d" onchange="toggleFilter(this)"
-                                           data-group="Khoảng giá" data-field="price_min"
-                                           data-text="100.000đ - 200.000đ" value="(>=100000 AND <=200000)"
-                                           data-operator="OR">
+								<label for="filter-duoi-500-000d">
+									<input type="radio" name="pricefilter"  id="filter-duoi-500-000d" onchange="filterPrice(this.value)"
+                                           data-group="Khoảng giá" data-field="price_min" data-text="Dưới 500.000đ"
+                                           value="0+500000" >
 									<i class="fa"></i>
-									100.000đ - 200.000đ
-								</label>
-							</span>
-                                    </li>
-
-
-                                    <li class="filter-item filter-item--check-box filter-item--green">
-                                            <span>
-								<label for="filter-200-000d-300-000d">
-									<input type="checkbox" id="filter-200-000d-300-000d" onchange="toggleFilter(this)"
-                                           data-group="Khoảng giá" data-field="price_min"
-                                           data-text="200.000đ - 300.000đ" value="(>=200000 AND <=300000)"
-                                           data-operator="OR">
-									<i class="fa"></i>
-									200.000đ - 300.000đ
-								</label>
-							</span>
-                                    </li>
-
-
-                                    <li class="filter-item filter-item--check-box filter-item--green">
-                                            <span>
-								<label for="filter-300-000d-500-000d">
-									<input type="checkbox" id="filter-300-000d-500-000d" onchange="toggleFilter(this)"
-                                           data-group="Khoảng giá" data-field="price_min"
-                                           data-text="300.000đ - 500.000đ" value="(>=300000 AND <=500000)"
-                                           data-operator="OR">
-									<i class="fa"></i>
-									300.000đ - 500.000đ
+									Giá dưới 500.000đ
 								</label>
 							</span>
                                     </li>
@@ -362,23 +309,61 @@
                                     <li class="filter-item filter-item--check-box filter-item--green">
                                             <span>
 								<label for="filter-500-000d-1-000-000d">
-									<input type="checkbox" id="filter-500-000d-1-000-000d" onchange="toggleFilter(this)"
+									<input type="radio" name="pricefilter"  id="filter-500-000d-1-000-000d" onchange="filterPrice(this.value)"
                                            data-group="Khoảng giá" data-field="price_min"
-                                           data-text="500.000đ - 1.000.000đ" value="(>=500000 AND <=1000000)"
-                                           data-operator="OR">
+                                           data-text="500.000đ - 1.000.000đ" value="500000+1000000">
 									<i class="fa"></i>
 									500.000đ - 1.000.000đ
 								</label>
 							</span>
                                     </li>
+
                                     <li class="filter-item filter-item--check-box filter-item--green">
                                             <span>
-								<label for="filter-tren1-000-000d">
-									<input type="checkbox" id="filter-tren1-000-000d" onchange="filter(this)"
-                                           data-group="Khoảng giá" data-field="price_min" data-text="Trên 1.000.000đ"
-                                           value="(>1000000)" data-operator="OR">
+								<label for="filter-1-000-000d-3-000-000d">
+									<input type="radio" name="pricefilter"  id="filter-1-000-000d-3-000-000d" onchange="filterPrice(this.value)"
+                                           data-group="Khoảng giá" data-field="price_min"
+                                           data-text="1.000.000đ - 3.000.000đ" value="1000000+3000000">
 									<i class="fa"></i>
-									Giá trên 1.000.000đ
+									1.000.000đ - 3.000.000đ
+								</label>
+							</span>
+                                    </li>
+
+                                    <li class="filter-item filter-item--check-box filter-item--green">
+                                            <span>
+								<label for="filter-3-000-000d-5-000-000d">
+									<input type="radio" name="pricefilter"  id="filter-3-000-000d-5-000-000d" onchange="filterPrice(this.value)"
+                                           data-group="Khoảng giá" data-field="price_min"
+                                           data-text="3.000.000đ - 5.000.000đ" value="3000000+5000000">
+									<i class="fa"></i>
+									3.000.000đ - 5.000.000đ
+								</label>
+							</span>
+                                    </li>
+
+
+                                    <li class="filter-item filter-item--check-box filter-item--green">
+                                            <span>
+								<label for="filter-5.000-000d-10.000-000d">
+									<input type="radio" name="pricefilter"  id="filter-5.000-000d-10.000-000d" onchange="filterPrice(this.value)"
+                                           data-group="Khoảng giá" data-field="price_min"
+                                           data-text="5.000.000đ - 10.000.000đ" value="5000000+10000000">
+									<i class="fa"></i>
+									5.000.000đ - 10.000.000đ
+								</label>
+							</span>
+                                    </li>
+
+
+                                    <li class="filter-item filter-item--check-box filter-item--green">
+                                            <span>
+								<label for="filter-tren10-000-000d">
+									<input type="radio" name="pricefilter" id="filter-tren10-000-000d" onchange="filterPrice(this.value)"
+                                           data-group="Khoảng giá" data-field="price_min" data-text="Trên 10.000.000đ"
+                                           value="10000000+999999999" >
+									<i class="fa"></i>
+									Giá trên 10.000.000đ
 								</label>
 							</span>
                                     </li>
@@ -397,22 +382,23 @@
 
                                 <ul class="filter-vendor" id="id01">
 
+                                    <li class="filter-item filter-item--check-box filter-item--green " >
+                                        <label for="filter-All" class="All">
+                                            <input type="radio" id="filter-All" name="brand" onchange="filter('All')"
+                                                   data-group="Hãng" data-text="All" checked
+                                                   value="All" >
+                                            <i class="fa"></i>
+                                            Tất cả
+                                        </label>
+                                    </li>
+
                                     <c:forEach items="${brand}" var="i">
-<%--                                        <li class="filter-item filter-item--check-box filter-item--green " href="${typePage}?name=${i}">--%>
-<%--                                            <label >--%>
-<%--                                                <button--%>
-<%--&lt;%&ndash;                                                        type="checkbox" onclick="checked"&ndash;%&gt;--%>
-<%--                                                       checked data-text="${i}"/>--%>
-<%--                                                <a class="fa" href="${typePage}?name=${i}"></a>--%>
-<%--                                                <i href="${typePage}?name=${i}">${i}</i>--%>
-<%--                                            </label>--%>
-<%--&lt;%&ndash;                                        <a href="${typePage}?category=${i.getName()}">${i.getName()}</a>&ndash;%&gt;--%>
-<%--                                        </li>--%>
-                                        <li class="filter-item filter-item--check-box filter-item--green " href="${typePage}?name=${i}">
-                                            <label data-filter="${i}" for="filter-${i}" class="${i}">
-                                                <input type="checkbox" id="filter-${i}" onchange="toggleFilter(this)"
-                                                       data-group="Hãng" data-field="vendor.filter_key" data-text="${i}"
-                                                       value="(${i})" data-operator="OR">
+
+                                        <li class="filter-item filter-item--check-box filter-item--green " >
+                                            <label for="filter-${i}" class="${i}">
+                                                <input type="radio" id="filter-${i}" name="brand" onchange="filter('${i}')"
+                                                       data-group="Hãng" data-text="${i}"
+                                                       value="${i}" >
                                                 <i class="fa"></i>
                                                     ${i}
                                             </label>
@@ -433,7 +419,7 @@
             <aside class="evo-aside-banner">
                 <div class="heading">Khuyến mãi</div>
                 <div class="aside-content">
-                    <a class="single_image_effect" href="DiscountProduct" title="Khuyến mãi">
+                    <a class="single_image_effect" href="Product?typePage=DiscountProduct" title="Khuyến mãi">
                         <img class="lazy img-responsive center-block"
                              src="data:image/png"
                              data-src="img/banner/aside_banner.webp"
@@ -450,22 +436,6 @@
 </div>
 
 
-<a href="javascript:;" class="suntory-alo-phone suntory-alo-green d-none d-lg-block d-xl-block d-md-block hidden-xs"
-   id="suntory-alo-phoneIcon-mb" style="left: 0px; bottom: 0px;">
-    <div class="suntory-alo-ph-circle"></div>
-    <div class="suntory-alo-ph-circle-fill"></div>
-    <div class="suntory-alo-ph-img-circle"><i class="fa fa-phone"></i></div>
-    <span class="oi">0123456789</span>
-</a>
-<div class="box_chat">
-    <a class="sc w d-sm-none hidden-lg hidden-md hidden-sm" href="#" title="Zalo">
-        <img src="img/icon/zalochat.png" alt="Zalo">
-    </a>
-    <a class="sc w d-none d-lg-block d-xl-block d-md-block hidden-xs" href="#" title="Zalo" target="_blank">
-        <img src="img/icon/zalochat.png" alt="Zalo">
-    </a>
-</div>
-
 <div class="backdrop__body-backdrop___1rvky"></div>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
@@ -473,38 +443,6 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"
         type="text/javascript"></script>
 
-<div class="ajax-load"><!-- undefine-->
-        <span class="loading-icon">
-		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-             width="24px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;"
-             xml:space="preserve">
-			<rect x="0" y="10" width="4" height="10" fill="#333" opacity="0.2">
-				<animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0s" dur="0.6s"
-                         repeatCount="indefinite"/>
-				<animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0s" dur="0.6s"
-                         repeatCount="indefinite"/>
-				<animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0s" dur="0.6s"
-                         repeatCount="indefinite"/>
-			</rect>
-			<rect x="8" y="10" width="4" height="10" fill="#333" opacity="0.2">
-				<animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0.15s" dur="0.6s"
-                         repeatCount="indefinite"/>
-				<animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0.15s" dur="0.6s"
-                         repeatCount="indefinite"/>
-				<animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0.15s" dur="0.6s"
-                         repeatCount="indefinite"/>
-			</rect>
-			<rect x="16" y="10" width="4" height="10" fill="#333" opacity="0.2">
-				<animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0.3s" dur="0.6s"
-                         repeatCount="indefinite"/>
-				<animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0.3s" dur="0.6s"
-                         repeatCount="indefinite"/>
-				<animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0.3s" dur="0.6s"
-                         repeatCount="indefinite"/>
-			</rect>
-		</svg>
-	</span>
-</div>
 <div class="loading awe-popup"><!-- undefine-->
     <div class="overlay"></div>
     <div class="loader" title="2">
@@ -538,7 +476,7 @@
 		</svg>
     </div>
 </div>
-<div class="addcart-popup product-popup awe-popup"><!-- undefine-->
+<div class="addcart-popup product-popup awe-popup"><!-- undefine -->
     <div class="overlay no-background"></div>
     <div class="content">
         <div class="row row-noGutter">
@@ -571,7 +509,6 @@
         <div class="error-message"></div>
     </div>
 </div>
-<script src="User_page/js/Productjs/ProductJS.js"></script>
 <div id="popup-cart" class="modal fade" role="dialog"><!-- undefine-->
     <div id="popup-cart-desktop" class="clearfix">
         <div class="title-popup-cart"><i class="ion ion-md-notifications-outline" aria-hidden="true"></i> Bạn đã thêm
@@ -610,18 +547,51 @@
 <script src="User_page/js/cs.script.js" type="text/javascript"></script>
 <script src="User_page/js/main.js" type="text/javascript"></script>
 
-<script src="User_page/js/Productjs/col.js" type="text/javascript"></script>
+<%--<script src="User_page/js/ajax.js" type="text/javascript"></script>--%>
+<script src="User_page/js/evo-collection.js" type="text/javascript"></script>
 <script>
-    function filter(e) {
-        var checked = e.value;
-        var id= e.id;
-            $.ajax({
-                url: 'Product',
-                type: 'GET',
-                data: "&chkbx1="+id
-            });
-        alert(checked)
-    };
+
+    // function filter(e) {
+    //     var checked = e.value;
+    //     var id= e.id;
+    //     $.ajax({
+    //         url: 'Product',
+    //         type: 'GET',
+    //         data: "&chkbx1="+id
+    //     });
+    //     alert(checked)
+
+
+
+    function filter(name) {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            document.getElementById("product-load").innerHTML =
+                this.responseText ;
+        }
+        var price = document.querySelector('input[name="pricefilter"]:checked').value;
+        var sort = document.querySelector('input[name="sort-product"]:checked').value;
+
+        xhttp.open("GET", "LoadProduct?filter=" + name + "&price=" + price + "&sort=" + sort);
+        xhttp.send();
+    }
+    function filterPrice(price) {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            document.getElementById("product-load").innerHTML =
+                this.responseText ;
+        }
+        var filter = "";
+        if (document.querySelector('input[name="brand"]:checked').value != "All"){
+            filter = document.querySelector('input[name="brand"]:checked').value;
+        }
+
+        var sort = document.querySelector('input[name="sort-product"]:checked').value;
+
+        xhttp.open("GET", "LoadProduct?filter=" + filter + "&price="+price + "&sort=" + sort);
+        xhttp.send();
+
+    }
     function addCart(e) {
         $.ajax({
             url: 'AddCart',
@@ -633,6 +603,7 @@
         });
 
     };
+
     function sortList() {
         var list, i, switching, b, shouldSwitch;
         list = document.getElementById("id01");
@@ -666,11 +637,23 @@
         }
     }
 
-</script>
 
-<div class="fb-livechat">
-    <a href="https://m.me/587115538341623" target="_blank" title="Chat với chúng tôi!" class="ctrlq fb-button"></a>
-</div>
+    function sort(sort) {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            document.getElementById("product-load").innerHTML =
+                this.responseText ;
+        }
+        var price = document.querySelector('input[name="pricefilter"]:checked').value;
+        var filter = "";
+        if (document.querySelector('input[name="brand"]:checked').value != "All"){
+            filter = document.querySelector('input[name="brand"]:checked').value;
+        }
+
+        xhttp.open("GET", "LoadProduct?filter=" + filter + "&price=" + price + "&sort="+sort);
+        xhttp.send();
+    }
+</script>
 
 <jsp:include page='footer.jsp'>
     <jsp:param name="articleId" value=""/>

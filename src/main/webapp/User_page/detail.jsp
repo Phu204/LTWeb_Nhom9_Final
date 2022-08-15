@@ -412,11 +412,11 @@ MICRO-...">
                                         <div class="col-sm-12 col-md-6 margin-bottom-10">
                                             <div class="btn-mua">
 
-                                                    <input type="hidden" name="id_product" value="${item.id}"/>
-                                                    <button type="submit" class="btn btn-lg btn-gray btn-cart btn_buy" >
-                                                        <span class="txt-main">Mua ngay <b class="product-price hidden">21.000.000₫</b></span>
-                                                        <span class="text-add">Giao hàng tận nơi</span>
-                                                    </button>
+                                                <input type="hidden" name="id_product" value="${item.id}"/>
+                                                <button type="submit" class="btn btn-lg btn-gray btn-cart btn_buy" >
+                                                    <span class="txt-main">Mua ngay <b class="product-price hidden">21.000.000₫</b></span>
+                                                    <span class="text-add">Giao hàng tận nơi</span>
+                                                </button>
 
                                             </div>
 
@@ -766,7 +766,7 @@ MICRO-...">
                                     </a>
                                     <div class="button-add hidden-sm hidden-xs">
                                         <form action="buynow" method="post" enctype="multipart/form-data" class="hidden-md variants form-nut-grid form-ajaxtocart" data-id="product-actions-17108925">
-<%--thay cái action để tạo mau ngay--%>
+                                            <%--thay cái action để tạo mau ngay--%>
 
                                             <input type="hidden" name="id_product" value="${item.id}"/>
                                             <button type="submit" title="Mua ngay" class="action" ><i class="fa fa-check-square-o" aria-hidden="true"></i></button>

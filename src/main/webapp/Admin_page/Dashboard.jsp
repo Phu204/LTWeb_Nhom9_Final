@@ -20,28 +20,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-    <!-- vendor css -->
     <link href="${pageContext.request.contextPath}/Admin_page/css/all.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/Admin_page/lib/typicons.font/typicons.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/Admin_page/css/admin.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/Admin_page/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/Admin_page/css/datatables.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/Admin_page/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
 
     <!-- azia CSS -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Admin_page/css/azia.css">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/Admin_page/css/bootstrap.min.css">
-
-    <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/Admin_page/css/all.min.css">
-
-    <!-- Datepicker CSS -->
-
-    <!-- Datatables CSS -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/Admin_page/css/datatables.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Admin_page/css/app.css">
 
 
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/Admin_page/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
 </head>
 
@@ -58,7 +49,7 @@
                         </div>
 
                         <div class="dash-widget-info">
-                            <h3>429</h3>
+                            <h3>${NumUser}</h3>
                             <h6 class="text-muted">Người dùng</h6>
                         </div>
                     </div>
@@ -102,68 +93,50 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td class="text-nowrap">
-                                    Annette Silva
-                                </td>
-                                <td class="text-nowrap">9 Sep 2020</td>
-                                <td>Máy hút bụi</td>
-                                <td>
-                                    <span class="badge bg-danger inv-badge">chờ xử lý</span>
-                                </td>
-                                <td>
-                                    <div class="font-weight-600">1.064.000 VNĐ</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-nowrap">
-                                    Stephen Wilson</td>
-                                <td class="text-nowrap">8 Sep 2020</td>
-                                <td>Máy giặt</td>
-                                <td>
-                                    <span class="badge bg-danger inv-badge">chờ xử lý</span>
-                                </td>
-                                <td>
-                                    <div class="font-weight-600">50.000.000 VNĐ</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-nowrap">
-                                    Ryan Rodriguez</td>
-                                <td class="text-nowrap">7 Sep 2020</td>
-                                <td>Tủ lạnh</td>
-                                <td>
-                                    <span class="badge bg-danger inv-badge">chờ xử lý</span>
-                                </td>
-                                <td>
-                                    <div class="font-weight-600">39.000.000 VNĐ</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-nowrap">
-                                    Lucile Devera
-                                </td>
-                                <td class="text-nowrap">6 Sep 2020</td>
-                                <td>Máy hút bụi</td>
-                                <td>
-                                    <span class="badge bg-danger inv-badge">chờ xử lý</span>
-                                </td>
-                                <td>
-                                    <div class="font-weight-600">36.000.000 VNĐ</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-nowrap">
-                                    Roland Storey</td>
-                                <td class="text-nowrap">5 Sep 2020</td>
-                                <td>Máy giặt</td>
-                                <td>
-                                    <span class="badge bg-danger inv-badge">chờ xử lý</span>
-                                </td>
-                                <td>
-                                    <div class="font-weight-600">79.000.000 VNĐ</div>
-                                </td>
-                            </tr>
+
+                            <c:forEach items="${orders}" var="o">
+                                <tr>
+                                    <td class="text-nowrap">
+                                        ${o.getCustomerName()}
+                                    </td>
+                                    <td class="text-nowrap">${o.datecreate}</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle sp" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    ${o.getProductListInOrder().size()} sản phẩm
+                                            </button>
+                                            <div class="dropdown-menu tx-13" aria-labelledby="dropdownMenuButton">
+                                                <c:forEach items="${o.getProductListInOrder()}" var="p">
+                                                    <a class="dropdown-item" href="#">
+                                                                <span class="table-avatar">
+                                                            <a href="#" class="avatar avatar-sm mr-2">
+                                                                <img class="avatar-img rounded-circle" alt="" src="${p.getListImage().get(0)}">
+                                                            </a>
+                                                            <span>${p.name}</span>
+                                                                </span>
+                                                    </a>
+                                                </c:forEach>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <c:if test="${o.status==1}"><span
+                                                class="badge badge-danger">Đã hủy</span></c:if>
+                                        <c:if test="${o.status==2}"><span
+                                                class="badge badge-warning">Bị từ chối</span></c:if>
+                                        <c:if test="${o.status==3}"><span
+                                                class="badge badge-dark">Đang xử lí</span></c:if>
+                                        <c:if test="${o.status==4}"><span class="badge badge-primary">Đang đóng gói</span></c:if>
+                                        <c:if test="${o.status==5}"><span class="badge badge-info">Đang vận chuyển</span></c:if>
+                                        <c:if test="${o.status==6}"><span
+                                                class="badge badge-success">Hoàn thành</span></c:if>
+                                    </td>
+                                    <td>${o.stringPrice(o.price)} VNĐ</td>
+                                </tr>
+                            </c:forEach>
+
+
                             </tbody>
                         </table>
                     </div>
@@ -181,4 +154,25 @@
         font-size: 450%;
     }
 </style>
+
+
+<!-- jQuery -->
+<script src="${pageContext.request.contextPath}/Admin_page/js/jquery-3.5.0.min.js"></script>
+
+<!-- Bootstrap Core JS -->
+<script src="${pageContext.request.contextPath}/Admin_page/js/popper.min.js"></script>
+<script src="${pageContext.request.contextPath}/Admin_page/js/bootstrap.min.js"></script>
+
+<!-- Datepicker Core JS -->
+<script src="${pageContext.request.contextPath}/Admin_page/js/moment.min.js"></script>
+<script src="${pageContext.request.contextPath}/Admin_page/js/bootstrap-datetimepicker.min.js"></script>
+
+<!-- Datatables JS -->
+<script src="${pageContext.request.contextPath}/Admin_page/js/datatables.min.js"></script>
+
+<!-- Select2 JS -->
+<script src="${pageContext.request.contextPath}/Admin_page/js/select2.min.js"></script>
+
+<script src="${pageContext.request.contextPath}/Admin_page/js/admin.js"></script>
+
 </html>
