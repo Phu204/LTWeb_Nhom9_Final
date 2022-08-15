@@ -19,4 +19,12 @@ public class ChangePassworDao {
         return false;
     }
 
+    public static boolean checkNewPassword(String email, String oldPassword, String newPassword, String reNewPassword){
+        User us = UserServices.checkLogin(email, oldPassword);
+        if(us != null){
+            if(newPassword.equals(reNewPassword)) return true;
+        }
+        return false;
+    }
+
 }

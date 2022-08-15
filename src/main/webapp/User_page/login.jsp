@@ -167,7 +167,7 @@
                             </p>
                             <div class="text-login text-center">
                                 <p>
-                                    Bạn chưa có tài khoản. Đăng ký <a href="register.jsp" title="Đăng ký">tại đây.</a>
+                                    Bạn chưa có tài khoản. Đăng ký <a href="Register" title="Đăng ký">tại đây.</a>
                                 </p>
                             </div>
                         </div>

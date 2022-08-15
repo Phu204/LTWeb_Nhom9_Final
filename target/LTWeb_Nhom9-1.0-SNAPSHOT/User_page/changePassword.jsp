@@ -16,7 +16,7 @@
 <html lang="en">
 <head>
 
-<%--    <meta charset="UTF-8">--%>
+    <%--    <meta charset="UTF-8">--%>
     <title>${title} | SHOP TEAM 9</title>
     <link rel="icon" href="${pageContext.request.contextPath}/img/icon/logo.png" type="image/x-icon"/>
 
@@ -26,11 +26,14 @@
     <link href="${pageContext.request.contextPath}/User_page/css/base.scss.css" rel="stylesheet" type="text/css"/>
     <link href="${pageContext.request.contextPath}/User_page/css/evo-main.scss.css" rel="stylesheet" type="text/css"/>
     <link href="${pageContext.request.contextPath}/User_page/css/slick.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="${pageContext.request.contextPath}/User_page/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css"/>
 
-    <link href="${pageContext.request.contextPath}/User_page/css/Reposive&&ContacIcon.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/Reposive&&ContacIcon.css" rel="stylesheet"
+          type="text/css"/>
 
-    <link href="${pageContext.request.contextPath}/User_page/css/evo-accounts.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/evo-accounts.scss.css" rel="stylesheet"
+          type="text/css"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/User_page/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
@@ -59,9 +62,9 @@
                     </div>
 
                     <form action="/LTWeb_Nhom9_war/ChangePassword" method="post">
-<%--                    error--%>
+                        <%--                    error--%>
                         <%
-                            String error = (String) request.getAttribute("error");
+                            String error = (String) session.getAttribute("error");
                         %>
                         <%
                             if (error != null) {
@@ -72,15 +75,27 @@
                         <%
                             }
                         %>
-<%--                    success--%>
+                        <%--                    success--%>
                         <%
-                            String success = (String) request.getAttribute("success");
+                            String success = (String) session.getAttribute("success");
                         %>
                         <%
                             if (success != null) {
                         %>
                         <div class="alert alert-success" role="alert">
                             <%= success%>
+                        </div>
+                        <%
+                            }
+                        %>
+                        <%
+                            String error2 = (String) session.getAttribute("error2");
+                        %>
+                        <%
+                            if (error2 != null) {
+                        %>
+                        <div class="alert alert-danger" role="alert">
+                            <%= error2%>
                         </div>
                         <%
                             }
@@ -111,8 +126,16 @@
                                        id="customer_new_password" data-validation-error-msg="Không được để trống"
                                        data-validation="required"/>
                             </fieldset>
+                            <fieldset class="form-group">
+                                <label>Nhập lại mật khẩu mới<span class="required">*</span></label>
+                                <input autocomplete="off" placeholder="Nhập lại mật khẩu mới" type="password"
+                                       class="form-control form-control-lg" value="" name="reNewPassword"
+                                       id="customer_re_new_password" data-validation-error-msg="Không được để trống"
+                                       data-validation="required"/>
+                            </fieldset>
                             <div class="pull-xs-left text-center" style="margin-top: 15px;">
-                                <button class="btn btn-style btn-blues" type="submit" value="login">Đổi mật khẩu</button>
+                                <button class="btn btn-style btn-blues" type="submit" value="login">Đổi mật khẩu
+                                </button>
                             </div>
                         </div>
                     </form>
@@ -154,11 +177,11 @@
 
 
 <div id="myModal" class="modal fade" role="dialog"></div>
-<script src="js/intersection-observer.js"></script>
-<script src="js/lazyload.min.js"></script>
-<script src="js/cs.script.js" type="text/javascript"></script>
-<script src="js/jquery.cookie.min.js"></script>
-<script src="js/main.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/intersection-observer.js"></script>
+<script src="${pageContext.request.contextPath}/js/lazyload.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/cs.script.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.cookie.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/main.js" type="text/javascript"></script>
 
 
 <div class="fb-livechat">

@@ -626,9 +626,9 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
 
-<script src="js/option-selectors.js" type="text/javascript"></script>
-<script src="js/api.jquery.js" type="text/javascript"></script>
-<script src="js/slick.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/option-selectors.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/api.jquery.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/slick.js" type="text/javascript"></script>
 
 
 <section class="bread-crumb margin-bottom-10">

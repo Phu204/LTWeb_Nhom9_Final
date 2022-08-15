@@ -17,7 +17,6 @@ public class LoadOrderHistory extends HttpServlet {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("auth");
         int id = user.getId();
-        System.out.println(id);
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         UserDao ud = UserDao.getInstance();

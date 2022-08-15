@@ -15,7 +15,7 @@
 <html lang="en">
 <head>
 
-    <link rel="icon" href="../img/icon/logo.png" type="image/x-icon"/>
+    <link rel="icon" href="${pageContext.request.contextPath}/img/icon/logo.png" type="image/x-icon"/>
     <title>${sessionScope.auth.name} | SHOP TEAM 9</title>
 
     <link href="${pageContext.request.contextPath}/User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>

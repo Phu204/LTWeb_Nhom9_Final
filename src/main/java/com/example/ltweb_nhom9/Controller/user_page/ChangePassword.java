@@ -25,19 +25,26 @@ public class ChangePassword extends HttpServlet {
         String email = request.getParameter("email");
         String oldPass = request.getParameter("oldPassword");
         String newPass = request.getParameter("newPassword");
+        String reNewPass = request.getParameter("reNewPassword");
         User us = UserServices.checkLogin(email,oldPass);
         HttpSession session = request.getSession();
 
-        if (us != null){
+        if (us != null) {
             if (us.getPassword().equals(oldPass) || us.getEmail().equals(email)) {
-                ChangePassworDao.changePassword(email, oldPass, newPass);
-                session.setAttribute("success", "Thay đổi mật khẩu thành công.");
+                if (ChangePassworDao.checkNewPassword(email, oldPass, newPass, reNewPass)) {
+                    ChangePassworDao.changePassword(email, oldPass, newPass);
+                    session.setAttribute("success", "Thay đổi mật khẩu thành công.");
+                    response.sendRedirect("ChangePassword");
+                } else {
+                    session.setAttribute("error2", "Mật khẩu mới không chính xác.");
+                    response.sendRedirect("ChangePassword");
+                }
+            } else {
+                session.setAttribute("error", "Email hoặc mật khẩu không chính xác.");
                 response.sendRedirect("ChangePassword");
             }
-        } else{
-            session.setAttribute("error", "Email hoặc mật khẩu không chính xác.");
-            response.sendRedirect("ChangePassword");
+        }else{
+            response.sendRedirect("Login");
         }
-
     }
 }
