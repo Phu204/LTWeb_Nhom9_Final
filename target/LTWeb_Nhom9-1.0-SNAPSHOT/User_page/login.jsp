@@ -16,9 +16,9 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <title>Đăng nhập</title>
-    <link rel="icon" href="../img/icon/logo.png" type="image/x-icon"/>
+<%--    <meta charset="UTF-8">--%>
+<%--    <title> ${title} | SHOP TEAM 9</title>--%>
+<%--    <link rel="icon" href="${pageContext.request.contextPath}/img/icon/logo.png" type="image/x-icon"/>--%>
 
 
     <link href="${pageContext.request.contextPath}/User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
@@ -100,10 +100,10 @@
                     <div class="social-login text-center margin-bottom-10">
                         <a href="#" class="social-login--facebook" ><img
                                 width="129px" height="37px" alt="facebook-login-button"
-                                src="../img/icon/fb-btn.svg"></a>
+                                src="${pageContext.request.contextPath}/img/icon/fb-btn.svg"></a>
                         <a href="#" class="social-login--google" ><img
                                 width="129px" height="37px" alt="google-login-button"
-                                src="../img/icon/gp-btn.svg"></a>
+                                src="${pageContext.request.contextPath}/img/icon/gp-btn.svg"></a>
                     </div>
                     <div class="line-break">
                         <span>hoặc</span>
@@ -193,12 +193,9 @@
     <span class="oi">0123456789</span>
 </a>
 <div class="box_chat">
-    <a class="sc w d-sm-none hidden-lg hidden-md hidden-sm" href="#" title="Zalo">
-        <img src="../img/icon/zalochat.png" alt="Zalo">
-    </a>
     <a class="sc w d-none d-lg-block d-xl-block d-md-block hidden-xs" href="#" title="Zalo"
        target="">
-        <img src="../img/icon/zalochat.png" alt="Zalo">
+        <img src="${pageContext.request.contextPath}/img/icon/zalochat.png" alt="Zalo">
     </a>
 </div>
 

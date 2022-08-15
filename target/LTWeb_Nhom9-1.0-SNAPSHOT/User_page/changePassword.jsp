@@ -16,21 +16,21 @@
 <html lang="en">
 <head>
 
-    <meta charset="UTF-8">
-    <title>Đổi mật khẩu</title>
-    <link rel="icon" href="../img/icon/logo.png" type="image/x-icon"/>
+<%--    <meta charset="UTF-8">--%>
+<%--    <title>Đổi mật khẩu</title>--%>
+<%--    <link rel="icon" href="../img/icon/logo.png" type="image/x-icon"/>--%>
 
 
-    <link href="css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="css/plugin.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="css/base.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="css/evo-main.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="css/slick.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/plugin.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/base.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/evo-main.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/slick.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 
-    <link href="css/Reposive&&ContacIcon.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/Reposive&&ContacIcon.css" rel="stylesheet" type="text/css"/>
 
-    <link href="css/evo-accounts.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/evo-accounts.scss.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
@@ -44,9 +44,9 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
 
-<script src="js/option-selectors.js" type="text/javascript"></script>
-<script src="js/api.jquery.js" type="text/javascript"></script>
-<script src="js/slick.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/User_page/js/option-selectors.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/User_page/js/api.jquery.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/User_page/js/slick.js" type="text/javascript"></script>
 
 
 <div class="container margin-bottom-20 margin-top-30">
@@ -58,7 +58,7 @@
                         <h1 class="title-head">Thay đổi mật khẩu</h1>
                     </div>
 
-                    <form action="/LTWeb_Nhom9/ChangePassword" method="post">
+                    <form action="/LTWeb_Nhom9_war/ChangePassword" method="post">
 <%--                    error--%>
                         <%
                             String error = (String) request.getAttribute("error");
@@ -139,12 +139,9 @@
     <span class="oi">0123456789</span>
 </a>
 <div class="box_chat">
-    <a class="sc w d-sm-none hidden-lg hidden-md hidden-sm" href="#" title="Zalo">
-        <img src="../img/icon/zalochat.png" alt="Zalo">
-    </a>
     <a class="sc w d-none d-lg-block d-xl-block d-md-block hidden-xs" href="#" title="Zalo"
        target="">
-        <img src="../img/icon/zalochat.png" alt="Zalo">
+        <img src="${pageContext.request.contextPath}/img/icon/zalochat.png" alt="Zalo">
     </a>
 </div>
 

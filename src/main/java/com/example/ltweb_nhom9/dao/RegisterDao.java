@@ -40,7 +40,7 @@ public class RegisterDao {
         return max;
     }
 
-    public static boolean checkEmailDuplicates(String email){
+    public static boolean checkEmailDuplicates(String email) {
         try {
             String sql = "SELECT email FROM customer WHERE email = ?";
             Connection connection = DBConect.getInstance().connect();
@@ -62,14 +62,25 @@ public class RegisterDao {
     private static final String registerSuccessSub = "Đăng ký thành công tài khoản.";
     private static final String textMessage = "<h1>Chúc mừng bạn đã đăng ký <span style=\"color: #ff0000;\"><b> thành công </b></span> tài khoản của Shop Team 9. Vui lòng tiến hành đăng nhập.</h1>";
 
+    public static void main(String[] args) throws SQLException {
+        System.out.println(checkEmailDuplicates("nguyenngochieu040301@gmail.com"));
+        System.out.println(registerId_user("hieeus", "037434938", "nguyenngochieu040301@gmail.com", "hieuuu"));
+//        System.out.println(nextID("1098", "customer"));
+        Date now = new Date();
+        Timestamp timestamp = new Timestamp(now.getTime());
+        System.out.println("bay gio la: "+timestamp);
+    }
+
+
     public static boolean registerId_user(String name, String phone, String email, String password) {
         try {
             if (checkEmailDuplicates(email)) {
                 Connection connection = DBConect.getInstance().connect();
                 int newID = nextID("id", "customer");
+                System.out.println(newID);
                 Date now = new Date();
                 Timestamp timestamp = new Timestamp(now.getTime());
-                String sqlAdd = "INSERT INTO customer VALUES(?,?,?,?,?,?,?,?)";
+                String sqlAdd = "INSERT INTO customer VALUES(?,?,?,?,?,?,?,?,?)";
                 PreparedStatement psAdd = connection.prepareStatement(sqlAdd);
                 psAdd.setInt(1, newID);
                 psAdd.setString(2, name);
@@ -78,10 +89,11 @@ public class RegisterDao {
                 psAdd.setString(5, email);
                 psAdd.setTimestamp(6, timestamp);
                 psAdd.setString(7, phone);
-                psAdd.setInt(8, 1);
+                psAdd.setString(8, null);
+                psAdd.setInt(9, 1);
                 int result = psAdd.executeUpdate();
                 SendEmail s = new SendEmail();
-                s.sendEmail(email,textMessage,registerSuccessSub);
+                s.sendEmail(email, textMessage, registerSuccessSub);
                 if (result == 1) {
                     return true;
                 } else {

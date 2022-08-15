@@ -13,24 +13,28 @@ import java.io.IOException;
 
 @WebServlet(name = "Login", value = "/Login")
 public class Login extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.setAttribute("title","Đăng nhập");
+        request.getRequestDispatcher("Login").forward(request,response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("email");
         String pass = request.getParameter("password");
+        request.setAttribute("title","Tất cả sản phẩm");
         User us = UserServices.checkLogin(email, pass);
+
         if (us != null){
             HttpSession session = request.getSession();
             session.setAttribute("auth", us);
             session.setMaxInactiveInterval(120);
-            response.sendRedirect("User_page/home.jsp");
+            response.sendRedirect("Home");
         }else{
-            request.setAttribute("error", "Email or Password incorrect");
-            request.getRequestDispatcher("User_page/login.jsp").forward(request,response);
+            request.setAttribute("error", "Email hoặc mật khẩu không chính xác.");
+            request.getRequestDispatcher("Login").forward(request,response);
         }
     }
 }

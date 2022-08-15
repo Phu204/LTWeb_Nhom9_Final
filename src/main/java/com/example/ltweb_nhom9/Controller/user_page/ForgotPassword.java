@@ -13,7 +13,8 @@ import java.io.IOException;
 public class ForgotPassword extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.setAttribute("title","");
+        request.getRequestDispatcher("ForgotPassword").forward(request, response);
     }
 
     @Override
@@ -26,10 +27,10 @@ public class ForgotPassword extends HttpServlet {
         if (c){
             request.setAttribute("success", "Mật khẩu đã được thay đổi <b>thành công</b></style>. Vui lòng kiểm tra hộp thư, Email có thể nằm trong Inbox hoặc thư mục Spam trong hộp thư của bạn.");
 //            response.sendRedirect("login.jsp");
-            request.getRequestDispatcher("User_page/forgotPassword.jsp").forward(request, response);
+            request.getRequestDispatcher("ForgotPassword").forward(request, response);
         }else{
-            request.setAttribute("error", "Email not exist");
-            request.getRequestDispatcher("User_page/forgotPassword.jsp").forward(request, response);
+            request.setAttribute("error", "Email không tồn tại.");
+            request.getRequestDispatcher("ForgotPassword").forward(request, response);
         }
 
 

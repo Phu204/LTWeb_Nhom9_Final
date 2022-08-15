@@ -11,21 +11,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SHOP TEAM 9</title>
+    <title>${title} | SHOP TEAM 9</title>
+    <link rel="icon" href="../img/icon/logo.png" type="image/x-icon"/>
 
-    <link href="${pageContext.request.contextPath}/User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="${pageContext.request.contextPath}/User_page/css/plugin.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="${pageContext.request.contextPath}/User_page/css/base.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="${pageContext.request.contextPath}/User_page/css/evo-main.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="${pageContext.request.contextPath}/User_page/css/slick.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="${pageContext.request.contextPath}/User_page/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-    <link href="${pageContext.request.contextPath}/User_page/css/evo-index.scss.css" rel="stylesheet" type="text/css"/>
+<%--    <link href="${pageContext.request.contextPath}/User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>--%>
+<%--    <link href="${pageContext.request.contextPath}/User_page/css/plugin.scss.css" rel="stylesheet" type="text/css"/>--%>
+<%--    <link href="${pageContext.request.contextPath}/User_page/css/base.scss.css" rel="stylesheet" type="text/css"/>--%>
+<%--    <link href="${pageContext.request.contextPath}/User_page/css/evo-main.scss.css" rel="stylesheet" type="text/css"/>--%>
+<%--    <link href="${pageContext.request.contextPath}/User_page/css/slick.scss.css" rel="stylesheet" type="text/css"/>--%>
+<%--    <link href="${pageContext.request.contextPath}/User_page/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>--%>
+<%--    <link href="${pageContext.request.contextPath}/User_page/css/evo-index.scss.css" rel="stylesheet" type="text/css"/>--%>
 
-    <link href="${pageContext.request.contextPath}/User_page/css/ContacIcon.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-          type="text/css"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<%--    <link href="${pageContext.request.contextPath}/User_page/css/ContacIcon.css" rel="stylesheet" type="text/css">--%>
+<%--    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>--%>
+<%--    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"--%>
+<%--          type="text/css"/>--%>
+<%--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">--%>
 
 
 </head>
@@ -42,18 +43,18 @@
                     <ul>
 
                         <c:if test="${sessionScope.auth == null }">
-                            <li><a rel="nofollow" href="login.jsp" title="Đăng nhập"><i class="fa fa-sign-in"
+                            <li><a rel="nofollow" href="Login" title="Đăng nhập"><i class="fa fa-sign-in"
                                                                                         aria-hidden="true"></i> Đăng
                                 nhập</a></li>
-                            <li><a rel="nofollow" href="register.jsp" title="Đăng ký"><i class="fa fa-user-plus"
+                            <li><a rel="nofollow" href="Register" title="Đăng ký"><i class="fa fa-user-plus"
                                                                                          aria-hidden="true"></i> Đăng ký</a>
                             </li>
                         </c:if>
                         <c:if test="${sessionScope.auth != null }">
-                            <li><a rel="nofollow" href="/LTWeb_Nhom9_war/LogOut" title="Đăng xuất"><i class="fa fa-sign-out"
+                            <li><a rel="nofollow" href="LogOut" title="Đăng xuất"><i class="fa fa-sign-out"
                                                                                      aria-hidden="true"></i> Đăng
                                 xuất</a></li>
-                            <li><a rel="nofollow" href="/LTWeb_Nhom9_war/loadOrderHistory" title="hello name"><i class="fa fa-user"
+                            <li><a rel="nofollow" href="loadOrderHistory" title="hello name"><i class="fa fa-user"
                                                                                            aria-hidden="true"></i>
                                 Hello ${sessionScope.auth.name}</a>
                             </li>
@@ -75,7 +76,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="/" class="logo-wrapper" title="SHOP TEAM 9">
-                        <img src="../img/icon/logo.png" data-src="img/icon/logo.png" alt="SHOP TEAM 9"
+                        <img src="${pageContext.request.contextPath}/img/icon/logo.png" data-src="img/icon/logo.png" alt="SHOP TEAM 9"
                              class="lazy img-responsive center-block"/>
                     </a>
                     <div class="evo-flexitem evo-flexitem-fill visible-sm visible-xs">
