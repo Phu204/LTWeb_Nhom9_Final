@@ -16,8 +16,8 @@ import java.io.IOException;
 public class ChangePassword extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("title","Đổi mật khẩi");
-        request.getRequestDispatcher("ChangePassword").forward(request,response);
+        request.setAttribute("title","Đổi mật khẩu");
+        request.getRequestDispatcher("User_page/changePassword.jsp").forward(request,response);
     }
 
     @Override
@@ -31,12 +31,12 @@ public class ChangePassword extends HttpServlet {
         if (us != null){
             if (us.getPassword().equals(oldPass) || us.getEmail().equals(email)) {
                 ChangePassworDao.changePassword(email, oldPass, newPass);
-                request.setAttribute("success", "Thay đổi mật khẩu thành công.");
-                request.getRequestDispatcher("ChangePassword").forward(request,response);
+                session.setAttribute("success", "Thay đổi mật khẩu thành công.");
+                response.sendRedirect("ChangePassword");
             }
         } else{
-            request.setAttribute("error", "Email hoặc mật khẩu không chính xác.");
-            request.getRequestDispatcher("ChangePassword").forward(request,response);
+            session.setAttribute("error", "Email hoặc mật khẩu không chính xác.");
+            response.sendRedirect("ChangePassword");
         }
 
     }

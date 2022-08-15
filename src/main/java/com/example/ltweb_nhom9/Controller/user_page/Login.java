@@ -17,7 +17,7 @@ public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("title","Đăng nhập");
-        request.getRequestDispatcher("Login").forward(request,response);
+        request.getRequestDispatcher("/User_page/login.jsp").forward(request,response);
     }
 
     @Override
@@ -26,15 +26,15 @@ public class Login extends HttpServlet {
         String pass = request.getParameter("password");
         request.setAttribute("title","Tất cả sản phẩm");
         User us = UserServices.checkLogin(email, pass);
+        HttpSession session = request.getSession();
 
         if (us != null){
-            HttpSession session = request.getSession();
             session.setAttribute("auth", us);
             session.setMaxInactiveInterval(120);
             response.sendRedirect("Home");
         }else{
-            request.setAttribute("error", "Email hoặc mật khẩu không chính xác.");
-            request.getRequestDispatcher("Login").forward(request,response);
+            session.setAttribute("error", "Email hoặc mật khẩu không chính xác.");
+            response.sendRedirect("Login");
         }
     }
 }

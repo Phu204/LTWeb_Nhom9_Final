@@ -16,8 +16,8 @@
 <head>
 
 <%--    <meta charset="UTF-8">--%>
-<%--    <title>${title} | SHOP TEAM 9</title>--%>
-<%--    <link rel="icon" href="${pageContext.request.contextPath}/img/icon/logo.png" type="image/x-icon"/>--%>
+    <title>${title} | SHOP TEAM 9</title>
+    <link rel="icon" href="${pageContext.request.contextPath}/img/icon/logo.png" type="image/x-icon"/>
 
 
     <link href="${pageContext.request.contextPath}/User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
@@ -662,7 +662,7 @@
                                                                               name="Token"/>
 <%--                    register error--%>
                         <%
-                            String error = (String) request.getAttribute("error");
+                            String error = (String) session.getAttribute("error");
                         %>
                         <%
                             if (error != null) {

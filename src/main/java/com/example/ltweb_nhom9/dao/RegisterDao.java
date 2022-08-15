@@ -62,16 +62,6 @@ public class RegisterDao {
     private static final String registerSuccessSub = "Đăng ký thành công tài khoản.";
     private static final String textMessage = "<h1>Chúc mừng bạn đã đăng ký <span style=\"color: #ff0000;\"><b> thành công </b></span> tài khoản của Shop Team 9. Vui lòng tiến hành đăng nhập.</h1>";
 
-    public static void main(String[] args) throws SQLException {
-        System.out.println(checkEmailDuplicates("nguyenngochieu040301@gmail.com"));
-        System.out.println(registerId_user("hieeus", "037434938", "nguyenngochieu040301@gmail.com", "hieuuu"));
-//        System.out.println(nextID("1098", "customer"));
-        Date now = new Date();
-        Timestamp timestamp = new Timestamp(now.getTime());
-        System.out.println("bay gio la: "+timestamp);
-    }
-
-
     public static boolean registerId_user(String name, String phone, String email, String password) {
         try {
             if (checkEmailDuplicates(email)) {

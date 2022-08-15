@@ -17,8 +17,8 @@
 <head>
 
 <%--    <meta charset="UTF-8">--%>
-<%--    <title>Đổi mật khẩu</title>--%>
-<%--    <link rel="icon" href="../img/icon/logo.png" type="image/x-icon"/>--%>
+    <title>${title} | SHOP TEAM 9</title>
+    <link rel="icon" href="${pageContext.request.contextPath}/img/icon/logo.png" type="image/x-icon"/>
 
 
     <link href="${pageContext.request.contextPath}/User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
@@ -31,7 +31,7 @@
     <link href="${pageContext.request.contextPath}/User_page/css/Reposive&&ContacIcon.css" rel="stylesheet" type="text/css"/>
 
     <link href="${pageContext.request.contextPath}/User_page/css/evo-accounts.scss.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="css/all.css"
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/User_page/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           type="text/css"/>

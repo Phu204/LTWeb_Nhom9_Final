@@ -18,7 +18,7 @@
 
 <%--    <meta charset="UTF-8">--%>
 <%--    <title> ${title} | SHOP TEAM 9</title>--%>
-<%--    <link rel="icon" href="${pageContext.request.contextPath}/img/icon/logo.png" type="image/x-icon"/>--%>
+    <link rel="icon" href="${pageContext.request.contextPath}/img/icon/logo.png" type="image/x-icon"/>
 
 
     <link href="${pageContext.request.contextPath}/User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
@@ -101,7 +101,9 @@
                         <a href="#" class="social-login--facebook" ><img
                                 width="129px" height="37px" alt="facebook-login-button"
                                 src="${pageContext.request.contextPath}/img/icon/fb-btn.svg"></a>
-                        <a href="#" class="social-login--google" ><img
+                        <a href="https://accounts.google.com/o/oauth2/auth?scope=profile&redirect_uri=http://localhost:8080/LTWeb_Nhom9_war/LoginGoogle&response_type=code
+                        &client_id=143041336891-uti56rdkneqhih5i5tlr2gr1op35pm5s.apps.googleusercontent.com&approval_prompt=force"
+                           class="social-login--google" ><img
                                 width="129px" height="37px" alt="google-login-button"
                                 src="${pageContext.request.contextPath}/img/icon/gp-btn.svg"></a>
                     </div>
@@ -110,7 +112,7 @@
                     </div>
                     <form action="/LTWeb_Nhom9_war/Login" method="post">
                         <%
-                            String error = (String) request.getAttribute("error");
+                            String error = (String) session.getAttribute("error");
                         %>
                         <%
                             if (error != null) {
@@ -123,7 +125,7 @@
                         %>
 <%--                    success--%>
                         <%
-                            String success = (String) request.getAttribute("success");
+                            String success = (String) session.getAttribute("success");
                         %>
                         <%
                             if (success != null) {
@@ -160,7 +162,7 @@
                             </div>
                             <div class="clearfix"></div>
                             <p class="text-center">
-                                <a href="forgotPassword.jsp" class="btn-link-style"
+                                <a href="ForgotPassword" class="btn-link-style"
                                    title="Quên mật khẩu?">Quên mật khẩu?</a>
                             </p>
                             <div class="text-login text-center">
