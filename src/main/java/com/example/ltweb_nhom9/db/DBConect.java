@@ -21,7 +21,7 @@ public class DBConect {
         return instance;
     }
 
-    private void connect() throws SQLException, ClassNotFoundException {
+    public void connect() throws SQLException, ClassNotFoundException {
         if (connection==null || connection.isClosed()){
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection= DriverManager.getConnection(DB_URL,USER,PASS);

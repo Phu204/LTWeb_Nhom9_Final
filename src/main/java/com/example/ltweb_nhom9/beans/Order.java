@@ -24,6 +24,9 @@ public class Order implements Serializable {
     private int shipprice;
     private String note;
 
+    public Order() {
+    }
+
     public Order(int id, int customerId, Date datecreate, Date dateupdate, double price, int addressId, double phone, boolean payment, int status, int shipprice, String note) {
         this.id = id;
         this.customerId = customerId;
@@ -36,9 +39,6 @@ public class Order implements Serializable {
         this.status = status;
         this.shipprice = shipprice;
         this.note = note;
-    }
-
-    public Order() {
     }
 
     public int getId() {
@@ -93,12 +93,6 @@ public class Order implements Serializable {
         return phone;
     }
 
-    public String getStringPhone() {
-        DecimalFormat df = new DecimalFormat("###");
-        String result = df.format(phone);
-        return result;
-    }
-
     public void setPhone(double phone) {
         this.phone = phone;
     }
@@ -118,6 +112,14 @@ public class Order implements Serializable {
     public void setStatus(int status) {
         this.status = status;
     }
+
+    public String getStringPhone() {
+        DecimalFormat df = new DecimalFormat("###");
+        String result = df.format(phone);
+        return result;
+    }
+
+
 
     @Override
     public String toString() {

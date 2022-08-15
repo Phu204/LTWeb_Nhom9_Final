@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: dtphu
@@ -40,11 +41,23 @@
                 <div class="col-md-6 col-sm-6 evo-account hidden-xs hidden-sm">
                     <ul>
 
-                        <li><a rel="nofollow" href="login.html" title="Đăng nhập"><i class="fa fa-sign-in"
-                                                                                     aria-hidden="true"></i> Đăng nhập</a></li>
-                        <li><a rel="nofollow" href="register.html" title="Đăng ký"><i class="fa fa-user-plus"
-                                                                                      aria-hidden="true"></i> Đăng ký</a></li>
-
+                        <c:if test="${sessionScope.auth == null }">
+                            <li><a rel="nofollow" href="login.jsp" title="Đăng nhập"><i class="fa fa-sign-in"
+                                                                                        aria-hidden="true"></i> Đăng
+                                nhập</a></li>
+                            <li><a rel="nofollow" href="register.jsp" title="Đăng ký"><i class="fa fa-user-plus"
+                                                                                         aria-hidden="true"></i> Đăng ký</a>
+                            </li>
+                        </c:if>
+                        <c:if test="${sessionScope.auth != null }">
+                            <li><a rel="nofollow" href="/LTWeb_Nhom9_war/LogOut" title="Đăng xuất"><i class="fa fa-sign-out"
+                                                                                     aria-hidden="true"></i> Đăng
+                                xuất</a></li>
+                            <li><a rel="nofollow" href="/LTWeb_Nhom9_war/loadOrderHistory" title="hello name"><i class="fa fa-user"
+                                                                                           aria-hidden="true"></i>
+                                Hello ${sessionScope.auth.name}</a>
+                            </li>
+                        </c:if>
                     </ul>
                 </div>
             </div>
@@ -62,8 +75,8 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="/" class="logo-wrapper" title="SHOP TEAM 9">
-                        <img src="img/icon/logo.png" data-src="img/icon/logo.png" alt="SHOP TEAM 9"
-                             class="lazy img-responsive center-block" />
+                        <img src="../img/icon/logo.png" data-src="img/icon/logo.png" alt="SHOP TEAM 9"
+                             class="lazy img-responsive center-block"/>
                     </a>
                     <div class="evo-flexitem evo-flexitem-fill visible-sm visible-xs">
                         <a href="javascript:void(0);" class="site-header-search" rel="nofollow" title="Tìm kiếm">
