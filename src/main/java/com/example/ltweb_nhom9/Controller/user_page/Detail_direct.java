@@ -22,8 +22,19 @@ public class Detail_direct extends HttpServlet {
         String idItem = req.getParameter("id");
         Product item = ProductService.getInstance().getById(Integer.parseInt(idItem));
         List<String> images = ProductService.getInstance().getImgList(item.getImgId());
+
+        List<Product> list = ProductService.getInstance().getAllDiscount();
+        List<Product> discountList = list.subList(0,list.size()>8?8:list.size());
+
         Category category = CategoryService.getInstance().getById(item.getCategoryId());
-        req.setAttribute("item",item);
+        list = ProductService.getInstance().getProductQuerybyCategory(category.getName(), true);
+        List<Product> cateList = list.subList(0,list.size()>4?4:list.size());
+
+
+        req.setAttribute("cateList",cateList);
+        req.setAttribute("discountList",discountList);
+        req.setAttribute("p",item);
+//        req.setAttribute("item",item);
         req.setAttribute("images",images);
         req.setAttribute("category",category);
         System.out.println(item);
@@ -32,6 +43,6 @@ public class Detail_direct extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+        doPost(req, resp);
     }
 }

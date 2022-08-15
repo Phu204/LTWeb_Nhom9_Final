@@ -28,7 +28,7 @@
     <link href="css/slick.scss.css" rel="stylesheet" type="text/css"/>
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 
-    <link href="css/Reposive&&ContacIcon.css" rel="stylesheet" type="text/css"/>
+    <link href="css/ContacIcon.css" rel="stylesheet" type="text/css"/>
 
     <link href="css/evo-accounts.scss.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="css/all.css"

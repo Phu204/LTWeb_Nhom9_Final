@@ -24,17 +24,17 @@
     <link rel="icon" href="img/icon/logo.png"
           type="image/x-icon"/>
 
-    <link href="User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="User_page/css/plugin.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="User_page/css/base.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="User_page/css/evo-main.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="User_page/css/slick.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/plugin.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/base.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/evo-main.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/slick.scss.css" rel="stylesheet" type="text/css"/>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           type="text/css"/>
-    <link href="css/ContacIcon.css" rel="stylesheet" type="text/css">
-    <link href="User_page/css/evo-collections.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/ContacIcon.css" rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}/User_page/css/evo-collections.scss.css" rel="stylesheet" type="text/css"/>
 
-    <link href="User_page/css/checkbox.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/checkbox.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body class="bg-body collection">
@@ -161,12 +161,12 @@
                                 <a href="Detail?id=${p.id}"
                                    title=${p.name} class="image-resize">
                                     <img class="lazy"
-                                         src="Detail"
+                                         src="Detail?id=${p.id}"
                                          data-src=${p.getListImage().get(0)}
                                          alt=${p.name}/>
 
                                     <img class="lazy hover-pic"
-                                         src="Detail"
+                                         src="Detail?id=${p.id}"
                                          data-src=${p.getListImage().get(1)}
                                          alt=${p.name}/>
 

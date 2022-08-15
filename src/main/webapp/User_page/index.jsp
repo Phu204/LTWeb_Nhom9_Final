@@ -104,16 +104,16 @@
                                     <div class="product-sale">
                                         <span>${p.getLabel()} </span>
                                     </div>
-                                    <a href="Detail"
+                                    <a href="Detail?id=${p.id}"
                                        title="${p.name}"
                                        class="image-resize">
                                         <img class="lazy"
-                                             src="Detail"
+                                             src="Detail?id=${p.id}"
                                              data-src="${p.getListImage().get(0)}"
                                              alt="${p.name}"/>
 
                                         <img class="lazy hover-pic"
-                                             src="Detail"
+                                             src="Detail?id=${p.id}"
                                              data-src="${p.getListImage().get(1)}"
                                              alt="${p.name}"/>
 
@@ -271,10 +271,10 @@
                                             <span>${p.getLabel()} </span>
                                         </div>
                                     </c:if>
-                                    <a href="Detail"
+                                    <a href="Detail?id=${p.id}"
                                        title="${p.name}" class="image-resize">
                                         <img class="lazy"
-                                             src="Detail"
+                                             src="Detail?id=${p.id}"
                                              data-src="${p.getListImage().get(0)}"
                                              alt="${p.name}"/>
 
@@ -419,7 +419,7 @@
                                                     <span>${p.getLabel()} </span>
                                                 </div>
                                             </c:if>
-                                            <a href="Detail" title="${p.name}" class="image-resize">
+                                            <a href="Detail?id=${p.id}" title="${p.name}" class="image-resize">
                                                 <img class="lazy" src="#" data-src="${p.getListImage().get(0)}"
                                                      alt="${p.name}"/>
                                             </a>
@@ -427,11 +427,11 @@
                                         <div class="product-detail clearfix">
                                             <div class="pro-brand">
 
-                                                <a href="Detail" title=""></a>
+                                                <a href="Detail?id=${p.id}" title=""></a>
 
                                             </div>
                                             <h3 class="pro-name">
-                                                <a href="Detail" title="${p.name}">${p.name}</a>
+                                                <a href="Detail?id=${p.id}" title="${p.name}">${p.name}</a>
                                             </h3>
                                             <div class="box-pro-prices">
                                                 <p class="pro-price">
@@ -469,7 +469,7 @@
                                                     <span>${p.getLabel()} </span>
                                                 </div>
                                             </c:if>
-                                            <a href="Detail" title="${p.name}" class="image-resize">
+                                            <a href="Detail?id=${p.id}" title="${p.name}" class="image-resize">
                                                 <img class="lazy" src="#" data-src="${p.getListImage().get(0)}"
                                                      alt="${p.name}"/>
                                             </a>
@@ -477,11 +477,11 @@
                                         <div class="product-detail clearfix">
                                             <div class="pro-brand">
 
-                                                <a href="Detail" title=""></a>
+                                                <a href="Detail?id=${p.id}" title=""></a>
 
                                             </div>
                                             <h3 class="pro-name">
-                                                <a href="Detail" title="${p.name}">${p.name}</a>
+                                                <a href="Detail?id=${p.id}" title="${p.name}">${p.name}</a>
                                             </h3>
                                             <div class="box-pro-prices">
                                                 <p class="pro-price">
@@ -528,7 +528,7 @@
                                                     <span>${p.getLabel()} </span>
                                                 </div>
                                             </c:if>
-                                            <a href="Detail" title="${p.name}" class="image-resize">
+                                            <a href="Detail?id=${p.id}" title="${p.name}" class="image-resize">
                                                 <img class="lazy" src="#" data-src="${p.getListImage().get(0)}"
                                                      alt="${p.name}"/>
                                             </a>
@@ -536,11 +536,11 @@
                                         <div class="product-detail clearfix">
                                             <div class="pro-brand">
 
-                                                <a href="Detail" title=""></a>
+                                                <a href="Detail?id=${p.id}" title=""></a>
 
                                             </div>
                                             <h3 class="pro-name">
-                                                <a href="Detail" title="${p.name}">${p.name}</a>
+                                                <a href="Detail?id=${p.id}" title="${p.name}">${p.name}</a>
                                             </h3>
                                             <div class="box-pro-prices">
                                                 <p class="pro-price">
@@ -578,7 +578,7 @@
                                                     <span>${p.getLabel()} </span>
                                                 </div>
                                             </c:if>
-                                            <a href="Detail" title="${p.name}" class="image-resize">
+                                            <a href="Detail?id=${p.id}" title="${p.name}" class="image-resize">
                                                 <img class="lazy" src="#" data-src="${p.getListImage().get(0)}"
                                                      alt="${p.name}"/>
                                             </a>
@@ -586,11 +586,11 @@
                                         <div class="product-detail clearfix">
                                             <div class="pro-brand">
 
-                                                <a href="Detail" title=""></a>
+                                                <a href="Detail?id=${p.id}" title=""></a>
 
                                             </div>
                                             <h3 class="pro-name">
-                                                <a href="Detail" title="${p.name}">${p.name}</a>
+                                                <a href="Detail?id=${p.id}" title="${p.name}">${p.name}</a>
                                             </h3>
                                             <div class="box-pro-prices">
                                                 <p class="pro-price">
@@ -636,7 +636,7 @@
                                                     <span>${p.getLabel()} </span>
                                                 </div>
                                             </c:if>
-                                            <a href="Detail" title="${p.name}" class="image-resize">
+                                            <a href="Detail?id=${p.id}" title="${p.name}" class="image-resize">
                                                 <img class="lazy" src="#" data-src="${p.getListImage().get(0)}"
                                                      alt="${p.name}"/>
                                             </a>
@@ -644,11 +644,11 @@
                                         <div class="product-detail clearfix">
                                             <div class="pro-brand">
 
-                                                <a href="Detail" title=""></a>
+                                                <a href="Detail?id=${p.id}" title=""></a>
 
                                             </div>
                                             <h3 class="pro-name">
-                                                <a href="Detail" title="${p.name}">${p.name}</a>
+                                                <a href="Detail?id=${p.id}" title="${p.name}">${p.name}</a>
                                             </h3>
                                             <div class="box-pro-prices">
                                                 <p class="pro-price">
@@ -686,7 +686,7 @@
                                                     <span>${p.getLabel()} </span>
                                                 </div>
                                             </c:if>
-                                            <a href="Detail" title="${p.name}" class="image-resize">
+                                            <a href="Detail?id=${p.id}" title="${p.name}" class="image-resize">
                                                 <img class="lazy" src="#" data-src="${p.getListImage().get(0)}"
                                                      alt="${p.name}"/>
                                             </a>
@@ -694,11 +694,11 @@
                                         <div class="product-detail clearfix">
                                             <div class="pro-brand">
 
-                                                <a href="Detail" title=""></a>
+                                                <a href="Detail?id=${p.id}" title=""></a>
 
                                             </div>
                                             <h3 class="pro-name">
-                                                <a href="Detail" title="${p.name}">${p.name}</a>
+                                                <a href="Detail?id=${p.id}" title="${p.name}">${p.name}</a>
                                             </h3>
                                             <div class="box-pro-prices">
                                                 <p class="pro-price">

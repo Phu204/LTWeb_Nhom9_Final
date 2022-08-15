@@ -25,7 +25,7 @@
 
     <link href="${pageContext.request.contextPath}/User_page/css/evo-contacts.scss.css" rel="stylesheet" type="text/css" />
 
-    <link href="${pageContext.request.contextPath}/User_page/css/Reposive&&ContacIcon.css" rel="stylesheet" type="text/css" />
+    <link href="${pageContext.request.contextPath}/User_page/css/ContacIcon.css" rel="stylesheet" type="text/css" />
 
     <link href="${pageContext.request.contextPath}/User_page/css/evo-accounts.scss.css" rel="stylesheet" type="text/css" />
 
