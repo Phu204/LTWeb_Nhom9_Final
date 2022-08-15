@@ -74,13 +74,12 @@
 
                                 <div class="form-group">
                                     <label>Ảnh</label>
-                                    <input class="form-control" multiple="multiple" name="image" type="file" value="${ImageList}" required>
+                                    <input class="form-control" multiple="multiple" name="image" type="file"
+                                           <c:if test="${TypePage.equalsIgnoreCase('Add_Blog')}">required</c:if>>
                                 </div>
                                 <div class="form-group">
                                     <div class="avatar">
-                                        <c:forEach items="${ImageList}" var="i">
-                                            <img class="avatar-img rounded" src="${i}" >
-                                        </c:forEach>
+                                        <c:forEach items="${ImageList}" var="i"><img class="avatar-img rounded" src="${i}"></c:forEach>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -99,9 +98,9 @@
                                         <c:forEach items="${categoryList}" var="c">
                                             <option
                                                     value="${c.id}"
-                                            <c:if test="${c.id == product.categoryId}">
-                                                selected
-                                            </c:if>
+                                                    <c:if test="${c.id == product.categoryId}">
+                                                        selected
+                                                    </c:if>
                                             >${c.name}</option>
                                         </c:forEach>
                                     </select>
@@ -116,9 +115,9 @@
                                                         selected
                                                     </c:if>
                                             >${c.name}
-                                            <c:if test="${c.id > 0}">
-                                                ${c.getLabel()}
-                                            </c:if>
+                                                <c:if test="${c.id > 0}">
+                                                    ${c.getLabel()}
+                                                </c:if>
                                             </option>
                                         </c:forEach>
                                     </select>

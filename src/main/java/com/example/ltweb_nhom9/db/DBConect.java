@@ -6,7 +6,7 @@ public class DBConect {
     private static DBConect instance;
     private static String DB_URL = "jdbc:mysql://localhost:3306/shopteam9_db";
     private static String USER = "root";
-    private static String PASS = "";
+    private static String PASS = "LTWteam9";
 
     private Connection connection;
 
@@ -19,6 +19,19 @@ public class DBConect {
             instance = new DBConect();
         }
         return instance;
+    }
+
+    public Connection connection(){
+        Connection connection = null;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection(DB_URL,USER,PASS);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return connection;
     }
 
     public void connect() throws SQLException, ClassNotFoundException {

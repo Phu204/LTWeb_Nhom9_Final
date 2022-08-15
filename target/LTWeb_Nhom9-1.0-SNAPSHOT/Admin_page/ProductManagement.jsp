@@ -152,18 +152,7 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
     function delete_product(id) {
-        let text = "Bạn có chắc muốn xóa!!";
-        if (confirm(text) == true) {
-            // const xhttp = new XMLHttpRequest();
-            //  xhttp.onload = function() { //getvitriload
-            //     document.getElementById("table").innerHTML =
-            //         this.responseText ;
-            // }
-            //
-            // xhttp.open("GET", "Delete_product?id="+id);
-            // xhttp.send();
-
-            swal({
+        swal({
                 title: "Bạn có chắc muốn xóa!!",
                 text: "Khi xóa sản phẩm sẽ không thể khôi phục lại!",
                 icon: "warning",
@@ -180,7 +169,6 @@
                         swal("Sản phẩm của bạn đã được giữ lại!");
                     }
                 });
-        }
 
     }
 </script>

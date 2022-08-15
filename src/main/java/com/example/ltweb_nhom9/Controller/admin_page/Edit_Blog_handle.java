@@ -1,20 +1,19 @@
 package com.example.ltweb_nhom9.Controller.admin_page;
 
-import com.example.ltweb_nhom9.Service.BlogService;
-import com.example.ltweb_nhom9.beans.Blog;
 import com.example.ltweb_nhom9.dao.BlogDao;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,13 +22,8 @@ import java.util.Map;
 public class Edit_Blog_handle extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Blog> blogs = BlogService.getInstance().getAll();
-
-        request.setAttribute("blogs",blogs);
-        request.setAttribute("title","Quản Lý Blog");
-        request.setAttribute("TypePage","BlogManagement");
-        request.setAttribute("index",6);
-        request.getRequestDispatcher("Admin_page/BlogManagement.jsp").forward(request,response);
+        RequestDispatcher rd = request.getRequestDispatcher("BlogManagement");
+        rd.forward(request,response);
     }
 
     @Override

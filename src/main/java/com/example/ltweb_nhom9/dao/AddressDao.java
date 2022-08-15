@@ -25,7 +25,7 @@ public class AddressDao {
         String sql = "SELECT * FROM address where id = " + id;
         Address address = null;
         try {
-            Connection connection = DBConect.getInstance().connect();
+            Connection connection = DBConect.getInstance().connection();
             PreparedStatement ps = connection.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {

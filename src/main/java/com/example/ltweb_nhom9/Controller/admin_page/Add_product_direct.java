@@ -6,15 +6,13 @@ import com.example.ltweb_nhom9.beans.Category;
 import com.example.ltweb_nhom9.beans.Label;
 import com.example.ltweb_nhom9.beans.Product;
 import com.example.ltweb_nhom9.dao.CategoryDao;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
-import java.io.File;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 @WebServlet(name = "Add_product", value = "/Add_product")
