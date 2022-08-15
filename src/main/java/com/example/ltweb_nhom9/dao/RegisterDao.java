@@ -40,7 +40,7 @@ public class RegisterDao {
         return max;
     }
 
-    public static boolean checkEmailDuplicates(String email){
+    public static boolean checkEmailDuplicates(String email) {
         try {
             String sql = "SELECT email FROM customer WHERE email = ?";
             Connection connection = DBConect.getInstance().connection();
@@ -67,9 +67,10 @@ public class RegisterDao {
             if (checkEmailDuplicates(email)) {
                 Connection connection = DBConect.getInstance().connection();
                 int newID = nextID("id", "customer");
+                System.out.println(newID);
                 Date now = new Date();
                 Timestamp timestamp = new Timestamp(now.getTime());
-                String sqlAdd = "INSERT INTO customer VALUES(?,?,?,?,?,?,?,?)";
+                String sqlAdd = "INSERT INTO customer VALUES(?,?,?,?,?,?,?,?,?)";
                 PreparedStatement psAdd = connection.prepareStatement(sqlAdd);
                 psAdd.setInt(1, newID);
                 psAdd.setString(2, name);
@@ -78,10 +79,11 @@ public class RegisterDao {
                 psAdd.setString(5, email);
                 psAdd.setTimestamp(6, timestamp);
                 psAdd.setString(7, phone);
-                psAdd.setInt(8, 1);
+                psAdd.setString(8, null);
+                psAdd.setInt(9, 1);
                 int result = psAdd.executeUpdate();
                 SendEmail s = new SendEmail();
-                s.sendEmail(email,textMessage,registerSuccessSub);
+                s.sendEmail(email, textMessage, registerSuccessSub);
                 if (result == 1) {
                     return true;
                 } else {

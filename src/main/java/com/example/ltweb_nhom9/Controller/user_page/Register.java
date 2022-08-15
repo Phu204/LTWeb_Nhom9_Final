@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(name = "Register", value = "/Register")
@@ -15,26 +16,25 @@ import java.io.IOException;
 public class Register extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.setAttribute("title","Đăng ký");
+        request.getRequestDispatcher("User_page/register.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-
+        HttpSession session = request.getSession();
         String name = request.getParameter("name");
         String phone = request.getParameter("phone");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         boolean r = RegisterDao.registerId_user(name, phone, email, password);
         if (r){
-            request.setAttribute("success", "<b>Đăng ký thành công</b>, vui lòng đăng nhập tài khoản.");
-//            response.sendRedirect("User_page/login.jsp");
-            request.getRequestDispatcher("User_page/login.jsp").forward(request, response);
+            response.sendRedirect("Login");
         } else{
-            request.setAttribute("error", "Email already exist");
-            request.getRequestDispatcher("User_page/register.jsp").forward(request, response);
+            session.setAttribute("dktb", "Email đã tồn tại.");
+            response.sendRedirect("Register");
         }
     }
 }
