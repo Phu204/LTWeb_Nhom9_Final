@@ -19,6 +19,9 @@ public class ProductService {
         return instance;
     }
 
+    public List<String> getImgList(int id)     {
+        return ProductDao.getInstance().getImgList(id);
+    }
     public Product getById(int id) {
         return ProductDao.getInstance().getById(id);
     }

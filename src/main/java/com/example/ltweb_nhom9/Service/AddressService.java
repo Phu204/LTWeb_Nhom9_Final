@@ -17,5 +17,7 @@ public class AddressService {
     }
 
     public List<Address> getAll(){return AddressDao.getInstance().getAll();}
-
+    public int getIdLastAddress(){return AddressDao.getInstance().getIdLastAddress();}
+    public boolean insertAddress(int id, String province, String district, String ward, String addressDetail){
+        return AddressDao.getInstance().InsertAddress(id,  province,  district,  ward,  addressDetail);}
 }

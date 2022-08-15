@@ -10,22 +10,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>SHOP TEAM 9</title>
+<%--    <meta charset="UTF-8">--%>
+<%--    <title>SHOP TEAM 9</title>--%>
 
-    <link href="${pageContext.request.contextPath}/User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="${pageContext.request.contextPath}/User_page/css/plugin.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="${pageContext.request.contextPath}/User_page/css/base.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="${pageContext.request.contextPath}/User_page/css/evo-main.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="${pageContext.request.contextPath}/User_page/css/slick.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="${pageContext.request.contextPath}/User_page/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-    <link href="${pageContext.request.contextPath}/User_page/css/evo-index.scss.css" rel="stylesheet" type="text/css"/>
+<%--    <link href="${pageContext.request.contextPath}/User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>--%>
+<%--    <link href="${pageContext.request.contextPath}/User_page/css/plugin.scss.css" rel="stylesheet" type="text/css"/>--%>
+<%--    <link href="${pageContext.request.contextPath}/User_page/css/base.scss.css" rel="stylesheet" type="text/css"/>--%>
+<%--    <link href="${pageContext.request.contextPath}/User_page/css/evo-main.scss.css" rel="stylesheet" type="text/css"/>--%>
+<%--    <link href="${pageContext.request.contextPath}/User_page/css/slick.scss.css" rel="stylesheet" type="text/css"/>--%>
+<%--    <link href="${pageContext.request.contextPath}/User_page/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>--%>
+<%--    <link href="${pageContext.request.contextPath}/User_page/css/evo-index.scss.css" rel="stylesheet" type="text/css"/>--%>
 
-    <link href="${pageContext.request.contextPath}/User_page/css/ContacIcon.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-          type="text/css"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<%--    <link href="${pageContext.request.contextPath}/User_page/css/ContacIcon.css" rel="stylesheet" type="text/css">--%>
+<%--    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>--%>
+<%--    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"--%>
+<%--          type="text/css"/>--%>
+<%--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">--%>
 
 
 </head>
@@ -92,7 +92,7 @@
                                     </g>
                                 </g>
                             </svg>
-                            <span class="count_item_pr">0</span>
+                            <span class="count_item_pr">${cart.getNumberOfItems()}</span>
                         </a>
                     </div>
                 </div>
@@ -131,7 +131,7 @@
                         </a>
                     </div>
                     <div class="evo-cart">
-                        <a href="cart.html" title="Giỏ hàng" rel="nofollow">
+                        <a href="Cart" title="Giỏ hàng" rel="nofollow">
                             <svg viewBox="0 0 100 100" data-radium="true" style="width: 25px;">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <g transform="translate(-286.000000, -515.000000)" fill="#000">
@@ -141,7 +141,7 @@
                                     </g>
                                 </g>
                             </svg>
-                            <span class="count_item_pr">0</span>
+                            <span class="count_item_pr">${cart.getNumberOfItems()}</span>
                         </a>
                         <div class="top-cart-content">
                             <ul id="cart-sidebar" class="mini-products-list count_li">
@@ -556,7 +556,7 @@
 
 
                         <li class=" nav-item has-childs ">
-                            <a href="tu-van.html" class="nav-link" title="Tư vấn">Tư vấn <i class="fa fa-angle-down"
+                            <a href="Blog" class="nav-link" title="Blog">Blog <i class="fa fa-angle-down"
                                                                                             data-toggle="dropdown"></i></a>
 
                             <ul class="dropdown-menu">

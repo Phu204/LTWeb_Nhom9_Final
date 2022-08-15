@@ -70,11 +70,24 @@ public class AddressDao {
 
         return list;
     }
+    public boolean InsertAddress(int id, String province, String district, String ward, String addressDetail){
+        Statement statement = DBConect.getInstance().get();
+        String sql = "INSERT INTO address VALUE(" +
+                id + ",'" + province + "','" + district + "','" + ward + "','" + addressDetail +"')";
+        int update = 0;
+        try {
+            update = statement.executeUpdate(sql);
 
+            return update == 1;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
     public int getIdLastAddress(){
         Statement statement = DBConect.getInstance().get();
 
-        String sql = "select max(id) from orders";
+        String sql = "select max(id) from address";
         int id = 0;
         try {
             ResultSet rs = statement.executeQuery(sql);
@@ -88,6 +101,7 @@ public class AddressDao {
         }
         return id;
     }
+
 
     public boolean UpdateAddress(int id, String provine_city, String dictrict, String ward, String detail){
         Statement statement = DBConect.getInstance().get();

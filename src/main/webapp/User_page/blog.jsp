@@ -78,7 +78,7 @@
 								chủ</span></a><span><i class="fa fa-angle-right"></i></span></li>
 
 
-                    <li><strong itemprop="title">Tư v&#7845;n mua B&#7871;p</strong></li>
+                    <li><strong itemprop="title">Blog</strong></li>
 
 
                 </ul>
@@ -87,11 +87,11 @@
     </div>
 </section>
 <div class="container margin-top-20" itemscope itemtype="#">
-    <meta itemprop="name" content="Tư vấn mua Bếp">
+    <meta itemprop="name" content="Blog">
     <meta itemprop="description" content="Chủ đề không có mô tả">
     <div class="row">
         <div class="col-md-9 col-md-push-3 evo-list-blog-page">
-            <h1 class="title-head">Tư vấn mua Bếp</h1>
+            <h1 class="title-head">Blog</h1>
 
 
             <section class="evo-list-blogs row">
@@ -562,6 +562,8 @@
 <script src="${pageContext.request.contextPath}/User_page/js/main.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/User_page/js/stats.min.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/User_page/js/widgets.js" type="text/javascript"></script>
+
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
