@@ -16,55 +16,6 @@
     <meta name="description" content="SHOP TEAM 9- Thanh toán đơn hàng" />
     <title>SHOP TEAM 9 - Thanh toán đơn hàng</title>
 
-    <!--Facebook Pixel Code-->
-    <script>
-        !function(f, b, e, v, n, t, s){
-            if (f.fbq) return; n = f.fbq = function(){
-                n.callMethod?
-                    n.callMethod.apply(n, arguments):n.queue.push(arguments)}; if (!f._fbq) f._fbq = n;
-            n.push = n; n.loaded = !0; n.version = '2.0'; n.queue =[]; t = b.createElement(e); t.async = !0;
-            t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)}
-        (window,
-            document,'script','https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '719562398779296', {}, {'agent': 'plsapo'}); // Insert your pixel ID here.
-        fbq('track', 'PageView', {}, { eventID: new Date().getTime().toString() });
-    </script>
-    <noscript><img height = '1' width = '1' style = 'display:none'
-                   src = 'https://www.facebook.com/tr?id=719562398779296&ev=PageView&noscript=1'
-    /></noscript>
-    <!--DO NOT MODIFY-->
-    <!--End Facebook Pixel Code-->
-
-    <script>fbq('track', 'InitiateCheckout',{ content_ids: ['43455211'],content_name: 'Máy pha cafe Sage Sage Barista Pro | SES875', value:'21000000.0000', num_items:'1', content_type:'product', currency:'VND' }, { eventID: new Date().getTime().toString() })</script>
-
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168978729-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-168978729-1');
-    </script>
-
-    <!-- Facebook Pixel Code -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '314916326326617');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-                   src="https://www.facebook.com/tr?id=314916326326617&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Facebook Pixel Code -->
 
 
 
@@ -192,23 +143,6 @@
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         .product-thumbnail__quantity {
             color: #FFFFFF;
         }
@@ -216,52 +150,13 @@
 
 
 
-
-
-
-
-
-
-
     </style>
-    <!-- End checkout custom css -->
 
 
 
     <script src="${pageContext.request.contextPath}/User_page/js/checkout.vendor.min.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/User_page/js/checkout.min.js" type="text/javascript"></script>
 
-
-
-
-
-    <script>
-        var Bizweb = Bizweb || {};
-        Bizweb.id = '374243';
-        Bizweb.store = 'haanhgermany.mysapo.net';
-
-
-        Bizweb.template = 'checkout';
-
-
-        Bizweb.Checkout = Bizweb.Checkout || {};
-        Bizweb.Checkout.token = "37af1dbfc716440eb4e754ec02e83db3"
-        Bizweb.Checkout.apiHost = "haanhgermany.mysapo.net"
-
-
-    </script>
-
-    <script>
-        window.BizwebAnalytics = window.BizwebAnalytics || {};
-        window.BizwebAnalytics.meta = window.BizwebAnalytics.meta || {};
-        window.BizwebAnalytics.meta.currency = 'VND';
-        window.BizwebAnalytics.tracking_url = '/s';
-        var meta = {};
-
-        for (var attr in meta) {
-            window.BizwebAnalytics.meta[attr] = meta[attr];
-        }
-    </script>
 
     <script src="${pageContext.request.contextPath}/User_page/js/stats.min.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/User_page/js/fp.v3.3.0.min.js" type="text/javascript"></script>
@@ -275,7 +170,7 @@
     <div class="wrap">
         <div class="logo logo--center">
 
-            <a href="/">
+            <a href="Home">
                 <img class="logo__image  logo__image--medium " alt="SHOP TEAM 9" src="img/imgProductDemo/logo.png" />
             </a>
 
@@ -302,7 +197,7 @@
                 <header class="main__header">
                     <div class="logo logo--center">
 
-                        <a href="/">
+                        <a href="Home">
                             <img class="logo__image  logo__image--medium " alt="SHOP TEAM 9" src="img/imgProductDemo/logo.png" />
                         </a>
 
@@ -315,7 +210,7 @@
                                 <div class="section__header">
                                     <div class="layout-flex">
                                         <h2 class="section__title layout-flex__item layout-flex__item--stretch">
-                                            <i class="fa fa-id-card-o fa-lg section__title--icon hide-on-desktop"></i>
+                                            <i></i>
 
                                             Thông tin nhận hàng
 
@@ -323,7 +218,7 @@
 
 
                                         <a href="#">
-                                            <i class="fa fa-user-circle-o fa-lg"></i>
+                                            <i ></i>
                                             <span>Đăng nhập </span>
                                         </a>
 
@@ -395,7 +290,7 @@
                                                         data-bind="billing.province"
                                                         data-address-type="province"
                                                         data-address-zone="billing" required
-                                                    onchange="getProvince(this)">
+                                                        onchange="getProvince(this)">
 
                                                 </select>
                                             </div>
@@ -475,7 +370,7 @@
                                 <div class="section__header">
                                     <div class="layout-flex">
                                         <h2 class="section__title layout-flex__item layout-flex__item--stretch">
-                                            <i class="fa fa-truck fa-lg section__title--icon hide-on-desktop"></i>
+                                            <i ></i>
                                             Vận chuyển
                                         </h2>
                                     </div>
@@ -506,7 +401,7 @@
                                 <div class="section__header">
                                     <div class="layout-flex">
                                         <h2 class="section__title layout-flex__item layout-flex__item--stretch">
-                                            <i class="fa fa-credit-card fa-lg section__title--icon hide-on-desktop"></i>
+                                            <i ></i>
                                             Thanh toán
                                         </h2>
                                     </div>
@@ -534,7 +429,7 @@
                                                     <span class="radio__label__primary">Chuyển khoản qua ngân hàng</span>
                                                     <span class="radio__label__accessory">
 															<span class="radio__label__icon">
-																<i class="payment-icon payment-icon--3"></i>
+																<i class="payment-icon"></i>
 															</span>
 														</span>
                                                 </label>
@@ -544,12 +439,8 @@
                                                 <p>Quý Khách có thẻ đến phòng giao dịch bất kỳ ngân hàng nào hoặc ATM, Internet banking để chuyển tiền vào các tài khoản sau:
                                                 </p> <p>1. Tài khoản Techcombank
                                             </p> <p>Số tài khoản: 19033380955012
-                                            </p> <p>Chủ tài khoản: Phùng Vũ Sơn
-                                            </p> <p>Chi nhánh Hà Nội
-                                            </p> <p>2. Tài khoản Vietcombank
-                                            </p> <p>Số tài khoản: 0971000032686
-                                            </p> <p>Chủ tài khoản: Phùng Vũ Sơn
-                                            </p> <p>Chi nhánh Nam Hà Nội
+                                            </p> <p>Chủ tài khoản: Phan Hữu Thắng
+                                            </p> <p>Chi nhánh TP HCM
                                             </p> <p>Nội Dung: Số điện thoại Khách hàng + Mã đơn Hàng</p>
 
                                             </div>
@@ -569,7 +460,7 @@
                                                     <span class="radio__label__primary">Thanh toán khi giao hàng (COD)</span>
                                                     <span class="radio__label__accessory">
 															<span class="radio__label__icon">
-																<i class="payment-icon payment-icon--4"></i>
+																<i class="payment-icon"></i>
 															</span>
 														</span>
                                                 </label>
@@ -644,33 +535,33 @@
                                     </thead>
                                     <tbody>
                                     <c:forEach items="${cart.getCartItems()}" var ="cartItem" >
-                                    <tr class="product">
-                                        <td class="product__image">
-                                            <div class="product-thumbnail">
-                                                <div class="product-thumbnail__wrapper" data-tg-static>
+                                        <tr class="product">
+                                            <td class="product__image">
+                                                <div class="product-thumbnail">
+                                                    <div class="product-thumbnail__wrapper" data-tg-static>
 
-                                                    <img src="${cartItem.product.getListImage().get(0)} "
-                                                         alt="" class="product-thumbnail__image">
+                                                        <img src="${cartItem.product.getListImage().get(0)} "
+                                                             alt="" class="product-thumbnail__image">
 
+                                                    </div>
+                                                    <span class="product-thumbnail__quantity">${cartItem.quantity}</span>
                                                 </div>
-                                                <span class="product-thumbnail__quantity">${cartItem.quantity}</span>
-                                            </div>
-                                        </td>
-                                        <th class="product__description">
+                                            </td>
+                                            <th class="product__description">
 													<span class="product__description__name">
 
                                                             ${cartItem.product.name}
-													</span>
+                                                    </span>
 
 
-                                        </th>
-                                        <td class="product__quantity visually-hidden"><em>Số lượng:</em> ${cartItem.quantity}</td>
-                                        <td class="product__price">
+                                            </th>
+                                            <td class="product__quantity visually-hidden"><em>Số lượng:</em> ${cartItem.quantity}</td>
+                                            <td class="product__price">
 
-                                                ${cartItem.stringPrice(cartItem.totalPrice()) }đ
+                                                    ${cartItem.stringPrice(cartItem.totalPrice()) }đ
 
-                                        </td>
-                                    </tr>
+                                            </td>
+                                        </tr>
                                     </c:forEach>
                                     </tbody>
                                 </table>
@@ -751,7 +642,7 @@
 													</span>
                                         </th>
                                         <td class="total-line__price">
-                                            <span class="payment-due__price" >${cart.stringPrice(cart.getTotal()-15000)}đ</span>
+                                            <span class="payment-due__price" >${cart.stringPrice(cart.getTotal()+15000)}đ</span>
                                         </td>
                                     </tr>
                                     </tfoot>
@@ -806,19 +697,19 @@
         var province =  document.getElementById("billingProvince");
 
         fetch("https://provinces.open-api.vn/api/")
-        .then(res => res.json())
-        .then(res=>{
+            .then(res => res.json())
+            .then(res=>{
 
-            //var district=document.getElementById("billingDistrict") ;
-            console.log(res)
+                //var district=document.getElementById("billingDistrict") ;
+                console.log(res)
                 var h ="";
-                    h+="<option value=0></option>"
-                    for(var x of res)  {
-                        var p = x.name;
-                        h+='<option value='+'"'+x.code+'-'+p+'"'+'>'+x.name+'</option>'
-                    }
-            province.innerHTML=h;
-        })
+                h+="<option value=0></option>"
+                for(var x of res)  {
+                    var p = x.name;
+                    h+='<option value='+'"'+x.code+'-'+p+'"'+'>'+x.name+'</option>'
+                }
+                province.innerHTML=h;
+            })
 
     }
     function getProvince(e){
@@ -857,19 +748,19 @@
             })
     }
     function loadDistrictDefault(){
-            fetch("https://provinces.open-api.vn/api/p/1?depth=2")
-                .then(res => res.json())
-                .then(res=>{
+        fetch("https://provinces.open-api.vn/api/p/1?depth=2")
+            .then(res => res.json())
+            .then(res=>{
 
-                    var district=document.getElementById("billingDistrict") ;
-                    console.log(res)
-                    var h ="";
-                    for(var x of res.districts)  {
-                        h+="<option value="+x.name+">"+x.name+"</option>"
+                var district=document.getElementById("billingDistrict") ;
+                console.log(res)
+                var h ="";
+                for(var x of res.districts)  {
+                    h+="<option value="+x.name+">"+x.name+"</option>"
 
-                    }
-                    district.innerHTML=h;
-                })
+                }
+                district.innerHTML=h;
+            })
 
     }
 

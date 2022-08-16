@@ -30,6 +30,7 @@ public class Contact extends HttpServlet {
         HttpSession session = request.getSession();
         ContactDao.addContact(name, email, phone, message);
 
+        request.setAttribute("headIndex",6);
         session.setAttribute("lienhe", "<b>Thông tin của bạn đã được ghi lại.</b>");
         response.sendRedirect("Contact");
 

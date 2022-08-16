@@ -120,8 +120,7 @@ public class ProductService {
         Locale lithuanian = new Locale("lt_LT");
         Collator lithuanianCollator = Collator.getInstance(lithuanian);
         Collections.sort(al,lithuanianCollator);
-        System.out.println("List after the use of" +
-                " Collection.sort() :\n" + al);
+
 
     }
 }

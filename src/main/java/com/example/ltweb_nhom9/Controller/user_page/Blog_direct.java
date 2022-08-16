@@ -23,6 +23,8 @@ public class Blog_direct extends HttpServlet {
         List<Blog>  blogList =  BlogService.getInstance().getAll();
 
         Blog blog =BlogService.getInstance().getAll().get(0);
+
+        req.setAttribute("headIndex",5);
         req.setAttribute("blog",blog);
         req.setAttribute("blogList",blogList);
         req.getRequestDispatcher("User_page/blog.jsp").forward(req,resp);

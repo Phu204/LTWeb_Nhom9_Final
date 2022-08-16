@@ -97,7 +97,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="/" class="logo-wrapper" title="SHOP TEAM 9">
+                    <a href="Home" class="logo-wrapper" title="SHOP TEAM 9">
                         <img src="${pageContext.request.contextPath}/img/icon/logo.png" data-src="img/icon/logo.png" alt="SHOP TEAM 9"
                              class="lazy img-responsive center-block"/>
                     </a>
@@ -215,7 +215,7 @@
                                     </g>
                                 </svg>
                             </div>
-                            <a href="/" class="logo-wrapper" title="SHOP TEAM 9">
+                            <a href="Home" class="logo-wrapper" title="SHOP TEAM 9">
                                 <img src="#" data-src="img/icon/logo.png" alt="SHOP TEAM 9"
                                      class="lazy img-responsive center-block" />
                             </a>
@@ -636,7 +636,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <ul class="breadcrumb" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-                    <li class="home"><a itemprop="url" href="/" title="Trang chủ"><span itemprop="title">Trang
+                    <li class="home"><a itemprop="url" href="Home" title="Trang chủ"><span itemprop="title">Trang
                                     chủ</span></a><span><i class="fa fa-angle-right"></i></span></li>
 
                     <li><strong itemprop="title">Quên mật khẩu</strong></li>

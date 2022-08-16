@@ -28,7 +28,7 @@
     <link href="${pageContext.request.contextPath}/User_page/css/slick.scss.css" rel="stylesheet" type="text/css"/>
     <link href="${pageContext.request.contextPath}/User_page/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 
-    <link href="${pageContext.request.contextPath}/User_page/css/Reposive&&ContacIcon.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/ContacIcon.css" rel="stylesheet" type="text/css"/>
     <link href="${pageContext.request.contextPath}/User_page/css/evo-accounts.scss.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/User_page/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -79,7 +79,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <ul class="breadcrumb" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-                    <li class="home"><a itemprop="url" href="/" title="Trang chủ"><span itemprop="title">Trang
+                    <li class="home"><a itemprop="url" href="Home" title="Trang chủ"><span itemprop="title">Trang
 									chủ</span></a><span><i class="fa fa-angle-right"></i></span></li>
 
                     <li><strong itemprop="title">Đăng nhập tài khoản</strong></li>
