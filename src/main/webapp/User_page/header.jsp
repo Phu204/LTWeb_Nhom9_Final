@@ -548,7 +548,7 @@
 
                         <li class="nav-item
                             <c:if test="${headIndex == 2}">active</c:if>
-                            "><a class="nav-link" href="gioi-thieu.html" title="Giới thiệu">Giới thiệu</a></li>
+                            "><a class="nav-link" href="Intro" title="Giới thiệu">Giới thiệu</a></li>
 
 
                         <li class=" nav-item

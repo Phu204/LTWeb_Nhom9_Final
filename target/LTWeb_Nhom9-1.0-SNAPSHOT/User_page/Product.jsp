@@ -24,82 +24,83 @@
     <link rel="icon" href="img/icon/logo.png"
           type="image/x-icon"/>
 
-    <link href="User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="User_page/css/plugin.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="User_page/css/base.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="User_page/css/evo-main.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="User_page/css/slick.scss.css" rel="stylesheet" type="text/css"/>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-          type="text/css"/>
-    <link href="css/ContacIcon.css" rel="stylesheet" type="text/css">
-    <link href="User_page/css/evo-collections.scss.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>--%>
+        <link href="User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
+        <link href="User_page/css/plugin.scss.css" rel="stylesheet" type="text/css"/>
+        <link href="User_page/css/base.scss.css" rel="stylesheet" type="text/css"/>
+        <link href="User_page/css/evo-main.scss.css" rel="stylesheet" type="text/css"/>
+        <link href="User_page/css/slick.scss.css" rel="stylesheet" type="text/css"/>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+              type="text/css"/>
+        <link href="css/ContacIcon.css" rel="stylesheet" type="text/css">
+        <link href="User_page/css/evo-collections.scss.css" rel="stylesheet" type="text/css"/>
 
-    <link href="User_page/css/checkbox.css" rel="stylesheet" type="text/css"/>
-</head>
+        <link href="User_page/css/checkbox.css" rel="stylesheet" type="text/css"/>
+    </head>
 
-<body class="bg-body collection">
-
-
-<jsp:include page='header.jsp'>
-    <jsp:param name="articleId" value=""/>
-</jsp:include>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
-
-<script src="User_page/js/option-selectors.js" type="text/javascript"></script>
-<script src="User_page/js/api.jquery.js" type="text/javascript"></script>
-<script src="User_page/js/slick.js" type="text/javascript"></script>
+    <body class="bg-body collection">
 
 
-<script src="User_page/js/pagination.min.js" type="text/javascript"></script>
+    <jsp:include page='header.jsp'>
+        <jsp:param name="articleId" value=""/>
+    </jsp:include>
 
-<section class="bread-crumb margin-bottom-10">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <ul class="breadcrumb" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-                    <li class="home"><a itemprop="url" href="Home" title="Trang chủ"><span
-                            itemprop="title">Trang chủ</span></a><span><i class="fa fa-angle-right"></i></span></li>
-                    <li><strong><span itemprop="title">Tất cả sản phẩm</span></strong></li>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
 
-                </ul>
+    <script src="User_page/js/option-selectors.js" type="text/javascript"></script>
+    <script src="User_page/js/api.jquery.js" type="text/javascript"></script>
+    <script src="User_page/js/slick.js" type="text/javascript"></script>
+
+
+    <script src="User_page/js/pagination.min.js" type="text/javascript"></script>
+
+    <section class="bread-crumb margin-bottom-10">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="breadcrumb" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                        <li class="home"><a itemprop="url" href="Home" title="Trang chủ"><span
+                                itemprop="title">Trang chủ</span></a><span><i class="fa fa-angle-right"></i></span></li>
+                        <li><strong><span itemprop="title">Tất cả sản phẩm</span></strong></li>
+
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<div class="container margin-top-20">
-    <div class="row">
-        <div class="main_container col-md-12 margin-bottom-25">
-            <h1 class="col-title">Tất cả sản phẩm</h1>
+    <div class="container margin-top-20">
+        <div class="row">
+            <div class="main_container col-md-12 margin-bottom-25">
+                <h1 class="col-title">Tất cả sản phẩm</h1>
 
-            <div class="category-gallery">
+                <div class="category-gallery">
 
-                <div class="single_image_effect">
-                    <img data-src="img/banner/cat-banner-1.jpg"
-                         alt="Tất cả sản phẩm" title="Tất cả sản phẩm" class="lazy img-responsive center-block"/>
+                    <div class="single_image_effect">
+                        <img data-src="img/banner/cat-banner-1.jpg"
+                             alt="Tất cả sản phẩm" title="Tất cả sản phẩm" class="lazy img-responsive center-block"/>
+                    </div>
+
                 </div>
 
-            </div>
 
+                <div class="group-category">
 
-            <div class="group-category">
+                    <jsp:useBean id="categoryList" scope="request" type="java.util.List"/>
+                    <c:forEach items="${categoryList}" var="i">
+                        <div class="category-item">
+                            <a href="Product?typePage=${typePage}&category=${i.getName()}" title="${i.getName()}">
+                                <div class="group-category-image">
 
-                <jsp:useBean id="categoryList" scope="request" type="java.util.List"/>
-                <c:forEach items="${categoryList}" var="i">
-                    <div class="category-item">
-                        <a href="Product?typePage=${typePage}&category=${i.getName()}" title="${i.getName()}">
-                            <div class="group-category-image">
+                                    <img data-src="${i.getImg()}"
+                                         alt="${i.getName()}" class="img-responsive center-block lazy"/>
 
-                                <img data-src="${i.getImg()}"
-                                     alt="${i.getName()}" class="img-responsive center-block lazy"/>
-
-                            </div>
-                            <h6>${i.getName()}</h6>
-                        </a>
-                    </div>
-                </c:forEach>
-<%--<h1>-${category}-</h1>--%>
+                                </div>
+                                <h6>${i.getName()}</h6>
+                            </a>
+                        </div>
+                    </c:forEach>
+    <%--<h1>-${category}-</h1>--%>
             </div>
 
         </div>

@@ -75,7 +75,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="/" class="logo-wrapper" title="SHOP TEAM 9">
+                    <a href="Home" class="logo-wrapper" title="SHOP TEAM 9">
                         <img src="${pageContext.request.contextPath}/img/icon/logo.png" data-src="img/icon/logo.png" alt="SHOP TEAM 9"
                              class="lazy img-responsive center-block"/>
                     </a>
@@ -193,7 +193,7 @@
                                     </g>
                                 </svg>
                             </div>
-                            <a href="/" class="logo-wrapper" title="SHOP TEAM 9">
+                            <a href="Home" class="logo-wrapper" title="SHOP TEAM 9">
                                 <img src="#" data-src="img/icon/logo.png" alt="SHOP TEAM 9"
                                      class="lazy img-responsive center-block" />
                             </a>
@@ -201,8 +201,8 @@
                         </div>
                         <div class="ul-first-menu">
 
-                            <a rel="nofollow" href="login.html" title="Đăng nhập">Đăng nhập</a>
-                            <a rel="nofollow" href="register.html" title="Đăng ký">Đăng ký</a>
+                            <a rel="nofollow" href="Login" title="Đăng nhập">Đăng nhập</a>
+                            <a rel="nofollow" href="Register" title="Đăng ký">Đăng ký</a>
 
                         </div>
                     </div>
@@ -540,59 +540,41 @@
                     <ul id="nav" class="nav">
 
 
-                        <li class="nav-item active"><a class="nav-link" href="Home" title="Trang chủ">Trang chủ</a>
+                        <li class="nav-item
+                            <c:if test="${headIndex == 1}">active</c:if>
+                            "><a class="nav-link" href="Home" title="Trang chủ">Trang chủ</a>
                         </li>
 
 
-                        <li class="nav-item "><a class="nav-link" href="gioi-thieu.html" title="Giới thiệu">Giới thiệu</a></li>
+                        <li class="nav-item
+                            <c:if test="${headIndex == 2}">active</c:if>
+                            "><a class="nav-link" href="Intro" title="Giới thiệu">Giới thiệu</a></li>
 
 
-                        <li class=" nav-item">
-                            <a href="Product" class="nav-link" title="Sản phẩm">Sản phẩm <i class="fa fa-angle-down"
-                                                                                                 data-toggle="dropdown"></i></a>
+                        <li class=" nav-item
+                            <c:if test="${headIndex == 3}">active</c:if>
+                            ">
+                            <a href="Product" class="nav-link" title="Sản phẩm">Sản phẩm </a>
                         </li>
 
 
-                        <li class="nav-item "><a class="nav-link" href="Product?typePage=DiscountProduct" title="Khuyến mãi">Khuyến mãi</a></li>
+                        <li class="nav-item
+                            <c:if test="${headIndex == 4}">active</c:if>
+                            "><a class="nav-link" href="Product?typePage=DiscountProduct" title="Khuyến mãi">Khuyến mãi</a></li>
 
 
-                        <li class=" nav-item has-childs ">
-                            <a href="Blog" class="nav-link" title="Blog">Blog <i class="fa fa-angle-down"
-                                                                                            data-toggle="dropdown"></i></a>
+                        <li class=" nav-item
+                            <c:if test="${headIndex == 5}">active</c:if>
+                            ">
+                            <a href="Blog" class="nav-link" title="Blog">Blog </a>
 
-                            <ul class="dropdown-menu">
-
-
-                                <li class="nav-item-lv2"><a class="nav-link" href="may-rua-bat.html" title="Tư vấn Máy rửa bát">Tư
-                                    vấn
-                                    Máy rửa bát</a></li>
-
-
-                                <li class="nav-item-lv2"><a class="nav-link" href="tu-van-bep-tu.html" title="Tư vấn Bếp từ">Tư vấn
-                                    Bếp
-                                    từ</a></li>
-
-
-                                <li class="nav-item-lv2"><a class="nav-link" href="kien-truc.html" title="Kiến trúc VIỆT">Kiến
-                                    trúc
-                                    VIỆT</a></li>
-
-
-                                <li class="nav-item-lv2"><a class="nav-link" href="may-ep-cham.html" title="Máy ép chậm">Máy ép
-                                    chậm</a></li>
-
-
-                                <li class="nav-item-lv2"><a class="nav-link" href="noi-chien-khong-dau.html"
-                                                            title="Nồi chiên không dầu">Nồi
-                                    chiên không dầu</a></li>
-
-
-                            </ul>
 
                         </li>
 
 
-                        <li class="nav-item "><a class="nav-link" href="Contact" title="Liên hệ">Liên hệ</a></li>
+                        <li class="nav-item
+                            <c:if test="${headIndex == 6}">active</c:if>
+                            "><a class="nav-link" href="Contact" title="Liên hệ">Liên hệ</a></li>
 
 
                     </ul>
