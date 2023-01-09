@@ -24,18 +24,17 @@
     <link rel="icon" href="img/icon/logo.png"
           type="image/x-icon"/>
 
-    <link href="${pageContext.request.contextPath}/User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>--%>
-        <link href="User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
-        <link href="User_page/css/plugin.scss.css" rel="stylesheet" type="text/css"/>
-        <link href="User_page/css/base.scss.css" rel="stylesheet" type="text/css"/>
-        <link href="User_page/css/evo-main.scss.css" rel="stylesheet" type="text/css"/>
-        <link href="User_page/css/slick.scss.css" rel="stylesheet" type="text/css"/>
+        <link href="${pageContext.request.contextPath}/User_page/css/bootstrap.scss.css" rel="stylesheet" type="text/css"/>
+        <link href="${pageContext.request.contextPath}/User_page/css/plugin.scss.css" rel="stylesheet" type="text/css"/>
+        <link href="${pageContext.request.contextPath}/User_page/css/base.scss.css" rel="stylesheet" type="text/css"/>
+        <link href="${pageContext.request.contextPath}/User_page/css/evo-main.scss.css" rel="stylesheet" type="text/css"/>
+        <link href="${pageContext.request.contextPath}/User_page/css/slick.scss.css" rel="stylesheet" type="text/css"/>
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
               type="text/css"/>
-        <link href="css/ContacIcon.css" rel="stylesheet" type="text/css">
-        <link href="User_page/css/evo-collections.scss.css" rel="stylesheet" type="text/css"/>
+        <link href="${pageContext.request.contextPath}/User_page/css/ContacIcon.css" rel="stylesheet" type="text/css">
+        <link href="${pageContext.request.contextPath}/User_page/css/evo-collections.scss.css" rel="stylesheet" type="text/css"/>
 
-        <link href="User_page/css/checkbox.css" rel="stylesheet" type="text/css"/>
+        <link href="${pageContext.request.contextPath}/User_page/css/checkbox.css" rel="stylesheet" type="text/css"/>
     </head>
 
     <body class="bg-body collection">
@@ -47,12 +46,12 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
 
-    <script src="User_page/js/option-selectors.js" type="text/javascript"></script>
-    <script src="User_page/js/api.jquery.js" type="text/javascript"></script>
-    <script src="User_page/js/slick.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/User_page/js/option-selectors.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/User_page/js/api.jquery.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/User_page/js/slick.js" type="text/javascript"></script>
 
 
-    <script src="User_page/js/pagination.min.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/User_page/js/pagination.min.js" type="text/javascript"></script>
 
     <section class="bread-crumb margin-bottom-10">
         <div class="container">
@@ -77,7 +76,7 @@
                 <div class="category-gallery">
 
                     <div class="single_image_effect">
-                        <img data-src="img/banner/cat-banner-1.jpg"
+                        <img data-src="${pageContext.request.contextPath}/img/banner/cat-banner-1.jpg"
                              alt="Tất cả sản phẩm" title="Tất cả sản phẩm" class="lazy img-responsive center-block"/>
                     </div>
 
@@ -88,11 +87,11 @@
 
                     <jsp:useBean id="categoryList" scope="request" type="java.util.List"/>
                     <c:forEach items="${categoryList}" var="i">
-                        <div class="category-item">
+                        <div class="category-item slick-slide">
                             <a href="Product?typePage=${typePage}&category=${i.getName()}" title="${i.getName()}">
                                 <div class="group-category-image">
 
-                                    <img data-src="${i.getImg()}"
+                                    <img data-src="${pageContext.request.contextPath}/${i.getImg()}"
                                          alt="${i.getName()}" class="img-responsive center-block lazy"/>
 
                                 </div>
@@ -163,12 +162,12 @@
                                    title=${p.name} class="image-resize">
                                     <img class="lazy"
                                          src="Detail?id=${p.id}"
-                                         data-src=${p.getListImage().get(0)}
+                                         data-src="${pageContext.request.contextPath}/${p.getListImage().get(0)}"
                                          alt=${p.name}/>
 
                                     <img class="lazy hover-pic"
                                          src="Detail?id=${p.id}"
-                                         data-src=${p.getListImage().get(1)}
+                                         data-src="${pageContext.request.contextPath}/${p.getListImage().get(1)}"
                                          alt=${p.name}/>
 
                                 </a>
@@ -423,7 +422,7 @@
                     <a class="single_image_effect" href="Product?typePage=DiscountProduct" title="Khuyến mãi">
                         <img class="lazy img-responsive center-block"
                              src="data:image/png"
-                             data-src="img/banner/aside_banner.webp"
+                             data-src="${pageContext.request.contextPath}/img/banner/aside_banner.webp"
                              alt="Khuyến mãi"/>
                     </a>
                 </div>
@@ -544,12 +543,12 @@
 <div id="myModal" class="modal fade" role="dialog"></div>
 <script src="//cdn.jsdelivr.net/npm/intersection-observer@0.5.1/intersection-observer.js"></script>
 <!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>-->
-<script src="User_page/js/lazyload.min.js"></script>
-<script src="User_page/js/cs.script.js" type="text/javascript"></script>
-<script src="User_page/js/main.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/User_page/js/lazyload.min.js"></script>
+<script src="${pageContext.request.contextPath}/User_page/js/cs.script.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/User_page/js/main.js" type="text/javascript"></script>
 
-<%--<script src="User_page/js/ajax.js" type="text/javascript"></script>--%>
-<script src="User_page/js/evo-collection.js" type="text/javascript"></script>
+<%--<script src="${pageContext.request.contextPath}/User_page/js/ajax.js" type="text/javascript"></script>--%>
+<script src="${pageContext.request.contextPath}/User_page/js/evo-collection.js" type="text/javascript"></script>
 <script>
 
     // function filter(e) {
